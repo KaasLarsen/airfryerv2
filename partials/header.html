@@ -1,0 +1,81 @@
+<!-- PARTIAL: /partials/header.html -->
+<header class="site-header-wrap">
+  <div class="site-header">
+
+    <!-- logo -->
+    <a class="logo" href="/" aria-label="forside">opskrift-airfryer.dk</a>
+
+    <!-- burger (mobil) -->
+    <input id="nav-toggle" type="checkbox" hidden>
+    <label for="nav-toggle" class="burger-btn" aria-label="åbn menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <!-- navigation -->
+    <nav class="nav" aria-label="hovedmenu">
+      <a href="/seneste.html" class="nav-link">
+        <svg class="ico-inline"><use href="#book"></use></svg> seneste
+      </a>
+      <a href="/guides.html" class="nav-link">
+        <svg class="ico-inline"><use href="#star"></use></svg> guides
+      </a>
+      <a href="/madplan/index.html" class="nav-link">
+        <svg class="ico-inline"><use href="#calendar"></use></svg> madplaner
+      </a>
+      <a href="/top.html" class="nav-link">
+        <svg class="ico-inline"><use href="#trophy"></use></svg> top
+      </a>
+
+      <!-- bruger (kun statisk i v2-basic) -->
+      <div class="has-sub">
+        <button class="user-btn" type="button" aria-haspopup="true" aria-expanded="false">
+          <svg class="ico-inline"><use href="#user"></use></svg> bruger
+          <svg class="chev" width="14" height="14" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
+          </svg>
+        </button>
+        <div class="submenu" role="menu">
+          <a href="/profil/" class="sub-link"><svg class="ico-inline"><use href="#user"></use></svg> min profil</a>
+          <a href="/profil/favoritter.html" class="sub-link"><svg class="ico-inline"><use href="#star"></use></svg> mine favoritter</a>
+          <a href="/profil/mine-madplaner.html" class="sub-link"><svg class="ico-inline"><use href="#calendar"></use></svg> mine madplaner</a>
+          <div class="sub-sep"></div>
+          <a href="/profil/log-ind.html" class="sub-link"><svg class="ico-inline"><use href="#lock"></use></svg> log ind</a>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+<script>
+(function(){
+  // højde til evt. sticky offsets
+  function setH(){
+    const h = document.querySelector('.site-header-wrap')?.getBoundingClientRect().height || 64;
+    document.documentElement.style.setProperty('--header-h', Math.round(h) + 'px');
+  }
+  window.addEventListener('load', setH, { once:true });
+  window.addEventListener('resize', setH);
+
+  // dropdown
+  const box = document.querySelector('.has-sub');
+  const btn = box?.querySelector('.user-btn');
+  const menu = box?.querySelector('.submenu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', function(e){
+      const open = getComputedStyle(menu).display === 'block';
+      menu.style.display = open ? 'none' : 'block';
+      btn.setAttribute('aria-expanded', String(!open));
+      e.stopPropagation();
+    });
+
+    document.addEventListener('click', function(){
+      if (getComputedStyle(menu).position === 'absolute') {
+        menu.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+})();
+</script>
