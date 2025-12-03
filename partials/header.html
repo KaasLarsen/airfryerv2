@@ -1,31 +1,34 @@
 <header class="site-header">
-  <div class="site-header-inner">
-    <a href="index.html" class="site-logo">
-      <span class="site-logo-mark">🌀</span>
-      <span class="site-logo-text">Opskrift-Airfryer</span>
-    </a>
+  <div class="header-inner">
 
-    <div class="site-nav">
-      <button class="nav-toggle" aria-label="Åbn menu">
-        <svg class="icon icon-24" aria-hidden="true">
-          <use href="#icon-menu"></use>
+    <!-- Logo -->
+    <div class="header-logo">
+      <a href="index.html">Opskrift-Airfryer</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="header-nav">
+      <a href="index.html">Opskrifter</a>
+      <a href="madplaner.html">Madplaner</a>
+      <a href="guides.html">Guides</a>
+    </nav>
+
+    <!-- Søgning i header -->
+    <form class="header-search" action="search.html" method="get">
+      <input type="search" name="q" placeholder="Søg…" />
+      <button type="submit" aria-label="Søg">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="8" cy="8" r="6"></circle>
+          <line x1="14" y1="14" x2="18" y2="18"></line>
         </svg>
       </button>
+    </form>
 
-      <ul class="site-nav-list">
-        <li><a href="index.html" class="site-nav-link is-active">hjem</a></li>
-        <li><a href="#" class="site-nav-link">opskrifter</a></li>
-        <li><a href="#" class="site-nav-link">airfryer</a></li>
-        <li><a href="#" class="site-nav-link">madplaner</a></li>
-        <li><a href="#" class="site-nav-link">guides</a></li>
-      </ul>
-
-      <div class="header-auth">
-        <span class="header-auth-user js-auth-user-label"></span>
-        <button type="button" class="js-auth-toggle">
-          log ind
-        </button>
-      </div>
+    <!-- Login -->
+    <div class="header-user">
+      <button type="button" class="login-btn" onclick="openLogin()">Log ind</button>
     </div>
+
   </div>
 </header>
