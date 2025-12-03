@@ -1,105 +1,116 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="utf-8">
-  <title>opskrifter i airfryer – opskrift-airfryer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="Se alle opskrifter i airfryer samlet ét sted. Find kylling, pomfritter, grøntsager, snacks og lette retter.">
-  <link rel="stylesheet" href="assets/styles.css">
+  <meta charset="UTF-8" />
+  <title>opskrifter – opskrift-airfryer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body class="page">
 
-  <!-- svg icons + header -->
-  <div data-include="icons"></div>
-  <div data-include="header"></div>
+<body>
 
-  <main class="page-main page-main--wide">
+<header class="site-header">
+  <div class="header-inner">
 
-    <!-- top title + search (Arla-style) -->
-    <section class="recipes-header">
-      <div class="recipes-header-text">
-        <h1 class="recipes-title">opskrifter i airfryer</h1>
-        <p class="recipes-intro">
-          Her kan du gå på opdagelse i alle opskrifter til airfryer. Brug søgning og filtre til at finde retter, der
-          passer til råvarer, tid og lejlighed.
-        </p>
-      </div>
-      <form class="recipes-search" action="search.html" method="get">
-        <svg class="icon icon-24" aria-hidden="true">
-          <use href="#icon-search"></use>
-        </svg>
-        <input class="recipes-search-input" type="search" name="q"
-               placeholder="Søg efter for eksempel kylling, pomfritter eller grøntsager">
-        <button class="btn btn-primary" type="submit">søg</button>
-      </form>
-    </section>
+    <!-- left: logo -->
+    <div class="header-logo">
+      <a href="/">opskrift-airfryer</a>
+    </div>
 
-    <!-- filter bar -->
-    <section class="recipes-filters">
-      <div class="recipes-filters-inner">
-        <button type="button" class="recipes-filter-btn is-active">alle opskrifter</button>
-        <button type="button" class="recipes-filter-btn">kylling og kød</button>
-        <button type="button" class="recipes-filter-btn">grøntsager og tilbehør</button>
-        <button type="button" class="recipes-filter-btn">snacks</button>
-        <button type="button" class="recipes-filter-btn">lette retter</button>
-      </div>
-    </section>
+    <!-- middle: navigation -->
+    <nav class="header-nav">
+      <a href="/opskrifter.html">opskrifter</a>
+      <a href="/madplaner.html">madplaner</a>
+      <a href="/guides.html">guides</a>
+    </nav>
 
-    <!-- recipe grid – store billeder som hos arla -->
-    <section class="recipes-grid-section">
-      <div class="recipes-grid">
+    <!-- right: login -->
+    <div class="header-user">
+      <button class="login-btn" onclick="openLogin()">log ind</button>
+    </div>
 
-        <!-- kylling -->
-        <article class="recipe-tile">
-          <a href="saftig-kylling-i-airfryer.html" class="recipe-tile-link">
-            <div class="recipe-tile-image">
-              <img src="images/saftig-kylling-airfryer-768x768.jpg"
-                   alt="Saftig kylling i airfryer med sprød overflade">
-            </div>
-            <div class="recipe-tile-body">
-              <h2 class="recipe-tile-title">saftig kylling i airfryer med sprød overflade</h2>
-              <p class="recipe-tile-meta">30 minutter · 4 personer · airfryer</p>
-            </div>
-          </a>
-        </article>
+  </div>
+</header>
 
-        <!-- pomfritter -->
-        <article class="recipe-tile">
-          <a href="sprode-pomfritter-i-airfryer.html" class="recipe-tile-link">
-            <div class="recipe-tile-image">
-              <img src="images/pomfritter-airfryer-768x768.jpg"
-                   alt="Sprøde pomfritter i airfryer">
-            </div>
-            <div class="recipe-tile-body">
-              <h2 class="recipe-tile-title">sprøde pomfritter i airfryer</h2>
-              <p class="recipe-tile-meta">25 minutter · 2 personer · tilbehør</p>
-            </div>
-          </a>
-        </article>
+<main>
 
-        <!-- grøntsager -->
-        <article class="recipe-tile">
-          <a href="ristede-groentsager-i-airfryer.html" class="recipe-tile-link">
-            <div class="recipe-tile-image">
-              <img src="images/groentsager-airfryer-768x768.jpg"
-                   alt="Ristede grøntsager i airfryer">
-            </div>
-            <div class="recipe-tile-body">
-              <h2 class="recipe-tile-title">ristede grøntsager i airfryer</h2>
-              <p class="recipe-tile-meta">20 minutter · 3–4 personer · grønt</p>
-            </div>
-          </a>
-        </article>
+  <!-- HERO (Arla-style, clean af helvede til) -->
+  <section class="hero">
+    <h1 class="hero-title">opskrifter i airfryer</h1>
+    <p class="hero-subtitle">
+      Gå på opdagelse i lækre opskrifter. Enkel mad. Hurtig tilberedning. Store resultater.
+    </p>
 
-        <!-- flere opskrifter kan bare tilføjes som samme struktur -->
-      </div>
-    </section>
+    <form class="hero-search" method="get" action="search.html">
+      <input type="search" name="q" placeholder="Søg efter en opskrift..." />
+      <button type="submit">søg</button>
+    </form>
+  </section>
 
-  </main>
+  <!-- FILTERBAR -->
+  <section class="filterbar">
+    <button class="filter active">alle</button>
+    <button class="filter">kylling</button>
+    <button class="filter">grøntsager</button>
+    <button class="filter">tilbehør</button>
+    <button class="filter">snacks</button>
+  </section>
 
-  <div data-include="footer"></div>
+  <!-- GRID (Arla-style, kæmpe billeder, minimal tekst) -->
+  <section class="recipe-grid">
 
-  <script src="assets/include.js" defer></script>
+    <!-- PLACEHOLDER OPSKRIFT -->
+    <article class="recipe-card">
+      <a href="#" class="recipe-link">
+        <div class="recipe-img ph"></div>
+        <h2 class="recipe-title">placeholder opskrift</h2>
+        <p class="recipe-meta">30 min · 4 personer</p>
+      </a>
+    </article>
+
+    <article class="recipe-card">
+      <a href="#" class="recipe-link">
+        <div class="recipe-img ph"></div>
+        <h2 class="recipe-title">placeholder opskrift</h2>
+        <p class="recipe-meta">20 min · 2 personer</p>
+      </a>
+    </article>
+
+    <article class="recipe-card">
+      <a href="#" class="recipe-link">
+        <div class="recipe-img ph"></div>
+        <h2 class="recipe-title">placeholder opskrift</h2>
+        <p class="recipe-meta">15 min · tilbehør</p>
+      </a>
+    </article>
+
+    <article class="recipe-card">
+      <a href="#" class="recipe-link">
+        <div class="recipe-img ph"></div>
+        <h2 class="recipe-title">placeholder opskrift</h2>
+        <p class="recipe-meta">25 min · 3 personer</p>
+      </a>
+    </article>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h3>opskrift-airfryer</h3>
+      <p>Nem mad. Hurtigt. Lækkert.</p>
+    </div>
+    <div class="footer-col">
+      <a href="/om-os.html">om os</a>
+      <a href="/kontakt.html">kontakt</a>
+      <a href="/privatliv.html">privatlivspolitik</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/include.js" defer></script>
+
 </body>
 </html>
