@@ -351,3 +351,180 @@ body {
 .recipe-page-steps li {
   margin-bottom: 0.5rem;
 }
+/* HERO LARGE */
+.hero-large {
+  position: relative;
+  height: 480px;
+  background-image: var(--hero-image);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-large-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.5));
+}
+
+.hero-large-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  max-width: 780px;
+  padding: 1.5rem;
+}
+
+.hero-large-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.hero-large-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.8rem;
+  opacity: 0.9;
+}
+
+.hero-large-search {
+  display: flex;
+  max-width: 620px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 40px;
+  padding: 0.4rem 0.4rem;
+}
+
+.hero-large-search input {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border: none;
+  border-radius: 40px;
+  font-size: 1rem;
+}
+
+.hero-large-search button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.hero-large-filter-btn {
+  margin-top: 1.2rem;
+  background: #444;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* POPULÆRE TEMAER */
+.section-popular {
+  max-width: 1260px;
+  margin: 3.5rem auto;
+  padding: 0 1.2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2.5rem;
+}
+
+.theme-card {
+  text-align: center;
+}
+
+.theme-card img {
+  width: 156px;
+  height: 156px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.8rem;
+}
+
+.theme-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.theme-meta {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* UDVALGT KATEGORI */
+.section-category {
+  max-width: 1260px;
+  margin: 4rem auto;
+  padding: 0 1.2rem;
+}
+
+.category-header {
+  margin-bottom: 1.8rem;
+}
+
+.category-links {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.category-links a {
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.recipe-card {
+  text-decoration: none;
+}
+
+.recipe-card .recipe-img {
+  aspect-ratio: 1/1;
+  background: #eee;
+  border-radius: 12px;
+}
+
+.recipe-title {
+  margin-top: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+}
+
+.recipe-title:hover {
+  opacity: 0.7;
+}
+
+.recipe-meta {
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Remove underline on links inside recipe cards */
+.recipe-card a,
+.recipe-title {
+  text-decoration: none !important;
+}
