@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>saftig kylling i airfryer med sprød overflade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- eksisterende globale styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- ekstra, meget let opskrifts-specifik styling der bygger oven på styles.css -->
+    <style>
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #f5efe6;
+        }
+
+        .page-main {
+            flex: 1;
+            padding: 2rem 1.5rem 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .recipe-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr);
+            gap: 2rem;
+        }
+
+        @media (min-width: 960px) {
+            .recipe-layout {
+                grid-template-columns: minmax(0, 2.1fr) minmax(260px, 1.1fr);
+                align-items: flex-start;
+            }
+        }
+
+        .recipe-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 1.75rem;
+            align-items: stretch;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 800px) {
+            .recipe-hero {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .recipe-hero-image {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background: #ddd;
+            position: relative;
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .recipe-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .recipe-hero-tag {
+            position: absolute;
+            left: 1.2rem;
+            top: 1.2rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 0.35rem 0.8rem;
+            font-size: 0.8rem;
+            border-radius: 999px;
+            backdrop-filter: blur(6px);
+        }
+
+        .recipe-hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .recipe-title {
+            font-size: clamp(1.8rem, 3vw, 2.3rem);
+            line-height: 1.1;
+            color: #2f2f2f;
+            margin: 0;
+        }
+
+        .recipe-subtitle {
+            color: #5c5c5c;
+            font-size: 0.98rem;
+        }
+
+        .recipe-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.25rem;
+            font-size: 0.88rem;
+        }
+
+        .recipe-meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.03);
+        }
+
+        .recipe-meta-item span.icon {
+            font-size: 1rem;
+        }
+
+        .recipe-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #6bb87a;
+            color: #fff;
+            border-radius: 999px;
+            padding: 0.7rem 1.3rem;
+            font-size: 0.94rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.05);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #2f2f2f;
+            border-radius: 999px;
+            padding: 0.7rem 1.3rem;
+            font-size: 0.94rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            cursor: pointer;
+        }
+
+        .chip-muted {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.04);
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 2.25rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            margin: 0;
+            color: #2f2f2f;
+        }
+
+        .section-subtitle {
+            font-size: 0.88rem;
+            color: #777;
+        }
+
+        .intro-text {
+            font-size: 0.98rem;
+            color: #4a4a4a;
+            max-width: 70ch;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 1.25rem;
+            padding: 1.3rem 1.4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-muted {
+            background: #f8f3ea;
+        }
+
+        .ingredients-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .ingredients-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .ingredients-list input[type="checkbox"] {
+            width: 1.1rem;
+            height: 1.1rem;
+            border-radius: 0.35rem;
+            cursor: pointer;
+        }
+
+        .ingredients-group-title {
+            font-weight: 600;
+            margin-top: 0.2rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.92rem;
+            color: #444;
+        }
+
+        .steps-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .step-item {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            gap: 0.85rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 999px;
+            background: #6bb87a;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            font-size: 0.95rem;
+            color: #454545;
+        }
+
+        .step-tip {
+            margin-top: 0.3rem;
+            font-size: 0.86rem;
+            color: #777;
+        }
+
+        .tips-grid,
+        .method-grid,
+        .related-grid {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        @media (min-width: 720px) {
+            .tips-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .method-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .related-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        .pill-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.04);
+            margin-bottom: 0.4rem;
+        }
+
+        .rating-box {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .rating-stars {
+            font-size: 1.2rem;
+            letter-spacing: 0.08rem;
+        }
+
+        .rating-meta {
+            font-size: 0.82rem;
+            color: #777;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.32rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.7);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        .sidebar-block-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #333;
+        }
+
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .tag-pill {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        .badge-category {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(107, 184, 122, 0.13);
+            color: #265437;
+        }
+
+        .related-card-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .related-card-meta {
+            font-size: 0.78rem;
+            color: #777;
+        }
+
+        .related-card {
+            border-radius: 1rem;
+            padding: 0.9rem 1rem;
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+        }
+
+        .conclusion-text {
+            font-size: 0.97rem;
+            color: #444;
+        }
+
+        .header,
+        .footer {
+            background: #ffffff;
+        }
+
+        .header-inner,
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            font-size: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #444;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-inner {
+            font-size: 0.8rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body class="page">
+<header class="header">
+    <div class="header-inner">
+        <div class="logo">
+            opskrift<span style="color:#6bb87a;">hub</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#">madplaner</a>
+            <a href="#">airfryer</a>
+            <a href="#">sunde retter</a>
+            <a href="#">alle opskrifter</a>
+        </nav>
+    </div>
+</header>
+
+<main class="page-main">
+    <!-- hero med billede + meta + call-to-actions -->
+    <section class="recipe-hero">
+        <div class="recipe-hero-image">
+            <!-- udskift src med rigtigt 768x768 billede -->
+            <img src="images/saftig-kylling-airfryer-768x768.jpg" alt="saftig kylling i airfryer med sprød overflade">
+            <div class="recipe-hero-tag">
+                🌀 lavet i airfryer
+            </div>
+        </div>
+        <div class="recipe-hero-content">
+            <h1 class="recipe-title">saftig kylling i airfryer med sprød overflade</h1>
+            <p class="recipe-subtitle">
+                nem hverdagret med sprød skorpe, saftigt kød og masser af smag – perfekt til både travle dage og gæstemad.
+            </p>
+
+            <div class="recipe-meta">
+                <div class="recipe-meta-item">
+                    <span class="icon">⏱</span>
+                    <span>30 minutter</span>
+                </div>
+                <div class="recipe-meta-item">
+                    <span class="icon">🍽</span>
+                    <span>4 personer</span>
+                </div>
+                <div class="recipe-meta-item">
+                    <span class="icon">🌶</span>
+                    <span>nem</span>
+                </div>
+                <div class="recipe-meta-item">
+                    <span class="icon">🔥</span>
+                    <span>ca. 520 kcal pr. portion</span>
+                </div>
+            </div>
+
+            <div class="recipe-cta-row">
+                <button class="btn-primary">start opskriften</button>
+                <button class="btn-secondary">udskriv opskrift</button>
+                <span class="chip-muted">💾 gem til senere</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">hvorfor du vil elske denne opskrift</h2>
+        </div>
+        <p class="intro-text">
+            denne kylling i airfryer er en af de opskrifter, du vender tilbage til igen og igen. du får sprød overflade,
+            saftigt kød og en krydret, men mild smag, som hele familien kan være med på. alt laves i airfryeren, så du
+            slipper for store fedtstænk på komfuret, og du kan nemt kombinere retten med salat, ovnkartofler, ris eller
+            det du lige har i køleskabet. det er hverdagsmad, der føles lidt ekstra lækkert.
+        </p>
+    </section>
+
+    <section class="recipe-layout">
+        <!-- venstre kolonne: ingredienser + fremgangsmåde + tips -->
+        <div class="recipe-main">
+            <!-- ingredienser -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">ingredienser</h2>
+                    <span class="section-subtitle">hak af mens du handler eller forbereder</span>
+                </div>
+                <div class="card card-muted">
+                    <div class="ingredients-group">
+                        <div class="ingredients-group-title">kylling</div>
+                        <ul class="ingredients-list">
+                            <li>
+                                <input type="checkbox" id="ing-1">
+                                <label for="ing-1">800 g kyllingebryst eller -inderfilet</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="ing-2">
+                                <label for="ing-2">2 spsk olivenolie</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="ing-3">
+                                <label for="ing-3">1 tsk groft salt</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="ing-4">
+                                <label for="ing-4">½ tsk friskkværnet peber</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="ing-5">
+                                <label for="ing-5">1 tsk paprika (gerne røget)</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="ing-6">
+                                <label for="ing-6">1 tsk hvidløgspulver eller 2 fed frisk hvidløg</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="ingredients-group" style="margin-top:1rem;">
+                        <div class="ingredients-group-title">tilbehør (valgfrit)</div>
+                        <ul class="ingredients-list">
+                            <li>
+                                <input type="checkbox" id="ing-7">
+                                <label for="ing-7">600 g små kartofler eller kartoffelbåde</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="ing-8">
+                                <label for="ing-8">1 spsk olivenolie til kartofler</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="ing-9">
+                                <label for="ing-9">frisk salat, fx spinat, tomat og agurk</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="ing-10">
+                                <label for="ing-10">citronskiver og friske krydderurter til servering</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- fremgangsmåde -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">fremgangsmåde</h2>
+                    <span class="section-subtitle">trin for trin til saftig kylling med sprød overflade</span>
+                </div>
+                <div class="card">
+                    <ol class="steps-list">
+                        <li class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <strong>forbered kyllingen</strong>
+                                <div>
+                                    dup kyllingen tør med køkkenrulle. skær store stykker i nogenlunde lige store bidder,
+                                    så de tilberedes ensartet i airfryeren.
+                                </div>
+                                <div class="step-tip">
+                                    tip: lige store stykker er nøglen til både saftig og gennemstegt kylling.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <strong>lav marinaden</strong>
+                                <div>
+                                    rør olie, salt, peber, paprika og hvidløg sammen i en skål. vend kyllingen godt rundt,
+                                    så alle stykker er dækket. lad gerne kyllingen trække 10–15 minutter, hvis du har tid.
+                                </div>
+                                <div class="step-tip">
+                                    tip: jo længere marinering, jo mere smag. du kan også lade den stå i køleskab natten over.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <strong>forvarm airfryeren</strong>
+                                <div>
+                                    forvarm airfryeren til 190 °c i 3–5 minutter. det giver ekstra sprød overflade og kortere tilberedningstid.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <strong>tilbered kyllingen</strong>
+                                <div>
+                                    fordel kyllingestykkerne i airfryerkurven i ét lag. tilbered ved 190 °c i 10–14 minutter.
+                                    vend stykkerne halvvejs, så de bliver sprøde på alle sider.
+                                </div>
+                                <div class="step-tip">
+                                    tip: kyllingen er færdig, når saften er klar, og kernetemperaturen er ca. 75 °c.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <strong>lav tilbehør</strong>
+                                <div>
+                                    mens kyllingen tilberedes, kan du forberede kartofler og salat. vend kartoflerne i olie
+                                    og lidt salt, og tilbered dem i airfryer eller ovn, til de er gyldne og møre.
+                                </div>
+                            </div>
+                        </li>
+                        <li class="step-item">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <strong>servering</strong>
+                                <div>
+                                    server kyllingen straks – gerne på et fad med kartofler, frisk salat, citronskiver
+                                    og eventuelt lidt yoghurt- eller hvidløgsdressing.
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- tips & variationer -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">tips og variationer</h2>
+                    <span class="section-subtitle">gør retten stærkere, sundere eller mere børnevenlig</span>
+                </div>
+                <div class="tips-grid">
+                    <div class="card">
+                        <div class="pill-label">🌶 mere spice</div>
+                        <p class="step-content">
+                            tilsæt ½ tsk chiliflager eller cayennepeber til marinaden, hvis du vil have mere varme.
+                            du kan også servere med stærk chilimayo ved siden af.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="pill-label">👨‍👩‍👧 børnevenlig</div>
+                        <p class="step-content">
+                            skru ned for hvidløget og brug mild paprika i stedet for røget. server med gulerodsstave,
+                            agurk og mild dip, så de mindste også er med.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="pill-label">🥦 ekstra grønt</div>
+                        <p class="step-content">
+                            tilføj broccolibuketter eller grønne bønner i airfryeren de sidste 6–8 minutter.
+                            vend dem i lidt olie, salt og citronsaft inden tilberedning.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="pill-label">🍗 andre udskæringer</div>
+                        <p class="step-content">
+                            du kan også bruge kyllingeoverlår eller kyllingevinger. juster tiden, så kødet er gennemstegt,
+                            og skindet er sprødt.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- alternative tilberedningsmetoder -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">andre tilberedningsmetoder</h2>
+                    <span class="section-subtitle">samme smag – forskellige måder at lave retten på</span>
+                </div>
+                <div class="method-grid">
+                    <div class="card">
+                        <div class="pill-label">🌀 airfryer</div>
+                        <p class="step-content">
+                            tilbered ved 190 °c i 10–14 minutter afhængigt af størrelse på kyllingestykkerne.
+                            vend halvvejs og tjek, at kernetemperaturen er ca. 75 °c.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="pill-label">🔥 ovn</div>
+                        <p class="step-content">
+                            fordel kyllingen på bagepapir. bag ved 200 °c varmluft i 15–20 minutter. vend stykkerne
+                            halvvejs og giv evt. et par minutter på grillfunktion til sidst for ekstra sprødhed.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="pill-label">🌤 grill</div>
+                        <p class="step-content">
+                            grill kyllingen over direkte varme et par minutter på hver side, og flyt den derefter til indirekte varme,
+                            til den er gennemstegt. pensl gerne med lidt ekstra olie undervejs.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="pill-label">🍳 pande</div>
+                        <p class="step-content">
+                            steg kyllingen i lidt olie på en middelvarm pande i 8–12 minutter, til kødet er gennemstegt
+                            og har en gylden stegeskorpe. vend jævnligt.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- serveringsforslag -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">serveringsforslag</h2>
+                </div>
+                <div class="card">
+                    <p class="step-content">
+                        server kyllingen med sprøde kartofler, frisk grøn salat og en syrlig dressing med yoghurt,
+                        hvidløg og citron. du kan også lave et mere let måltid ved at servere kyllingen på en bund af
+                        blandet salat med cherrytomater, agurk, avokado og ristede kerner.
+                    </p>
+                    <p class="step-content">
+                        vil du gøre retten lidt mere hyggelig, kan du servere små skåle med forskellige toppings
+                        på bordet: fx friskhakket persille, chiliflager, revet parmesan, citronskiver og en god olivenolie.
+                    </p>
+                </div>
+            </section>
+
+            <!-- afrunding / konklusion -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">konklusion</h2>
+                </div>
+                <p class="conclusion-text">
+                    denne kylling i airfryer er en af de opskrifter, der hurtigt bliver en fast del af madplanen.
+                    den er nem at lave, kræver få ingredienser og kan varieres i det uendelige, alt efter hvad du
+                    har i køleskabet. brug den som hurtig hverdagsret, som meal prep til flere dage eller som lækker
+                    servering, når der kommer gæster. det er hverdagsmad, der føles lidt som en lille luksus.
+                </p>
+            </section>
+
+            <!-- relaterede opskrifter -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">relaterede opskrifter</h2>
+                    <span class="section-subtitle">flere nemme retter med kylling og airfryer</span>
+                </div>
+                <div class="related-grid">
+                    <article class="related-card">
+                        <div class="badge-category">airfryer</div>
+                        <h3 class="related-card-title">kyllingelår i airfryer med honning og sennep</h3>
+                        <div class="related-card-meta">⏱ 35 min · 🍽 4 personer</div>
+                    </article>
+                    <article class="related-card">
+                        <div class="badge-category">sundt</div>
+                        <h3 class="related-card-title">grillet kyllingesalat med avocado og sprøde croutoner</h3>
+                        <div class="related-card-meta">⏱ 25 min · 🍽 2–3 personer</div>
+                    </article>
+                    <article class="related-card">
+                        <div class="badge-category">hverdagsmad</div>
+                        <h3 class="related-card-title">one pot kylling med ris og grøntsager</h3>
+                        <div class="related-card-meta">⏱ 30 min · 🍽 4 personer</div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- sidebar højre kolonne -->
+        <aside class="sidebar">
+            <div class="card">
+                <div class="sidebar-block-title">hurtigt overblik</div>
+                <div class="rating-box">
+                    <div class="rating-stars">★★★★★</div>
+                    <div>4,8 ud af 5 baseret på 126 stemmer</div>
+                    <div class="rating-meta">skriv en anmeldelse eller gem opskriften til senere</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="sidebar-block-title">kategori</div>
+                <span class="badge-category">kylling · airfryer · hverdagsmad</span>
+            </div>
+
+            <div class="card">
+                <div class="sidebar-block-title">tags</div>
+                <div class="tags-list">
+                    <span class="tag-pill">kylling</span>
+                    <span class="tag-pill">airfryer</span>
+                    <span class="tag-pill">nem aftensmad</span>
+                    <span class="tag-pill">hverdagsmad</span>
+                    <span class="tag-pill">familievenlig</span>
+                    <span class="tag-pill">hurtig mad</span>
+                    <span class="tag-pill">proteinrig</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="sidebar-block-title">næringsindhold (ca. pr. portion)</div>
+                <ul style="list-style:none;padding:0;margin:0;font-size:0.85rem;color:#555;display:grid;gap:0.25rem;">
+                    <li>🔥 energi: 520 kcal</li>
+                    <li>💪 protein: ca. 45 g</li>
+                    <li>🥑 fedt: ca. 22 g</li>
+                    <li>🍚 kulhydrat: ca. 30 g (afhængigt af tilbehør)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="sidebar-block-title">brugte redskaber</div>
+                <ul style="list-style:none;padding:0;margin:0;font-size:0.85rem;color:#555;display:grid;gap:0.25rem;">
+                    <li>🌀 airfryer (ca. 5–6 liter kurv)</li>
+                    <li>🔪 skærebræt og skarp kniv</li>
+                    <li>🥣 stor skål til marinering</li>
+                    <li>🌡 stegetermometer (anbefalet)</li>
+                </ul>
+            </div>
+        </aside>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <span>© 2025 opskrifthub – nemme opskrifter til hverdag og fest</span>
+        <span>privacy · kontakt · om siden</span>
+    </div>
+</footer>
+
+</body>
+</html>
