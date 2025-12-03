@@ -528,3 +528,155 @@ body {
 .recipe-title {
   text-decoration: none !important;
 }
+/* HEADER – Arla-style clean */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #ededed;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.header-nav a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+
+.header-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #333;
+}
+
+.header-icon:hover svg {
+  stroke: #2ba84a;
+}
+
+/* Search dropdown */
+.header-searchbar {
+  display: none;
+  padding: 0.7rem 1.4rem;
+  background: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-searchbar form input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* LOGIN MODAL */
+
+.login-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.login-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+}
+
+.login-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 0.9rem;
+  background: #2ba84a;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-close {
+  background: #999 !important;
+  margin-top: 0.5rem;
+}
+
+/* SAVED RECIPES DRAWER */
+
+.saved-drawer {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 340px;
+  height: 100vh;
+  background: white;
+  box-shadow: -3px 0 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: 0.3s ease;
+  z-index: 1500;
+}
+
+.saved-drawer.open {
+  right: 0;
+}
+
+.saved-drawer h3 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+#savedList {
+  margin-bottom: 2rem;
+}
