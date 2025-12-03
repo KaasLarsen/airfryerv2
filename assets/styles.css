@@ -674,3 +674,155 @@ body {
   color: #c53030;
   margin-bottom: 0.6rem;
 }
+/* layout mere som arla – bredere hovedindhold */
+.page-main--wide {
+  max-width: 1280px;
+}
+
+/* topsektion for opskriftsoversigt */
+
+.recipes-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e3e3e3;
+  margin-bottom: 1.5rem;
+}
+
+.recipes-title {
+  margin: 0 0 0.4rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.recipes-intro {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #666666;
+  max-width: 40rem;
+}
+
+/* søgning i arla-stil – mere fladt og bredt */
+
+.recipes-search {
+  flex: 1 1 280px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.7rem 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #e3e3e3;
+  background: #ffffff;
+}
+
+.recipes-search-input {
+  border: none;
+  background: transparent;
+  flex: 1;
+  font-size: 0.95rem;
+  outline: none;
+  padding-block: 0.25rem;
+}
+
+.recipes-search-input::placeholder {
+  color: #aaaaaa;
+}
+
+/* filtrer-bar */
+
+.recipes-filters {
+  padding: 1rem 0 0.5rem;
+}
+
+.recipes-filters-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.recipes-filter-btn {
+  border-radius: 999px;
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.recipes-filter-btn.is-active {
+  border-color: #2ba84a;
+  color: #2ba84a;
+}
+
+/* recipes grid – store billedfliser ligesom arla */
+
+.recipes-grid-section {
+  padding-top: 0.5rem;
+}
+
+.recipes-grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1100px) {
+  .recipes-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .recipes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .recipes-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.recipe-tile {
+  /* næsten ingen styling – alt fokus på billede */
+}
+
+.recipe-tile-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.recipe-tile-image {
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-tile-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.recipe-tile-body {
+  padding: 0 0.1rem;
+}
+
+.recipe-tile-title {
+  margin: 0 0 0.2rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.recipe-tile-meta {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #666666;
+}
