@@ -2,9 +2,9 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>Opskrifter i Airfryer – Opskrift-Airfryer</title>
+  <title>Opskrifter i airfryer – Opskrift-Airfryer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Find lækre opskrifter til airfryer – nemt, sprødt og perfekt hver gang.">
+  <meta name="description" content="Find lækre airfryeropskrifter – nemt, sprødt og perfekt hver gang.">
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -13,11 +13,11 @@
   <div data-include="header"></div>
 
   <!-- HERO -->
-  <section class="hero-large" style="--hero-image: url('images/flaeskesteg-hero.jpg');">
+  <section class="hero-large" style="--hero-image: url('assets/images/hero/flaeskesteg-hero.jpg');">
     <div class="hero-large-overlay"></div>
 
     <div class="hero-large-content">
-      <h1 class="hero-large-title">Opskrifter & Madinspiration</h1>
+      <h1 class="hero-large-title">Opskrifter & madinspiration</h1>
       <p class="hero-large-subtitle">
         300 lækre airfryeropskrifter udviklet og testet i vores eget airfryerkøkken.
       </p>
@@ -25,7 +25,8 @@
       <form class="hero-large-search" action="search.html" method="get">
         <input type="search" name="q" placeholder="Søg på kategori" />
         <button type="submit">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" 
+               stroke-linecap="round" stroke-linejoin="round">
             <circle cx="10" cy="10" r="7"></circle>
             <line x1="15" y1="15" x2="21" y2="21"></line>
           </svg>
@@ -40,147 +41,109 @@
 
     <!-- POPULÆRE TEMAER -->
     <section class="section-popular">
-      <h2 class="section-title">Populære Temaer</h2>
+      <h2 class="section-title">Populære temaer</h2>
 
       <div class="popular-grid">
 
-        <!-- THEME CARD 1 -->
         <div class="theme-card">
-          <img src="images/tema-1.jpg" alt="Nye Opskrifter">
-          <h3>Nye Opskrifter</h3>
+          <img src="assets/images/tema/tema-1.jpg" alt="Nye opskrifter">
+          <h3>Nye opskrifter</h3>
           <p class="theme-meta">33 opskrifter</p>
         </div>
 
-        <!-- THEME CARD 2 -->
         <div class="theme-card">
-          <img src="images/tema-2.jpg" alt="Julesalater">
+          <img src="assets/images/tema/tema-2.jpg" alt="Julesalater">
           <h3>Julesalater</h3>
           <p class="theme-meta">18 opskrifter</p>
         </div>
 
-        <!-- THEME CARD 3 -->
         <div class="theme-card">
-          <img src="images/tema-3.jpg" alt="Spiselige Gaver">
-          <h3>Spiselige Gaver</h3>
+          <img src="assets/images/tema/tema-3.jpg" alt="Spiselige gaver">
+          <h3>Spiselige gaver</h3>
           <p class="theme-meta">23 opskrifter</p>
         </div>
 
-        <!-- THEME CARD 4 -->
         <div class="theme-card">
-          <img src="images/tema-4.jpg" alt="Vegetarisk Julemad">
-          <h3>Vegetarisk Julemad</h3>
+          <img src="assets/images/tema/tema-4.jpg" alt="Vegetarisk julemad">
+          <h3>Vegetarisk julemad</h3>
           <p class="theme-meta">26 opskrifter</p>
         </div>
 
-        <!-- THEME CARD 5 -->
         <div class="theme-card">
-          <img src="images/tema-5.jpg" alt="Sprøde Julesmåkager">
-          <h3>Sprøde Julesmåkager</h3>
+          <img src="assets/images/tema/tema-5.jpg" alt="Sprøde julesmåkager">
+          <h3>Sprøde julesmåkager</h3>
           <p class="theme-meta">23 opskrifter</p>
         </div>
 
-        <!-- THEME CARD 6 -->
         <div class="theme-card">
-          <img src="images/tema-6.jpg" alt="Opskrifter Med Grønkål">
-          <h3>Opskrifter Med Grønkål</h3>
+          <img src="assets/images/tema/tema-6.jpg" alt="Opskrifter med grønkål">
+          <h3>Opskrifter med grønkål</h3>
           <p class="theme-meta">41 opskrifter</p>
         </div>
 
-        <!-- THEME CARD 7 -->
         <div class="theme-card">
-          <img src="images/tema-7.jpg" alt="Gyoza Og Andre Trends">
-          <h3>Gyoza Og Andre Trends</h3>
+          <img src="assets/images/tema/tema-7.jpg" alt="Gyoza og andre trends">
+          <h3>Gyoza og andre trends</h3>
           <p class="theme-meta">13 opskrifter</p>
         </div>
 
       </div>
     </section>
 
-<!-- UDVALGT KATEGORI (fx "Julefrokost") -->
-<section class="section-category">
-  <div class="category-header">
-    <h2 class="section-title">Julefrokost</h2>
+    <!-- UDVALGT KATEGORI -->
+    <section class="section-category">
+      <div class="category-header">
+        <h2 class="section-title">Julefrokost</h2>
 
-    <div class="category-links">
-      <a href="#">Juledesserter i glas</a>
-      <span>|</span>
-      <a href="#">Julemad</a>
-      <span>|</span>
-      <a href="#">Julesalat</a>
-      <span>|</span>
-      <a href="#">Julekager</a>
-      <span>|</span>
-      <a href="#">Juledesserter</a>
-    </div>
-  </div>
-
-  <div class="category-grid">
-
-    <!-- RIGTIG OPSKRIFT: Flæskestegssandwich -->
-    <a href="opskrifter/flaeskestegssandwich.html" class="recipe-card">
-      <div 
-        class="recipe-img" 
-        style="
-          background-image: url('assets/images/recipes/flaeskestegssandwich-768x768.jpg');
-          background-size: cover;
-          background-position: center;
-        ">
+        <div class="category-links">
+          <a href="#">Juledesserter i glas</a>
+          <span>|</span>
+          <a href="#">Julemad</a>
+          <span>|</span>
+          <a href="#">Julesalat</a>
+          <span>|</span>
+          <a href="#">Julekager</a>
+          <span>|</span>
+          <a href="#">Juledesserter</a>
+        </div>
       </div>
-      <h3 class="recipe-title">Flæskestegssandwich</h3>
-      <p class="recipe-meta">15 min • Sandwich</p>
-    </a>
-
-    <!-- Placeholder 1 -->
-    <a href="#" class="recipe-card">
-      <div class="recipe-img ph"></div>
-      <h3 class="recipe-title">Opskrift på vej</h3>
-      <p class="recipe-meta">- min • -</p>
-    </a>
-
-    <!-- Placeholder 2 -->
-    <a href="#" class="recipe-card">
-      <div class="recipe-img ph"></div>
-      <h3 class="recipe-title">Opskrift på vej</h3>
-      <p class="recipe-meta">- min • -</p>
-    </a>
-
-    <!-- Placeholder 3 -->
-    <a href="#" class="recipe-card">
-      <div class="recipe-img ph"></div>
-      <h3 class="recipe-title">Opskrift på vej</h3>
-      <p class="recipe-meta">- min • -</p>
-    </a>
-
-  </div>
-</section>
-
 
       <div class="category-grid">
 
-        <!-- Placeholder opskrifter i Arla-style -->
-        <article class="recipe-card">
-          <div class="recipe-img ph"></div>
+        <!-- RIGTIG OPSKRIFT -->
+        <a href="opskrifter/flaeskestegssandwich.html" class="recipe-card">
+          <div 
+            class="recipe-img"
+            style="
+              background-image: url('assets/images/recipes/flaeskestegssandwich-768x768.jpg');
+              background-size: cover;
+              background-position: center;
+            ">
+          </div>
           <h3 class="recipe-title">Flæskestegssandwich</h3>
-          <p class="recipe-meta">15 min</p>
-        </article>
+          <p class="recipe-meta">15 min • Sandwich</p>
+        </a>
 
-        <article class="recipe-card">
+        <!-- Placeholder 1 -->
+        <a href="#" class="recipe-card">
           <div class="recipe-img ph"></div>
-          <h3 class="recipe-title">Vegetar tarteleter</h3>
-          <p class="recipe-meta">45 min</p>
-        </article>
+          <h3 class="recipe-title">Opskrift på vej</h3>
+          <p class="recipe-meta">- min • -</p>
+        </a>
 
-        <article class="recipe-card">
+        <!-- Placeholder 2 -->
+        <a href="#" class="recipe-card">
           <div class="recipe-img ph"></div>
-          <h3 class="recipe-title">Julesalat med rødkål</h3>
-          <p class="recipe-meta">20 min</p>
-        </article>
+          <h3 class="recipe-title">Opskrift på vej</h3>
+          <p class="recipe-meta">- min • -</p>
+        </a>
 
-        <article class="recipe-card">
+        <!-- Placeholder 3 -->
+        <a href="#" class="recipe-card">
           <div class="recipe-img ph"></div>
-          <h3 class="recipe-title">Flæskesteg med sprød svær</h3>
-          <p class="recipe-meta">1 time 55 min</p>
-        </article>
+          <h3 class="recipe-title">Opskrift på vej</h3>
+          <p class="recipe-meta">- min • -</p>
+        </a>
 
       </div>
     </section>
@@ -188,7 +151,10 @@
   </main>
 
   <div data-include="footer"></div>
+  <div data-include="analytics"></div>
+
   <script src="assets/include.js" defer></script>
+  <script src="assets/header.js" defer></script>
 
 </body>
 </html>
