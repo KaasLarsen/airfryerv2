@@ -5,13 +5,13 @@
       <span class="site-logo-text">Opskrift-Airfryer</span>
     </a>
 
-    <button class="nav-toggle" aria-label="åbn menu">
-      <svg class="icon icon-24" aria-hidden="true">
-        <use href="#icon-menu"></use>
-      </svg>
-    </button>
+    <div class="site-nav">
+      <button class="nav-toggle" aria-label="Åbn menu">
+        <svg class="icon icon-24" aria-hidden="true">
+          <use href="#icon-menu"></use>
+        </svg>
+      </button>
 
-    <nav class="site-nav" aria-label="hovednavigation">
       <ul class="site-nav-list">
         <li><a href="index.html" class="site-nav-link is-active">hjem</a></li>
         <li><a href="#" class="site-nav-link">opskrifter</a></li>
@@ -19,6 +19,13 @@
         <li><a href="#" class="site-nav-link">madplaner</a></li>
         <li><a href="#" class="site-nav-link">guides</a></li>
       </ul>
-    </nav>
+
+      <div class="header-auth">
+        <span class="header-auth-user js-auth-user-label"></span>
+        <button type="button" class="js-auth-toggle">
+          log ind
+        </button>
+      </div>
+    </div>
   </div>
 </header>
