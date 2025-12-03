@@ -2,115 +2,151 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>opskrifter – opskrift-airfryer</title>
+  <title>Opskrifter i Airfryer – Opskrift-Airfryer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Find lækre opskrifter til airfryer – nemt, sprødt og perfekt hver gang.">
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
-
 <body>
 
-<header class="site-header">
-  <div class="header-inner">
+  <div data-include="icons"></div>
+  <div data-include="header"></div>
 
-    <!-- left: logo -->
-    <div class="header-logo">
-      <a href="/">opskrift-airfryer</a>
+  <!-- HERO -->
+  <section class="hero-large" style="--hero-image: url('images/flaeskesteg-hero.jpg');">
+    <div class="hero-large-overlay"></div>
+
+    <div class="hero-large-content">
+      <h1 class="hero-large-title">Opskrifter & Madinspiration</h1>
+      <p class="hero-large-subtitle">
+        300 lækre airfryeropskrifter udviklet og testet i vores eget airfryerkøkken.
+      </p>
+
+      <form class="hero-large-search" action="search.html" method="get">
+        <input type="search" name="q" placeholder="Søg på kategori" />
+        <button type="submit">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="15" y1="15" x2="21" y2="21"></line>
+          </svg>
+        </button>
+      </form>
+
+      <button class="hero-large-filter-btn">Filtre +</button>
     </div>
-
-    <!-- middle: navigation -->
-    <nav class="header-nav">
-      <a href="/opskrifter.html">opskrifter</a>
-      <a href="/madplaner.html">madplaner</a>
-      <a href="/guides.html">guides</a>
-    </nav>
-
-    <!-- right: login -->
-    <div class="header-user">
-      <button class="login-btn" onclick="openLogin()">log ind</button>
-    </div>
-
-  </div>
-</header>
-
-<main>
-
-  <!-- HERO (Arla-style, clean af helvede til) -->
-  <section class="hero">
-    <h1 class="hero-title">opskrifter i airfryer</h1>
-    <p class="hero-subtitle">
-      Gå på opdagelse i lækre opskrifter. Enkel mad. Hurtig tilberedning. Store resultater.
-    </p>
-
-    <form class="hero-search" method="get" action="search.html">
-      <input type="search" name="q" placeholder="Søg efter en opskrift..." />
-      <button type="submit">søg</button>
-    </form>
   </section>
 
-  <!-- FILTERBAR -->
-  <section class="filterbar">
-    <button class="filter active">alle</button>
-    <button class="filter">kylling</button>
-    <button class="filter">grøntsager</button>
-    <button class="filter">tilbehør</button>
-    <button class="filter">snacks</button>
-  </section>
+  <main>
 
-  <!-- GRID (Arla-style, kæmpe billeder, minimal tekst) -->
-  <section class="recipe-grid">
+    <!-- POPULÆRE TEMAER -->
+    <section class="section-popular">
+      <h2 class="section-title">Populære Temaer</h2>
 
-    <!-- PLACEHOLDER OPSKRIFT -->
-    <article class="recipe-card">
-      <a href="#" class="recipe-link">
-        <div class="recipe-img ph"></div>
-        <h2 class="recipe-title">placeholder opskrift</h2>
-        <p class="recipe-meta">30 min · 4 personer</p>
-      </a>
-    </article>
+      <div class="popular-grid">
 
-    <article class="recipe-card">
-      <a href="#" class="recipe-link">
-        <div class="recipe-img ph"></div>
-        <h2 class="recipe-title">placeholder opskrift</h2>
-        <p class="recipe-meta">20 min · 2 personer</p>
-      </a>
-    </article>
+        <!-- THEME CARD 1 -->
+        <div class="theme-card">
+          <img src="images/tema-1.jpg" alt="Nye Opskrifter">
+          <h3>Nye Opskrifter</h3>
+          <p class="theme-meta">33 opskrifter</p>
+        </div>
 
-    <article class="recipe-card">
-      <a href="#" class="recipe-link">
-        <div class="recipe-img ph"></div>
-        <h2 class="recipe-title">placeholder opskrift</h2>
-        <p class="recipe-meta">15 min · tilbehør</p>
-      </a>
-    </article>
+        <!-- THEME CARD 2 -->
+        <div class="theme-card">
+          <img src="images/tema-2.jpg" alt="Julesalater">
+          <h3>Julesalater</h3>
+          <p class="theme-meta">18 opskrifter</p>
+        </div>
 
-    <article class="recipe-card">
-      <a href="#" class="recipe-link">
-        <div class="recipe-img ph"></div>
-        <h2 class="recipe-title">placeholder opskrift</h2>
-        <p class="recipe-meta">25 min · 3 personer</p>
-      </a>
-    </article>
+        <!-- THEME CARD 3 -->
+        <div class="theme-card">
+          <img src="images/tema-3.jpg" alt="Spiselige Gaver">
+          <h3>Spiselige Gaver</h3>
+          <p class="theme-meta">23 opskrifter</p>
+        </div>
 
-  </section>
+        <!-- THEME CARD 4 -->
+        <div class="theme-card">
+          <img src="images/tema-4.jpg" alt="Vegetarisk Julemad">
+          <h3>Vegetarisk Julemad</h3>
+          <p class="theme-meta">26 opskrifter</p>
+        </div>
 
-</main>
+        <!-- THEME CARD 5 -->
+        <div class="theme-card">
+          <img src="images/tema-5.jpg" alt="Sprøde Julesmåkager">
+          <h3>Sprøde Julesmåkager</h3>
+          <p class="theme-meta">23 opskrifter</p>
+        </div>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-col">
-      <h3>opskrift-airfryer</h3>
-      <p>Nem mad. Hurtigt. Lækkert.</p>
-    </div>
-    <div class="footer-col">
-      <a href="/om-os.html">om os</a>
-      <a href="/kontakt.html">kontakt</a>
-      <a href="/privatliv.html">privatlivspolitik</a>
-    </div>
-  </div>
-</footer>
+        <!-- THEME CARD 6 -->
+        <div class="theme-card">
+          <img src="images/tema-6.jpg" alt="Opskrifter Med Grønkål">
+          <h3>Opskrifter Med Grønkål</h3>
+          <p class="theme-meta">41 opskrifter</p>
+        </div>
 
-<script src="assets/include.js" defer></script>
+        <!-- THEME CARD 7 -->
+        <div class="theme-card">
+          <img src="images/tema-7.jpg" alt="Gyoza Og Andre Trends">
+          <h3>Gyoza Og Andre Trends</h3>
+          <p class="theme-meta">13 opskrifter</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- UDVALGT KATEGORI (fx "Julefrokost") -->
+    <section class="section-category">
+      <div class="category-header">
+        <h2 class="section-title">Julefrokost</h2>
+        <div class="category-links">
+          <a href="#">Juledesserter I Glas</a>
+          <span>|</span>
+          <a href="#">Julemad</a>
+          <span>|</span>
+          <a href="#">Julesalat</a>
+          <span>|</span>
+          <a href="#">Julekager</a>
+          <span>|</span>
+          <a href="#">Juledesserter</a>
+        </div>
+      </div>
+
+      <div class="category-grid">
+
+        <!-- Placeholder opskrifter i Arla-style -->
+        <article class="recipe-card">
+          <div class="recipe-img ph"></div>
+          <h3 class="recipe-title">Flæskestegssandwich</h3>
+          <p class="recipe-meta">15 min</p>
+        </article>
+
+        <article class="recipe-card">
+          <div class="recipe-img ph"></div>
+          <h3 class="recipe-title">Vegetar Tarteleter</h3>
+          <p class="recipe-meta">45 min</p>
+        </article>
+
+        <article class="recipe-card">
+          <div class="recipe-img ph"></div>
+          <h3 class="recipe-title">Julesalat Med Rødkål</h3>
+          <p class="recipe-meta">20 min</p>
+        </article>
+
+        <article class="recipe-card">
+          <div class="recipe-img ph"></div>
+          <h3 class="recipe-title">Flæskesteg Med Sprød Svær</h3>
+          <p class="recipe-meta">1 time 55 min</p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div data-include="footer"></div>
+  <script src="assets/include.js" defer></script>
 
 </body>
 </html>
