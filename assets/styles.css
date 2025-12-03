@@ -175,9 +175,9 @@ body {
 .hero-large {
   position: relative;
   height: 480px;
-  background-image: var(--hero-image);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
