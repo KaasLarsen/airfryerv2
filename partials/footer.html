@@ -1,0 +1,38 @@
+<!-- PARTIAL: /partials/footer.html -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-cols">
+
+      <div>
+        <h2>opskrift-airfryer.dk</h2>
+        <p class="small">nem hverdagsmad, airfryer-tips og madplaner.</p>
+      </div>
+
+      <div>
+        <h3>indhold</h3>
+        <p class="small">
+          <a href="/opskrifter.html">opskrifter</a> ·
+          <a href="/guides.html">guides</a> ·
+          <a href="/madplan/index.html">madplaner</a>
+        </p>
+      </div>
+
+      <div>
+        <h3>følg os</h3>
+        <p class="small">
+          <a href="https://www.facebook.com/" rel="nofollow">facebook</a>
+        </p>
+      </div>
+
+    </div>
+
+    <p class="copy">© <span id="y"></span> opskrift-airfryer.dk · alle rettigheder forbeholdes</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var y = document.getElementById('y');
+    if (y) y.textContent = new Date().getFullYear();
+  })();
+</script>
