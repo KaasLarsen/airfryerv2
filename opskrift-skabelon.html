@@ -2,11 +2,47 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>Saftig kylling i airfryer – Opskrift-Airfryer</title>
+  <title>Saftig Kylling I Airfryer – Opskrift-Airfryer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Saftig kylling i airfryer med sprød overflade. Nem opskrift udviklet til airfryer med klare tider og temperaturer.">
+        content="Saftig kylling i airfryer med sprød overflade. En nem opskrift udviklet til airfryer med klare tider og temperaturer.">
+
   <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Schema (dynamic placeholders you swap per recipe) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    "name": "Saftig Kylling I Airfryer",
+    "image": ["images/saftig-kylling-hero.jpg"],
+    "description": "En lækker og saftig kyllingeopskrift lavet perfekt i airfryer.",
+    "keywords": "kylling, airfryer, sprød kylling",
+    "author": {
+      "@type": "Person",
+      "name": "Opskrift-Airfryer"
+    },
+    "datePublished": "2025-01-01",
+    "prepTime": "PT10M",
+    "cookTime": "PT20M",
+    "totalTime": "PT30M",
+    "recipeYield": "4 personer",
+    "recipeCategory": "Hovedret",
+    "recipeCuisine": "Dansk",
+    "recipeIngredient": [
+      "800 g kyllingebryst",
+      "2 spsk olie",
+      "1 tsk salt",
+      "1 tsk paprika"
+    ],
+    "recipeInstructions": [
+      { "@type": "HowToStep", "text": "Forvarm airfryer." },
+      { "@type": "HowToStep", "text": "Krydr kyllingen." },
+      { "@type": "HowToStep", "text": "Steg til den er saftig og gennemstegt." }
+    ]
+  }
+  </script>
+
 </head>
 <body>
 
@@ -20,40 +56,56 @@
       <!-- Top: billede + meta -->
       <header class="recipe-page-header">
         <div class="recipe-page-image">
-          <div class="recipe-page-img ph"></div>
+          <img src="images/saftig-kylling-hero.jpg" alt="Saftig kylling i airfryer" class="recipe-main-img" />
         </div>
+
         <div class="recipe-page-intro">
-          <h1 class="recipe-page-title">Saftig kylling i airfryer med sprød overflade</h1>
+          <h1 class="recipe-page-title">Saftig Kylling I Airfryer Med Sprød Overflade</h1>
+
+          <button class="heart-button" onclick="saveRecipe('Saftig Kylling I Airfryer Med Sprød Overflade')">♥ Gem opskrift</button>
+
           <p class="recipe-page-lead">
-            Denne tekst er en placeholder. Her kan du senere skrive en kort introduktion til opskriften. Layoutet er
-            klar, selv om indholdet ikke er det endnu.
+            Denne introduktion beskriver kort, hvorfor opskriften er lækker, hurtig og passer perfekt til en travl hverdag.
           </p>
+
           <div class="recipe-page-meta">
             <span>30 min</span>
             <span>4 personer</span>
             <span>Airfryer</span>
           </div>
+
+          <div class="recipe-tags">
+            <span>Kylling</span>
+            <span>Aftensmad</span>
+            <span>Nemt</span>
+          </div>
         </div>
       </header>
 
-      <!-- Indhold: ingredienser + fremgangsmåde -->
+      <!-- Indhold -->
       <section class="recipe-page-content">
+
+        <!-- Ingredienser -->
         <div class="recipe-page-ingredients">
           <h2>Ingredienser</h2>
           <ul>
-            <li>Placeholder ingrediens 1</li>
-            <li>Placeholder ingrediens 2</li>
-            <li>Placeholder ingrediens 3</li>
+            <li>800 g kyllingebryst</li>
+            <li>2 spsk olie</li>
+            <li>1 tsk salt</li>
+            <li>1 tsk paprika</li>
           </ul>
         </div>
+
+        <!-- Fremgangsmåde -->
         <div class="recipe-page-steps">
-          <h2>Sådan gør du</h2>
+          <h2>Sådan Gør Du</h2>
           <ol>
-            <li>Start med at læse hele opskriften igennem. Denne tekst er en placeholder.</li>
-            <li>Forvarm din airfryer, og forbered kødet. Du kan senere skrive de rigtige trin ind.</li>
-            <li>Tilbered retten, og tjek resultatet. Layoutet er klar, selv om indholdet kommer senere.</li>
+            <li>Forvarm din airfryer til den ønskede temperatur.</li>
+            <li>Krydr kyllingen grundigt, og tilsæt en smule olie.</li>
+            <li>Tilbered kyllingen, og kontroller at den er gennemstegt.</li>
           </ol>
         </div>
+
       </section>
 
     </article>
@@ -61,6 +113,9 @@
   </main>
 
   <div data-include="footer"></div>
+
   <script src="assets/include.js" defer></script>
+  <script src="assets/header.js" defer></script>
+
 </body>
 </html>
