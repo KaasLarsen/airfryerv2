@@ -262,3 +262,92 @@ body {
   font-size: 1rem;
   color: #333333;
 }
+/* RECIPE DETAIL PAGE */
+
+.recipe-page {
+  max-width: 960px;
+  margin: 3rem auto 4rem;
+  padding: 0 1.2rem;
+}
+
+.recipe-page-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 840px) {
+  .recipe-page-header {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recipe-page-image {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eeeeee;
+}
+
+.recipe-page-img {
+  aspect-ratio: 4 / 3;
+}
+
+.recipe-page-title {
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.recipe-page-lead {
+  color: #666666;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+.recipe-page-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  color: #444444;
+}
+
+.recipe-page-meta span::first-letter {
+  text-transform: uppercase;
+}
+
+/* Indhold: ingredienser + fremgangsmåde */
+
+.recipe-page-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 2.5rem;
+}
+
+@media (max-width: 840px) {
+  .recipe-page-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recipe-page-ingredients h2,
+.recipe-page-steps h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+}
+
+.recipe-page-ingredients ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  font-size: 0.98rem;
+}
+
+.recipe-page-steps ol {
+  padding-left: 1.2rem;
+  font-size: 0.98rem;
+}
+
+.recipe-page-steps li {
+  margin-bottom: 0.5rem;
+}
