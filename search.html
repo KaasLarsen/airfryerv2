@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <title>søg opskrifter i airfryer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Søg efter opskrifter i airfryer. Find kylling, pomfritter, grøntsager og meget mere.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page">
+
+  <div data-include="icons"></div>
+  <div data-include="header"></div>
+
+  <main class="page-main">
+    <section class="section">
+      <div class="section-header">
+        <h1 class="section-title">søg i opskrifter</h1>
+      </div>
+      <form class="search-bar" action="search.html" method="get">
+        <svg class="icon icon-24" aria-hidden="true">
+          <use href="#icon-search"></use>
+        </svg>
+        <input class="search-input" type="search" name="q" id="search-input"
+               placeholder="Skriv for eksempel kylling, pomfritter eller grøntsager">
+        <button class="btn btn-primary" type="submit">søg</button>
+      </form>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">resultater</h2>
+        <p class="section-subtitle js-search-summary"></p>
+      </div>
+      <div class="grid grid-3 js-search-results"></div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+
+  <script src="assets/include.js" defer></script>
+  <script>
+    function getQueryParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name) || "";
+    }
+
+    async function runSearch() {
+      const q = getQueryParam("q").trim();
+      const input = document.getElementById("search-input");
+      if (input) input.value = q;
+
+      const summaryEl = document.querySelector(".js-search-summary");
+      const resultsEl = document.querySelector(".js-search-results");
+      if (!resultsEl) return;
+
+      if (!q) {
+        summaryEl.textContent = "Skriv et søgeord for at se resultater.";
+        resultsEl.innerHTML = "";
+        return;
+      }
+
+      let recipes = [];
+      try {
+        const res = await fetch("assets/recipes.json");
+        recipes = await res.json();
+      } catch (err) {
+        console.error("Fejl ved indlæsning af opskrifter", err);
+        summaryEl.textContent = "Der opstod en fejl ved indlæsning af opskrifter.";
+        return;
+      }
+
+      const qLower = q.toLowerCase();
+      const matches = recipes.filter((r) => {
+        const haystack = [
+          r.title,
+          (r.description || ""),
+          (r.tags || []).join(" "),
+          (r.categories || []).join(" ")
+        ].join(" ").toLowerCase();
+        return haystack.includes(qLower);
+      });
+
+      if (matches.length === 0) {
+        summaryEl.textContent = "Ingen opskrifter matchede din søgning.";
+        resultsEl.innerHTML = "";
+        return;
+      }
+
+      summaryEl.textContent = matches.length + " opskrift(er) fundet.";
+
+      resultsEl.innerHTML = matches.map((r) => `
+        <article class="card recipe-card">
+          <a href="${r.slug}.html">
+            <div class="recipe-card-image">
+              <img src="${r.image}" alt="${r.title}">
+            </div>
+          </a>
+          <h3 class="recipe-card-title">${r.title}</h3>
+          <p class="recipe-card-meta">${r.time} · ${r.servings} · ${r.meta}</p>
+        </article>
+      `).join("");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      runSearch();
+    });
+  </script>
+</body>
+</html>
