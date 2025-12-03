@@ -1,123 +1,214 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>airfryer opskrifter – nem og sprød mad i hverdagen</title>
-  <meta name="description" content="nemme danske airfryer opskrifter med klare tider, temperaturer, billeder og tips. perfekt til hverdagsmad, aftensmad og tilbehør." />
-  <link rel="icon" href="/img/favicon.ico" />
-  <link rel="stylesheet" href="/assets/styles.css" />
-
-  <!-- structured data: website -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://www.opskrift-airfryer.dk/",
-    "name": "Opskrift-Airfryer.dk",
-    "inLanguage": "da",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.opskrift-airfryer.dk/seneste.html?soeg={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
+  <meta charset="utf-8">
+  <title>opskrift-airfryer – sprøde opskrifter i airfryer, madplaner og guides</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="find de bedste opskrifter i airfryer – sprød kylling, grøntsager, snacks, madplaner og guides. alt samlet ét sted på opskrift-airfryer.">
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-  <div data-include="/partials/icons.html"></div>
-  <div data-include="/partials/header.html"></div>
+<body class="page">
 
-  <main class="container">
+  <!-- svg-ikoner -->
+  <div data-include="icons"></div>
 
-    <!-- blå hero -->
-    <section class="panel panel--blue">
-      <div class="hero">
-        <div>
-          <span class="kicker">danske airfryer opskrifter</span>
-          <h1>airfryer opskrifter – nem og sprød mad</h1>
-          <p class="lead">få nemme, gennemtestede opskrifter med præcise tider, temperaturer og billeder – så du slipper for gætværk og får sprøde resultater hver gang.</p>
+  <!-- header -->
+  <div data-include="header"></div>
 
-          <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
-            <a class="btn primary" href="#populaere">se populære</a>
-            <a class="btn" href="/seneste.html">se seneste opskrifter</a>
-          </div>
-        </div>
+  <main class="page-main">
 
-        <div class="hero-box">
-          <!-- her kan du senere bruge et hero-billede -->
-          <svg class="hero-ico"><use href="#fries"></use></svg>
-        </div>
-      </div>
+    <!-- hero -->
+    <section class="hero">
+      <div>
+        <p class="hero-kicker">velkommen til opskrift-airfryer</p>
+        <h1 class="hero-title">
+          sprøde <strong>airfryer-opskrifter</strong> til hverdag og weekend
+        </h1>
+        <p class="hero-text">
+          her finder du nemme opskrifter, der udnytter din airfryer fuldt ud – fra saftig kylling og grøntsager
+          til snacks, morgenmad og søde sager. alt er testet, optimeret og forklaret trin for trin.
+        </p>
 
-      <div class="panel-search">
-        <form onsubmit="event.preventDefault(); window.location.href='/seneste.html?soeg='+encodeURIComponent(document.getElementById('search-input').value || '');">
-          <input id="search-input" type="search" placeholder="søg efter opskrifter … fx flæskesteg, frikadeller, pommes" />
-          <button class="btn primary" type="submit">søg</button>
+        <form class="search-bar" action="#" method="get">
+          <svg class="icon icon-24" aria-hidden="true">
+            <use href="#icon-search"></use>
+          </svg>
+          <input class="search-input" type="search" name="q" placeholder="søg efter opskrifter – fx ‘kylling’, ‘kartofler’ eller ‘proteinsnack’">
+          <button class="btn btn-primary" type="submit">søg</button>
         </form>
-      </div>
-    </section>
 
-    <!-- populære opskrifter -->
-    <section id="populaere" class="section">
-      <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-        <h2>populære opskrifter</h2>
-        <a class="small" href="/seneste.html" style="text-decoration:underline">se alle</a>
+        <div class="hero-actions">
+          <button class="btn btn-ghost" type="button">se alle opskrifter</button>
+          <span class="hero-pill">⭐ populære lige nu: kylling, pomfritter, grøntsager</span>
+        </div>
       </div>
 
-      <div class="grid grid-3">
-        <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html">
-          <div class="thumb-icon"><svg><use href="#flaeskesteg"></use></svg></div>
-          <div class="card-body">
-            <h3>flæskesteg i airfryer – sprød svær</h3>
-            <p class="meta">45–60 min · sprød svær · klassisk dansk</p>
-          </div>
-        </a>
+      <aside class="hero-card">
+        <div class="chip">
+          <svg class="icon icon-24" aria-hidden="true">
+            <use href="#icon-airfryer"></use>
+          </svg>
+          <span>udvalgt opskrift</span>
+        </div>
 
-        <a class="card" href="/opskrifter/frikadeller-i-airfryer.html">
-          <div class="thumb-icon"><svg><use href="#frikadelle"></use></svg></div>
-          <div class="card-body">
-            <h3>frikadeller i airfryer – nem aftensmad</h3>
-            <p class="meta">20–25 min · familievenlig</p>
-          </div>
-        </a>
+        <div class="hero-card-image">
+          <img src="images/saftig-kylling-airfryer-768x768.jpg"
+               alt="saftig kylling i airfryer på tallerken med salat">
+        </div>
 
-        <a class="card" href="/opskrifter/pommes-frites-i-airfryer.html">
-          <div class="thumb-icon"><svg><use href="#fries"></use></svg></div>
-          <div class="card-body">
-            <h3>pommes frites i airfryer – sprøde hver gang</h3>
-            <p class="meta">14–18 min · tilbehør</p>
+        <div>
+          <h2 class="hero-card-title">saftig kylling i airfryer med sprød overflade</h2>
+          <div class="hero-card-meta">
+            <span>⏱ 30 min</span>
+            <span>🍽 4 personer</span>
+            <span>🌀 airfryer</span>
           </div>
-        </a>
-      </div>
+        </div>
+      </aside>
     </section>
 
     <!-- kategorier -->
     <section class="section">
-      <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-        <h2>kategorier</h2>
-        <a class="small" href="/kategori.html" style="text-decoration:underline">se alle</a>
+      <div class="section-header">
+        <h2 class="section-title">udforsk efter kategori</h2>
+        <p class="section-subtitle">find hurtigt det du har lyst til i dag</p>
       </div>
-      <div class="grid grid-4">
-        <a class="cat" href="/kategori.html?slug=kylling">
-          <svg><use href="#chicken"></use></svg><span>kylling</span>
+      <div class="category-row">
+        <a href="#" class="category-pill">
+          <svg class="icon icon-24" aria-hidden="true">
+            <use href="#icon-chicken"></use>
+          </svg>
+          <span>kylling &amp; kød</span>
         </a>
-        <a class="cat" href="/kategori.html?slug=svinekød">
-          <svg><use href="#pig"></use></svg><span>svinekød</span>
+        <a href="#" class="category-pill">
+          <svg class="icon icon-24" aria-hidden="true">
+            <use href="#icon-leaf"></use>
+          </svg>
+          <span>grønt &amp; tilbehør</span>
         </a>
-        <a class="cat" href="/kategori.html?slug=grønt">
-          <svg><use href="#leaf"></use></svg><span>grønt</span>
+        <a href="#" class="category-pill">
+          <svg class="icon icon-24" aria-hidden="true">
+            <use href="#icon-fire"></use>
+          </svg>
+          <span>snacks &amp; comfort</span>
         </a>
-        <a class="cat" href="/kategori.html?slug=tilbehør">
-          <svg><use href="#fries"></use></svg><span>tilbehør</span>
+        <a href="#" class="category-pill">
+          <svg class="icon icon-24" aria-hidden="true">
+            <use href="#icon-weight"></use>
+          </svg>
+          <span>lette &amp; vægttab</span>
         </a>
+      </div>
+    </section>
+
+    <!-- populære opskrifter -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">populære opskrifter i airfryer</h2>
+        <p class="section-subtitle">mest læste opskrifter lige nu</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card recipe-card">
+          <div class="recipe-card-image">
+            <img src="images/saftig-kylling-airfryer-768x768.jpg" alt="saftig kylling i airfryer">
+          </div>
+          <h3 class="recipe-card-title">saftig kylling i airfryer med sprød overflade</h3>
+          <div class="recipe-card-meta">
+            <span>⏱ 30 min</span>
+            <span>🍽 4 personer</span>
+            <span>🌀 airfryer</span>
+          </div>
+        </article>
+
+        <article class="card recipe-card">
+          <div class="recipe-card-image">
+            <img src="images/pomfritter-airfryer-768x768.jpg" alt="pomfritter i airfryer">
+          </div>
+          <h3 class="recipe-card-title">sprøde pomfritter i airfryer</h3>
+          <div class="recipe-card-meta">
+            <span>⏱ 25 min</span>
+            <span>🍽 2 personer</span>
+            <span>🥔 tilbehør</span>
+          </div>
+        </article>
+
+        <article class="card recipe-card">
+          <div class="recipe-card-image">
+            <img src="images/grontsager-airfryer-768x768.jpg" alt="grøntsager i airfryer">
+          </div>
+          <h3 class="recipe-card-title">ristede grøntsager i airfryer</h3>
+          <div class="recipe-card-meta">
+            <span>⏱ 20 min</span>
+            <span>🍽 3–4 personer</span>
+            <span>🌿 grønt</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- madplaner / vægttab / universer -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">madplaner og universer</h2>
+        <p class="section-subtitle">samlede pakker med flere opskrifter</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3 class="recipe-card-title">7-dages madplan i airfryer</h3>
+          <p class="body-text">
+            komplet madplan med opskrifter til hele ugen – inkl. indkøbsliste, tips til rester og forslag til sunde snacks.
+          </p>
+          <div class="recipe-card-meta">
+            <span>📅 7 dage</span>
+            <span>🍽 4 personer</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3 class="recipe-card-title">airfryer til vægttab</h3>
+          <p class="body-text">
+            fokus på lette måltider med højt proteinindhold og nem tilberedning – perfekt til dig, der vil ned i vægt.
+          </p>
+          <div class="recipe-card-meta">
+            <span>🔥 kalorielette retter</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3 class="recipe-card-title">guides til airfryer</h3>
+          <p class="body-text">
+            lær at få sprød svær, undgå tør kylling og tilpasse tider og temperaturer – uanset hvilken airfryer du bruger.
+          </p>
+          <div class="recipe-card-meta">
+            <span>📖 trin-for-trin guides</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- seo-tekst -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">sådan bruger du opskrift-airfryer</h2>
+      </div>
+      <div class="card card-soft">
+        <p class="body-text">
+          opskrift-airfryer er din genvej til sprød og nem hverdagsmad. alle opskrifter er udviklet specifikt til
+          airfryer – ikke bare kopier af ovnopskrifter. du får præcise tider, temperaturer og tips til, hvordan du
+          undgår tørre eller bløde resultater.
+        </p>
+        <p class="body-text">
+          brug søgefeltet, når du ved, hvad du har i køleskabet. filtrer efter kategori, når du mangler inspiration.
+          og hop ind i madplaner eller vægttabs-universet, når du vil have struktur på hele ugen. målet er, at du
+          altid kan finde noget, der passer til både tid, lyst og niveau.
+        </p>
       </div>
     </section>
 
   </main>
 
-  <div data-include="/partials/footer.html"></div>
+  <!-- footer -->
+  <div data-include="footer"></div>
 
-  <script src="/assets/include.js" defer></script>
+  <script src="assets/include.js" defer></script>
 </body>
 </html>
