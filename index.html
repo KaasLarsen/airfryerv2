@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>airfryer opskrifter – nem og sprød mad i hverdagen</title>
+  <meta name="description" content="nemme danske airfryer opskrifter med klare tider, temperaturer, billeder og tips. perfekt til hverdagsmad, aftensmad og tilbehør." />
+  <link rel="icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+
+  <!-- structured data: website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.opskrift-airfryer.dk/",
+    "name": "Opskrift-Airfryer.dk",
+    "inLanguage": "da",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.opskrift-airfryer.dk/seneste.html?soeg={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div data-include="/partials/icons.html"></div>
+  <div data-include="/partials/header.html"></div>
+
+  <main class="container">
+
+    <!-- blå hero -->
+    <section class="panel panel--blue">
+      <div class="hero">
+        <div>
+          <span class="kicker">danske airfryer opskrifter</span>
+          <h1>airfryer opskrifter – nem og sprød mad</h1>
+          <p class="lead">få nemme, gennemtestede opskrifter med præcise tider, temperaturer og billeder – så du slipper for gætværk og får sprøde resultater hver gang.</p>
+
+          <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+            <a class="btn primary" href="#populaere">se populære</a>
+            <a class="btn" href="/seneste.html">se seneste opskrifter</a>
+          </div>
+        </div>
+
+        <div class="hero-box">
+          <!-- her kan du senere bruge et hero-billede -->
+          <svg class="hero-ico"><use href="#fries"></use></svg>
+        </div>
+      </div>
+
+      <div class="panel-search">
+        <form onsubmit="event.preventDefault(); window.location.href='/seneste.html?soeg='+encodeURIComponent(document.getElementById('search-input').value || '');">
+          <input id="search-input" type="search" placeholder="søg efter opskrifter … fx flæskesteg, frikadeller, pommes" />
+          <button class="btn primary" type="submit">søg</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- populære opskrifter -->
+    <section id="populaere" class="section">
+      <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <h2>populære opskrifter</h2>
+        <a class="small" href="/seneste.html" style="text-decoration:underline">se alle</a>
+      </div>
+
+      <div class="grid grid-3">
+        <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html">
+          <div class="thumb-icon"><svg><use href="#flaeskesteg"></use></svg></div>
+          <div class="card-body">
+            <h3>flæskesteg i airfryer – sprød svær</h3>
+            <p class="meta">45–60 min · sprød svær · klassisk dansk</p>
+          </div>
+        </a>
+
+        <a class="card" href="/opskrifter/frikadeller-i-airfryer.html">
+          <div class="thumb-icon"><svg><use href="#frikadelle"></use></svg></div>
+          <div class="card-body">
+            <h3>frikadeller i airfryer – nem aftensmad</h3>
+            <p class="meta">20–25 min · familievenlig</p>
+          </div>
+        </a>
+
+        <a class="card" href="/opskrifter/pommes-frites-i-airfryer.html">
+          <div class="thumb-icon"><svg><use href="#fries"></use></svg></div>
+          <div class="card-body">
+            <h3>pommes frites i airfryer – sprøde hver gang</h3>
+            <p class="meta">14–18 min · tilbehør</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- kategorier -->
+    <section class="section">
+      <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <h2>kategorier</h2>
+        <a class="small" href="/kategori.html" style="text-decoration:underline">se alle</a>
+      </div>
+      <div class="grid grid-4">
+        <a class="cat" href="/kategori.html?slug=kylling">
+          <svg><use href="#chicken"></use></svg><span>kylling</span>
+        </a>
+        <a class="cat" href="/kategori.html?slug=svinekød">
+          <svg><use href="#pig"></use></svg><span>svinekød</span>
+        </a>
+        <a class="cat" href="/kategori.html?slug=grønt">
+          <svg><use href="#leaf"></use></svg><span>grønt</span>
+        </a>
+        <a class="cat" href="/kategori.html?slug=tilbehør">
+          <svg><use href="#fries"></use></svg><span>tilbehør</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script src="/assets/include.js" defer></script>
+</body>
+</html>
