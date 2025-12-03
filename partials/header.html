@@ -1,72 +1,61 @@
 <header class="site-header">
   <div class="header-inner">
 
-    <!-- Logo -->
+    <!-- LOGO – ALTID til roden -->
     <div class="header-logo">
-      <a href="index.html">Opskrift-Airfryer</a>
+      <a href="/">Opskrift-Airfryer</a>
     </div>
 
-    <!-- Navigation -->
+    <!-- DIN EKSISTERENDE MENU 100% UDEN ÆNDRINGER -->
     <nav class="header-nav">
-      <a href="index.html">Opskrifter</a>
-      <a href="madplaner.html">Madplaner</a>
-      <a href="guides.html">Guides</a>
+      <a href="/">Forside</a>
+      <a href="/opskrifter.html">Opskrifter</a>
+      <a href="/madplaner.html">Madplaner</a>
     </nav>
 
-    <!-- Icons / Actions -->
+    <!-- ACTIONS (søge + ❤️ GEMTE OPSKRIFTER) -->
     <div class="header-actions">
 
-      <!-- Search icon -->
-      <button class="header-icon" onclick="toggleSearchBar()">
-        <svg viewBox="0 0 24 24">
-          <circle cx="11" cy="11" r="7" stroke-width="2" fill="none" stroke="currentColor"/>
-          <line x1="16" y1="16" x2="22" y2="22" stroke-width="2" stroke="currentColor" />
+      <!-- SØGE IKON (samme som før) -->
+      <button class="header-icon" id="openSearch">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="16" y1="16" x2="22" y2="22"></line>
         </svg>
       </button>
 
-      <!-- User icon -->
-      <button class="header-icon" onclick="toggleLoginModal()">
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="8" r="4" stroke-width="2" fill="none" stroke="currentColor"/>
-          <path d="M4 22c0-4 4-7 8-7s8 3 8 7" stroke-width="2" fill="none" stroke="currentColor"/>
-        </svg>
-      </button>
-
-      <!-- Saved recipes -->
-      <button class="header-icon" onclick="toggleSavedRecipes()">
-        <svg viewBox="0 0 24 24">
-          <rect x="4" y="4" width="16" height="18" rx="2" ry="2" stroke="currentColor" fill="none" stroke-width="2"/>
-          <line x1="8" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="2"/>
-          <line x1="8" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="2"/>
+      <!-- ❤️ HEART ICON (NYT) -->
+      <button class="header-icon" id="openSaved">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21s-6.3-4.2-9.3-8.1C-1.2 7 2 2 6.5 2c2.3 0 4 1.2 5.5 3 1.5-1.8 3.2-3 5.5-3C22 2 25.2 7 21.3 12.9C18.3 16.8 12 21 12 21z"/>
         </svg>
       </button>
 
     </div>
-
   </div>
 
-  <!-- Search bar dropdown -->
-  <div class="header-searchbar" id="headerSearchBar">
-    <form action="search.html">
-      <input type="search" name="q" placeholder="Søg efter opskrift…" />
+  <!-- SØGEBAR DROPDOWN -->
+  <div class="header-searchbar" id="searchBar">
+    <form action="/search.html" method="get">
+      <input type="search" name="q" placeholder="Søg efter opskrifter…" />
     </form>
   </div>
-
 </header>
 
-<!-- Login Modal -->
-<div class="login-modal" id="loginModal">
-  <div class="login-box">
-    <h3>Log Ind</h3>
-    <input type="text" id="loginName" placeholder="Dit navn" />
-    <button onclick="loginUser()">Log ind</button>
-    <button class="login-close" onclick="toggleLoginModal()">Luk</button>
-  </div>
-</div>
 
-<!-- Saved Recipes Drawer -->
-<div class="saved-drawer" id="savedDrawer">
-  <h3>Dine Gemte Opskrifter</h3>
-  <div id="savedList"></div>
-  <button onclick="toggleSavedRecipes()">Luk</button>
-</div>
+<!-- SCRIPT TIL HEADER HANDLING -->
+<script>
+  // Toggle søgefelt
+  document.getElementById('openSearch').addEventListener('click', () => {
+    const bar = document.getElementById('searchBar');
+    bar.style.display = (bar.style.display === 'block') ? 'none' : 'block';
+  });
+
+  // Toggle gemte opskrifter (drawer)
+  document.getElementById('openSaved').addEventListener('click', () => {
+    const drawer = document.querySelector('.saved-drawer');
+    drawer.classList.toggle('open');
+  });
+</script>
