@@ -2,167 +2,97 @@
 <html lang="da">
 <head>
   <meta charset="utf-8">
-  <title>opskrift-airfryer – opskrifter i airfryer, madplaner og guides</title>
+  <title>opskrifter i airfryer – opskrift-airfryer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="Find nemme og gennemtestede opskrifter i airfryer. Sprød kylling, pomfritter, grøntsager, snacks, madplaner og guides samlet ét sted.">
+        content="Se alle opskrifter i airfryer samlet ét sted. Find kylling, pomfritter, grøntsager, snacks og lette retter.">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body class="page">
 
+  <!-- svg icons + header -->
   <div data-include="icons"></div>
   <div data-include="header"></div>
 
-  <main class="page-main">
+  <main class="page-main page-main--wide">
 
-    <!-- hero -->
-    <section class="hero">
-      <div>
-        <p class="hero-kicker">velkommen til opskrift-airfryer</p>
-        <h1 class="hero-title">opskrifter i airfryer til hverdag og weekend</h1>
-        <p class="hero-text">
-          Her finder du opskrifter, der er udviklet til airfryer fra start. Du får præcise tider, temperaturer og
-          tips, så maden bliver sprød og saftig – uden gætværk.
+    <!-- top title + search (Arla-style) -->
+    <section class="recipes-header">
+      <div class="recipes-header-text">
+        <h1 class="recipes-title">opskrifter i airfryer</h1>
+        <p class="recipes-intro">
+          Her kan du gå på opdagelse i alle opskrifter til airfryer. Brug søgning og filtre til at finde retter, der
+          passer til råvarer, tid og lejlighed.
         </p>
-
-        <form class="search-bar" action="search.html" method="get">
-          <svg class="icon icon-24" aria-hidden="true">
-            <use href="#icon-search"></use>
-          </svg>
-          <input class="search-input" type="search" name="q"
-                 placeholder="Søg efter opskrifter – for eksempel kylling, pomfritter eller grøntsager">
-          <button class="btn btn-primary" type="submit">søg</button>
-        </form>
-
-        <div class="hero-actions">
-          <button class="btn btn-ghost" type="button">se alle opskrifter</button>
-          <span class="hero-pill">populært lige nu: kylling, pomfritter og grøntsager</span>
-        </div>
       </div>
-
-      <aside class="hero-card">
-        <div class="hero-card-image">
-          <img src="images/saftig-kylling-airfryer-768x768.jpg"
-               alt="Saftig kylling i airfryer med sprød overflade">
-        </div>
-        <h2 class="hero-card-title">saftig kylling i airfryer med sprød overflade</h2>
-        <p class="hero-card-meta">
-          30 minutter · 4 personer · airfryer
-        </p>
-      </aside>
+      <form class="recipes-search" action="search.html" method="get">
+        <svg class="icon icon-24" aria-hidden="true">
+          <use href="#icon-search"></use>
+        </svg>
+        <input class="recipes-search-input" type="search" name="q"
+               placeholder="Søg efter for eksempel kylling, pomfritter eller grøntsager">
+        <button class="btn btn-primary" type="submit">søg</button>
+      </form>
     </section>
 
-    <!-- kategorier -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">udforsk efter kategori</h2>
-        <p class="section-subtitle">find hurtigt en opskrift, der passer til din airfryer og din hverdag</p>
-      </div>
-      <div class="category-row">
-        <a href="#" class="category-pill">
-          kylling og kød
-        </a>
-        <a href="#" class="category-pill">
-          grøntsager og tilbehør
-        </a>
-        <a href="#" class="category-pill">
-          snacks og comfort
-        </a>
-        <a href="#" class="category-pill">
-          let og til vægttab
-        </a>
+    <!-- filter bar -->
+    <section class="recipes-filters">
+      <div class="recipes-filters-inner">
+        <button type="button" class="recipes-filter-btn is-active">alle opskrifter</button>
+        <button type="button" class="recipes-filter-btn">kylling og kød</button>
+        <button type="button" class="recipes-filter-btn">grøntsager og tilbehør</button>
+        <button type="button" class="recipes-filter-btn">snacks</button>
+        <button type="button" class="recipes-filter-btn">lette retter</button>
       </div>
     </section>
 
-    <!-- populære opskrifter (tre cards koblet til template-opskrifter) -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">populære opskrifter i airfryer</h2>
-        <p class="section-subtitle">tre gode opskrifter at starte med</p>
-      </div>
-      <div class="grid grid-3">
-        <article class="card recipe-card">
-          <a href="saftig-kylling-i-airfryer.html">
-            <div class="recipe-card-image">
+    <!-- recipe grid – store billeder som hos arla -->
+    <section class="recipes-grid-section">
+      <div class="recipes-grid">
+
+        <!-- kylling -->
+        <article class="recipe-tile">
+          <a href="saftig-kylling-i-airfryer.html" class="recipe-tile-link">
+            <div class="recipe-tile-image">
               <img src="images/saftig-kylling-airfryer-768x768.jpg"
                    alt="Saftig kylling i airfryer med sprød overflade">
             </div>
+            <div class="recipe-tile-body">
+              <h2 class="recipe-tile-title">saftig kylling i airfryer med sprød overflade</h2>
+              <p class="recipe-tile-meta">30 minutter · 4 personer · airfryer</p>
+            </div>
           </a>
-          <h3 class="recipe-card-title">saftig kylling i airfryer med sprød overflade</h3>
-          <p class="recipe-card-meta">30 minutter · 4 personer · airfryer</p>
         </article>
 
-        <article class="card recipe-card">
-          <a href="sprode-pomfritter-i-airfryer.html">
-            <div class="recipe-card-image">
+        <!-- pomfritter -->
+        <article class="recipe-tile">
+          <a href="sprode-pomfritter-i-airfryer.html" class="recipe-tile-link">
+            <div class="recipe-tile-image">
               <img src="images/pomfritter-airfryer-768x768.jpg"
                    alt="Sprøde pomfritter i airfryer">
             </div>
+            <div class="recipe-tile-body">
+              <h2 class="recipe-tile-title">sprøde pomfritter i airfryer</h2>
+              <p class="recipe-tile-meta">25 minutter · 2 personer · tilbehør</p>
+            </div>
           </a>
-          <h3 class="recipe-card-title">sprøde pomfritter i airfryer</h3>
-          <p class="recipe-card-meta">25 minutter · 2 personer · tilbehør</p>
         </article>
 
-        <article class="card recipe-card">
-          <a href="ristede-groentsager-i-airfryer.html">
-            <div class="recipe-card-image">
+        <!-- grøntsager -->
+        <article class="recipe-tile">
+          <a href="ristede-groentsager-i-airfryer.html" class="recipe-tile-link">
+            <div class="recipe-tile-image">
               <img src="images/groentsager-airfryer-768x768.jpg"
                    alt="Ristede grøntsager i airfryer">
             </div>
+            <div class="recipe-tile-body">
+              <h2 class="recipe-tile-title">ristede grøntsager i airfryer</h2>
+              <p class="recipe-tile-meta">20 minutter · 3–4 personer · grønt</p>
+            </div>
           </a>
-          <h3 class="recipe-card-title">ristede grøntsager i airfryer</h3>
-          <p class="recipe-card-meta">20 minutter · 3–4 personer · grønt</p>
         </article>
-      </div>
-    </section>
 
-    <!-- universer / madplaner -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">madplaner og universer</h2>
-        <p class="section-subtitle">samlinger af opskrifter, der passer sammen i hverdagen</p>
-      </div>
-      <div class="grid grid-3">
-        <article class="card">
-          <h3 class="recipe-card-title">7-dages madplan i airfryer</h3>
-          <p class="body-text">
-            Få en samlet madplan til en hel uge med opskrifter i airfryer. Du får indkøbsliste, tips til rester
-            og forslag til variationer.
-          </p>
-        </article>
-        <article class="card">
-          <h3 class="recipe-card-title">airfryer til vægttab</h3>
-          <p class="body-text">
-            Fokus på lette retter med højt proteinindhold og enkle råvarer. Godt til dig, der vil spise mere
-            mæt og mindre tungt.
-          </p>
-        </article>
-        <article class="card">
-          <h3 class="recipe-card-title">guides til airfryer</h3>
-          <p class="body-text">
-            Lær, hvordan du får sprød svær, undgår tør kylling og tilpasser tider og temperaturer i din airfryer,
-            uanset model.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- seo-tekst -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">sådan bruger du opskrift-airfryer</h2>
-      </div>
-      <div class="card">
-        <p class="body-text">
-          Opskrift-Airfryer er til dig, der gerne vil lave mere mad i airfryer uden at gætte dig frem. Opskrifterne
-          er udviklet til airfryer som førsteprioritet og ikke bare tilpasset fra ovn. Det betyder tydelige tider,
-          temperaturer og konkrete tips til, hvornår du skal ryste kurven eller vende maden.
-        </p>
-        <p class="body-text">
-          Du kan søge direkte efter råvarer, se populære opskrifter eller klikke dig ind i madplanerne, når du vil
-          have overblik over hele ugen. Målet er, at du hurtigt kan finde en ret, der passer til både tid, lyst og
-          niveau – og at din airfryer bliver en fast del af din hverdag.
-        </p>
+        <!-- flere opskrifter kan bare tilføjes som samme struktur -->
       </div>
     </section>
 
