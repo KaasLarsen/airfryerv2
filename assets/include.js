@@ -1,49 +1,50 @@
-// /assets/include.js
-(async function injectIncludes(){
-  const nodes = Array.from(document.querySelectorAll("[data-include]"));
+// assets/include.js
 
-  async function loadInto(el){
-    const url = el.getAttribute("data-include");
-    if (!url) return;
-    try {
-      const res = await fetch(url, { cache: "no-cache" });
-      if (!res.ok) throw new Error("http "+res.status);
-      const html = await res.text();
+async function loadPartials() {
+  const elements = document.querySelectorAll("[data-include]");
+  const promises = [];
 
-      const range = document.createRange();
-      range.selectNode(el);
-      const fragment = range.createContextualFragment(html);
-      el.replaceWith(fragment);
+  elements.forEach((el) => {
+    const name = el.getAttribute("data-include");
+    if (!name) return;
 
-      // kør scripts inde i fragmentet (header/footer)
-      fragment.querySelectorAll("script").forEach(old => {
-        const s = document.createElement("script");
-        for (const {name, value} of Array.from(old.attributes)) {
-          if (name === "src") continue;
-          s.setAttribute(name, value);
-        }
-        if (old.src) {
-          s.src = old.src;
-          s.async = old.async;
-        } else {
-          s.textContent = old.textContent || "";
-        }
-        old.replaceWith(s);
+    const path = `partials/${name}.html`;
+
+    const p = fetch(path)
+      .then((res) => {
+        if (!res.ok) throw new Error(`kunne ikke loade ${path}`);
+        return res.text();
+      })
+      .then((html) => {
+        el.outerHTML = html;
+      })
+      .catch((err) => {
+        console.error(err);
       });
-    } catch(e){
-      console.warn("include fail", url, e);
-    }
-  }
 
-  await Promise.all(nodes.map(loadInto));
-
-  // markér aktiv nav
-  const path = location.pathname.replace(/\/index\.html$/, "/");
-  document.querySelectorAll(".nav a[href]").forEach(a => {
-    const href = a.getAttribute("href");
-    if (!href || href.startsWith("#")) return;
-    if (path === href || path === href.replace(/\/index\.html$/, "/")) {
-      a.classList.add("active");
-    }
+    promises.push(p);
   });
-})();
+
+  await Promise.all(promises);
+}
+
+function initNavigation() {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  const toggle = header.querySelector(".nav-toggle");
+  const nav = header.querySelector(".site-nav");
+
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("is-open");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadPartials();
+
+  // partials er nu indsat i DOM'en
+  initNavigation();
+});
