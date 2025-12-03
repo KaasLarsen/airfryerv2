@@ -1,0 +1,459 @@
+/* ====== Reset + base ====== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #0f172a;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+:root {
+  --max: 1200px;
+  --pad: 16px;
+  --text: #0f172a;
+  --muted: #475569;
+  --line: #e2e8f0;
+  --soft: #f8fafc;
+  --accent: #0ea5e9;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.section {
+  margin: 24px 0;
+}
+
+h1, h2, h3 {
+  margin: 0 0 10px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+/* du vil gerne have overskrifter i lowercase */
+h1 { font-size: clamp(28px, 3vw, 38px); text-transform: none; }
+h2 { font-size: 22px; text-transform: none; }
+h3 { font-size: 16px; text-transform: none; }
+
+p { margin: 0 0 10px; color: var(--muted); }
+.small { font-size: 13px; color: #64748b; }
+.meta { font-size: 13px; color: #64748b; }
+
+/* ====== Header ====== */
+.site-header-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 1002;
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.site-header {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 10px var(--pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.nav-link.active {
+  color: var(--accent);
+}
+
+.ico-inline {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+}
+
+/* bruger-dropdown */
+.has-sub { position: relative; }
+
+.user-btn {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.chev { opacity: 0.7; }
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 8px 0;
+  z-index: 1003;
+}
+
+.sub-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.sub-link:hover { background: #f8fafc; }
+.sub-sep { height: 1px; background: var(--line); margin: 6px 0; }
+
+/* burger / mobil */
+.burger-btn {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  width: 32px;
+  height: 28px;
+  justify-content: center;
+  cursor: pointer;
+}
+.burger-btn span {
+  height: 2px;
+  background: #0f172a;
+  border-radius: 2px;
+}
+
+@media (max-width: 860px) {
+  .burger-btn { display: inline-flex; }
+  .nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 56px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
+    padding: 12px var(--pad);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    display: none;
+  }
+  #nav-toggle:checked ~ .nav { display: flex; }
+  .submenu {
+    position: static;
+    display: block;
+    border: none;
+    box-shadow: none;
+    padding: 4px 0;
+  }
+}
+
+/* ====== Hero / panel ====== */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  margin: 24px 0;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+}
+
+.lead {
+  font-size: 15px;
+}
+
+.hero-box {
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  padding: 14px;
+}
+
+.hero-ico {
+  width: 110px;
+  height: 110px;
+}
+
+/* blå hero-panel */
+.panel {
+  border-radius: 22px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  margin: 24px 0;
+}
+
+.panel--blue {
+  background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%);
+  border-color: #0369a1;
+  color: #ffffff;
+}
+
+.panel--blue h1,
+.panel--blue p,
+.panel--blue .kicker {
+  color: #ffffff;
+}
+
+.panel--blue .hero-box {
+  background: #ffffff;
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+/* knapper */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 14px;
+  font-weight: 600;
+  background: #ffffff;
+  color: #0f172a;
+  cursor: pointer;
+  transition: transform 0.06s ease, box-shadow 0.06s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+}
+
+.btn.primary {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  color: #ffffff;
+}
+
+/* søgepanel */
+.panel-search {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.panel-search form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.panel-search input[type="search"],
+.panel-search input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 12px;
+  border-radius: 11px;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+/* ====== Cards & grids ====== */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+@media (max-width: 900px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+.card {
+  display: block;
+  border-radius: 15px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.06s ease, box-shadow 0.06s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.16);
+}
+
+.thumb-icon {
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.thumb-icon svg {
+  width: 54px;
+  height: 54px;
+  color: var(--accent);
+}
+
+.card-body {
+  padding: 12px 14px 13px;
+}
+
+/* kategori-tegl */
+.cat {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 16px;
+  border-radius: 15px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: #ffffff;
+}
+
+.cat svg {
+  width: 38px;
+  height: 38px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.cat span {
+  font-weight: 600;
+}
+
+/* ====== Opskrift-layout ====== */
+
+.recipe-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  margin: 24px 0;
+}
+
+@media (max-width: 900px) {
+  .recipe-hero { grid-template-columns: 1fr; }
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 12px;
+}
+
+.recipe-hero-img {
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* lister */
+
+ul.list {
+  padding-left: 18px;
+}
+
+ul.list li {
+  margin-bottom: 4px;
+}
+
+ol.steps {
+  padding-left: 20px;
+}
+ol.steps li {
+  margin: 0 0 6px;
+}
+
+/* ====== Footer ====== */
+.footer {
+  margin-top: 32px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 28px var(--pad) 20px;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.copy {
+  font-size: 13px;
+  color: #64748b;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .footer-cols { grid-template-columns: 1fr; }
+}
