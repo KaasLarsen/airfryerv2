@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flæskestegssandwich – Opskrift-Airfryer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Flæskestegssandwich med sprød svær, rødkål og hjemmelavet agurkesalat. Den perfekte sandwich til julefrokost eller hverdag – nem og utrolig lækker.">
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- JSON-LD RECIPE SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    "name": "Flæskestegssandwich",
+    "image": "https://YOURDOMAIN.dk/assets/images/recipes/flaeskestegssandwich-768x768.jpg",
+    "description": "Lækker flæskestegssandwich med sprød svær, rødkål og agurkesalat. Nem opskrift med masser af smag.",
+    "totalTime": "PT15M",
+    "recipeYield": "4 personer",
+    "recipeCategory": "Sandwich",
+    "recipeCuisine": "Dansk",
+    "keywords": "flæskestegssandwich, flæskesteg, sandwich, julesandwich, julemad, frokost",
+    "recipeIngredient": [
+      "8 skiver flæskesteg med sprød svær",
+      "4 friskbagte sandwichboller",
+      "2 dl rødkål (syltet eller frisk)",
+      "2 dl agurkesalat",
+      "4 spsk mayonnaise eller remoulade",
+      "Frisk persille",
+      "Salt og peber"
+    ],
+    "recipeInstructions": [
+      { "@type": "HowToStep", "text": "Varm flæskestegsskiverne let i airfryer eller på pande, så sværen bliver ekstra sprød." },
+      { "@type": "HowToStep", "text": "Lun sandwichbollerne let." },
+      { "@type": "HowToStep", "text": "Smør bunden af bollen med mayonnaise eller remoulade." },
+      { "@type": "HowToStep", "text": "Tilføj rødkål og et par skiver flæskesteg." },
+      { "@type": "HowToStep", "text": "Top med agurkesalat og frisk persille." },
+      { "@type": "HowToStep", "text": "Luk sandwichen og server straks." }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <div data-include="icons"></div>
+  <div data-include="header"></div>
+
+  <main>
+
+    <article class="recipe-page">
+
+      <!-- Top: billede + meta -->
+      <header class="recipe-page-header">
+        <div class="recipe-page-image">
+          <img 
+            src="assets/images/recipes/flaeskestegssandwich-768x768.jpg" 
+            alt="Flæskestegssandwich" 
+            class="recipe-main-img">
+        </div>
+
+        <div class="recipe-page-intro">
+          <h1 class="recipe-page-title">Flæskestegssandwich</h1>
+
+          <p class="recipe-page-lead">
+            Flæskestegssandwich lavet med sprød svær, syrlig agurkesalat og saftig rødkål. En ægte klassiker til julefrokost, aftensmad eller som luksus-sandwich i weekenden.
+          </p>
+
+          <div class="recipe-page-meta">
+            <span>15 min</span>
+            <span>4 personer</span>
+            <span>Sandwich</span>
+          </div>
+
+          <!-- GEM OPSKRIFT (HJERTE) -->
+          <div class="recipe-tags">
+            <button class="save-recipe-btn" data-recipe="Flæskestegssandwich">❤️ Gem opskrift</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Indhold -->
+      <section class="recipe-page-content">
+
+        <div class="recipe-page-ingredients">
+          <h2>Ingredienser</h2>
+          <ul>
+            <li>8 skiver flæskesteg med sprød svær</li>
+            <li>4 sandwichboller</li>
+            <li>2 dl rødkål</li>
+            <li>2 dl agurkesalat</li>
+            <li>4 spsk mayonnaise eller remoulade</li>
+            <li>Frisk persille</li>
+            <li>Salt og peber</li>
+          </ul>
+        </div>
+
+        <div class="recipe-page-steps">
+          <h2>Sådan gør du</h2>
+          <ol>
+            <li>Varm skiverne af flæskesteg, så sværen bliver ekstra sprød og kødet lunt.</li>
+            <li>Lun bollerne i airfryer eller ovn.</li>
+            <li>Smør bunden med mayonnaise eller remoulade.</li>
+            <li>Tilføj rødkål og flæskesteg.</li>
+            <li>Top med agurkesalat og frisk persille.</li>
+            <li>Luk sandwichen og server straks.</li>
+          </ol>
+        </div>
+
+      </section>
+
+    </article>
+
+  </main>
+
+  <div data-include="footer"></div>
+  <div data-include="analytics"></div>
+
+  <script src="assets/include.js" defer></script>
+  <script src="assets/header.js" defer></script>
+
+  <!-- Gem opskrift funktion -->
+  <script>
+    document.querySelector(".save-recipe-btn").addEventListener("click", function () {
+      const name = this.dataset.recipe;
+      let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+
+      if (!saved.includes(name)) {
+        saved.push(name);
+        localStorage.setItem("savedRecipes", JSON.stringify(saved));
+        this.textContent = "❤️ Gemt";
+      }
+    });
+  </script>
+
+</body>
+</html>
