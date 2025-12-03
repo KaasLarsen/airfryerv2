@@ -1,0 +1,8 @@
+{
+  "name": "opskrift-airfryer",
+  "version": "1.0.0",
+  "description": "Automatisk sitemap generator til Opskrift-Airfryer",
+  "scripts": {
+    "sitemap": "node generate-sitemap.js"
+  }
+}
