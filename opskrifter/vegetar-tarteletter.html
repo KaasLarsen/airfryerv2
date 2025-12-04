@@ -2,207 +2,231 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>Vegetar tarteletter – cremet fyld med grøntsager</title>
+  <title>Vegetar tarteletter i airfryer – cremet fyld & sprøde skaller</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-        content="Vegetar tarteletter med cremet grøntsagsfyld, sprøde tarteletskaller og masser af smag. Perfekte til julefrokost, påskebord og nem hverdagsmad.">
+  <meta name="description" 
+    content="Vegetar tarteletter i airfryer med cremet grøntsagsfyld, sprøde tarteletskaller og masser af smag. Perfekt til julefrokost, gæster eller en nem, hyggelig aftensmad." />
 
   <link rel="stylesheet" href="../assets/styles.css" />
-
-  <!-- Schema markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Recipe",
-    "name": "Vegetar tarteletter",
-    "description": "Vegetar tarteletter med cremet grøntsagsfyld, ærter og svampe. Perfekte til frokost, jul og hverdagsmad.",
-    "image": [
-      "https://www.opskrift-airfryer.dk/assets/images/recipes/vegetar-tarteletter-768x768.jpg"
-    ],
-    "author": { "@type": "Organization", "name": "Opskrift-Airfryer" },
-    "prepTime": "PT20M",
-    "cookTime": "PT25M",
-    "totalTime": "PT45M",
-    "recipeYield": "4 personer",
-    "recipeCategory": "Vegetar",
-    "recipeCuisine": "Dansk",
-    "keywords": "vegetar tarteletter, tarteletter uden kød, grøn julefrokost, vegetarisk frokost",
-    "recipeIngredient": [
-      "8 tarteletskaller",
-      "2 spsk smør",
-      "1 løg, finthakket",
-      "2 gulerødder, i små tern",
-      "1 porre, i skiver",
-      "200 g champignoner, i skiver",
-      "150 g frosne ærter",
-      "3 spsk hvedemel",
-      "5 dl grøntsagsbouillon",
-      "1,5 dl madlavningsfløde",
-      "1 tsk dijonsennep",
-      "Salt og peber",
-      "Frisk persille"
-    ],
-    "recipeInstructions": [
-      { "@type": "HowToStep", "text": "Sauter løg og grøntsager i smør, til de er møre." },
-      { "@type": "HowToStep", "text": "Drys mel over og rør det godt ud i grøntsagerne." },
-      { "@type": "HowToStep", "text": "Tilsæt bouillon lidt ad gangen og pisk til en jævn sauce." },
-      { "@type": "HowToStep", "text": "Kom fløde og ærter i gryden og lad saucen tykne." },
-      { "@type": "HowToStep", "text": "Smag til med sennep, salt og peber. Fyld tarteletskallerne lige inden servering." }
-    ]
-  }
-  </script>
 </head>
 
 <body>
 
+  <!-- Partials -->
   <div data-include="icons"></div>
   <div data-include="header"></div>
 
-  <main>
-    <article class="recipe-page">
+  <main class="recipe-page">
 
-      <!-- TOP: billede + intro -->
-      <header class="recipe-page-header">
-        <div class="recipe-page-image">
-          <img src="../assets/images/recipes/vegetar-tarteletter-768x768.jpg"
-               alt="Vegetar tarteletter med cremet grøntsagsfyld"
-               class="recipe-main-img" />
-        </div>
+    <!-- HEADER SEKTIONS -->
+    <header class="recipe-page-header">
+      
+      <!-- Billede -->
+      <div class="recipe-page-image">
+        <img 
+          src="../assets/images/recipes/vegetar-tarteletter-768x768.jpg" 
+          alt="Vegetar tarteletter" 
+          class="recipe-main-img" />
+      </div>
 
-        <div class="recipe-page-intro">
-          <h1 class="recipe-page-title">Vegetar tarteletter</h1>
+      <!-- Intro -->
+      <div>
+        <h1 class="recipe-page-title">Vegetar tarteletter i airfryer</h1>
 
-          <p class="recipe-page-lead">
-            Vegetar tarteletter er den perfekte kombination af klassisk dansk comfort food og et grønnere twist.
-            Fyldet er cremet, varmt og fuld af smag fra gulerødder, porrer, champignoner og ærter – og bliver bundet
-            sammen af en mild, fløjlsblød sauce, der smager som ren hygge.
-          </p>
-
-          <p class="recipe-page-lead">
-            Retten er genial, når du vil servere noget velkendt, men stadig holde måltidet vegetarisk uden at gå
-            på kompromis med smag eller konsistens. Tarteletterne passer perfekt til julefrokost, påskefrokost,
-            weekendhygge, gæstemad eller en hurtig hverdagstallerken.
-          </p>
-
-          <p class="recipe-page-lead">
-            Fyldet kan nemt skaleres op, laves i forvejen og tilpasses sæsonens grøntsager – hvilket gør opskriften
-            både fleksibel, budgetvenlig og elsket af alle aldre.
-          </p>
-
-          <div class="recipe-page-meta">
-            <span>45 min</span>
-            <span>4 personer</span>
-            <span>Vegetar</span>
-          </div>
-
-          <button class="save-recipe-btn" data-recipe="Vegetar tarteletter">❤️ Gem opskrift</button>
-        </div>
-      </header>
-
-      <!-- INDHOLD -->
-      <section class="recipe-page-content">
-        <div class="recipe-page-ingredients">
-          <h2>Ingredienser</h2>
-
-          <ul>
-            <li>8 tarteletskaller</li>
-            <li>2 spsk smør</li>
-            <li>1 løg, finthakket</li>
-            <li>2 gulerødder, i små tern</li>
-            <li>1 porre, i skiver</li>
-            <li>200 g champignoner, i skiver</li>
-            <li>150 g frosne ærter</li>
-            <li>3 spsk hvedemel</li>
-            <li>5 dl grøntsagsbouillon</li>
-            <li>1,5 dl madlavningsfløde</li>
-            <li>1 tsk dijonsennep</li>
-            <li>Salt og peber</li>
-            <li>Frisk persille til pynt</li>
-          </ul>
-        </div>
-
-        <div class="recipe-page-steps">
-          <h2>Sådan gør du</h2>
-
-          <ol>
-            <li>
-              Smelt smørret i en gryde, og sautér løg, gulerødder, porre og champignoner ved middel varme, indtil
-              grøntsagerne er møre og dufter godt.
-            </li>
-
-            <li>
-              Drys hvedemel over grøntsagerne, og rør det godt ud. Lad det stege i 1 minut – det giver en jævn sauce.
-            </li>
-
-            <li>
-              Tilsæt grøntsagsbouillon lidt ad gangen, mens du pisker, så saucen bliver glat og uden klumper.
-            </li>
-
-            <li>
-              Kom madlavningsfløde og ærter i gryden, og lad fyldet småkoge i et par minutter, til det tykner og bliver
-              cremet. Smag til med dijonsennep, salt og peber.
-            </li>
-
-            <li>
-              Varm tarteletskallerne sprøde i ovn eller airfryer. Fyld dem lige inden servering, så bunden ikke bliver blød.
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- TIPS -->
-      <section class="recipe-tip">
-        <h2>Tips og variationer</h2>
-        <p>
-          Du kan variere fyldet med broccoli, blomkål, squash eller spinat. Hvis du ønsker mere protein, kan du tilsætte
-          linser eller hvide bønner. Vil du have en endnu mere julet udgave, kan du krydre saucen med en smule muskatnød.
+        <p class="recipe-page-lead">
+          Vegetar tarteletter er en vidunderlig kombination af sprødhed, blødhed og dyb smag – og når du laver dem i airfryer, får du tarteletskaller, der bliver ekstra luftige og sprøde uden at tørre ud. Denne opskrift giver dig en fyldig, cremet grøntsagsstuvning med champignon, ærter og porre, som smager mindst lige så godt som den klassiske version – måske endda bedre.
         </p>
-      </section>
 
-      <!-- SERVERINGSFORSLAG -->
-      <section class="recipe-tip">
-        <h2>Serveringsforslag</h2>
-        <p>
-          Server vegetar tarteletter som forret, frokostret eller let aftensmad. De er også populære på julefrokostbordet,
-          hvor de giver et grønt modspil til de tungere retter.
+        <p class="recipe-page-lead">
+          Retten er oplagt til julefrokost og hyggelige vinterdage, men fungerer også perfekt som en nem aftensmad med masser af varme og comfort. Airfryeren gør tilberedningen hurtig og nem, og tarteletterne kan både bruges som forret, tapas, buffet eller et vegetarisk alternativ i julen, hvor der ofte er brug for noget grønt og let.
         </p>
-      </section>
 
-      <!-- RELATEREDE OPSKRIFTER -->
-      <section class="recipe-related">
-        <h2>Relaterede opskrifter</h2>
+        <p class="recipe-page-lead">
+          Fyldet kan tilpasses sæsonens grøntsager, og du kan lave det mildt, krydret eller ekstra cremet, alt efter hvad du bedst kan lide. Uanset versionen får du en ret, der både er indbydende, farverig og utrolig lækker – og som garanteret vil blive et hit både blandt vegetarer og kødspisere.
+        </p>
+
+        <div class="recipe-page-meta">
+          <span>45 min</span>
+          <span>4 personer</span>
+          <span>Airfryer</span>
+        </div>
+
+        <div class="recipe-tags">
+          <span>Vegetar</span>
+          <span>Jul</span>
+          <span>Forret</span>
+          <span>Tarteletter</span>
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- INDHOLD SEKTION -->
+    <section class="recipe-page-content">
+
+      <!-- Ingredienser -->
+      <div class="recipe-page-ingredients">
+        <h2>Ingredienser</h2>
+
         <ul>
-          <li><a href="flaeskestegssandwich.html">Flæskestegssandwich</a></li>
-          <li><a href="julesalat-med-roedkaal.html">Julesalat med rødkål</a></li>
-          <li><a href="flaeskesteg-med-sproed-svaer.html">Flæskesteg med sprød svær</a></li>
+          <li>12 tarteletskaller</li>
+          <li>250 g champignon, skiveskåret</li>
+          <li>1 porre, fint skåret</li>
+          <li>1 løg, finthakket</li>
+          <li>2 fed hvidløg, presset</li>
+          <li>2 dl frosne ærter</li>
+          <li>40 g smør</li>
+          <li>3 spsk hvedemel</li>
+          <li>4 dl grøntsagsbouillon</li>
+          <li>1 dl madlavningsfløde</li>
+          <li>Salt og peber</li>
+          <li>Frisk persille til topping</li>
         </ul>
-      </section>
+      </div>
 
-      <!-- KONKLUSION -->
-      <section class="recipe-conclusion">
-        <h2>Konklusion</h2>
-        <p>
-          Vegetar tarteletter er en ret, der både er traditionel og moderne på én gang. Den er nem at lave, fyldt med grøntsager
-          og smager fantastisk – og den fungerer lige godt til hverdag, gæster eller højtider. En sand grøn klassiker!
-        </p>
-      </section>
+      <!-- Fremgangsmåde -->
+      <div class="recipe-page-steps">
+        <h2>Sådan gør du</h2>
 
-    </article>
+        <ol>
+          <li>Start med at opvarme tarteletskallerne i airfryeren ved 170°C i 4–5 minutter, så de bliver sprøde og varme.</li>
+          <li>Smelt smør i en gryde, og steg løg, hvidløg og porre blødt i et par minutter.</li>
+          <li>Tilsæt champignon, og steg dem, indtil de afgiver væde og bliver let gyldne.</li>
+          <li>Dryp melet over grøntsagerne, og rør godt rundt, så det suger fedtet og danner en jævn base.</li>
+          <li>Hæld grøntsagsbouillon i lidt ad gangen, mens du pisker, så stuvningen bliver glat og uden klumper.</li>
+          <li>Tilsæt fløde og ærter, og lad stuvningen simre i 5–7 minutter, til den er cremet.</li>
+          <li>Smag til med salt, peber og evt. lidt muskatnød.</li>
+          <li>Fyld de varme tarteletskaller med den cremede grøntsagsstuvning.</li>
+          <li>Top med frisk persille, og server straks.</li>
+        </ol>
+      </div>
+
+    </section>
+
+    <!-- TIPS -->
+    <section style="margin-top: 3rem;">
+      <h2>Tips</h2>
+      <ul>
+        <li>Brug små champignon for bedste struktur – de giver mindre væde.</li>
+        <li>Tilføj en smule citronsaft for at give friskhed til stuvningen.</li>
+        <li>Ønsker du en helt tyk stuvning, så lad den simre et par minutter ekstra.</li>
+      </ul>
+    </section>
+
+    <!-- Variationer -->
+    <section style="margin-top: 2rem;">
+      <h2>Variationer</h2>
+      <ul>
+        <li><strong>Vegansk:</strong> Brug plantesmør, plantefløde og grøntsagsbouillon uden mælk.</li>
+        <li><strong>Svamperig:</strong> Erstat halvdelen af champignon med portobello eller kantareller.</li>
+        <li><strong>Krydret:</strong> Tilføj timian eller lidt paprika.</li>
+        <li><strong>Juleversion:</strong> Tilsæt små tern af æble og lidt revet muskatnød.</li>
+      </ul>
+    </section>
+
+    <!-- Serveringsforslag -->
+    <section style="margin-top: 2rem;">
+      <h2>Serveringsforslag</h2>
+      <p>
+        Vegetar tarteletter er perfekte som forret, til julefrokost, som en del af et tapasbord eller som let aftensmad. Server evt. med en grøn salat eller små ristede kartofler.
+      </p>
+    </section>
+
+    <!-- Opbevaring -->
+    <section style="margin-top: 2rem;">
+      <h2>Opbevaring</h2>
+      <p>
+        Fyldet kan gemmes i 2–3 dage i køleskab. Varm det op ved lav varme og tilsæt lidt ekstra fløde eller bouillon, hvis det bliver for tykt. Tarteletskaller bør altid varmes sprøde i airfryeren lige inden servering.
+      </p>
+    </section>
+
+    <!-- Konklusion -->
+    <section style="margin-top: 2rem;">
+      <h2>Konklusion</h2>
+      <p>
+        Vegetar tarteletter er en let, lækker og utrolig alsidig ret, der passer perfekt til både hverdag og højtider. Den cremede grøntsagsstuvning og de sprøde tarteletskaller giver en skøn kontrast, som både børn og voksne elsker. En oplagt ret til dig, der vil have noget hyggeligt, hjemmelavet og hurtigt – med den perfekte airfryer-fordel.
+      </p>
+    </section>
+
+    <!-- RELATEREDE OPSKRIFTER – samme stil som flæskesteg -->
+    <section style="margin-top: 3rem;">
+      <h2>Relaterede opskrifter</h2>
+
+      <div class="category-grid" style="margin-top: 1.5rem;">
+
+        <!-- Flæskestegssandwich -->
+        <a href="flaeskestegssandwich.html" class="recipe-card">
+          <div class="recipe-img"
+            style="
+              background-image: url('../assets/images/recipes/flaeskestegssandwich-768x768.jpg');
+              background-size: cover; background-position: center;">
+          </div>
+          <h3 class="recipe-title">Flæskestegssandwich</h3>
+          <p class="recipe-meta">15 min • Sandwich</p>
+        </a>
+
+        <!-- Placeholder to be replaced with julesalat -->
+        <a href="#" class="recipe-card">
+          <div class="recipe-img ph"></div>
+          <h3 class="recipe-title">Julesalat med rødkål</h3>
+          <p class="recipe-meta">20 min</p>
+        </a>
+
+        <!-- Placeholder to be replaced -->
+        <a href="#" class="recipe-card">
+          <div class="recipe-img ph"></div>
+          <h3 class="recipe-title">Flæskesteg med sprød svær</h3>
+          <p class="recipe-meta">1 time 55 min</p>
+        </a>
+
+      </div>
+    </section>
+
   </main>
 
   <div data-include="footer"></div>
-  <div data-include="analytics"></div>
-
   <script src="../assets/include.js" defer></script>
-  <script>
-    document.addEventListener("click", function (e) {
-      if (!e.target.matches(".save-recipe-btn")) return;
-      const name = e.target.getAttribute("data-recipe");
-      let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-      if (!saved.includes(name)) saved.push(name);
-      localStorage.setItem("savedRecipes", JSON.stringify(saved));
-      e.target.textContent = "❤️ Opskrift gemt";
-    });
+
+  <!-- SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "Vegetar tarteletter i airfryer",
+    "image": "https://opskrift-airfryer.dk/assets/images/recipes/vegetar-tarteletter-768x768.jpg",
+    "description": "Vegetar tarteletter i airfryer med cremet fyld og sprøde tarteletskaller. Perfekt til jul, frokost og gæster.",
+    "recipeCuisine": "Dansk",
+    "recipeCategory": "Vegetar",
+    "prepTime": "PT15M",
+    "cookTime": "PT30M",
+    "totalTime": "PT45M",
+    "recipeYield": "4 personer",
+    "recipeIngredient": [
+      "12 tarteletskaller",
+      "250 g champignon",
+      "1 porre",
+      "1 løg",
+      "2 fed hvidløg",
+      "2 dl ærter",
+      "40 g smør",
+      "3 spsk hvedemel",
+      "4 dl grøntsagsbouillon",
+      "1 dl madlavningsfløde",
+      "Salt og peber",
+      "Frisk persille"
+    ],
+    "recipeInstructions": [
+      {"@type": "HowToStep", "text": "Opvarm tarteletskaller i airfryer."},
+      {"@type": "HowToStep", "text": "Steg løg, hvidløg og porre i smør."},
+      {"@type": "HowToStep", "text": "Tilsæt champignon."},
+      {"@type": "HowToStep", "text": "Rør mel i."},
+      {"@type": "HowToStep", "text": "Tilsæt bouillon og pisk glat."},
+      {"@type": "HowToStep", "text": "Tilsæt fløde og ærter."},
+      {"@type": "HowToStep", "text": "Smag til."},
+      {"@type": "HowToStep", "text": "Fyld tarteletterne."}
+    ]
+  }
   </script>
 
 </body>
