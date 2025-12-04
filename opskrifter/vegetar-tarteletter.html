@@ -296,6 +296,34 @@
       e.target.textContent = "❤️ Opskrift gemt";
     });
   </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".recipe-card").forEach(card => {
+    const slug = card.getAttribute("data-slug");
+    if (!slug) return;
+
+    const imgPath = `../assets/images/recipes/${slug}-768x768.jpg`;
+    const imgDiv = card.querySelector(".recipe-img");
+
+    // Check om billedet findes
+    fetch(imgPath, { method: "HEAD" })
+      .then(res => {
+        if (res.ok) {
+          // Billede findes → brug det
+          imgDiv.style.backgroundImage = `url('${imgPath}')`;
+          imgDiv.style.backgroundSize = "cover";
+          imgDiv.style.backgroundPosition = "center";
+        } else {
+          // Intet billede → placeholder
+          imgDiv.classList.add("ph");
+        }
+      })
+      .catch(() => {
+        imgDiv.classList.add("ph");
+      });
+  });
+});
+</script>
 
 </body>
 </html>
