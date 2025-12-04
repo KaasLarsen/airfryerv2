@@ -2,210 +2,299 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>Vegetar tarteletter – Cremet juleforret i airfryer</title>
+  <title>Vegetar tarteletter – cremet fyld og sprød bund</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Vegetar tarteletter i airfryer – sprøde skaller og cremet grøntsagsstuvning. Den perfekte juleforret eller hyggelige vinterret. Nem opskrift, fyldig smag og hurtig at lave." />
+  <meta name="description"
+        content="Vegetar tarteletter med cremet svampefyld, porrer og ærter i sprøde tarteletskaller. Perfekt som juleforret, til julefrokost eller hyggelig vintermad.">
 
+  <!-- KORREKT STIL-STI FRA /opskrifter/ -->
   <link rel="stylesheet" href="../assets/styles.css" />
 
-  <!-- Google Analytics -->
-  <div data-include="analytics"></div>
+  <!-- Recipe schema (rich results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Recipe",
+    "name": "Vegetar tarteletter",
+    "description": "Vegetar tarteletter med cremet svampefyld, porrer og ærter i sprøde tarteletskaller. Perfekte som forret til julefrokost eller hyggelig vintermad.",
+    "image": [
+      "https://www.opskrift-airfryer.dk/assets/images/recipes/vegetar-tarteletter-768x768.jpg"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "Opskrift-Airfryer"
+    },
+    "datePublished": "2025-12-04",
+    "prepTime": "PT20M",
+    "cookTime": "PT25M",
+    "totalTime": "PT45M",
+    "keywords": "vegetar tarteletter, vegetarisk juleforret, tarteletter uden kød, vegetar julefrokost",
+    "recipeYield": "4 personer",
+    "recipeCategory": "Forret",
+    "recipeCuisine": "Dansk",
+    "recipeIngredient": [
+      "12 tarteletskaller",
+      "300 g champignon eller blandede svampe, i små tern",
+      "1 porre, renset og skåret i tynde skiver",
+      "1 lille løg, finthakket",
+      "2 fed hvidløg, finthakket",
+      "2 dl frosne ærter",
+      "40 g smør",
+      "3 spsk hvedemel",
+      "5 dl grøntsagsbouillon",
+      "1,5 dl madlavningsfløde eller piskefløde",
+      "1 tsk dijonsennep (kan udelades)",
+      "1 tsk citronsaft",
+      "Salt og friskkværnet peber",
+      "Frisk persille til pynt"
+    ],
+    "recipeInstructions": [
+      { "@type": "HowToStep", "text": "Rens champignon og skær dem i små tern. Rens porre og skær den i tynde skiver. Hak løg og hvidløg fint." },
+      { "@type": "HowToStep", "text": "Smelt smør i en gryde ved middel varme. Sauter løg, hvidløg og porre i 3–4 minutter, til de er bløde og let gyldne." },
+      { "@type": "HowToStep", "text": "Tilsæt champignon og steg dem videre, til de afgiver væde og begynder at få farve. Det giver dyb smag til fyldet." },
+      { "@type": "HowToStep", "text": "Drys hvedemel over grøntsagerne, og rør godt rundt, så melet fordeler sig og suger smørret. Lad det stege i ca. 1 minut." },
+      { "@type": "HowToStep", "text": "Hæld grøntsagsbouillon i lidt ad gangen, mens du pisker eller rører grundigt. Fortsæt, til al bouillon er brugt, og saucen er jævn." },
+      { "@type": "HowToStep", "text": "Tilsæt fløde og lad stuvningen småsimre i 5–7 minutter, til den er cremet og tykner let. Rør ærterne i og varm dem igennem." },
+      { "@type": "HowToStep", "text": "Smag til med dijonsennep, citronsaft, salt og peber. Juster konsistensen med lidt ekstra bouillon eller fløde, hvis den er for tyk." },
+      { "@type": "HowToStep", "text": "Varm tarteletskallerne i airfryer ved 180 °C i 3–4 minutter, eller i ovn ved 190 °C i 5–7 minutter, til de er sprøde og lune." },
+      { "@type": "HowToStep", "text": "Fyld de varme tarteletskaller med den cremede vegetarstuvning lige inden servering og pynt med friskhakket persille." }
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
+  <!-- PARTIALS: icons + header -->
   <div data-include="icons"></div>
   <div data-include="header"></div>
 
-  <main class="recipe-page">
+  <main>
+    <article class="recipe-page">
 
-    <!-- HEADER -->
-    <header class="recipe-page-header">
-      <img 
-        src="../assets/images/recipes/vegetar-tarteletter-768x768.jpg" 
-        alt="Vegetar tarteletter i airfryer" 
-        class="recipe-main-img"
-      >
+      <!-- TOP: billede + intro -->
+      <header class="recipe-page-header">
 
-      <div>
-        <h1 class="recipe-page-title">Vegetar tarteletter</h1>
+        <!-- Billede – KORREKT STI -->
+        <div class="recipe-page-image">
+          <img
+            src="../assets/images/recipes/vegetar-tarteletter-768x768.jpg"
+            alt="Vegetar tarteletter med cremet fyld og sprød bund"
+            class="recipe-main-img"
+          />
+        </div>
 
-        <p class="recipe-page-lead">
-          Vegetar tarteletter er en klassisk forret, som både er cremet, sprød og perfekt til jul. Her får du en moderne og grønnere version, hvor fyldet er lavet på grøntsager og mild fløde – serveret i luftige tarteletskaller, som bliver perfekt sprøde i airfryer.
+        <!-- Intro-tekst -->
+        <div class="recipe-page-intro">
+          <h1 class="recipe-page-title">Vegetar tarteletter</h1>
+
+          <p class="recipe-page-lead">
+            Vegetar tarteletter er sådan en ret, der får hele bordet til at trække lidt tættere sammen. Det er klassisk
+            dansk comfort food, men i en grønnere version, hvor svampe, porrer og ærter erstatter kødet. Fyldet er
+            cremet, blødt og fyldigt, mens den sprøde tarteletskal giver knas i hver eneste bid. Perfekt som
+            juleforret, til julefrokost eller bare på en kold vinteraften, hvor du har lyst til noget varmt og hyggeligt.
+          </p>
+
+          <p class="recipe-page-lead">
+            Opskriften er udviklet, så du både kan lave den i god tid og tilpasse den til det, du allerede har i
+            køleskabet. Stuvningen kan forberedes dagen før og blot varmes op, mens tarteletskallerne hurtigt bliver
+            sprøde i airfryer eller ovn. Det gør vegetar tarteletter til en af de mest taknemmelige retter, når du vil
+            servere noget, der både ser imponerende ud og samtidig er relativt nemt at lave – også til mange gæster.
+          </p>
+
+          <div class="recipe-page-meta">
+            <span>45 min</span>
+            <span>4 personer</span>
+            <span>Forret</span>
+          </div>
+
+          <button class="save-recipe-btn" data-recipe="Vegetar tarteletter">
+            ❤️ Gem opskrift
+          </button>
+        </div>
+      </header>
+
+      <!-- Ingredienser + fremgangsmåde -->
+      <section class="recipe-page-content">
+
+        <!-- Ingredienser -->
+        <div class="recipe-page-ingredients">
+          <h2>Ingredienser</h2>
+          <ul>
+            <li>12 tarteletskaller</li>
+            <li>300 g champignon eller blandede svampe, i små tern</li>
+            <li>1 porre, renset og skåret i tynde skiver</li>
+            <li>1 lille løg, finthakket</li>
+            <li>2 fed hvidløg, finthakket</li>
+            <li>2 dl frosne ærter</li>
+            <li>40 g smør</li>
+            <li>3 spsk hvedemel</li>
+            <li>5 dl grøntsagsbouillon</li>
+            <li>1,5 dl madlavningsfløde eller piskefløde</li>
+            <li>1 tsk dijonsennep (kan udelades)</li>
+            <li>1 tsk citronsaft</li>
+            <li>Salt og friskkværnet peber</li>
+            <li>Frisk persille til pynt</li>
+          </ul>
+        </div>
+
+        <!-- Fremgangsmåde -->
+        <div class="recipe-page-steps">
+          <h2>Sådan gør du</h2>
+          <ol>
+            <li>
+              <strong>Forbered grøntsagerne.</strong> Rens champignon og skær dem i små tern. Rens porren og skær den
+              i tynde skiver. Hak løg og hvidløg fint, så de kan smelte ind i stuvningen.
+            </li>
+            <li>
+              <strong>Sauter løg, porre og svampe.</strong> Smelt smør i en gryde ved middel varme. Sauter løg,
+              hvidløg og porre i 3–4 minutter, til de er bløde og let gyldne. Tilsæt champignon og steg videre,
+              til de afgiver væde og begynder at få farve. Jo mere du bruner, jo dybere smag.
+            </li>
+            <li>
+              <strong>Tilsæt mel og lav en jævn stuvning.</strong> Drys hvedemel over grøntsagerne og rør grundigt,
+              så melet fordeler sig og suger smørret. Lad det stege i cirka 1 minut, så melsmagen forsvinder.
+            </li>
+            <li>
+              <strong>Pisk bouillon og fløde i.</strong> Hæld grøntsagsbouillon i lidt ad gangen, mens du pisker eller
+              rører kraftigt. Når saucen er jævn, tilsætter du fløde og lader stuvningen småsimre i 5–7 minutter,
+              til den bliver cremet og let tykner.
+            </li>
+            <li>
+              <strong>Rør ærter og krydderier i.</strong> Vend ærterne i stuvningen og varm dem igennem. Smag til med
+              dijonsennep, citronsaft, salt og peber. Juster konsistensen med lidt ekstra bouillon eller fløde, hvis
+              du synes den er for tyk.
+            </li>
+            <li>
+              <strong>Varm tarteletskallerne.</strong> Læg skallerne i airfryer og varm dem ved 180 °C i 3–4 minutter,
+              til de er sprøde og lune. Alternativt kan du varme dem i ovn ved 190 °C i 5–7 minutter.
+            </li>
+            <li>
+              <strong>Fyld og server.</strong> Fordel den varme stuvning i de sprøde skaller lige inden servering og
+              pynt med friskhakket persille. Server med det samme, mens fyldet er varmt og skallerne stadig sprøde.
+            </li>
+          </ol>
+        </div>
+
+      </section>
+
+      <!-- Tips & variationer -->
+      <section class="recipe-tip">
+        <h2>Tips og variationer</h2>
+        <p>
+          Vil du have ekstra dybde i smagen, kan du erstatte en del af champignonerne med portobello eller østershatte.
+          Du kan også tilsætte en lille sjat hvidvin sammen med bouillonen eller smage til med en anelse revet muskatnød
+          for et mere julet udtryk. Har du rester af rodfrugter, kan små tern af pastinak eller knoldselleri sagtens
+          snige sig med ned i gryden.
         </p>
+        <p>
+          Du kan desuden lave en helt vegansk version ved at bruge plantebaseret smør og fløde samt en grøntsagsbouillon
+          uden animalske ingredienser. Serverer du for børn, kan du nedtone dijonsennep og citronsaft en smule, så
+          smagen bliver endnu mildere og mere rund.
+        </p>
+      </section>
 
-        <div class="recipe-page-meta">
-          <span>45 min</span>
-          <span>Forret</span>
-          <span>Airfryer</span>
-          <span>4 personer</span>
+      <!-- SEO-tekst: servering, rester, FAQ -->
+      <section style="margin-top: 3rem;">
+        <h2 class="section-title">Sådan serverer du vegetar tarteletter</h2>
+        <p style="max-width: 760px; margin-top: 1rem; color: #555; line-height: 1.7;">
+          Vegetar tarteletter er oplagte som forret til julefrokost og andre højtider, hvor der i forvejen er mange
+          tunge retter på bordet. Den cremede stuvning mætter godt, men uden at føles voldsom, og den sprøde bund gør,
+          at hver bid føles let og afbalanceret. Du kan servere én stor tartelet pr. person som forret eller flere små
+          i miniskaller som en del af et større tapas- eller julebord. Pynt gerne med ekstra persille, lidt friskrevet
+          citronskal eller sprøde rugbrødschips for at give retten et mere moderne udtryk.
+        </p>
+        <p style="max-width: 760px; margin-top: 1rem; color: #555; line-height: 1.7;">
+          Skal tarteletterne fungere som hovedret, kan du regne med 3–4 skaller per person og servere dem sammen med en
+          sprød salat, fx med rødkål, æble og appelsin. De passer også forrygende til et glas kold hvidvin eller
+          mousserende vin, hvis retten serveres som en lille luksusforret til gæster.
+        </p>
+      </section>
+
+      <section style="margin-top: 3rem;">
+        <h2 class="section-title">Brug af rester og forberedelse</h2>
+        <p style="max-width: 760px; margin-top: 1rem; color: #555; line-height: 1.7;">
+          En stor fordel ved vegetar tarteletter er, at stuvningen kan forberedes i god tid. Lav den gerne dagen før,
+          lad den køle helt af og opbevar den i en lufttæt beholder i køleskabet. På dagen varmer du den forsigtigt op
+          ved lav varme, mens du pisker en smule ekstra bouillon eller fløde i, hvis den er blevet for tyk. På den måde
+          kan du stå helt roligt og kun fokusere på at varme skallerne og anrette pænt lige inden servering.
+        </p>
+        <p style="max-width: 760px; margin-top: 1rem; color: #555; line-height: 1.7;">
+          Har du rester af stuvning, kan den bruges som fyld i en tærte, som sauce til pasta eller vendes sammen med
+          kogte kartofler og gratineres i ovnen. Det gør opskriften fleksibel og med til at mindske madspild – noget,
+          der passer perfekt til den mere bevidste måde at lave mad på, som mange går efter i dag.
+        </p>
+      </section>
+
+      <section style="margin-top: 3rem; margin-bottom: 3rem;">
+        <h2 class="section-title">Ofte stillede spørgsmål</h2>
+        <p style="max-width: 760px; margin-top: 1rem; color: #555; line-height: 1.7;">
+          <strong>Kan jeg fryse stuvningen?</strong><br />
+          Ja, stuvningen kan fryses i op til 2–3 måneder. Lad den tø op i køleskab og varm den langsomt op under
+          omrøring. Tilsæt evt. lidt ekstra fløde eller bouillon, hvis konsistensen er blevet meget tyk efter
+          optøning.
+        </p>
+        <p style="max-width: 760px; margin-top: 1rem; color: #555; line-height: 1.7;">
+          <strong>Kan jeg bruge andre grøntsager?</strong><br />
+          Absolut. Prøv fx små tern af gulerod, selleri, blomkål eller broccoli. Bare sørg for, at grøntsagerne er
+          skåret i små stykker, så de når at blive møre og falde godt ind i stuvningen.
+        </p>
+        <p style="max-width: 760px; margin-top: 1rem; color: #555; line-height: 1.7;">
+          <strong>Kan tarteletterne laves helt uden fløde?</strong><br />
+          Ja, du kan erstatte fløden med mælk eller plantebaserede alternativer. Stuvningen bliver en smule mindre
+          fyldig, men stadig cremet, hvis du lader den koge lidt længere ind.
+        </p>
+      </section>
+
+      <!-- Relaterede opskrifter -->
+      <section class="section-category" style="margin-top: 3rem;">
+        <div class="category-header">
+          <h2 class="section-title">Relaterede opskrifter</h2>
         </div>
 
-        <div class="recipe-tags">
-          <span>Jul</span>
-          <span>Vegetar</span>
-          <span>Forret</span>
+        <div class="category-grid">
+          <a href="flaeskestegssandwich.html" class="recipe-card">
+            <div class="recipe-img ph"></div>
+            <h3 class="recipe-title">Flæskestegssandwich</h3>
+            <p class="recipe-meta">15 min</p>
+          </a>
+
+          <a href="julesalat-med-roedkaal.html" class="recipe-card">
+            <div class="recipe-img ph"></div>
+            <h3 class="recipe-title">Julesalat med rødkål</h3>
+            <p class="recipe-meta">20 min</p>
+          </a>
+
+          <a href="flaeskesteg-med-sproed-svaer.html" class="recipe-card">
+            <div class="recipe-img ph"></div>
+            <h3 class="recipe-title">Flæskesteg med sprød svær</h3>
+            <p class="recipe-meta">1 time 55 min</p>
+          </a>
         </div>
+      </section>
 
-        <!-- Gem opskrift -->
-        <button class="save-recipe-btn" data-recipe="vegetar-tarteletter">
-          ❤️ Gem opskrift
-        </button>
-      </div>
-    </header>
-
-    <!-- INDHOLD -->
-    <section class="recipe-page-content">
-
-      <!-- INGREDIENSER -->
-      <div class="recipe-page-ingredients">
-        <h2>Ingredienser</h2>
-
-        <ul>
-          <li>12 tarteletskaller</li>
-          <li>250 g champignon, i skiver</li>
-          <li>2 gulerødder, små tern</li>
-          <li>1 porre, fint skåret</li>
-          <li>25 g smør</li>
-          <li>2 spsk hvedemel</li>
-          <li>3,5 dl grøntsagsbouillon</li>
-          <li>1 dl madlavningsfløde</li>
-          <li>Salt og peber</li>
-          <li>Frisk persille til pynt</li>
-        </ul>
-      </div>
-
-      <!-- TRIN -->
-      <div class="recipe-page-steps">
-        <h2>Sådan gør du</h2>
-
-        <ol>
-          <li>Varm tarteletskallerne i airfryeren ved 180°C i 3–4 minutter, indtil de er sprøde.</li>
-          <li>Sauter porre og gulerødder i smør i en gryde, til de er bløde.</li>
-          <li>Tilsæt champignon, og steg dem gyldne.</li>
-          <li>Drys mel over, og rør godt rundt.</li>
-          <li>Hæld grøntsagsbouillon i lidt ad gangen, mens du rører.</li>
-          <li>Tilføj fløde, og lad stuven simre 5–7 min, til den er cremet.</li>
-          <li>Smag til med salt og peber.</li>
-          <li>Fyld de varme skaller lige inden servering.</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- TIPS -->
-    <section class="recipe-tip">
-      <h2>Tips til de bedste vegetar tarteletter</h2>
-      <p>
-        Vil du have en ekstra fyldig stuvning, kan du tilføje lidt ekstra fløde eller en smule revet parmesan. Du kan også udskifte champignon med asparges, ærter eller broccoli for en grønnere version.
-      </p>
-    </section>
-
-    <!-- VARIATIONER -->
-    <section class="recipe-tip">
-      <h2>Variationer</h2>
-      <p>
-        Denne opskrift er nem at tilpasse. Brug grøntsager, du allerede har i køleskabet, eller gør retten mere mættende ved at tilføje linser, kikærter eller små kartoffeltern. Du kan også lave en luksusversion med hvide asparges og frisk estragon.
-      </p>
-    </section>
-
-    <!-- SERVERING -->
-    <section class="recipe-tip">
-      <h2>Serveringsforslag</h2>
-      <p>
-        Server tarteletterne som en elegant forret til julefrokost, juleaften eller decemberhygge. De fungerer også perfekt som let aftensmad serveret med en frisk salat, gerne med rødkål eller appelsin for et julet twist.
-      </p>
-    </section>
-
-    <!-- OPBEVARING -->
-    <section class="recipe-tip">
-      <h2>Opbevaring og rester</h2>
-      <p>
-        Stuvningen kan gemmes i køleskab i op til 3–4 dage. Varm den langsomt op ved lav varme, og tilsæt en smule ekstra bouillon eller fløde, hvis den bliver for tyk. Skallerne skal altid varmes og fyldes lige inden servering – ellers bliver de bløde.
-      </p>
-    </section>
-
-    <!-- SEO EKSTRATEKST -->
-    <section class="recipe-tip" style="margin-bottom: 4rem;">
-      <h2>Vegetar tarteletter som juleforret</h2>
-      <p>
-        Vegetar tarteletter er en oplagt måde at bringe mere grønt ind i julemaden uden at gå på kompromis med smag eller traditioner. Kombinationen af sprøde skaller og blød, cremet stuvning gør retten til en favorit hos både børn og voksne.
-      </p>
-      <p>
-        Retten kan også nydes uden for julesæsonen – som forret til konfirmation, påskefrokost, fødselsdag eller bare når du vil servere noget hyggeligt og klassisk. Uanset sæson er de et sikkert hit.
-      </p>
-    </section>
-
-    <!-- RELATEREDE OPSKRIFTER -->
-    <section>
-      <h2>Relaterede opskrifter</h2>
-
-      <div class="category-grid" style="margin-top: 1.5rem;">
-
-        <!-- 1 -->
-        <a href="../opskrifter/flaeskestegssandwich.html" class="recipe-card">
-          <div class="recipe-img" style="background-image:url('../assets/images/recipes/flaeskestegssandwich-768x768.jpg'); background-size:cover; background-position:center;"></div>
-          <h3 class="recipe-title">Flæskestegssandwich</h3>
-          <p class="recipe-meta">15 min • sandwich</p>
-        </a>
-
-        <!-- 2 -->
-        <a href="#" class="recipe-card">
-          <div class="recipe-img ph"></div>
-          <h3 class="recipe-title">Julesalat med rødkål</h3>
-          <p class="recipe-meta">20 min • tilbehør</p>
-        </a>
-
-        <!-- 3 -->
-        <a href="#" class="recipe-card">
-          <div class="recipe-img ph"></div>
-          <h3 class="recipe-title">Flæskesteg med sprød svær</h3>
-          <p class="recipe-meta">1 time 55 min • hovedret</p>
-        </a>
-
-      </div>
-    </section>
-
+    </article>
   </main>
 
+  <!-- Footer + analytics via partials -->
   <div data-include="footer"></div>
+  <div data-include="analytics"></div>
+
+  <!-- INCLUDE SCRIPT (KORREKT STI FRA /opskrifter/) -->
   <script src="../assets/include.js" defer></script>
 
-  <!-- SCHEMA -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org/",
-    "@type": "Recipe",
-    "name": "Vegetar tarteletter",
-    "description": "Vegetar tarteletter med cremet grøntsagsstuvning og sprøde tarteletskaller.",
-    "image": "https://www.opskrift-airfryer.dk/assets/images/recipes/vegetar-tarteletter-768x768.jpg",
-    "recipeCategory": "Forret",
-    "recipeCuisine": "Dansk",
-    "keywords": "vegetar, jul, tarteletter",
-    "recipeIngredient": [
-      "12 tarteletskaller",
-      "250 g champignon",
-      "2 gulerødder",
-      "1 porre",
-      "25 g smør",
-      "2 spsk hvedemel",
-      "3,5 dl grøntsagsbouillon",
-      "1 dl madlavningsfløde",
-      "Salt og peber",
-      "Persille"
-    ],
-    "recipeInstructions": [
-      "Varm skallerne i airfryer.",
-      "Sauter grøntsager.",
-      "Tilsæt champignon.",
-      "Rør mel i.",
-      "Tilføj bouillon.",
-      "Kom fløde i.",
-      "Smag til.",
-      "Fyld skallerne."
-    ],
-    "totalTime": "PT45M",
-    "recipeYield": "4 personer"
-  }
+  <!-- Gem opskrift i localStorage -->
+  <script>
+    document.addEventListener("click", function (e) {
+      if (!e.target.matches(".save-recipe-btn")) return;
+      const name = e.target.getAttribute("data-recipe");
+      let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+      if (!saved.includes(name)) {
+        saved.push(name);
+        localStorage.setItem("savedRecipes", JSON.stringify(saved));
+      }
+      e.target.textContent = "❤️ Opskrift gemt";
+    });
   </script>
 
 </body>
