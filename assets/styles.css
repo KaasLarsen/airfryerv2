@@ -539,3 +539,10 @@ body {
   border-radius: 6px;
   color: #333;
 }
+.theme-img-round {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.8rem;
+}
