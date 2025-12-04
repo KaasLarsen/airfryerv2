@@ -208,10 +208,12 @@
   </main>
 
   <div data-include="footer"></div>
-  <div data-include="analytics"></div>
+<div data-include="analytics"></div>
 
-  <script src="assets/include.js" defer></script>
-  <script src="assets/header.js" defer></script>
+<script src="assets/include.js" defer></script>
+<script src="assets/header.js" defer></script>
+
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.getElementById("recipe-slider");
   const btnPrev = document.querySelector(".slider-btn.prev");
@@ -225,6 +227,8 @@ document.addEventListener("DOMContentLoaded", () => {
     slider.scrollBy({ left: 300, behavior: "smooth" });
   });
 });
+</script>
 
 </body>
 </html>
+
