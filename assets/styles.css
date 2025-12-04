@@ -546,3 +546,11 @@ body {
   object-fit: cover;
   margin-bottom: 0.8rem;
 }
+.theme-img-round {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 0.6rem;
+}
