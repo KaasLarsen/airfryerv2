@@ -15,12 +15,4 @@
     "tags": ["jul", "julefrokost", "forret"],
     "image": "vegetar-tarteletter-768x768.jpg"
   },
-  {
-    "slug": "julesalat-med-roedkaal",
-    "title": "Julesalat med rødkål",
-    "time": "20 min",
-    "category": "tilbehor",
-    "tags": ["jul", "salat"],
-    "image": "julesalat-med-roedkaal-768x768.jpg"
-  }
 ]
