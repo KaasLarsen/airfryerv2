@@ -13,6 +13,11 @@
   <!-- Recipe schema (rich results) -->
   <script type="application/ld+json">
   {
+    <script>
+  window.recipeSlug = "flaeskestegssandwich";
+  window.recipeTags = ["sandwich", "julefrokost", "flæskesteg", "airfryer"];
+</script>
+
     "@context": "https://schema.org",
     "@type": "Recipe",
     "name": "Flæskestegssandwich",
@@ -219,32 +224,15 @@
         </p>
       </section>
 
-      <!-- Relaterede opskrifter (placeholder links) -->
-      <section class="section-category" style="margin-top: 3rem;">
-        <div class="category-header">
-          <h2 class="section-title">Relaterede opskrifter</h2>
-        </div>
+      <!-- Relaterede opskrifter (styres af related.js) -->
+<section class="section-category" style="margin-top: 3rem;">
+  <div class="category-header">
+    <h2 class="section-title">Relaterede opskrifter</h2>
+  </div>
 
-        <div class="category-grid">
-          <a href="flaeskesteg-med-sproed-svaer.html" class="recipe-card">
-            <div class="recipe-img ph"></div>
-            <h3 class="recipe-title">Flæskesteg med sprød svær</h3>
-            <p class="recipe-meta">1 time 55 min</p>
-          </a>
+  <div class="category-grid" id="related-container"></div>
+</section>
 
-          <a href="julesalat-med-roedkaal.html" class="recipe-card">
-            <div class="recipe-img ph"></div>
-            <h3 class="recipe-title">Julesalat med rødkål</h3>
-            <p class="recipe-meta">20 min</p>
-          </a>
-
-          <a href="vegetar-tarteletter.html" class="recipe-card">
-            <div class="recipe-img ph"></div>
-            <h3 class="recipe-title">Vegetar tarteletter</h3>
-            <p class="recipe-meta">45 min</p>
-          </a>
-        </div>
-      </section>
 
     </article>
   </main>
@@ -256,19 +244,40 @@
   <!-- INCLUDE SCRIPT (KORREKT STI FRA /opskrifter/) -->
   <script src="../assets/include.js" defer></script>
 
-  <!-- Gem opskrift i localStorage -->
-  <script>
-    document.addEventListener("click", function (e) {
-      if (!e.target.matches(".save-recipe-btn")) return;
-      const name = e.target.getAttribute("data-recipe");
-      let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-      if (!saved.includes(name)) {
-        saved.push(name);
-        localStorage.setItem("savedRecipes", JSON.stringify(saved));
+  <!-- Gem / fjern opskrift (toggle) -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.querySelector(".save-recipe-btn");
+    if (!btn) return;
+
+    const name = btn.getAttribute("data-recipe");
+    let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+
+    function updateButton() {
+      if (saved.includes(name)) {
+        btn.textContent = "💚 Opskrift gemt (klik for at fjerne)";
+      } else {
+        btn.textContent = "❤️ Gem opskrift";
       }
-      e.target.textContent = "❤️ Opskrift gemt";
+    }
+
+    updateButton();
+
+    btn.addEventListener("click", function () {
+      saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+
+      if (saved.includes(name)) {
+        saved = saved.filter((r) => r !== name);
+      } else {
+        saved.push(name);
+      }
+
+      localStorage.setItem("savedRecipes", JSON.stringify(saved));
+      updateButton();
     });
-  </script>
+  });
+</script>
+
 
 </body>
 </html>
