@@ -9,244 +9,247 @@
 
   <link rel="stylesheet" href="../assets/styles.css" />
 
-  <!-- Recipe schema -->
+  <!-- JSON-LD RECIPE -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Recipe",
     "name": "Flæskestegssandwich",
-    "description": "Flæskestegssandwich med sprød svær, saftigt kød, rødkål, agurkesalat og remoulade.",
-    "image": ["https://www.opskrift-airfryer.dk/assets/images/recipes/flaeskestegssandwich-768x768.jpg"],
-    "author": {"@type": "Organization", "name": "Opskrift-Airfryer"},
+    "description": "Flæskestegssandwich med sprød svær, saftigt kød, rødkål, agurkesalat og remoulade. Perfekt til julefrokost og resteflæskesteg.",
+    "image": [
+      "https://www.opskrift-airfryer.dk/assets/images/recipes/flaeskestegssandwich-768x768.jpg"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "Opskrift-Airfryer"
+    },
     "datePublished": "2025-12-03",
     "prepTime": "PT15M",
     "cookTime": "PT0M",
     "totalTime": "PT15M",
-    "keywords": "flæskestegssandwich, flæskesteg i airfryer, resteflæskesteg, julefrokost",
+    "keywords": "flæskestegssandwich, flæskesteg i airfryer, resteflæskesteg, julefrokost, sandwich med flæskesteg",
     "recipeYield": "4 personer",
     "recipeCategory": "Sandwich",
     "recipeCuisine": "Dansk",
     "recipeIngredient": [
       "8 skiver flæskesteg med sprød svær",
-      "4 sandwichboller",
-      "2 dl rødkål",
+      "4 sandwichboller, gerne lidt rustikke",
+      "2 dl rødkål (syltet eller hjemmelavet)",
       "2 dl agurkesalat",
       "4 spsk remoulade eller mayonnaise",
-      "Frisk persille",
-      "Salt og peber"
+      "Frisk persille eller anden frisk krydderurt",
+      "Salt og friskkværnet peber"
     ],
     "recipeInstructions": [
-      { "@type": "HowToStep", "text": "Varm flæskestegen i airfryer ved 180°C i 3–5 min." },
-      { "@type": "HowToStep", "text": "Lun bollerne i airfryer eller ovn." },
-      { "@type": "HowToStep", "text": "Smør bunden med remoulade eller mayonnaise." },
-      { "@type": "HowToStep", "text": "Fordel rødkål og læg flæskesteg ovenpå." },
-      { "@type": "HowToStep", "text": "Top med agurkesalat og persille." },
-      { "@type": "HowToStep", "text": "Luk og server varmt." }
+      { "@type": "HowToStep", "text": "Varm skiverne af flæskesteg i airfryer eller ovn, så sværen bliver ekstra sprød og kødet lunt." },
+      { "@type": "HowToStep", "text": "Lun sandwichbollerne, så de bliver bløde indeni og let sprøde udenpå." },
+      { "@type": "HowToStep", "text": "Smør bunden af hver bolle med et generøst lag remoulade eller mayonnaise." },
+      { "@type": "HowToStep", "text": "Fordel rødkål på bunden, og læg derefter 2 skiver flæskesteg ovenpå." },
+      { "@type": "HowToStep", "text": "Top med agurkesalat og friskhakket persille." },
+      { "@type": "HowToStep", "text": "Luk sandwichen med toppen af bollen, pres den let sammen og server straks." }
     ]
   }
   </script>
 
-  <!-- Data til related.js -->
+  <!-- Related.js metadata -->
   <script>
     window.recipeSlug = "flaeskestegssandwich";
-    window.recipeTags = ["jul", "sandwich", "flæskesteg", "airfryer"];
+    window.recipeTags = ["jul", "sandwich", "airfryer"];
   </script>
 </head>
 
 <body>
 
-<div data-include="icons"></div>
-<div data-include="header"></div>
+  <div data-include="icons"></div>
+  <div data-include="header"></div>
 
-<main>
-  <article class="recipe-page">
+  <main>
+    <article class="recipe-page">
 
-    <!-- TOP -->
-    <header class="recipe-page-header">
-      <div class="recipe-page-image">
-        <img
-          src="../assets/images/recipes/flaeskestegssandwich-768x768.jpg"
-          alt="Flæskestegssandwich med sprød svær, rødkål og agurkesalat"
-          class="recipe-main-img"
-        />
-      </div>
-
-      <div class="recipe-page-intro">
-        <h1 class="recipe-page-title">Flæskestegssandwich</h1>
-
-        <p class="recipe-page-lead">
-          Flæskestegssandwich er den ultimative måde at bruge resterne af flæskestegen på – eller bare en undskyldning
-          for at stege en ekstra. Her får du en saftig sandwich med sprød svær, rødkål, syrlig agurkesalat og cremet
-          remoulade. Perfekt til julefrokost, søndagsfrokost eller når du vil forkæle familien.
-        </p>
-
-        <p class="recipe-page-lead">
-          Opskriften er udviklet med fokus på airfryer og resteflæskesteg, så du hurtigt kan varme kødet, få sværen
-          knasende sprød igen og samle en sandwich, der både er nem og smager som noget fra en rigtig god café.
-        </p>
-
-        <div class="recipe-page-meta">
-          <span>15 min</span>
-          <span>4 personer</span>
-          <span>Sandwich</span>
+      <!-- HEADER MED BILLEDE -->
+      <header class="recipe-page-header">
+        <div class="recipe-page-image">
+          <img
+            src="../assets/images/recipes/flaeskestegssandwich-768x768.jpg"
+            alt="Flæskestegssandwich med sprød svær, rødkål og agurkesalat"
+            class="recipe-main-img"
+          />
         </div>
 
-        <div style="height: 1.5rem;"></div>
+        <div class="recipe-page-intro">
+          <h1 class="recipe-page-title">Flæskestegssandwich</h1>
 
-        <button class="save-recipe-btn" data-recipe="Flæskestegssandwich">
-          ❤️ Gem opskrift
-        </button>
-      </div>
-    </header>
+          <p class="recipe-page-lead">
+            Flæskestegssandwich er den ultimative måde at bruge resterne af flæskestegen på – eller bare en undskyldning
+            for at lave stegen igen. Den kombinerer alt det bedste fra det danske julebord i en enkelt, perfekt mundfuld:
+            sprød svær, saftigt kød, syrlig agurkesalat, cremet remoulade og blødt brød. Det er comfort food på den helt
+            rigtige måde – varm, sprød, fed, syrlig, frisk og fuldstændig uimodståelig.
+          </p>
 
-    <!-- CONTENT GRID -->
-    <section class="recipe-page-content">
-      <div class="recipe-page-ingredients">
-        <h2>Ingredienser</h2>
-        <ul>
-          <li>8 skiver flæskesteg med sprød svær</li>
-          <li>4 sandwichboller</li>
-          <li>2 dl rødkål</li>
-          <li>2 dl agurkesalat</li>
-          <li>4 spsk remoulade eller mayonnaise</li>
-          <li>Frisk persille</li>
-          <li>Salt og peber</li>
-        </ul>
-      </div>
+          <p class="recipe-page-lead">
+            Alt i opskriften er tilpasset airfryer, så både kød og boller hurtigt bliver lune og sprøde igen uden at miste
+            saft. Sværen bliver som ny, og du kan samle sandwichen på få minutter. Perfekt til julefrokost, søndagsmad,
+            gæster eller de dage hvor du bare vil forkæle dig selv med noget, der smager af både jul og caféklassiker.
+          </p>
 
-      <div class="recipe-page-steps">
-        <h2>Sådan gør du</h2>
-        <ol>
-          <li>
-            <strong>Varm flæskestegen.</strong>
-            Læg skiverne i airfryeren ved 180 °C i 3–5 minutter, indtil sværen er sprød igen.
-          </li>
-          <li>
-            <strong>Lun bollerne.</strong>
-            Giv dem et par minutter i airfryer, til de er let sprøde udenpå og bløde indeni.
-          </li>
-          <li>
-            <strong>Smør bunden.</strong>
-            Et godt lag remoulade eller mayonnaise giver fedme og binder fyldet.
-          </li>
-          <li>
-            <strong>Byg sandwichen.</strong>
-            Rødkål nederst, derefter flæskesteg – gerne med både kød og sprød svær i hver bid.
-          </li>
-          <li>
-            <strong>Top med syrligt fyld.</strong>
-            Agurkesalat og persille giver friskhed og balance.
-          </li>
-          <li>
-            <strong>Server straks.</strong>
-            Sandwichen er bedst, når kødet er varmt og sværen er helt sprød.
-          </li>
-        </ol>
-      </div>
-    </section>
+          <div class="recipe-page-meta">
+            <span>15 min</span>
+            <span>4 personer</span>
+            <span>Sandwich</span>
+          </div>
 
-    <!-- TIPS -->
-    <section class="recipe-tip">
-      <h2>Tips og variationer</h2>
-      <p>
-        Vil du have endnu mere julestemning i din flæskestegssandwich, kan du tilføje lidt appelsinskal til rødkålen
-        eller bruge en grov sennep sammen med remouladen. Du kan også skifte rødkålen ud med en frisk rødkålssalat for
-        mere sprødhed.
-      </p>
-      <p>
-        Har du rester af brun sovs, så server en lille skål ved siden af. Det smager vanvittigt godt at dyppe sandwichen!
-      </p>
-    </section>
+          <div style="height: 1rem;"></div>
 
-    <!-- SERVERING -->
-    <section style="margin-top:3rem;">
-      <h2 class="section-title">Sådan serverer du flæskestegssandwich</h2>
-      <p style="max-width:760px;margin-top:1rem;color:#555;line-height:1.7;">
-        Flæskestegssandwich kan stå alene som et helt måltid, men bliver endnu bedre med lidt tilbehør som ovnkartofler,
-        rodfrugter, coleslaw eller grøn salat. Til julefrokost fungerer den perfekt som et varmt indslag.
-      </p>
-      <p style="max-width:760px;margin-top:1rem;color:#555;line-height:1.7;">
-        Varm både boller og flæskesteg i airfryeren for perfekt sprødhed – hurtigt, effektivt og uden forvarmning.
-      </p>
-    </section>
+          <button class="save-recipe-btn" data-recipe="Flæskestegssandwich">
+            ❤️ Gem opskrift
+          </button>
+        </div>
+      </header>
 
-    <!-- RESTER -->
-    <section style="margin-top:3rem;">
-      <h2 class="section-title">Brug af rester og opbevaring</h2>
-      <p style="max-width:760px;margin-top:1rem;color:#555;line-height:1.7;">
-        Flæskestegssandwich er genial til rester. Opbevar skiver af flæskesteg 2–3 dage i køleskab og varm dem kort i
-        airfryer før servering.
-      </p>
-      <p style="max-width:760px;margin-top:1rem;color:#555;line-height:1.7;">
-        Til madpakken: undlad agurkesalat og tilføj den lige inden servering, så bollen ikke bliver blød.
-      </p>
-    </section>
+      <!-- GRID: INGREDIENSER + STEPS -->
+      <section class="recipe-page-content">
 
-    <!-- FAQ -->
-    <section style="margin-top:3rem;margin-bottom:3rem;">
-      <h2 class="section-title">Ofte stillede spørgsmål</h2>
+        <div class="recipe-page-ingredients">
+          <h2>Ingredienser</h2>
+          <ul>
+            <li>8 skiver flæskesteg med sprød svær</li>
+            <li>4 sandwichboller</li>
+            <li>2 dl rødkål</li>
+            <li>2 dl agurkesalat</li>
+            <li>4 spsk remoulade eller mayonnaise</li>
+            <li>Frisk persille</li>
+            <li>Salt og friskkværnet peber</li>
+          </ul>
+        </div>
 
-      <p style="max-width:760px;margin-top:1rem;color:#555;line-height:1.7;">
-        <strong>Kan jeg bruge friskstegt flæskesteg?</strong><br>
-        Ja, lad stegen hvile, skær i skiver og brug dem direkte. Airfryeren varmer dem perfekt.
-      </p>
+        <div class="recipe-page-steps">
+          <h2>Sådan gør du</h2>
+          <ol>
+            <li><strong>Varm flæskestegen.</strong> Læg skiverne i airfryeren ved 180 °C i 3–5 min, til sværen er sprød.</li>
+            <li><strong>Lun bollerne.</strong> Giv dem 2–3 min i airfryer, til de er varme og let sprøde.</li>
+            <li><strong>Smør bollen.</strong> Fordel et lag remoulade eller mayo på underbollen.</li>
+            <li><strong>Byg sandwich.</strong> Læg rødkål, derefter flæskesteg, så agurkesalat.</li>
+            <li><strong>Top og server.</strong> Slut med persille, sæt låget på og server straks.</li>
+          </ol>
+        </div>
 
-      <p style="max-width:760px;margin-top:1rem;color:#555;line-height:1.7;">
-        <strong>Hvilken type bolle er bedst?</strong><br>
-        Fast men blød: brioche, burgerbolle eller ciabatta. Undgå både ekstremt luftige og meget hårde.
-      </p>
+      </section>
 
-      <p style="max-width:760px;margin-top:1rem;color:#555;line-height:1.7;">
-        <strong>Kan jeg lave en lettere version?</strong><br>
-        Skift remoulade ud med let mayo eller yoghurt-dressing. Brug ekstra grønt og tyndere skiver flæskesteg.
-      </p>
-    </section>
+      <!-- TIPS -->
+      <section class="recipe-tip">
+        <h2>Tips og variationer</h2>
+        <p>
+          Vil du have endnu mere julestemning i din flæskestegssandwich, kan du tilføje lidt appelsinskal til rødkålen
+          eller bruge en grov sennep sammen med remouladen. Du kan også skifte rødkålen ud med en frisk rødkålssalat,
+          hvis du vil have mere sprødhed og mindre syltet smag. Prøv også at tilføje æbler i tynde skiver eller lidt
+          sprød grønkål for ekstra struktur.
+        </p>
+        <p>
+          Har du rester af brun sovs, kan du servere en lille skål ved siden af og dyppe sandwichen i sovsen, når du
+          spiser den. Det lyder vildt, men det smager fuldstændig vanedannende.
+        </p>
+      </section>
 
-    <!-- RELATERET -->
-    <section class="section-category" style="margin-top:3rem;">
-      <div class="category-header">
-        <h2 class="section-title">Relaterede opskrifter</h2>
-      </div>
-      <div class="category-grid" id="related-container"></div>
-    </section>
+      <!-- SERVERING -->
+      <section style="margin-top: 3rem;">
+        <h2 class="section-title">Sådan serverer du flæskestegssandwich</h2>
+        <p style="max-width:760px; margin-top:1rem; color:#555; line-height:1.7;">
+          Flæskestegssandwich kan uden problemer stå alene som et helt måltid, men den bliver endnu bedre med lidt
+          tilbehør. Server den sammen med ovnkartofler, sprøde rodfrugter, coleslaw eller en simpel grøn salat, hvis du
+          vil gøre måltidet lidt lettere. Til julefrokost fungerer den godt som et varmt indslag midt mellem de kolde
+          retter, og du kan sagtens lave den i mindre versioner som sliders, hvis gæsterne skal smage på lidt af hvert.
+        </p>
+        <p style="max-width:760px; margin-top:1rem; color:#555; line-height:1.7;">
+          Skal sandwichen være ekstra venlig over for airfryer-fans, kan du varme både boller og flæskesteg i airfryeren.
+          Det går hurtigt, kræver ingen forvarmning og giver en super sprød tekstur. Brug gerne en klassisk kurvmodel,
+          men en stor skuffe-model fungerer også fint.
+        </p>
+      </section>
 
-  </article>
-</main>
+      <!-- RESTER -->
+      <section style="margin-top: 3rem;">
+        <h2 class="section-title">Brug af rester og opbevaring</h2>
+        <p style="max-width:760px; margin-top:1rem; color:#555; line-height:1.7;">
+          En af de store fordele ved flæskestegssandwich er, at den er perfekt til at udnytte rester. Har du flæskesteg
+          tilovers fra juleaften eller søndagsstegen, kan du skære den i pæne skiver, pakke den i lufttæt beholder og
+          opbevare den i køleskab 2–3 dage. Når du vil lave sandwich, varmer du bare skiverne hurtigt i airfryer, så
+          sværen bliver sprød igen. Rødkål og agurkesalat kan også sagtens være rester fra dagen før.
+        </p>
+        <p style="max-width:760px; margin-top:1rem; color:#555; line-height:1.7;">
+          Skal sandwichen med i madpakke, kan du samle den uden agurkesalat og tilføje den lige inden servering, så
+          bollen ikke bliver blød. Pak den stramt ind i bagepapir eller madpapir, så fyldet bliver, hvor det skal.
+        </p>
+      </section>
 
-<div data-include="footer"></div>
-<div data-include="analytics"></div>
+      <!-- FAQ -->
+      <section style="margin-top: 3rem; margin-bottom:3rem;">
+        <h2 class="section-title">Ofte stillede spørgsmål</h2>
 
-<script src="../assets/include.js" defer></script>
-<script src="../assets/related.js" defer></script>
+        <p style="max-width:760px; margin-top:1rem; color:#555;">
+          <strong>Kan jeg bruge friskstegt flæskesteg?</strong><br>
+          Ja, du kan sagtens lave sandwichen med helt frisk flæskesteg. Lad stegen hvile, skær den i skiver og brug den
+          på samme måde som rester.
+        </p>
 
-<!-- Toggle hjerte -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.querySelector(".save-recipe-btn");
-  const name = btn.getAttribute("data-recipe");
-  let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+        <p style="max-width:760px; margin-top:1rem; color:#555;">
+          <strong>Hvilken type bolle er bedst?</strong><br>
+          En lidt fast, men stadig blød bolle er bedst – fx burgerbolle, ciabatta eller brioche.
+        </p>
 
-  function update() {
-    btn.textContent = saved.includes(name)
-      ? "💚 Opskrift gemt (klik for at fjerne)"
-      : "❤️ Gem opskrift";
-  }
+        <p style="max-width:760px; margin-top:1rem; color:#555;">
+          <strong>Kan jeg lave en lettere version?</strong><br>
+          Ja, skift remoulade ud med let mayo eller yoghurt-dressing, brug ekstra grønt og server med salat.
+        </p>
+      </section>
 
-  update();
+      <!-- RELATERET (NY MODEL) -->
+      <section class="section-category" style="margin-top:3rem;">
+        <div class="category-header">
+          <h2 class="section-title">Relaterede opskrifter</h2>
+        </div>
+        <div class="category-grid" id="related-container"></div>
+      </section>
 
-  btn.addEventListener("click", function () {
-    saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+    </article>
+  </main>
 
-    if (saved.includes(name))
-      saved = saved.filter((r) => r !== name);
-    else
-      saved.push(name);
+  <div data-include="footer"></div>
+  <div data-include="analytics"></div>
 
-    localStorage.setItem("savedRecipes", JSON.stringify(saved));
-    update();
-  });
-});
-</script>
+  <script src="../assets/include.js" defer></script>
+  <script src="../assets/related.js" defer></script>
+
+  <!-- TOGGLE FAVORIT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const btn = document.querySelector(".save-recipe-btn");
+      if (!btn) return;
+
+      const name = btn.getAttribute("data-recipe");
+      let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+
+      function update() {
+        if (saved.includes(name)) {
+          btn.textContent = "💚 Opskrift gemt (klik for at fjerne)";
+        } else {
+          btn.textContent = "❤️ Gem opskrift";
+        }
+      }
+
+      update();
+
+      btn.addEventListener("click", function () {
+        saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+        if (saved.includes(name)) {
+          saved = saved.filter(r => r !== name);
+        } else {
+          saved.push(name);
+        }
+        localStorage.setItem("savedRecipes", JSON.stringify(saved));
+        update();
+      });
+    });
+  </script>
 
 </body>
 </html>
