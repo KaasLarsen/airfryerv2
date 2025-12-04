@@ -525,3 +525,17 @@ body {
   font-size: 0.85rem;
   color: #777;
 }
+.recipe-tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.recipe-tags span {
+  background: #eee;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  color: #333;
+}
