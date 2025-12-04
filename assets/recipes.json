@@ -15,4 +15,12 @@
     "tags": ["jul", "julefrokost", "forret"],
     "image": "vegetar-tarteletter-768x768.jpg"
   },
+  {
+    "slug": "fiskefilet",
+    "title": "Fiskefilet i airfryer",
+    "time": "20 min",
+    "category": "frokost",
+    "tags": ["jul", "julefrokost", "frokost"],
+    "image": "fiskefilet-768x768.jpg"
+  }
 ]
