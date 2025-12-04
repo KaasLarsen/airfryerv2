@@ -619,3 +619,63 @@ body {
 .slider-btn.next {
   right: -10px;
 }
+/* ----------------------------------
+   FEATURED OPSKRIFT (Næsten-sektion)
+---------------------------------- */
+
+.featured-recipe {
+  max-width: 1260px;
+  margin: 5rem auto;
+  padding: 0 1.2rem;
+}
+
+.featured-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.featured-text h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.featured-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
+  color: #444;
+}
+
+.featured-badge {
+  display: inline-block;
+  background: #111;
+  color: white;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.featured-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #2ba84a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.featured-image img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .featured-inner {
+    grid-template-columns: 1fr;
+  }
+}
