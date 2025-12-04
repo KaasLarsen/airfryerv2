@@ -1,38 +1,26 @@
 [
   {
-    "id": "kylling-airfryer",
-    "title": "Saftig kylling i airfryer med sprød overflade",
-    "slug": "saftig-kylling-i-airfryer",
-    "image": "images/saftig-kylling-airfryer-768x768.jpg",
-    "time": "30 minutter",
-    "servings": "4 personer",
-    "meta": "airfryer",
-    "description": "Saftig kylling i airfryer med sprød overflade og simpel marinade.",
-    "tags": ["kylling", "aftensmad", "airfryer"],
-    "categories": ["kylling og kød"]
+    "slug": "flaeskestegssandwich",
+    "title": "Flæskestegssandwich",
+    "time": "15 min",
+    "category": "sandwich",
+    "tags": ["jul", "julefrokost", "sandwich"],
+    "image": "flaeskestegssandwich-768x768.jpg"
   },
   {
-    "id": "pomfritter-airfryer",
-    "title": "Sprøde pomfritter i airfryer",
-    "slug": "sprode-pomfritter-i-airfryer",
-    "image": "images/pomfritter-airfryer-768x768.jpg",
-    "time": "25 minutter",
-    "servings": "2 personer",
-    "meta": "tilbehør",
-    "description": "Sprøde pomfritter i airfryer med blød midte og gylden overflade.",
-    "tags": ["pomfritter", "kartofler", "tilbehør"],
-    "categories": ["grøntsager og tilbehør"]
+    "slug": "vegetar-tarteletter",
+    "title": "Vegetar tarteletter",
+    "time": "45 min",
+    "category": "forret",
+    "tags": ["jul", "julefrokost", "forret"],
+    "image": "vegetar-tarteletter-768x768.jpg"
   },
   {
-    "id": "groentsager-airfryer",
-    "title": "Ristede grøntsager i airfryer",
-    "slug": "ristede-groentsager-i-airfryer",
-    "image": "images/groentsager-airfryer-768x768.jpg",
-    "time": "20 minutter",
-    "servings": "3–4 personer",
-    "meta": "grønt",
-    "description": "Ristede grøntsager i airfryer med god smag og let sprødhed.",
-    "tags": ["grøntsager", "tilbehør", "sundt"],
-    "categories": ["grøntsager og tilbehør"]
+    "slug": "julesalat-med-roedkaal",
+    "title": "Julesalat med rødkål",
+    "time": "20 min",
+    "category": "tilbehor",
+    "tags": ["jul", "salat"],
+    "image": "julesalat-med-roedkaal-768x768.jpg"
   }
 ]
