@@ -22,5 +22,13 @@
     "category": "frokost",
     "tags": ["jul", "julefrokost", "frokost"],
     "image": "fiskefilet-768x768.jpg"
+  },
+  {
+    "slug": "frikadeller-juleudgave",
+    "title": "Julefrikadeller i airfryer",
+    "time": "31 min",
+    "category": "frokost",
+    "tags": ["jul", "julefrokost", "frokost"],
+    "image": "frikadeller-768x768.jpg"
   }
 ]
