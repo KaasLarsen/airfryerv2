@@ -758,3 +758,84 @@ body {
 .slider-btn.next {
   right: -18px;
 }
+/* FEATURED RECIPE (Arla-style) */
+.featured-recipe {
+  background: #0d4d3b; /* Dybt grøn som Arla */
+  color: white;
+  padding: 4rem 0;
+  margin-top: 4rem;
+}
+
+.featured-grid {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 1.4rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.featured-image img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.featured-badge {
+  display: inline-block;
+  background: #111;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.featured-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.featured-meta {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.6rem;
+  opacity: 0.9;
+}
+
+.featured-stars {
+  margin-left: 0.5rem;
+  color: #ffd700;
+}
+
+.featured-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+}
+
+.featured-btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: white;
+  color: #0d4d3b;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.featured-btn:hover {
+  background: #e6e6e6;
+}
+
+/* MOBILE FIX */
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
