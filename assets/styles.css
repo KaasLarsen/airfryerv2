@@ -919,3 +919,61 @@ body {
 .slider-section {
   margin-top: 2.5rem;
 }
+/* FEATURED RECIPE */
+.featured-recipe {
+  background: #0e3a52; /* blå */
+  padding: 3rem 1.5rem;
+  margin: 3rem auto;
+}
+
+.featured-grid {
+  max-width: 1260px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.featured-image img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.featured-content {
+  color: white;
+}
+
+.featured-badge {
+  background: black;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.featured-title {
+  font-size: 2.4rem;
+  margin: 1rem 0;
+  font-weight: 700;
+}
+
+.featured-meta span {
+  margin-right: 0.5rem;
+}
+
+.featured-stars {
+  color: gold;
+}
+
+.featured-btn {
+  display: inline-block;
+  margin-top: 1.4rem;
+  background: white;
+  color: #0e3a52;
+  padding: 0.8rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
