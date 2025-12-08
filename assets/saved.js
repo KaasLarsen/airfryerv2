@@ -1,73 +1,60 @@
-document.addEventListener("DOMContentLoaded", () => {
+// assets/saved.js
 
-  // Vent til include.js har indlæst header
-  setTimeout(() => {
+// Helpers til localStorage
+function getSaved() {
+  return JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+}
 
-    const drawer = document.querySelector(".saved-drawer");
-    const openBtn = document.getElementById("openSaved");
-    const closeBtn = document.getElementById("closeSaved");
+function saveList(arr) {
+  localStorage.setItem("savedRecipes", JSON.stringify(arr));
+}
 
-    if (!drawer || !openBtn) {
-      console.warn("Saved drawer eller openSaved blev ikke fundet.");
-      return;
-    }
+// Render liste i panelet
+function renderSavedList() {
+  const container = document.getElementById("savedList");
+  if (!container) return;
 
-    // Helpers
-    function getSaved() {
-      return JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-    }
-    function saveList(arr) {
-      localStorage.setItem("savedRecipes", JSON.stringify(arr));
-    }
+  const saved = getSaved();
+  container.innerHTML = "";
 
-    function renderSavedList() {
-      const container = document.getElementById("savedList");
-      const saved = getSaved();
+  if (!saved.length) {
+    container.innerHTML = `
+      <p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>
+    `;
+    return;
+  }
 
-      container.innerHTML = saved.length === 0
-        ? `<p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>`
-        : saved.map(item => `
-          <div class="saved-item">
-            <a href="${item.url}">
-              <img src="${item.image}" alt="${item.title}">
-            </a>
-            <a class="saved-item-title" href="${item.url}">${item.title}</a>
-          </div>
-        `).join("");
-    }
+  saved.forEach(item => {
+    container.innerHTML += `
+      <div class="saved-item">
+        <a href="${item.url}">
+          <img src="${item.image}" alt="${item.title}">
+        </a>
+        <div>
+          <a class="saved-item-title" href="${item.url}">${item.title}</a>
+        </div>
+      </div>
+    `;
+  });
+}
 
-    // Åbn/Luk panel
-    openBtn.addEventListener("click", () => {
-      drawer.classList.add("open");
-      renderSavedList();
-    });
+// Kør med det samme, når saved.js er indlæst
+(function initSavedDrawer() {
+  const drawer   = document.querySelector(".saved-drawer");
+  const openBtn  = document.getElementById("openSaved");
+  const closeBtn = document.getElementById("closeSaved");
 
-    if (closeBtn) {
-      closeBtn.addEventListener("click", () => {
-        drawer.classList.remove("open");
-      });
-    }
+  if (!drawer || !openBtn || !closeBtn) {
+    console.warn("Saved drawer: elementer ikke fundet.");
+    return;
+  }
 
-    // Knapper på opskriftssider
-    document.querySelectorAll(".save-recipe-btn").forEach(btn => {
-      const title = btn.dataset.recipe;
-      const url = btn.dataset.url;
-      const image = btn.dataset.image;
+  openBtn.addEventListener("click", () => {
+    drawer.classList.add("open");
+    renderSavedList();
+  });
 
-      btn.addEventListener("click", () => {
-        let saved = getSaved();
-        const index = saved.findIndex(r => r.title === title);
-
-        if (index !== -1) {
-          saved.splice(index, 1);
-        } else {
-          saved.push({ title, url, image });
-        }
-
-        saveList(saved);
-      });
-    });
-
-  }, 200); // vigtigt – vent på include.js
-
-});
+  closeBtn.addEventListener("click", () => {
+    drawer.classList.remove("open");
+  });
+})();
