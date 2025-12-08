@@ -1,5 +1,6 @@
-// Vent til include.js har indlæst headeren
+// Wait until header is inserted by include.js
 document.addEventListener("DOMContentLoaded", () => {
+
   setTimeout(() => {
 
     console.log("saved.js loaded ✔️");
@@ -9,13 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("closeSaved");
 
     if (!drawer || !openBtn) {
-      console.warn("⚠️ Saved drawer eller openSaved blev ikke fundet.");
+      console.warn("❌ Header ikke klar endnu – saved drawer blev ikke fundet.");
       return;
     }
 
-    /* -------------------------------------------------
-       HELPERS
-    ------------------------------------------------- */
+    // Helpers
     function getSaved() {
       return JSON.parse(localStorage.getItem("savedRecipes") || "[]");
     }
@@ -26,124 +25,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function renderSavedList() {
       const container = document.getElementById("savedList");
+      const saved = getSaved();
+
       if (!container) return;
 
-      const saved = getSaved();
-
-      if (saved.length === 0) {
-        container.innerHTML = `<p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>`;
-        return;
-      }
-
-      container.innerHTML = saved.map(item => `
-        <div class="saved-item">
-          <a href="${item.url}">
-            <img src="${item.image}" alt="${item.title}">
-          </a>
-          <a class="saved-item-title" href="${item.url}">${item.title}</a>
-        </div>
-      `).join("");
+      container.innerHTML =
+        saved.length === 0
+          ? `<p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>`
+          : saved
+              .map(
+                (item) => `
+          <div class="saved-item">
+            <a href="${item.url}">
+              <img src="${item.image}" alt="${item.title}">
+            </a>
+            <a class="saved-item-title" href="${item.url}">
+              ${item.title}
+            </a>
+          </div>`
+              )
+              .join("");
     }
 
-    function updateSaveButtons() {
-      const saved = getSaved();
-
-      document.querySelectorAll(".save-recipe-btn").forEach(btn => {
-        const title = btn.dataset.recipe;
-        const isSaved = saved.some(r => r.title === title);
-
-        btn.textContent = isSaved
-          ? "💚 Opskrift gemt (klik for at fjerne)"
-          : "❤️ Gem opskrift";
-      });
-    }
-
-    /* -------------------------------------------------
-       AUTO-DETECT OPSKRIFTSDATA på opskriftssider
-    ------------------------------------------------- */
-    (function autoDetectRecipe() {
-      const btn = document.querySelector(".save-recipe-btn");
-      if (!btn) return; // Ikke en opskriftsside
-
-      // Titel
-      const titleEl = document.querySelector(".recipe-page-title");
-      const title = titleEl ? titleEl.textContent.trim() : document.title.trim();
-
-      // Billede
-      const imgEl = document.querySelector(".recipe-main-img");
-      const image = imgEl ? imgEl.src : "";
-
-      // URL
-      const url = window.location.pathname;
-
-      // Gem i knappen
-      btn.dataset.recipe = title;
-      btn.dataset.image = image;
-      btn.dataset.url = url;
-
-      console.log("Auto-detected recipe:", { title, image, url });
-    })();
-
-    /* -------------------------------------------------
-       ÅBN / LUK PANEL
-    ------------------------------------------------- */
+    // Open drawer
     openBtn.addEventListener("click", () => {
       drawer.classList.add("open");
       renderSavedList();
     });
 
+    // Close drawer
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
         drawer.classList.remove("open");
       });
     }
 
-    // Klik udenfor = luk
-    document.addEventListener("click", (e) => {
-      if (!drawer.classList.contains("open")) return;
+    // Save buttons on recipe pages
+    document.querySelectorAll(".save-recipe-btn").forEach((btn) => {
+      const title = btn.dataset.recipe;
+      const url = btn.dataset.url;
+      const image = btn.dataset.image;
 
-      const insideDrawer = drawer.contains(e.target);
-      const clickedHeart = openBtn.contains(e.target);
-
-      if (!insideDrawer && !clickedHeart) {
-        drawer.classList.remove("open");
-      }
-    });
-
-    /* -------------------------------------------------
-       GEM / FJERN OPSKRIFT
-    ------------------------------------------------- */
-    document.querySelectorAll(".save-recipe-btn").forEach(btn => {
       btn.addEventListener("click", () => {
-        const title = btn.dataset.recipe;
-        const url = btn.dataset.url;
-        const image = btn.dataset.image;
-
-        if (!title || !url) {
-          console.error("❌ Ingen recipe-data fundet på knappen");
-          return;
-        }
-
         let saved = getSaved();
-        const index = saved.findIndex(r => r.title === title);
+        const index = saved.findIndex((r) => r.title === title);
 
         if (index !== -1) {
-          saved.splice(index, 1);
+          saved.splice(index, 1); // remove
         } else {
-          saved.push({ title, url, image });
+          saved.push({ title, url, image }); // add
         }
 
         saveList(saved);
-        updateSaveButtons();
-
-        if (drawer.classList.contains("open")) {
-          renderSavedList();
-        }
+        renderSavedList();
       });
     });
 
-    // Initial button states
-    updateSaveButtons();
+  }, 200); // wait for include.js
 
-  }, 200); // vent på at include.js er færdig
 });
