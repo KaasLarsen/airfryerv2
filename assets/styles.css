@@ -718,3 +718,14 @@ body {
     font-size: 2.2rem;
   }
 }
+.theme-card a,
+.theme-card h3,
+.theme-meta,
+.theme-card {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.theme-card:hover h3 {
+  color: #c4491e; /* din røde accentfarve */
+}
