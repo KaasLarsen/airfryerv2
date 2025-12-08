@@ -814,3 +814,18 @@ body {
   color: white !important;
   border-color: #27ae60 !important;
 }
+.clear-saved-btn {
+  background: #ff3b3b;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  margin: 0 1.2rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.clear-saved-btn:hover {
+  background: #d73232;
+}
