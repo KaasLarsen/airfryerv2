@@ -234,6 +234,37 @@
       });
     });
   </script>
+  <!-- TOGGLE FAVORIT – PRÆCIS SOM FØR -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const btn = document.querySelector(".save-recipe-btn");
+      if (!btn) return;
+
+      const name = btn.getAttribute("data-recipe");
+      let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+
+      function update() {
+        if (saved.includes(name)) {
+          btn.textContent = "💚 Opskrift gemt (klik for at fjerne)";
+        } else {
+          btn.textContent = "❤️ Gem opskrift";
+        }
+      }
+
+      update();
+
+      btn.addEventListener("click", function () {
+        saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+        if (saved.includes(name)) {
+          saved = saved.filter(r => r !== name);
+        } else {
+          saved.push(name);
+        }
+        localStorage.setItem("savedRecipes", JSON.stringify(saved));
+        update();
+      });
+    });
+  </script>
 
 </body>
 </html>
