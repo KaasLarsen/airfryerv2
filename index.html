@@ -287,6 +287,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".theme-card");
+
+  fetch("/assets/recipe.json")
+    .then(res => res.json())
+    .then(recipes => {
+      cards.forEach(card => {
+        const category = card.dataset.category;
+
+        // Tæl hvor mange opskrifter der matcher kategorien
+        const count = recipes.filter(r =>
+          r.categories && r.categories.includes(category)
+        ).length;
+
+        card.querySelector(".recipe-count").textContent = count;
+      });
+    })
+    .catch(err => console.error("Fejl ved hentning af recipe.json", err));
+});
+</script>
 
 </body>
 </html>
