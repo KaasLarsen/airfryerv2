@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="header-inner">
 
-    <!-- LOGO – ALTID til roden -->
+    <!-- LOGO -->
     <div class="header-logo">
       <a href="/">Opskrift-Airfryer</a>
     </div>
@@ -13,10 +13,10 @@
       <a href="/madplaner.html">Madplaner</a>
     </nav>
 
-    <!-- ACTIONS (søge + ❤️ GEMTE OPSKRIFTER) -->
+    <!-- ACTION ICONS -->
     <div class="header-actions">
 
-      <!-- SØGE IKON -->
+      <!-- SØG IKON -->
       <button class="header-icon" id="openSearch">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round">
@@ -25,7 +25,7 @@
         </svg>
       </button>
 
-      <!-- ❤️ HEART ICON -->
+      <!-- ❤️ GEMTE OPSKRIFTER -->
       <button class="header-icon" id="openSaved">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round">
@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <!-- SØGEBAR DROPDOWN -->
+  <!-- SØGEBAR -->
   <div class="header-searchbar" id="searchBar">
     <form action="/search.html" method="get">
       <input type="search" name="q" placeholder="Søg efter opskrifter…" />
@@ -53,101 +53,117 @@
       <button id="closeSaved" class="close-btn">×</button>
     </div>
 
-    <div class="saved-drawer-header">
-  <h2>Gemte opskrifter</h2>
-  <button id="closeSaved" class="close-btn">×</button>
-</div>
+    <!-- SLET ALLE -->
+    <button id="clearSaved" class="clear-saved-btn">Slet alle</button>
 
-<!-- NY KNAP -->
-<button id="clearSaved" class="clear-saved-btn">Slet alle</button>
-
-    
     <div class="saved-drawer-list" id="savedList">
       <p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>
     </div>
 
   </div>
 </div>
+
 <script>
 (function () {
+
+  /*** ELEMENTER ***/
   const searchBtn  = document.getElementById("openSearch");
   const searchBar  = document.getElementById("searchBar");
   const openSaved  = document.getElementById("openSaved");
   const closeSaved = document.getElementById("closeSaved");
   const drawer     = document.querySelector(".saved-drawer");
   const listEl     = document.getElementById("savedList");
+  const clearBtn   = document.getElementById("clearSaved");
 
-  // 🔎 Toggle søgefelt
+
+  /*** SØGEFELT ***/
   if (searchBtn && searchBar) {
     searchBtn.addEventListener("click", () => {
-      const isVisible = searchBar.style.display === "block";
-      searchBar.style.display = isVisible ? "none" : "block";
+      searchBar.style.display = searchBar.style.display === "block" ? "none" : "block";
     });
   }
 
-  // Helpers til gemte opskrifter – VI BRUGER NØGLEN "savedRecipes"
-  function getSavedTitles() {
-    try {
-      return JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-    } catch (e) {
-      return [];
-    }
-  }
-function getSavedRaw() {
-  try {
-    return JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-  } catch (e) {
-    return [];
-  }
-}
 
+  /*** STORAGE HELPERS ***/
+  function getSavedRaw() {
+    try { return JSON.parse(localStorage.getItem("savedRecipes") || "[]"); }
+    catch (e) { return []; }
+  }
+
+  function saveAll(arr) {
+    localStorage.setItem("savedRecipes", JSON.stringify(arr));
+  }
+
+
+  /*** RENDER LISTE ***/
   function renderSavedList() {
-  if (!listEl) return;
+    if (!listEl) return;
 
-  const saved = getSavedRaw();
+    const saved = getSavedRaw();
 
-  if (!saved || saved.length === 0) {
-    listEl.innerHTML = '<p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>';
-    return;
+    if (saved.length === 0) {
+      listEl.innerHTML = '<p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>';
+      return;
+    }
+
+    listEl.innerHTML = saved.map(item => `
+      <div class="saved-item">
+        <a href="${item.url}">
+          <img src="${item.image}" alt="${item.title}">
+        </a>
+
+        <div class="saved-item-info">
+          <a class="saved-item-title" href="${item.url}">${item.title}</a>
+        </div>
+
+        <!-- ❌ FJERN ENKELT OPSKRIFT -->
+        <button class="remove-saved-item" data-title="${item.title}">✖</button>
+      </div>
+    `).join("");
+
+    // Klik på "✖"
+    document.querySelectorAll(".remove-saved-item").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const title = btn.dataset.title;
+        let saved = getSavedRaw();
+        saved = saved.filter(item => item.title !== title);
+        saveAll(saved);
+        renderSavedList();
+      });
+    });
   }
 
-  listEl.innerHTML = saved.map(item => `
-    <div class="saved-item">
-      <a href="${item.url}">
-        <img src="${item.image}" alt="${item.title}">
-      </a>
-      <div>
-        <a class="saved-item-title" href="${item.url}">${item.title}</a>
-      </div>
-    </div>
-  `).join("");
-}
 
-
-  // ❤️ Åbn / luk panel via knap
-  if (openSaved && drawer) {
+  /*** ÅBN / LUK PANEL ***/
+  if (openSaved) {
     openSaved.addEventListener("click", () => {
       drawer.classList.add("open");
       renderSavedList();
     });
   }
 
-  if (closeSaved && drawer) {
-    closeSaved.addEventListener("click", () => {
-      drawer.classList.remove("open");
+  if (closeSaved) {
+    closeSaved.addEventListener("click", () => drawer.classList.remove("open"));
+  }
+
+  /*** LUK VED KLIK UDENFOR ***/
+  document.addEventListener("click", (e) => {
+    if (!drawer.classList.contains("open")) return;
+    if (drawer.contains(e.target)) return;
+    if (openSaved.contains(e.target)) return;
+    drawer.classList.remove("open");
+  });
+
+
+  /*** SLET ALLE ***/
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      if (confirm("Slet alle gemte opskrifter?")) {
+        saveAll([]);
+        renderSavedList();
+      }
     });
   }
 
-  // Luk ved klik udenfor
-  document.addEventListener("click", (e) => {
-    if (!drawer || !drawer.classList.contains("open")) return;
-
-    const clickInsideDrawer = drawer.contains(e.target);
-    const clickOnHeart      = openSaved && openSaved.contains(e.target);
-
-    if (!clickInsideDrawer && !clickOnHeart) {
-      drawer.classList.remove("open");
-    }
-  });
 })();
 </script>
