@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
 
       const counts = {};
-      const recipes = data.recipes;
+      const recipes = data.recipes; // ← VIGTIGT!
 
       recipes.forEach(r => {
         r.categories.forEach(cat => {
