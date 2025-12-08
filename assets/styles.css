@@ -729,3 +729,83 @@ body {
 .theme-card:hover h3 {
   color: #c4491e; /* din røde accentfarve */
 }
+/* FAVORIT PANEL / DRAWER */
+.saved-drawer {
+  position: fixed;
+  top: 0;
+  right: -400px; /* skjult */
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.12);
+  transition: right 0.35s ease;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+.saved-drawer.open {
+  right: 0;
+}
+
+.saved-drawer-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+}
+
+.saved-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.saved-drawer-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.close-btn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 18px;
+  padding: 0;
+}
+
+.saved-drawer-list {
+  margin-top: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.saved-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.saved-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.saved-item-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+}
+
+.empty-text {
+  color: #777;
+  margin-top: 30px;
+  text-align: center;
+}
