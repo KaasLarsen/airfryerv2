@@ -829,3 +829,37 @@ body {
 .clear-saved-btn:hover {
   background: #d73232;
 }
+.modern-x {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.15s;
+}
+
+.modern-x:hover {
+  background: #f2f2f2;
+  border-color: #999;
+}
+
+.modern-x span {
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+}
+
+.modern-x span:first-child {
+  transform: rotate(45deg);
+}
+
+.modern-x span:last-child {
+  transform: rotate(-45deg);
+}
