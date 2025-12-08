@@ -86,25 +86,27 @@
   }
 
   function renderSavedList() {
-    if (!listEl) return;
+  if (!listEl) return;
 
-    const saved = getSavedTitles();
+  const saved = getSavedRaw();
 
-    if (!saved || saved.length === 0) {
-      listEl.innerHTML = '<p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>';
-      return;
-    }
-
-    listEl.innerHTML = saved
-      .map(title => `
-        <div class="saved-item">
-          <div>
-            <span class="saved-item-title">${title}</span>
-          </div>
-        </div>
-      `)
-      .join("");
+  if (!saved || saved.length === 0) {
+    listEl.innerHTML = '<p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>';
+    return;
   }
+
+  listEl.innerHTML = saved.map(item => `
+    <div class="saved-item">
+      <a href="${item.url}">
+        <img src="${item.image}" alt="${item.title}">
+      </a>
+      <div>
+        <a class="saved-item-title" href="${item.url}">${item.title}</a>
+      </div>
+    </div>
+  `).join("");
+}
+
 
   // ❤️ Åbn / luk panel via knap
   if (openSaved && drawer) {
