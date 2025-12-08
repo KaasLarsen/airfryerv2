@@ -46,3 +46,9 @@ function runInlineScripts(el) {
     oldScript.remove();
   });
 }
+if (file === "header") {
+  const script = document.createElement("script");
+  script.src = "/partials/saved.js";
+  script.defer = true;
+  document.body.appendChild(script);
+}
