@@ -287,27 +287,40 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+<script src="assets/include.js" defer></script>
+<script src="assets/header.js" defer></script>
+
+<!-- SÆT DETTE SCRIPT LIGE HER -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".theme-card");
-
-  fetch("/assets/recipe.json")
-    .then(res => res.json())
+  fetch("assets/data/recipes.json")
+    .then(r => r.json())
     .then(recipes => {
-      cards.forEach(card => {
-        const category = card.dataset.category;
 
-        // Tæl hvor mange opskrifter der matcher kategorien
-        const count = recipes.filter(r =>
-          r.categories && r.categories.includes(category)
-        ).length;
-
-        card.querySelector(".recipe-count").textContent = count;
+      // gruppér opskrifter efter kategori
+      const counts = {};
+      recipes.forEach(r => {
+        r.categories.forEach(cat => {
+          if (!counts[cat]) counts[cat] = 0;
+          counts[cat]++;
+        });
       });
+
+      // indsæt tal i tema-sektionen
+      document.querySelectorAll("[data-category]").forEach(el => {
+        const cat = el.dataset.category;
+        const count = counts[cat] || 0;
+        el.textContent = count + " opskrifter";
+      });
+
     })
-    .catch(err => console.error("Fejl ved hentning af recipe.json", err));
+    .catch(err => console.error("Fejl i recipes.json:", err));
 });
 </script>
+
+</body>
+</html>
+
 
 </body>
 </html>
