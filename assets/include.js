@@ -11,8 +11,9 @@ function loadPartials() {
   const includeElements = document.querySelectorAll("[data-include]");
 
   includeElements.forEach((el) => {
+    const file = el.getAttribute("data-include");
 
-    const file = el.getAttribute("data-include"); 
+    // Altid hent partials fra rodmappen
     const path = `/partials/${file}.html`;
 
     fetch(path)
@@ -23,17 +24,8 @@ function loadPartials() {
         return response.text();
       })
       .then(html => {
-
         el.innerHTML = html;
-        runInlineScripts(el);
-
-        // ⭐ Når vi loader HEADEREN → load header-events.js
-        if (file === "header") {
-          const script = document.createElement("script");
-          script.src = "/assets/header-events.js";
-          script.defer = true;
-          document.body.appendChild(script);
-        }
+        runInlineScripts(el); // vigtigt: kør <script> fra partials
       })
       .catch(err => {
         console.error(err);
