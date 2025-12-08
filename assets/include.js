@@ -25,17 +25,7 @@ function loadPartials() {
       })
       .then(html => {
         el.innerHTML = html;
-
-        // ⭐ AUTOLOAD saved.js når headeren er indlæst ⭐
-        if (file === "header") {
-          const script = document.createElement("script");
-           script.src = "/assets/saved.js";
-           // ← RETTET!
-          script.defer = true;
-          document.body.appendChild(script);
-        }
-
-        runInlineScripts(el);
+        runInlineScripts(el); // vigtigt: kør <script> fra partials
       })
       .catch(err => {
         console.error(err);
