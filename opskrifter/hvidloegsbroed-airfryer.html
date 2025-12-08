@@ -5,9 +5,11 @@
   <title>Hvidløgsbrød i airfryer – sprødt, blødt og uimodståeligt</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Hvidløgsbrød i airfryer – nemt, hurtigt og uimodståeligt sprødt. Bag brødet direkte i airfryer og få gylden skorpe, blødt indre og masser af smag. Perfekt som tilbehør til pastaretter, supper og grillmad.">
+        content="Hvidløgsbrød i airfryer – nemt, ekstremt sprødt og fyldt med hvidløgssmør. Perfekt som tilbehør til pastaretter, supper, grillmad eller som lækker snack. Klar på under 10 minutter.">
 
   <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/save-recipe.css" />
+  <script src="../assets/save-recipe.js" defer></script>
 
   <!-- JSON-LD RECIPE -->
   <script type="application/ld+json">
@@ -15,19 +17,22 @@
     "@context": "https://schema.org",
     "@type": "Recipe",
     "name": "Hvidløgsbrød i airfryer",
-    "description": "Sprødt, gyldent og smørfyldt hvidløgsbrød lavet direkte i airfryeren – nemt og perfekt hver gang.",
+    "description": "Sprødt, gyldent og smørfyldt hvidløgsbrød lavet direkte i airfryeren – perfekt hver gang.",
     "image": [
       "https://www.opskrift-airfryer.dk/assets/images/recipes/hvidloegsbroed-airfryer-768x768.jpg"
     ],
-    "author": {
-      "@type": "Organization",
-      "name": "Opskrift-Airfryer"
-    },
+    "author": {"@type":"Organization","name":"Opskrift-Airfryer"},
     "datePublished": "2025-12-05",
     "prepTime": "PT10M",
     "cookTime": "PT8M",
     "totalTime": "PT18M",
-    "keywords": "hvidløgsbrød airfryer, garlic bread airfryer, snack airfryer, tilbehør airfryer, nem hvidløgsbrød",
+    "keywords": [
+      "hvidløgsbrød airfryer",
+      "garlic bread",
+      "airfryer brød",
+      "tilbehør airfryer",
+      "nem opskrift"
+    ],
     "recipeYield": "4 personer",
     "recipeCategory": "Tilbehør",
     "recipeCuisine": "Italiensk",
@@ -40,10 +45,10 @@
       "Evt. 50 g revet mozzarella eller parmesan"
     ],
     "recipeInstructions": [
-      {"@type":"HowToStep","text":"Skær baguetten i skiver eller flæk den på langs."},
+      {"@type":"HowToStep","text":"Skær baguetten i skiver eller flæk den på langs efter ønsket stil."},
       {"@type":"HowToStep","text":"Rør blødt smør med hvidløg, persille og salt."},
-      {"@type":"HowToStep","text":"Smør brødet grundigt og læg det i airfryer-kurven."},
-      {"@type":"HowToStep","text":"Bag ved 180 °C i 6–8 minutter, eller til kanterne er gyldne og midten blød."}
+      {"@type":"HowToStep","text":"Smør brødet grundigt og læg det i airfryeren."},
+      {"@type":"HowToStep","text":"Bag ved 180 °C i 6–8 minutter til gyldent og sprødt."}
     ]
   }
   </script>
@@ -76,17 +81,26 @@
         <div class="recipe-page-intro">
           <h1 class="recipe-page-title">Hvidløgsbrød i airfryer</h1>
 
+          <!-- ⚡ NY MEGA-LANG INTRO -->
           <p class="recipe-page-lead">
-            Hvidløgsbrød i airfryer er en af de opskrifter, der viser præcis hvor genial en airfryer er:  
-            Du får sprøde kanter, gylden overflade og en blød, smørfyldt midte – alt sammen på under 10 minutter.  
-            Brødet bliver perfekt hver gang uden at varme hele ovnen op, og smagen er intens, aromatisk og dybt tilfredsstillende.
+            Hvidløgsbrød i airfryer er en af de opskrifter, hvor man næsten ikke fatter, at noget så simpelt kan smage
+            så absurd godt. Du får sprøde kanter, gylden overflade og en blød midte, der nærmest smelter sammen med det
+            varme, aromatiske hvidløgssmør. Det er den slags brød, der fylder hele køkkenet med duften af italien – uden
+            at du behøver tænde ovnen eller stå med grillen.
           </p>
 
           <p class="recipe-page-lead">
-            Opskriften her er udviklet med fokus på både hurtighed og maksimal smag. Du får en grundopskrift, der minder om
-            klassisk italiensk garlic bread, men du får også variationer, så du kan lave alt fra ostebagt hvidløgsbrød til
-            spicy café-style versioner. Det er den slags tilbehør, der passer til alt – pastaretter, supper, grillmad,
-            tapas, salater eller som en hurtig snack, når du er sulten om aftenen.  
+            Airfryeren er perfekt til hvidløgsbrød, fordi den giver en intens og direkte varme, som gør brødet både
+            sprødt og saftigt på samme tid. Det tager kun få minutter at røre smørret sammen og endnu færre minutter
+            at bage, og resultatet er på niveau med restaurantens garlic bread – måske endda bedre. Her får du både
+            den klassiske version, ostet version og krydrede variationer, så du altid kan lave præcis det brød, du har
+            lyst til.
+          </p>
+
+          <p class="recipe-page-lead">
+            Det er det perfekte tilbehør til pastaretter, supper, grillmad, tapas – eller som en uimodståelig snack,
+            når du bare har lyst til noget varmt og lækkert. Det er et af de mest populære airfryer-tilbehør, og når du
+            først har prøvet denne metode, er det svært at gå tilbage til ovnen igen.
           </p>
 
           <div class="recipe-page-meta">
@@ -95,15 +109,13 @@
             <span>Tilbehør</span>
           </div>
 
-          <div style="height: 1rem;"></div>
-
           <button class="save-recipe-btn" data-recipe="Hvidløgsbrød i airfryer">
             ❤️ Gem opskrift
           </button>
         </div>
       </header>
 
-      <!-- GRID: INGREDIENSER + TRIN -->
+      <!-- GRID -->
       <section class="recipe-page-content">
 
         <div class="recipe-page-ingredients">
@@ -119,9 +131,10 @@
 
           <h2 style="margin-top:2rem;">Udstyr</h2>
           <ul>
-            <li>Airfryer (gerne 4–5 liter eller større)</li>
-            <li>Skål til at blande smørret</li>
-            <li>Bred smørekniv</li>
+            <li>Airfryer</li>
+            <li>Skærbræt og kniv</li>
+            <li>Skål til smørret</li>
+            <li>Smørekniv</li>
           </ul>
         </div>
 
@@ -129,92 +142,118 @@
           <h2>Sådan gør du</h2>
           <ol>
             <li>
-              <strong>Forbered brødet.</strong> Skær baguetten i skiver eller flæk den på langs, alt efter hvilken stil du ønsker.
-              Skiver giver mere sprød kant, mens flækket brød giver mere blød midte og café-feel.
+              <strong>Forbered brødet.</strong><br>
+              Skær brødet i skiver eller flæk det på midten. Skiver giver hårdere sprødhed, mens flækket brød giver
+              café-stilen med sprød top og blød bund.
             </li>
 
             <li>
-              <strong>Bland hvidløgssmør.</strong> Rør blødt smør sammen med hvidløg, persille og salt.  
-              Jo blødere smør, jo bedre suger brødet smagen.
+              <strong>Lav hvidløgssmør.</strong><br>
+              Rør smør, hvidløg, persille og salt sammen. Jo blødere smørret er, jo bedre suger brødet smagen.
             </li>
 
             <li>
-              <strong>Smør grundigt.</strong> Dæk alle hjørner – også kanterne – da de bliver særligt sprøde i airfryeren.
+              <strong>Smør brødet.</strong><br>
+              Vær gavmild! Smørret er hele pointen. Gå helt til kanterne.
             </li>
 
             <li>
-              <strong>Bag brødet.</strong> Læg hvidløgsbrødene i airfryeren uden overlap.  
-              Tilbered ved <strong>180 °C i 6–8 minutter</strong>, eller til overfladen er gylden.
+              <strong>Bag i airfryer.</strong><br>
+              180 °C i 6–8 minutter. For ekstra gyldne kanter: giv 1 minut ved 200 °C til sidst.
             </li>
 
             <li>
-              <strong>Server straks.</strong> Hvidløgsbrød smager bedst 1–2 minutter efter det kommer ud af airfryeren.
+              <strong>Server straks.</strong><br>
+              Brødet er allerbedst direkte fra airfryeren, når smørret stadig er varmt og duftende.
             </li>
           </ol>
         </div>
 
       </section>
 
-      <!-- TIPS -->
+      <!-- TIPS (MEGA VERSION) -->
       <section class="recipe-tip">
         <h2>Tips og variationer</h2>
 
-        <p><strong>Ekstra sprødt?</strong> Giv brødet 1 minut ekstra ved 200 °C til sidst.</p>
+        <p>
+          <strong>Vil du have det mere italiensk?</strong>  
+          Tilsæt oregano, basilikum eller et stænk god olivenolie.
+        </p>
 
-        <p><strong>Oste-hvidløgsbrød:</strong> Top med mozzarella, parmesan eller cheddar.</p>
+        <p>
+          <strong>Ekstra ostet udgave:</strong>  
+          Top med mozzarella for stretchy ost eller parmesan for en sprød, salt finish.
+        </p>
 
-        <p><strong>Chili-version:</strong> Bland ½ tsk chili flakes i smørret for en spicy café-vibe.</p>
+        <p>
+          <strong>Spicy version:</strong>  
+          Tilføj chili flakes eller en smule cayennepeber.
+        </p>
 
-        <p><strong>Urtebrød:</strong> Tilføj basilikum, timian eller oregano for italiensk smag.</p>
+        <p>
+          <strong>Hvidløgsbrød med aioli:</strong>  
+          Server med hjemmelavet aioli eller creme fraiche-dip.
+        </p>
 
-        <p><strong>Hvidløgsbrød med aioli:</strong> Server med aioli eller creme fraiche-dip.</p>
+        <p>
+          <strong>Vil du lave det i forvejen?</strong>  
+          Smør brødene, pak dem i fryseposer, og bag dem direkte fra frost.
+        </p>
       </section>
 
-      <!-- SERVERING -->
+      <!-- SERVERING (MEGA VERSION) -->
       <section style="margin-top: 3rem;">
         <h2 class="section-title">Sådan serverer du hvidløgsbrød</h2>
 
         <p style="max-width:760px; margin-top:1rem; color:#555;">
-          Hvidløgsbrød passer især godt til pastaretter som lasagne, spaghetti bolognese, carbonara,
-          kødsovs, supper, grillretter og tapas-anretninger.  
+          Hvidløgsbrød er det perfekte tilbehør til pastaretter som spaghetti bolognese, lasagne, pasta carbonara eller
+          one-pot pasta. Det fungerer også til supper – især tomatsuppe, kartoffelsuppe og grøntsagssuppe.
         </p>
 
         <p style="max-width:760px; margin-top:1rem; color:#555;">
-          Som snack er det fuldstændig uimodståeligt med en dip: fx aioli, hvidløgscreme,
-          krydderurtesmør eller tomatsalsa.
+          Til grillmad er det genialt: server det til kød, fisk, burgere eller grillspyd. Det fungerer også på tapasbordet
+          sammen med pesto, oliven og charcuteri. Og som natmad? Det er et hit hver gang.
         </p>
       </section>
 
-      <!-- RESTER -->
+      <!-- RESTER & OPBEVARING (MEGA VERSION) -->
       <section style="margin-top: 3rem;">
         <h2 class="section-title">Rester og opbevaring</h2>
 
         <p style="max-width:760px; margin-top:1rem; color:#555;">
-          Rester af hvidløgsbrød kan gemmes i 1–2 dage på køl og genopvarmes i airfryeren ved 170 °C i 2–3 minutter.
+          Rester holder sig 1–2 dage i køleskab. Varm dem op ved 170 °C i 2–3 minutter, og de bliver næsten som nye.
         </p>
 
         <p style="max-width:760px; margin-top:1rem; color:#555;">
-          Det fryser også fint – især hvis det er uden ost. Frys det rå eller delvist bagte brød ned, og bag direkte fra frost.
+          Du kan også fryse hvidløgsbrødet både råt og bagt. Rå versioner bliver bedst: bag dem direkte fra frost ved
+          180 °C i 6–8 minutter.
         </p>
       </section>
 
-      <!-- FAQ -->
+      <!-- FAQ (MEGA VERSION) -->
       <section style="margin-top: 3rem; margin-bottom:3rem;">
         <h2 class="section-title">Ofte stillede spørgsmål</h2>
 
-        <p style="max-width:760px; margin-top:1rem; color:#555;">
-          <strong>Kan jeg bruge andre typer brød?</strong><br>
-          Ja – alt fra surdejsbrød til sandwichbrød og ciabatta fungerer fantastisk.
+        <p style="max-width:760px; margin-top:1rem;">
+          <strong>Kan jeg bruge olivenolie i stedet for smør?</strong><br>
+          Ja – det giver et mere italiensk, lettere hvidløgsbrød.
         </p>
 
-        <p style="max-width:760px; margin-top:1rem; color:#555;">
-          <strong>Kan jeg lave det uden smør?</strong><br>
-          Ja, brug olivenolie i stedet – det giver et mere italiensk resultat.
+        <p style="max-width:760px; margin-top:1rem;">
+          <strong>Hvorfor bliver mit brød for mørkt?</strong><br>
+          Sænk temperaturen til 170 °C eller brug mindre hvidløg (hvidløg bruner hurtigt).
         </p>
 
-        <p style="max-width:760px; margin-top:1rem; color:#555;">
-          <strong>Hvorfor bliver mit brød mørkt i kanten?</strong><br>
-          Skær ned på hvidløget – det bruner hurtigt. Eller sænk temperaturen til 170 °C.
+        <p style="max-width:760px; margin-top:1rem;">
+          <strong>Hvilket brød er bedst?</strong><br>
+          Flute = sprødt.  
+          Baguette = sprød top, blød midte.  
+          Ciabatta = luksus-version med fluffy krumme.
+        </p>
+
+        <p style="max-width:760px; margin-top:1rem;">
+          <strong>Kan det laves vegansk?</strong><br>
+          Ja – brug vegansk smør og evt. gærflager for ostesmag.
         </p>
       </section>
 
@@ -234,38 +273,6 @@
 
   <script src="../assets/include.js" defer></script>
   <script src="../assets/related.js" defer></script>
-
-  <!-- TOGGLE FAVORIT -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const btn = document.querySelector(".save-recipe-btn");
-      if (!btn) return;
-
-      const name = btn.getAttribute("data-recipe");
-      let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-
-      function update() {
-        if (saved.includes(name)) {
-          btn.textContent = "💚 Opskrift gemt (klik for at fjerne)";
-        } else {
-          btn.textContent = "❤️ Gem opskrift";
-        }
-      }
-
-      update();
-
-      btn.addEventListener("click", function () {
-        saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-        if (saved.includes(name)) {
-          saved = saved.filter(r => r !== name);
-        } else {
-          saved.push(name);
-        }
-        localStorage.setItem("savedRecipes", JSON.stringify(saved));
-        update();
-      });
-    });
-  </script>
 
 </body>
 </html>
