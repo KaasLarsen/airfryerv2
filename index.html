@@ -293,34 +293,32 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  function updateCounts() {
+  fetch("/assets/data/recipes.json")
+    .then(r => r.json())
+    .then(data => {
 
-    fetch("assets/data/recipes.json?cb=" + Date.now())
-      .then(r => r.json())
-      .then(data => {
+      const counts = {};
+      const recipes = data.recipes;
 
-        const counts = {};
-        const recipes = data.recipes;
-
-        recipes.forEach(r => {
-          r.categories.forEach(cat => {
-            counts[cat] = (counts[cat] || 0) + 1;
-          });
+      recipes.forEach(recipe => {
+        recipe.categories.forEach(cat => {
+          counts[cat] = (counts[cat] || 0) + 1;
         });
+      });
 
-        document.querySelectorAll("[data-category]").forEach(el => {
-          const cat = el.dataset.category;
-          el.textContent = (counts[cat] || 0) + " opskrifter";
-        });
-      })
-      .catch(err => console.error("FEJL i recipes.json →", err));
-  }
+      document.querySelectorAll("[data-category]").forEach(el => {
+        const cat = el.dataset.category;
+        const amount = counts[cat] || 0;
+        el.textContent = amount + " opskrifter";
+      });
 
-  // Vent til header/footer er loadet af include.js
-  setTimeout(updateCounts, 200);
+      console.log("✔ Kategorier opdateret:", counts);
 
+    })
+    .catch(err => console.error("FEJL:", err));
 });
 </script>
+
 
 </body>
 </html>
