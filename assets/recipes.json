@@ -1,34 +1,154 @@
-[
-  {
-    "slug": "flaeskestegssandwich",
-    "title": "Flæskestegssandwich",
-    "time": "15 min",
-    "category": "sandwich",
-    "tags": ["jul", "julefrokost", "sandwich"],
-    "image": "flaeskestegssandwich-768x768.jpg"
-  },
-  {
-    "slug": "vegetar-tarteletter",
-    "title": "Vegetar tarteletter",
-    "time": "45 min",
-    "category": "forret",
-    "tags": ["jul", "julefrokost", "forret"],
-    "image": "vegetar-tarteletter-768x768.jpg"
-  },
-  {
-    "slug": "fiskefilet",
-    "title": "Fiskefilet i airfryer",
-    "time": "20 min",
-    "category": "frokost",
-    "tags": ["jul", "julefrokost", "frokost"],
-    "image": "fiskefilet-768x768.jpg"
-  },
-  {
-    "slug": "frikadeller-juleudgave",
-    "title": "Julefrikadeller i airfryer",
-    "time": "31 min",
-    "category": "frokost",
-    "tags": ["jul", "julefrokost", "frokost"],
-    "image": "frikadeller-768x768.jpg"
-  }
-]
+{
+  "recipes": [
+    {
+      "slug": "pommes-frites",
+      "title": "Pommes frites i airfryer",
+      "category": "sproede-kartofler"
+    },
+    {
+      "slug": "kartoffelbaade",
+      "title": "Kartoffelbåde i airfryer",
+      "category": "sproede-kartofler"
+    },
+    {
+      "slug": "sprode-pomfritter-i-airfryer",
+      "title": "Sprøde pomfritter i airfryer",
+      "category": "sproede-kartofler"
+    },
+    {
+      "slug": "kyllinge-laar-airfryer",
+      "title": "Kyllingelår i airfryer",
+      "category": "kyllingefavoritter"
+    },
+    {
+      "slug": "kyllingebryst-i-airfryer",
+      "title": "Kyllingebryst i airfryer",
+      "category": "kyllingefavoritter"
+    },
+    {
+      "slug": "kyllingevinger-i-airfryer",
+      "title": "Kyllingevinger i airfryer",
+      "category": "kyllingefavoritter"
+    },
+    {
+      "slug": "chicken-nuggets-airfryer",
+      "title": "Chicken nuggets i airfryer",
+      "category": "kyllingefavoritter"
+    },
+    {
+      "slug": "saftig-kylling-i-airfryer",
+      "title": "Saftig kylling i airfryer",
+      "category": "kyllingefavoritter"
+    },
+    {
+      "slug": "fiskefilet",
+      "title": "Fiskefilet i airfryer",
+      "category": "nem-aftensmad"
+    },
+    {
+      "slug": "laks-i-airfryer",
+      "title": "Laks i airfryer",
+      "category": "nem-aftensmad"
+    },
+    {
+      "slug": "frikadeller-juleudgave",
+      "title": "Julefrikadeller i airfryer",
+      "category": "nem-aftensmad"
+    },
+    {
+      "slug": "flaeskesteg-i-airfryer",
+      "title": "Flæskesteg i airfryer",
+      "category": "nem-aftensmad"
+    },
+    {
+      "slug": "flaeskestegssandwich",
+      "title": "Flæskestegssandwich",
+      "category": "nem-aftensmad"
+    },
+    {
+      "slug": "grillede-groentsager-airfryer",
+      "title": "Grillede grøntsager i airfryer",
+      "category": "nem-aftensmad"
+    },
+    {
+      "slug": "ristede-groentsager-i-airfryer",
+      "title": "Ristede grøntsager i airfryer",
+      "category": "nem-aftensmad"
+    },
+    {
+      "slug": "hvidloegsbroed-airfryer",
+      "title": "Hvidløgsbrød i airfryer",
+      "category": "snacks-tilbehor"
+    },
+    {
+      "slug": "bacon-i-airfryer",
+      "title": "Bacon i airfryer",
+      "category": "snacks-tilbehor"
+    },
+    {
+      "slug": "chicken-nuggets-airfryer",
+      "title": "Chicken nuggets i airfryer",
+      "category": "snacks-tilbehor"
+    },
+    {
+      "slug": "grillede-groentsager-airfryer",
+      "title": "Grillede grøntsager i airfryer",
+      "category": "snacks-tilbehor"
+    },
+    {
+      "slug": "laks-i-airfryer",
+      "title": "Laks i airfryer",
+      "category": "sund-airfryer"
+    },
+    {
+      "slug": "kyllingebryst-i-airfryer",
+      "title": "Kyllingebryst i airfryer",
+      "category": "sund-airfryer"
+    },
+    {
+      "slug": "kyllingevinger-i-airfryer",
+      "title": "Kyllingevinger i airfryer",
+      "category": "sund-airfryer"
+    },
+    {
+      "slug": "grillede-groentsager-airfryer",
+      "title": "Grillede grøntsager i airfryer",
+      "category": "sund-airfryer"
+    },
+    {
+      "slug": "bacon-i-airfryer",
+      "title": "Bacon i airfryer",
+      "category": "morgenmad"
+    },
+    {
+      "slug": "hvidloegsbroed-airfryer",
+      "title": "Hvidløgsbrød i airfryer",
+      "category": "morgenmad"
+    },
+    {
+      "slug": "flaeskesteg-i-airfryer",
+      "title": "Flæskesteg i airfryer",
+      "category": "jul"
+    },
+    {
+      "slug": "flaeskestegssandwich",
+      "title": "Flæskestegssandwich",
+      "category": "jul"
+    },
+    {
+      "slug": "frikadeller-juleudgave",
+      "title": "Julefrikadeller i airfryer",
+      "category": "jul"
+    },
+    {
+      "slug": "vegetar-tarteletter",
+      "title": "Vegetar tarteletter",
+      "category": "jul"
+    },
+    {
+      "slug": "fiskefilet",
+      "title": "Fiskefilet i airfryer",
+      "category": "jul"
+    }
+  ]
+}
