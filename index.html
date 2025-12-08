@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  fetch("/assets/data/recipes.json")
+  fetch("/assets/recipes.json")   /* ← KORREKT STI */
     .then(r => r.json())
     .then(data => {
 
