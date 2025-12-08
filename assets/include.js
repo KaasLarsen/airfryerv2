@@ -11,10 +11,8 @@ function loadPartials() {
   const includeElements = document.querySelectorAll("[data-include]");
 
   includeElements.forEach((el) => {
-    const file = el.getAttribute("data-include");
-
-    // Altid hent partials fra rodmappen
-    const path = `/partials/${file}.html`;
+    const fileName = el.getAttribute("data-include"); // ← fix: fileName bruges nu
+    const path = `/partials/${fileName}.html`;
 
     fetch(path)
       .then(response => {
@@ -25,11 +23,20 @@ function loadPartials() {
       })
       .then(html => {
         el.innerHTML = html;
-        runInlineScripts(el); // vigtigt: kør <script> fra partials
+
+        // ⭐ Load saved.js når headeren er indlæst
+        if (fileName === "header") {
+          const script = document.createElement("script");
+          script.src = "/assets/saved.js";
+          script.defer = true;
+          document.body.appendChild(script);
+        }
+
+        runInlineScripts(el);
       })
       .catch(err => {
         console.error(err);
-        el.innerHTML = `<!-- FEJL: kunne ikke indlæse ${file}.html -->`;
+        el.innerHTML = `<!-- FEJL: kunne ikke indlæse ${fileName}.html -->`;
       });
   });
 }
@@ -45,10 +52,4 @@ function runInlineScripts(el) {
     document.body.appendChild(newScript);
     oldScript.remove();
   });
-}
-if (file === "header") {
-  const script = document.createElement("script");
-  script.src = "/partials/saved.js";
-  script.defer = true;
-  document.body.appendChild(script);
 }
