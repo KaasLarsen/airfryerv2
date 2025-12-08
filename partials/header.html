@@ -1,22 +1,19 @@
 <header class="site-header">
   <div class="header-inner">
 
-    <!-- LOGO -->
     <div class="header-logo">
       <a href="/">Opskrift-Airfryer</a>
     </div>
 
-    <!-- MENU -->
     <nav class="header-nav">
       <a href="/">Forside</a>
       <a href="/opskrifter.html">Opskrifter</a>
       <a href="/madplaner.html">Madplaner</a>
     </nav>
 
-    <!-- ACTION ICONS -->
     <div class="header-actions">
 
-      <!-- SØG IKON -->
+      <!-- Søg -->
       <button class="header-icon" id="openSearch">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round">
@@ -25,7 +22,7 @@
         </svg>
       </button>
 
-      <!-- ❤️ GEMTE OPSKRIFTER -->
+      <!-- Favoritter -->
       <button class="header-icon" id="openSaved">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round">
@@ -36,7 +33,7 @@
     </div>
   </div>
 
-  <!-- SØGEBAR -->
+  <!-- SØG -->
   <div class="header-searchbar" id="searchBar">
     <form action="/search.html" method="get">
       <input type="search" name="q" placeholder="Søg efter opskrifter…" />
@@ -53,9 +50,6 @@
       <button id="closeSaved" class="close-btn">×</button>
     </div>
 
-    <!-- SLET ALLE -->
-    <button id="clearSaved" class="clear-saved-btn">Slet alle</button>
-
     <div class="saved-drawer-list" id="savedList">
       <p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>
     </div>
@@ -66,104 +60,94 @@
 <script>
 (function () {
 
-  /*** ELEMENTER ***/
   const searchBtn  = document.getElementById("openSearch");
   const searchBar  = document.getElementById("searchBar");
   const openSaved  = document.getElementById("openSaved");
   const closeSaved = document.getElementById("closeSaved");
   const drawer     = document.querySelector(".saved-drawer");
   const listEl     = document.getElementById("savedList");
-  const clearBtn   = document.getElementById("clearSaved");
 
-
-  /*** SØGEFELT ***/
-  if (searchBtn && searchBar) {
+  /* Toggle søg */
+  if (searchBtn) {
     searchBtn.addEventListener("click", () => {
-      searchBar.style.display = searchBar.style.display === "block" ? "none" : "block";
+      searchBar.style.display =
+        searchBar.style.display === "block" ? "none" : "block";
     });
   }
 
-
-  /*** STORAGE HELPERS ***/
-  function getSavedRaw() {
+  /* Helpers */
+  function getSaved() {
     try { return JSON.parse(localStorage.getItem("savedRecipes") || "[]"); }
-    catch (e) { return []; }
+    catch { return []; }
   }
 
   function saveAll(arr) {
     localStorage.setItem("savedRecipes", JSON.stringify(arr));
   }
 
-
-  /*** RENDER LISTE ***/
+  /* Render liste */
   function renderSavedList() {
     if (!listEl) return;
 
-    const saved = getSavedRaw();
+    let saved = getSaved().reverse(); // nyeste først
 
     if (saved.length === 0) {
-      listEl.innerHTML = '<p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>';
+      listEl.innerHTML =
+        '<p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>';
       return;
     }
 
-    listEl.innerHTML = saved.map(item => `
+    listEl.innerHTML = saved
+      .map(
+        (item) => `
       <div class="saved-item">
         <a href="${item.url}">
           <img src="${item.image}" alt="${item.title}">
         </a>
 
         <div class="saved-item-info">
-          <a class="saved-item-title" href="${item.url}">${item.title}</a>
+          <a class="saved-item-title" href="${item.url}">
+            ${item.title}
+          </a>
         </div>
 
-        <!-- ❌ FJERN ENKELT OPSKRIFT -->
-        <button class="remove-saved-item" data-title="${item.title}">✖</button>
+        <button class="remove-saved-item modern-x" data-title="${item.title}">
+          <span></span><span></span>
+        </button>
       </div>
-    `).join("");
+    `
+      )
+      .join("");
 
-    // Klik på "✖"
-    document.querySelectorAll(".remove-saved-item").forEach(btn => {
+    // Slet én opskrift
+    document.querySelectorAll(".remove-saved-item").forEach((btn) => {
       btn.addEventListener("click", () => {
         const title = btn.dataset.title;
-        let saved = getSavedRaw();
-        saved = saved.filter(item => item.title !== title);
+        let saved = getSaved().filter((r) => r.title !== title);
         saveAll(saved);
         renderSavedList();
       });
     });
   }
 
+  /* Åbn panel */
+  openSaved.addEventListener("click", () => {
+    drawer.classList.add("open");
+    renderSavedList();
+  });
 
-  /*** ÅBN / LUK PANEL ***/
-  if (openSaved) {
-    openSaved.addEventListener("click", () => {
-      drawer.classList.add("open");
-      renderSavedList();
-    });
-  }
+  /* Luk panel */
+  closeSaved.addEventListener("click", () => {
+    drawer.classList.remove("open");
+  });
 
-  if (closeSaved) {
-    closeSaved.addEventListener("click", () => drawer.classList.remove("open"));
-  }
-
-  /*** LUK VED KLIK UDENFOR ***/
+  /* Klik udenfor = luk */
   document.addEventListener("click", (e) => {
     if (!drawer.classList.contains("open")) return;
     if (drawer.contains(e.target)) return;
     if (openSaved.contains(e.target)) return;
     drawer.classList.remove("open");
   });
-
-
-  /*** SLET ALLE ***/
-  if (clearBtn) {
-    clearBtn.addEventListener("click", () => {
-      if (confirm("Slet alle gemte opskrifter?")) {
-        saveAll([]);
-        renderSavedList();
-      }
-    });
-  }
 
 })();
 </script>
