@@ -5,9 +5,11 @@
   <title>Grillede grøntsager i airfryer – nemt, sundt og fyldt med smag</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Grillede grøntsager i airfryer – nem, sund og smagfuld tilbehørsopskrift. perfekt til aftensmad, grillretter og sunde måltider. klar på 12–15 min.">
+        content="Grillede grøntsager i airfryer – sundt, nemt og fyldt med smag. Perfekt som tilbehør til aftensmad, grillretter, bowls og vegetariske måltider. Færdigt på 12–15 min.">
 
   <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/save-recipe.css" />
+  <script src="../assets/save-recipe.js" defer></script>
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -15,16 +17,16 @@
     "@context": "https://schema.org",
     "@type": "Recipe",
     "name": "Grillede grøntsager i airfryer",
-    "description": "Nem og sund opskrift på grillede grøntsager i airfryer. Perfekt til aftensmad, grillmenuer, bowl-retter og sunde hverdagsmåltider.",
+    "description": "Nem, farverig og sund opskrift på grillede grøntsager i airfryer – sprøde, møre og fulde af smag.",
     "image": [
       "https://www.opskrift-airfryer.dk/assets/images/recipes/grillede-groentsager-airfryer-768x768.jpg"
     ],
-    "author": { "@type": "Organization", "name": "Opskrift-Airfryer" },
+    "author": {"@type":"Organization","name":"Opskrift-Airfryer"},
     "datePublished": "2025-12-05",
     "prepTime": "PT10M",
     "cookTime": "PT15M",
     "totalTime": "PT25M",
-    "keywords": "grillede grøntsager i airfryer, airfryer grøntsager, sunde grøntsager airfryer, tilbehør airfryer, vegetar airfryer",
+    "keywords": "grillede grøntsager airfryer, sunde grøntsager, airfryer tilbehør, grøntsager airfryer opskrift, vegetar airfryer",
     "recipeYield": "4 personer",
     "recipeCategory": "Tilbehør",
     "recipeCuisine": "International",
@@ -39,20 +41,13 @@
       "1 tsk tørret oregano eller timian",
       "½ tsk friskkværnet peber",
       "1 tsk hvidløgspulver (valgfrit)"
-    ],
-    "recipeInstructions": [
-      { "@type": "HowToStep", "text": "Skær peberfrugter i brede strimler, squash i halve skiver og rødløg i både. Lad cherrytomaterne være hele." },
-      { "@type": "HowToStep", "text": "Vend alle grøntsagerne i olivenolie, salt, peber, tørrede krydderier og evt. hvidløgspulver." },
-      { "@type": "HowToStep", "text": "Forvarm airfryeren til 190 °C. Læg grøntsagerne i kurven i ét jævnt lag for at sikre grill-effekt." },
-      { "@type": "HowToStep", "text": "Tilbered i 12–15 minutter og ryst kurven halvvejs. Grøntsagerne skal have en let grillkant og stadig være saftige." },
-      { "@type": "HowToStep", "text": "Server straks eller vend med lidt citronsaft eller friskhakkede krydderurter." }
     ]
   }
   </script>
 
   <script>
     window.recipeSlug = "grillede-groentsager-airfryer";
-    window.recipeTags = ["tilbehoer", "grill", "sundt", "vegetar", "airfryer"];
+    window.recipeTags = ["tilbehør", "sundt", "vegetar", "airfryer", "grill"];
   </script>
 </head>
 
@@ -62,175 +57,191 @@
 <div data-include="header"></div>
 
 <main>
-  <article class="recipe-page">
+<article class="recipe-page">
 
-    <!-- HEADER -->
-    <header class="recipe-page-header">
-      <div class="recipe-page-image">
-        <img
-          src="../assets/images/recipes/grillede-groentsager-airfryer-768x768.jpg"
-          alt="Grillede grøntsager i airfryer"
-          class="recipe-main-img"
-        />
-      </div>
+<header class="recipe-page-header">
+  <div class="recipe-page-image">
+    <img
+      src="../assets/images/recipes/grillede-groentsager-airfryer-768x768.jpg"
+      alt="Grillede grøntsager i airfryer"
+      class="recipe-main-img"
+    />
+  </div>
 
-      <div class="recipe-page-intro">
-        <h1 class="recipe-page-title">Grillede grøntsager i airfryer</h1>
+  <div class="recipe-page-intro">
+    <h1 class="recipe-page-title">Grillede grøntsager i airfryer</h1>
 
-        <p class="recipe-page-lead">
-          Grillede grøntsager i airfryer er noget af det nemmeste, sundeste og mest smagfulde tilbehør, du kan lave.
-          Airfryeren giver grøntsagerne samme grillede overflade og søde karamelliserede smag, som man normalt kun får
-          fra grillen – men helt uden ventetid, åben flamme eller store mængder olie.
-        </p>
+    <!-- 🔥 NY, LANG INTRO -->
+    <p class="recipe-page-lead">
+      Grillede grøntsager i airfryer er en af de nemmeste og mest alsidige retter, du kan lave. Airfryeren giver en
+      hurtig og effektiv varme, der får grøntsagerne til at karamellisere, få grillkanter og udvikle en dyb, naturlig
+      sødme – helt uden grill, røg eller unødvendige mængder olie. Det er ren hverdagsluksus på få minutter.
+    </p>
 
-        <p class="recipe-page-lead">
-          Denne opskrift er perfekt som tilbehør til kød, fisk, pasta, risretter, bowls, wraps eller bare som et
-          sundt mellemmåltid. Du kan bruge næsten alle typer grøntsager, og tilberedningstiden gør det ideelt til travle
-          hverdage. Resultatet er farverigt, mørt, let sprødt og fyldt med smag.
-        </p>
+    <p class="recipe-page-lead">
+      Denne opskrift er perfekt som sundt tilbehør til stort set alle retter: kød, fisk, kylling, frikadeller,
+      pastaretter, risretter, bowls, wraps eller salater. Du kan også servere dem som et vegetarisk hovedmåltid sammen
+      med quinoa, hummus eller ristede kikærter. Grøntsagerne får en intens smag og en sprød-mør konsistens, som man
+      ellers kun får fra en glohed grill – men uden besværet.
+    </p>
 
-        <div class="recipe-page-meta">
-          <span>25 min</span>
-          <span>4 personer</span>
-          <span>Tilbehør</span>
-        </div>
+    <p class="recipe-page-lead">
+      Det bedste er, at du kan bruge præcis de grøntsager, du har liggende. Airfryer-metoden er både hurtig, nem,
+      fleksibel og perfekt, når du vil spise sundt uden at gå på kompromis med smagen. Resultatet er farverigt,
+      aromatisk og fuldstændigt uimodståeligt.
+    </p>
 
-        <button class="save-recipe-btn" data-recipe="Grillede grøntsager i airfryer">
-          ❤️ Gem opskrift
-        </button>
-      </div>
-    </header>
+    <div class="recipe-page-meta">
+      <span>25 min</span>
+      <span>4 personer</span>
+      <span>Tilbehør</span>
+    </div>
 
-    <!-- CONTENT -->
-    <section class="recipe-page-content">
-      <div class="recipe-page-ingredients">
-        <h2>Ingredienser</h2>
+    <button class="save-recipe-btn" data-recipe="Grillede grøntsager i airfryer">
+      ❤️ Gem opskrift
+    </button>
+  </div>
+</header>
 
-        <ul>
-          <li>1 rød peberfrugt</li>
-          <li>1 gul peberfrugt</li>
-          <li>1 squash</li>
-          <li>1 rødløg</li>
-          <li>200 g cherrytomater</li>
-          <li>2 spsk olivenolie</li>
-          <li>1 tsk groft salt</li>
-          <li>1 tsk tørret oregano eller timian</li>
-          <li>½ tsk friskkværnet peber</li>
-          <li>1 tsk hvidløgspulver (valgfrit)</li>
-        </ul>
+<section class="recipe-page-content">
 
-        <h2 style="margin-top:2rem;">Udstyr</h2>
-        <ul>
-          <li>Airfryer (5 liter eller større anbefales)</li>
-          <li>Skærebræt og skarp kniv</li>
-          <li>Stor skål til marinering</li>
-        </ul>
-      </div>
+  <div class="recipe-page-ingredients">
+    <h2>Ingredienser</h2>
+    <ul>
+      <li>1 rød peberfrugt</li>
+      <li>1 gul peberfrugt</li>
+      <li>1 squash</li>
+      <li>1 rødløg</li>
+      <li>200 g cherrytomater</li>
+      <li>2 spsk olivenolie</li>
+      <li>1 tsk groft salt</li>
+      <li>1 tsk tørret oregano eller timian</li>
+      <li>½ tsk friskkværnet peber</li>
+      <li>1 tsk hvidløgspulver (valgfrit)</li>
+    </ul>
 
-      <div class="recipe-page-steps">
-        <h2>Sådan gør du</h2>
+    <h2 style="margin-top:2rem;">Udstyr</h2>
+    <ul>
+      <li>Airfryer (5 liter eller større)</li>
+      <li>Skærebræt og kniv</li>
+      <li>Skål til marinering</li>
+    </ul>
+  </div>
 
-        <ol>
-          <li>
-            <strong>Forbered grøntsagerne.</strong>
-            Skær peberfrugter i strimler, squash i halve skiver og rødløg i både. Lad tomaterne være hele,
-            da de giver sødme og saft under tilberedningen.
-          </li>
+  <div class="recipe-page-steps">
+    <h2>Sådan gør du</h2>
 
-          <li>
-            <strong>Marinér.</strong>
-            Vend alle grøntsagerne i olivenolie, salt, peber og krydderier. Sørg for, at alt er dækket jævnt –
-            olie hjælper med at skabe grilleffekt i airfryeren.
-          </li>
+    <ol>
+      <li>
+        <strong>Forbered grøntsagerne.</strong><br>
+        Skær peberfrugterne i strimler, squash i halve skiver og rødløg i både. Hold tomaterne hele – de sprænger let
+        og giver saft, der gør retten mere intens.
+      </li>
 
-          <li>
-            <strong>Forvarm airfryeren.</strong>
-            Sæt den på 190 °C. En varm kurv giver hurtigere grillmærker og bedre karamellisering.
-          </li>
+      <li>
+        <strong>Marinér.</strong><br>
+        Vend alle grøntsagerne i olivenolie, salt, peber, oregano og hvidløgspulver. Sørg for, at alt er jævnt dækket,
+        da oliens tynde lag hjælper med at skabe grill-effekt.
+      </li>
 
-          <li>
-            <strong>Tilberedning.</strong>
-            Læg grøntsagerne i ét lag. Tilbered i 12–15 minutter og ryst kurven halvvejs.
-            De skal være let brunede, men stadig saftige i midten.
-          </li>
+      <li>
+        <strong>Forvarm airfryeren.</strong><br>
+        190 °C giver den bedste karamellisering. En varm kurv betyder flottere grillkanter.
+      </li>
 
-          <li>
-            <strong>Server.</strong>
-            Spis dem, som de er – eller vend med frisk citronsaft, chili flakes, parmesan eller friske krydderurter.
-          </li>
-        </ol>
-      </div>
-    </section>
+      <li>
+        <strong>Tilbered grøntsagerne.</strong><br>
+        Læg dem i ét lag for at få grill-effekten. Tilbered 12–15 min og ryst halvvejs. De skal være let brunede,
+        men stadig saftige i midten.
+      </li>
 
-    <!-- TIPS -->
-    <section class="recipe-tip">
-      <h2>Tips og variationer</h2>
-      <p>
-        Du kan bruge stort set alle grøntsager, du har liggende: aubergine, grønne bønner, gulerødder,
-        broccoli, blomkål, asparges eller svampe. Skær dem i nogenlunde ens størrelse, så de tilberedes
-        jævnt.
-      </p>
+      <li>
+        <strong>Server.</strong><br>
+        Spis dem, som de er – eller løft retten med citronsaft, parmesan, chili flakes eller friske krydderurter.
+      </li>
+    </ol>
+  </div>
+</section>
 
-      <p>
-        For ekstra grillsmag kan du tilføje lidt røget paprika eller færdig BBQ-krydderi.
-        Vil du gøre det mere mættende, kan du vende grøntsagerne med feta, mozzarella eller ristede kikærter.
-      </p>
+<!-- TIPS (dobbelt længde) -->
+<section class="recipe-tip">
+  <h2>Tips og variationer</h2>
 
-      <p>
-        Skal retten være luksus, så dryp en god balsamico glaze over lige før servering.
-      </p>
-    </section>
+  <p>
+    Du kan bruge næsten alle grøntsager: aubergine, broccoli, blomkål, grønne bønner, asparges, gulerødder eller
+    svampe. Ens størrelse = jævn tilberedning.
+  </p>
 
-    <!-- SERVERING -->
-    <section style="margin-top: 3rem;">
-      <h2 class="section-title">Sådan serverer du grillede grøntsager</h2>
+  <p>
+    Vil du give grøntsagerne en smoky grillsmag, så tilsæt lidt røget paprika eller BBQ-krydderi. Elsker du varme
+    middelhavstoner, så brug timian, oregano, basilikum og en god ekstra jomfruolivenolie. Asiatiske bowls får et løft
+    med sesamolie, soya og hvidløg.
+  </p>
 
-      <p style="max-width:760px; margin-top:1rem;">
-        Grillede grøntsager passer perfekt til alt fra grillretter til ovnretter og airfryer-hovedretter.
-        Brug dem som tilbehør til kylling, laks, frikadeller, flæskesteg, koteletter eller som topping på pasta,
-        ris eller couscous. De er også fantastiske i wraps, pitabrød og bowls.
-      </p>
+  <p>
+    Når du vil gøre retten luksus, så vend grøntsagerne med balsamico glaze, feta, mozzarella eller ristede nødder.
+  </p>
+</section>
 
-      <p style="max-width:760px; margin-top:1rem;">
-        Til en vegetarisk hovedret kan du kombinere dem med hummus, quinoa og sprøde kikærter.
-      </p>
-    </section>
+<!-- SERVERING (dobbelt længde) -->
+<section style="margin-top:3rem;">
+  <h2 class="section-title">Sådan serverer du grillede grøntsager</h2>
 
-    <!-- RESTER -->
-    <section style="margin-top: 3rem;">
-      <h2 class="section-title">Rester og opbevaring</h2>
+  <p style="max-width:760px; margin-top:1rem;">
+    Grillede grøntsager passer til ALT. Brug dem som tilbehør til kylling, fisk, frikadeller, koteletter, bøffer,
+    flæskesteg, pulled pork eller vegetariske retter. De er fantastiske i pastasalater, omeletter, wraps, pitabrød og
+    risbowls. De fungerer også som en sund snack direkte fra airfryeren.
+  </p>
 
-      <p style="max-width:760px; margin-top:1rem;">
-        Grillede grøntsager kan holde sig 3–4 dage i køleskabet i lufttæt beholder. De er gode kolde i salater
-        eller kan lunes i airfryeren ved 170 °C i 3–4 minutter.  
-      </p>
+  <p style="max-width:760px; margin-top:1rem;">
+    Til vegetariske hovedmåltider kan du kombinere dem med quinoa, bulgur, couscous, risnudler eller kikærter. Vil du
+    lave en hurtig bowl, så tilsæt hummus, avocado, tahindressing eller pestodressing.
+  </p>
+</section>
 
-      <p style="max-width:760px; margin-top:1rem;">
-        De kan også fryses, men bliver blødere. Perfekt til lasagne, wraps eller omeletter.
-      </p>
-    </section>
+<!-- RESTER -->
+<section style="margin-top:3rem;">
+  <h2 class="section-title">Rester og opbevaring</h2>
 
-    <!-- FAQ -->
-    <section style="margin-top: 3rem; margin-bottom: 3rem;">
-      <h2 class="section-title">Ofte stillede spørgsmål</h2>
+  <p style="max-width:760px; margin-top:1rem;">
+    Grillede grøntsager holder 3–4 dage i køleskab og kan spises kolde i salater eller lunes ved 170 °C i airfryeren
+    i 3–4 minutter. De bliver ikke slatne, men får igen en flot sprødhed.
+  </p>
 
-      <p style="max-width:760px; margin-top:1rem;">
-        <strong>Skal jeg bruge olie?</strong><br>
-        Ja, lidt olie er vigtigt for at få grilloverflade og undgå, at grøntsagerne tørrer ud.
-      </p>
+  <p style="max-width:760px; margin-top:1rem;">
+    Du kan også fryse dem – de bliver blødere, men er perfekte til lasagne, pizza, wraps og omeletter.
+  </p>
+</section>
 
-      <p style="max-width:760px; margin-top:1rem;">
-        <strong>Kan jeg lave dem uden at forvarme?</strong><br>
-        Ja, men grill-effekten bliver bedre, når airfryeren er varm.
-      </p>
+<!-- FAQ -->
+<section style="margin-top:3rem; margin-bottom:3rem;">
+  <h2 class="section-title">Ofte stillede spørgsmål</h2>
 
-      <p style="max-width:760px; margin-top:1rem;">
-        <strong>Kan jeg lave store portioner?</strong><br>
-        Ja, men tilbered i flere hold. Overfyldt kurv = dampede grøntsager i stedet for grillede.
-      </p>
-    </section>
+  <p style="max-width:760px; margin-top:1rem;">
+    <strong>Skal jeg bruge olie?</strong><br>
+    Ja – et tyndt lag olie giver sprødhed og grillfarve. Uden olie bliver grøntsagerne mere dampede.
+  </p>
 
-  </article>
+  <p style="max-width:760px; margin-top:1rem;">
+    <strong>Kan jeg lave store portioner?</strong><br>
+    Ja, men tilbered i flere hold. Overfyldt kurv = ingen grillkant, fordi grøntsagerne damper hinanden.
+  </p>
+
+  <p style="max-width:760px; margin-top:1rem;">
+    <strong>Virker opskriften i alle airfryers?</strong><br>
+    Ja. Kurvmodeller giver mest grill-effekt, men skuffe-airfryers fungerer også fint.
+  </p>
+</section>
+
+<!-- RELATERET -->
+<section class="section-category" style="margin-top:3rem;">
+  <div class="category-header">
+    <h2 class="section-title">Relaterede opskrifter</h2>
+  </div>
+  <div class="category-grid" id="related-container"></div>
+</section>
+
+</article>
 </main>
 
 <div data-include="footer"></div>
@@ -238,37 +249,6 @@
 
 <script src="../assets/include.js" defer></script>
 <script src="../assets/related.js" defer></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector(".save-recipe-btn");
-  if (!btn) return;
-
-  const name = btn.getAttribute("data-recipe");
-  let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-
-  function update() {
-    btn.textContent = saved.includes(name)
-      ? "💚 Opskrift gemt (klik for at fjerne)"
-      : "❤️ Gem opskrift";
-  }
-
-  update();
-
-  btn.addEventListener("click", () => {
-    saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-
-    if (saved.includes(name)) {
-      saved = saved.filter(r => r !== name);
-    } else {
-      saved.push(name);
-    }
-
-    localStorage.setItem("savedRecipes", JSON.stringify(saved));
-    update();
-  });
-});
-</script>
 
 </body>
 </html>
