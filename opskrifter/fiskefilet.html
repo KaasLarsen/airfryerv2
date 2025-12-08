@@ -219,22 +219,6 @@
   <script src="../assets/include.js" defer></script>
   <script src="../assets/related.js" defer></script>
 
-  <!-- TOGGLE FAVORIT -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const btn = document.querySelector(".save-recipe-btn");
-      if (!btn) return;
-
-      const name = btn.getAttribute("data-recipe");
-      let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-
-      function update() {
-        if (saved.includes(name)) {
-          btn.textContent = "💚 Opskrift gemt (klik for at fjerne)";
-        } else {
-          btn.textContent = "❤️ Gem opskrift";
-        }
-      }
 
       update();
 
