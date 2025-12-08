@@ -49,50 +49,51 @@
 
   <div class="popular-grid">
 
-    <a href="/tema/sproede-kartofler.html" class="theme-card" data-category="sproede-kartofler">
+    <div class="theme-card">
       <img src="assets/images/tema/sproede-kartofler-768x768.jpg" class="theme-img-round" alt="Sprøde kartofler">
       <h3>Sprøde kartofler</h3>
-      <p class="theme-meta" data-category="sproede-kartofler"></p>
-    </a>
+      <p class="theme-meta" data-category="sproede-kartofler">0 opskrifter</p>
+    </div>
 
-    <a href="/tema/kyllingefavoritter.html" class="theme-card" data-category="kyllingefavoritter">
+    <div class="theme-card">
       <img src="assets/images/tema/kyllingefavoritter-768x768.jpg" class="theme-img-round" alt="Kyllingefavoritter">
       <h3>Kyllingefavoritter</h3>
-      <p class="theme-meta" data-category="kyllingefavoritter"></p>
-    </a>
+      <p class="theme-meta" data-category="kyllingefavoritter">0 opskrifter</p>
+    </div>
 
-    <a href="/tema/nem-aftensmad.html" class="theme-card" data-category="nem-aftensmad">
+    <div class="theme-card">
       <img src="assets/images/tema/nem-aftensmad-768x768.jpg" class="theme-img-round" alt="Nem aftensmad">
       <h3>Nem aftensmad</h3>
-      <p class="theme-meta" data-category="nem-aftensmad"></p>
-    </a>
+      <p class="theme-meta" data-category="nem-aftensmad">0 opskrifter</p>
+    </div>
 
-    <a href="/tema/snacks-tilbehor.html" class="theme-card" data-category="snacks-tilbehor">
-      <img src="assets/images/tema/snacks-tilbehor-768x768.jpg" class="theme-img-round" alt="Snacks og tilbehør">
+    <div class="theme-card">
+      <img src="assets/images/tema/snacks-tilbehor-768x768.jpg" class="theme-img-round" alt="Snacks & tilbehør">
       <h3>Snacks & tilbehør</h3>
-      <p class="theme-meta" data-category="snacks-tilbehor"></p>
-    </a>
+      <p class="theme-meta" data-category="snacks-tilbehor">0 opskrifter</p>
+    </div>
 
-    <a href="/tema/sundere-airfryer.html" class="theme-card" data-category="sundere-airfryer">
+    <div class="theme-card">
       <img src="assets/images/tema/sund-airfryer-768x768.jpg" class="theme-img-round" alt="Sundere airfryer-retter">
       <h3>Sundere airfryer-retter</h3>
-      <p class="theme-meta" data-category="sund-airfryer"></p>
-    </a>
+      <p class="theme-meta" data-category="sund-airfryer">0 opskrifter</p>
+    </div>
 
-    <a href="/tema/morgenmad.html" class="theme-card" data-category="morgenmad">
+    <div class="theme-card">
       <img src="assets/images/tema/morgenmad-airfryer-768x768.jpg" class="theme-img-round" alt="Morgenmad i airfryer">
       <h3>Morgenmad i airfryer</h3>
-      <p class="theme-meta" data-category="morgenmad"></p>
-    </a>
+      <p class="theme-meta" data-category="morgenmad">0 opskrifter</p>
+    </div>
 
-    <a href="/tema/bagvaerk-soede-sager.html" class="theme-card" data-category="bagvaerk-soede-sager">
+    <div class="theme-card">
       <img src="assets/images/tema/bagvaerk-soede-sager-768x768.jpg" class="theme-img-round" alt="Bagværk & søde sager">
       <h3>Bagværk & søde sager</h3>
-     <p class="theme-meta" data-category="bagvaerk-soede-sager"></p>
-    </a>
+      <p class="theme-meta" data-category="bagvaerk">0 opskrifter</p>
+    </div>
 
   </div>
 </section>
+
 
 
 
@@ -292,13 +293,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- SÆT DETTE SCRIPT LIGE HER -->
 <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   fetch("assets/data/recipes.json")
     .then(r => r.json())
     .then(recipes => {
 
-      // gruppér opskrifter efter kategori
       const counts = {};
+
       recipes.forEach(r => {
         r.categories.forEach(cat => {
           if (!counts[cat]) counts[cat] = 0;
@@ -306,17 +308,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-      // indsæt tal i tema-sektionen
       document.querySelectorAll("[data-category]").forEach(el => {
         const cat = el.dataset.category;
-        const count = counts[cat] || 0;
-        el.textContent = count + " opskrifter";
+        el.textContent = (counts[cat] || 0) + " opskrifter";
       });
 
     })
     .catch(err => console.error("Fejl i recipes.json:", err));
 });
 </script>
+
 
 </body>
 </html>
