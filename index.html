@@ -293,30 +293,38 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  fetch("assets/data/recipes.json")
-    .then(r => r.json())
-    .then(data => {
+  // Vent 150 ms på at include.js får indlæst header/footer
+  setTimeout(() => {
 
-      const counts = {};
-      const recipes = data.recipes; // ← VIGTIGT!
+    fetch("assets/data/recipes.json")
+      .then(r => r.json())
+      .then(data => {
 
-      recipes.forEach(r => {
-        r.categories.forEach(cat => {
-          if (!counts[cat]) counts[cat] = 0;
-          counts[cat]++;
+        const counts = {};
+        const recipes = data.recipes;
+
+        recipes.forEach(r => {
+          r.categories.forEach(cat => {
+            if (!counts[cat]) counts[cat] = 0;
+            counts[cat]++;
+          });
         });
-      });
 
-      document.querySelectorAll("[data-category]").forEach(el => {
-        const cat = el.dataset.category;
-        el.textContent = (counts[cat] || 0) + " opskrifter";
-      });
+        document.querySelectorAll("[data-category]").forEach(el => {
+          const cat = el.dataset.category;
+          el.textContent = (counts[cat] || 0) + " opskrifter";
+        });
 
-    })
-    .catch(err => console.error("Fejl i recipes.json:", err));
+        console.log("📌 Kategorier opdateret:", counts);
+
+      })
+      .catch(err => console.error("Fejl i recipes.json:", err));
+
+  }, 150); // ← VIGTIGT
 
 });
 </script>
+
 
 
 
