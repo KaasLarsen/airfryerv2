@@ -75,3 +75,54 @@
     drawer.classList.toggle('open');
   });
 </script>
+
+<script>
+// localStorage helpers
+function getSaved() {
+  return JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+}
+function saveList(arr) {
+  localStorage.setItem("savedRecipes", JSON.stringify(arr));
+}
+
+// Open drawer
+document.addEventListener("DOMContentLoaded", () => {
+  const drawer = document.querySelector(".saved-drawer");
+  const openBtn = document.getElementById("openSaved");
+  const closeBtn = document.getElementById("closeSaved");
+
+  if (openBtn) openBtn.addEventListener("click", () => {
+    drawer.classList.add("open");
+    renderSavedList();
+  });
+
+  if (closeBtn) closeBtn.addEventListener("click", () => {
+    drawer.classList.remove("open");
+  });
+});
+
+// Render list
+function renderSavedList() {
+  const container = document.getElementById("savedList");
+  const saved = getSaved();
+
+  container.innerHTML = "";
+
+  if (saved.length === 0) {
+    container.innerHTML = `<p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>`;
+    return;
+  }
+
+  saved.forEach(item => {
+    container.innerHTML += `
+      <div class="saved-item">
+        <a href="${item.url}">
+          <img src="${item.image}" alt="${item.title}">
+        </a>
+        <div>
+          <a class="saved-item-title" href="${item.url}">${item.title}</a>
+        </div>
+      </div>`;
+  });
+}
+</script>
