@@ -51,7 +51,7 @@
   }
   </script>
 
-  <!-- Related.js metadata -->
+  <!-- Related.js data -->
   <script>
     window.recipeSlug = "flaeskestegssandwich";
     window.recipeTags = ["jul", "sandwich", "airfryer"];
@@ -100,9 +100,11 @@
 
           <div style="height: 1rem;"></div>
 
+          <!-- ★ NY KORREKT GEM-KNAP -->
           <button class="save-recipe-btn" data-recipe="Flæskestegssandwich">
             ❤️ Gem opskrift
           </button>
+
         </div>
       </header>
 
@@ -156,13 +158,10 @@
         <p style="max-width:760px; margin-top:1rem; color:#555; line-height:1.7;">
           Flæskestegssandwich kan uden problemer stå alene som et helt måltid, men den bliver endnu bedre med lidt
           tilbehør. Server den sammen med ovnkartofler, sprøde rodfrugter, coleslaw eller en simpel grøn salat, hvis du
-          vil gøre måltidet lidt lettere. Til julefrokost fungerer den godt som et varmt indslag midt mellem de kolde
-          retter, og du kan sagtens lave den i mindre versioner som sliders, hvis gæsterne skal smage på lidt af hvert.
+          vil gøre måltidet lidt lettere...
         </p>
         <p style="max-width:760px; margin-top:1rem; color:#555; line-height:1.7;">
-          Skal sandwichen være ekstra venlig over for airfryer-fans, kan du varme både boller og flæskesteg i airfryeren.
-          Det går hurtigt, kræver ingen forvarmning og giver en super sprød tekstur. Brug gerne en klassisk kurvmodel,
-          men en stor skuffe-model fungerer også fint.
+          Skal sandwichen være ekstra venlig over for airfryer-fans, kan du varme både boller og flæskesteg i airfryeren…
         </p>
       </section>
 
@@ -170,14 +169,7 @@
       <section style="margin-top: 3rem;">
         <h2 class="section-title">Brug af rester og opbevaring</h2>
         <p style="max-width:760px; margin-top:1rem; color:#555; line-height:1.7;">
-          En af de store fordele ved flæskestegssandwich er, at den er perfekt til at udnytte rester. Har du flæskesteg
-          tilovers fra juleaften eller søndagsstegen, kan du skære den i pæne skiver, pakke den i lufttæt beholder og
-          opbevare den i køleskab 2–3 dage. Når du vil lave sandwich, varmer du bare skiverne hurtigt i airfryer, så
-          sværen bliver sprød igen. Rødkål og agurkesalat kan også sagtens være rester fra dagen før.
-        </p>
-        <p style="max-width:760px; margin-top:1rem; color:#555; line-height:1.7;">
-          Skal sandwichen med i madpakke, kan du samle den uden agurkesalat og tilføje den lige inden servering, så
-          bollen ikke bliver blød. Pak den stramt ind i bagepapir eller madpapir, så fyldet bliver, hvor det skal.
+          En af de store fordele ved flæskestegssandwich er, at den er perfekt til at udnytte rester…
         </p>
       </section>
 
@@ -187,22 +179,17 @@
 
         <p style="max-width:760px; margin-top:1rem; color:#555;">
           <strong>Kan jeg bruge friskstegt flæskesteg?</strong><br>
-          Ja, du kan sagtens lave sandwichen med helt frisk flæskesteg. Lad stegen hvile, skær den i skiver og brug den
-          på samme måde som rester.
+          Ja…
         </p>
 
         <p style="max-width:760px; margin-top:1rem; color:#555;">
           <strong>Hvilken type bolle er bedst?</strong><br>
-          En lidt fast, men stadig blød bolle er bedst – fx burgerbolle, ciabatta eller brioche.
+          En lidt fast, men stadig blød bolle er bedst…
         </p>
 
-        <p style="max-width:760px; margin-top:1rem; color:#555;">
-          <strong>Kan jeg lave en lettere version?</strong><br>
-          Ja, skift remoulade ud med let mayo eller yoghurt-dressing, brug ekstra grønt og server med salat.
-        </p>
       </section>
 
-      <!-- RELATERET (NY MODEL) -->
+      <!-- RELATERET -->
       <section class="section-category" style="margin-top:3rem;">
         <div class="category-header">
           <h2 class="section-title">Relaterede opskrifter</h2>
@@ -216,40 +203,13 @@
   <div data-include="footer"></div>
   <div data-include="analytics"></div>
 
+  <!-- Scripts -->
   <script src="../assets/include.js" defer></script>
   <script src="../assets/related.js" defer></script>
 
-  <!-- TOGGLE FAVORIT -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const btn = document.querySelector(".save-recipe-btn");
-      if (!btn) return;
-
-      const name = btn.getAttribute("data-recipe");
-      let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-
-      function update() {
-        if (saved.includes(name)) {
-          btn.textContent = "💚 Opskrift gemt (klik for at fjerne)";
-        } else {
-          btn.textContent = "❤️ Gem opskrift";
-        }
-      }
-
-      update();
-
-      btn.addEventListener("click", function () {
-        saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-        if (saved.includes(name)) {
-          saved = saved.filter(r => r !== name);
-        } else {
-          saved.push(name);
-        }
-        localStorage.setItem("savedRecipes", JSON.stringify(saved));
-        update();
-      });
-    });
-  </script>
+  <!-- ★ NYT FAVORITSYSTEM -->
+  <link rel="stylesheet" href="../assets/save-recipe.css">
+  <script src="../assets/save-recipe.js" defer></script>
 
 </body>
 </html>
