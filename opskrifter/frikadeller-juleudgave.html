@@ -8,52 +8,44 @@
         content="Julefrikadeller i airfryer med muskat, allehånde og løg. Sprøde udenpå og saftige indeni – perfekte til julefrokost og vinterhygge.">
 
   <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/save-recipe.css" />
+  <script src="../assets/save-recipe.js" defer></script>
 
-  <!-- JSON-LD RECIPE -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Recipe",
     "name": "Julefrikadeller i airfryer",
-    "description": "Sprøde, saftige julefrikadeller med muskat og allehånde – perfekte til julefrokost, buffet og vinterhygge.",
+    "description": "Sprøde, saftige julefrikadeller krydret med muskat og allehånde – perfekte til julefrokost, advent og vintermad.",
     "image": [
       "https://www.opskrift-airfryer.dk/assets/images/recipes/frikadeller-768x768.jpg"
     ],
-    "author": {
-      "@type": "Organization",
-      "name": "Opskrift-Airfryer"
-    },
+    "author": {"@type":"Organization","name":"Opskrift-Airfryer"},
     "datePublished": "2025-12-04",
     "prepTime": "PT15M",
     "cookTime": "PT16M",
     "totalTime": "PT31M",
-    "keywords": "frikadeller airfryer, julefrikadeller, frikadeller til julefrokost, danske frikadeller, muskat frikadeller",
+    "keywords": "julefrikadeller airfryer, frikadeller i airfryer, julefrokost frikadeller, muskat allehånde frikadeller",
     "recipeYield": "4 personer",
     "recipeCategory": "Frokost",
     "recipeCuisine": "Dansk",
     "recipeIngredient": [
-      "500 g hakket svine- og kalvekød (8–12 %)",
+      "500 g hakket svine- og kalvekød (8–12 % fedt)",
       "1 løg, finthakket eller revet",
       "1 æg",
       "1 dl mælk",
       "3 spsk hvedemel eller rasp",
       "1 tsk salt",
-      "½ tsk friskkværnet peber",
+      "½ tsk peber",
       "½ tsk stødt muskat",
       "¼ tsk allehånde",
-      "Smør eller olie-spray til formen"
-    ],
-    "recipeInstructions": [
-      { "@type": "HowToStep", "text": "Rør farsen sammen af kød, løg, æg, mælk, mel/rasp, salt, peber, muskat og allehånde til en blød, sammenhængende fars." },
-      { "@type": "HowToStep", "text": "Form frikadeller med en ske, og spray airfryer-skuffen let med olie." },
-      { "@type": "HowToStep", "text": "Læg frikadellerne i skuffen uden at de rører hinanden." },
-      { "@type": "HowToStep", "text": "Steg ved 180 °C i 14–16 minutter – vend dem halvvejs for jævn farve." },
-      { "@type": "HowToStep", "text": "Server lune med rødkål, rugbrød eller klassisk tilbehør." }
+      "Smør eller olie-spray"
     ]
   }
   </script>
 
-  <!-- Related.js metadata -->
+  <!-- Related.js -->
   <script>
     window.recipeSlug = "frikadeller";
     window.recipeTags = ["jul", "julefrokost", "frokost"];
@@ -62,154 +54,192 @@
 
 <body>
 
-  <div data-include="icons"></div>
-  <div data-include="header"></div>
+<div data-include="icons"></div>
+<div data-include="header"></div>
 
-  <main>
-    <article class="recipe-page">
+<main>
+<article class="recipe-page">
 
-      <!-- HEADER MED BILLEDE -->
-      <header class="recipe-page-header">
-        <div class="recipe-page-image">
-          <img
-            src="../assets/images/recipes/frikadeller-768x768.jpg"
-            alt="Julefrikadeller i airfryer – sprøde og saftige"
-            class="recipe-main-img"
-          />
-        </div>
+<header class="recipe-page-header">
 
-        <div class="recipe-page-intro">
-          <h1 class="recipe-page-title">Julefrikadeller i airfryer</h1>
+  <div class="recipe-page-image">
+    <img
+      src="../assets/images/recipes/frikadeller-768x768.jpg"
+      alt="Julefrikadeller i airfryer – sprøde og saftige"
+      class="recipe-main-img"
+    />
+  </div>
 
-          <p class="recipe-page-lead">
-            Julefrikadeller er en fast del af ethvert julefrokostbord, og når du laver dem i airfryer, får du en
-            fantastisk kombination af sprød overflade og saftig midte – helt uden at stå og stege ved panden i fedt
-            eller olie. Airfryeren giver en jævn varme, smuk farve og en renere smag, hvor krydderierne virkelig
-            kommer til deres ret.
-          </p>
+  <div class="recipe-page-intro">
+    <h1 class="recipe-page-title">Julefrikadeller i airfryer</h1>
 
-          <p class="recipe-page-lead">
-            Denne juleversion er krydret med muskat og allehånde, som giver den klassiske, varme julesmag, der passer
-            perfekt til rødkål, rugbrød, syltede rødbeder og alle de andre favoritter. En sikker vinder til både
-            julefrokost, advent, familiehygge eller en hurtig decembermiddag.
-          </p>
+    <!-- 🔥 LANG NY INTRO (dobbelt længde) -->
+    <p class="recipe-page-lead">
+      Julefrikadeller er en af de helt store klassikere på julefrokostbordet – og når du laver dem i airfryer,
+      får du den perfekte kombination af sprød overflade, saftig midte og en smuk jævn farve uden at stå ved panden.
+      Airfryeren gør frikadellerne både lettere, renere og mere ensartede, samtidig med at krydderierne får lov at
+      udvikle sig uden at branke. Det giver en smag, som virkelig bringer hele julens varme og hygge frem.
+    </p>
 
-          <div class="recipe-page-meta">
-            <span>31 min</span>
-            <span>4 personer</span>
-            <span>Frokost</span>
-          </div>
+    <p class="recipe-page-lead">
+      Denne opskrift læner sig op ad den traditionelle danske julefrikadelle – krydret med stødt muskat og allehånde.
+      De to krydderier giver frikadellerne deres karakteristiske dybe, varme og let søde smag, der passer perfekt til
+      alt fra rødkål og rugbrød til syltede rødbeder, brun sovs eller bare en god skefuld sennep. Det er comfort food
+      på det mest danske niveau, pakket ind i alt det, der gør december til noget særligt.
+    </p>
 
-          <div style="height: 1rem;"></div>
+    <p class="recipe-page-lead">
+      Fordelen ved airfryer-metoden er ikke kun smagen – det er også, at du slipper for fedtsprøjt, for meget olie,
+      ujævnt stegte deller eller at stå og passe en pande. Du kan stege store portioner på én gang, du får samme flotte
+      resultat hver gang, og du kan endda lave to zoner, hvis du har dual-zone airfryer: frikadeller i den ene, rødkål
+      eller kartofler i den anden. Det er virkelig julemad gjort enkelt.
+    </p>
 
-          <button class="save-recipe-btn" data-recipe="Frikadeller i airfryer">
-            ❤️ Gem opskrift
-          </button>
-        </div>
-      </header>
+    <div class="recipe-page-meta">
+      <span>31 min</span>
+      <span>4 personer</span>
+      <span>Frokost</span>
+    </div>
 
-      <!-- GRID: INGREDIENSER + STEPS -->
-      <section class="recipe-page-content">
+    <div style="height:1rem;"></div>
 
-        <div class="recipe-page-ingredients">
-          <h2>Ingredienser</h2>
-          <ul>
-            <li>500 g hakket svine- og kalvekød</li>
-            <li>1 løg</li>
-            <li>1 æg</li>
-            <li>1 dl mælk</li>
-            <li>3 spsk mel eller rasp</li>
-            <li>1 tsk salt</li>
-            <li>Peber</li>
-            <li>Muskat</li>
-            <li>Allehånde</li>
-            <li>Olie-spray</li>
-          </ul>
-        </div>
+    <!-- ⭐ SAVE KNAP -->
+    <button class="save-recipe-btn" data-recipe="Julefrikadeller i airfryer">
+      ❤️ Gem opskrift
+    </button>
 
-        <div class="recipe-page-steps">
-          <h2>Sådan gør du</h2>
-          <ol>
-            <li><strong>Rør farsen.</strong> Bland alle ingredienser til en blød fars.</li>
-            <li><strong>Form frikadeller.</strong> Brug en ske og spray skuffen.</li>
-            <li><strong>Læg i airfryer.</strong> Ikke for tæt.</li>
-            <li><strong>Steg.</strong> 180 °C i 14–16 min – vend halvvejs.</li>
-            <li><strong>Server.</strong> Lune med klassisk julefrokosttilbehør.</li>
-          </ol>
-        </div>
+  </div>
 
-      </section>
+</header>
 
-      <!-- TIPS -->
-      <section class="recipe-tip">
-        <h2>Tips og variationer</h2>
-        <p>
-          Brug gerne friskrevet muskat for en dybere og mere aromatisk julesmag. Du kan også tilsætte lidt sennep eller
-          finthakket æble for en sødere, mere rund smag. Vil du lave store portioner til julefrokost, kan du lave dem i
-          to lag med et stykke bagepapir mellem – men husk at give lidt ekstra tid.
-        </p>
-        <p>
-          Har du en dual-zone airfryer, kan du stege to portioner samtidig: én med frikadeller og én med rødkål eller
-          ovnkartofler. Nem og praktisk julemadlavning.
-        </p>
-      </section>
+<section class="recipe-page-content">
 
-      <!-- SERVERING -->
-      <section style="margin-top: 3rem;">
-        <h2 class="section-title">Sådan serverer du julefrikadeller</h2>
-        <p style="max-width:760px; margin-top:1rem; line-height:1.7; color:#555;">
-          Julefrikadeller serveres traditionelt med rødkål, rugbrød, syltede rødbeder, remoulade eller sennep. De passer
-          perfekt til julefrokostbordet, hvor de ofte er blandt de første retter, der forsvinder. Til børn er de også
-          perfekte som små snackfrikadeller med ketchup eller grøntsagsstænger.
-        </p>
-      </section>
+  <div class="recipe-page-ingredients">
+    <h2>Ingredienser</h2>
+    <ul>
+      <li>500 g hakket svine- og kalvekød (8–12 % fedt)</li>
+      <li>1 løg, finthakket</li>
+      <li>1 æg</li>
+      <li>1 dl mælk</li>
+      <li>3 spsk mel eller rasp</li>
+      <li>1 tsk salt</li>
+      <li>½ tsk peber</li>
+      <li>½ tsk stødt muskat</li>
+      <li>¼ tsk allehånde</li>
+      <li>Smør eller olie-spray</li>
+    </ul>
+  </div>
 
-      <!-- RESTER -->
-      <section style="margin-top: 3rem;">
-        <h2 class="section-title">Brug af rester og opbevaring</h2>
-        <p style="max-width:760px; margin-top:1rem; color:#555; line-height:1.7;">
-          Rester af julefrikadeller kan holde sig 3–4 dage i køleskab. Varm dem i airfryer ved 160 °C i 3–4 minutter,
-          så bliver de næsten som nystegte igen. De kan også fryses rå eller færdigstegte – rå frikadeller skal have
-          18–20 minutter direkte fra frost.
-        </p>
-      </section>
+  <div class="recipe-page-steps">
+    <h2>Sådan gør du</h2>
+    <ol>
+      <li><strong>Rør farsen.</strong> Bland kød, løg, æg, mælk, mel/rasp, salt, peber, muskat og allehånde til en
+      blød, smidig fars. Lad den hvile 10 minutter – det gør frikadellerne mere faste.</li>
 
-      <!-- FAQ -->
-      <section style="margin-top: 3rem; margin-bottom:3rem;">
-        <h2 class="section-title">Ofte stillede spørgsmål</h2>
+      <li><strong>Form frikadeller.</strong> Brug en ske dyppet i vand for at få flotte, runde deller.</li>
 
-        <p style="max-width:760px; margin-top:1rem;">
-          <strong>Kan jeg lave dem uden æg?</strong><br>
-          Ja – erstat æg med 2 spsk mel eller 1 spsk kartoffelmel.
-        </p>
+      <li><strong>Klargør airfryeren.</strong> Spray skuffen eller formen let med olie.</li>
 
-        <p style="max-width:760px; margin-top:1rem;">
-          <strong>Kan jeg bruge ren svinekød?</strong><br>
-          Ja, men 8–12 % fedt giver den bedste saftighed.
-        </p>
+      <li><strong>Læg frikadellerne i.</strong> Sørg for, at de ikke rører hinanden – så bliver de sprøde hele vejen rundt.</li>
 
-        <p style="max-width:760px; margin-top:1rem;">
-          <strong>Kan jeg lave dem mindre?</strong><br>
-          Ja, minifriks tager 10–12 minutter og er perfekte som snacks.
-        </p>
-      </section>
+      <li><strong>Steg.</strong> 180 °C i 14–16 minutter. Vend dem halvvejs for smukkeste farve.</li>
 
-      <!-- RELATERET -->
-      <section class="section-category" style="margin-top:3rem;">
-        <div class="category-header">
-          <h2 class="section-title">Relaterede opskrifter</h2>
-        </div>
-        <div class="category-grid" id="related-container"></div>
-      </section>
+      <li><strong>Server.</strong> Nyd dem varme med rødkål, kartofler, rugbrød eller som snackfrikadeller.</li>
+    </ol>
+  </div>
 
-    </article>
-  </main>
+</section>
 
-  <div data-include="footer"></div>
-  <div data-include="analytics"></div>
+<!-- TIPS & VARIATIONER (dobbelt længde) -->
+<section class="recipe-tip">
+  <h2>Tips og variationer</h2>
 
-  <script src="../assets/include.js" defer></script>
-  <script src="../assets/related.js" defer></script>
+  <p>
+    For den mest autentiske julesmag bør du bruge friskrevet muskat og ikke billig færdigblandet krydderi. Du kan også
+    tilsætte en smule sennep, lidt revet æble eller en skefuld fløde i farsen for ekstra saftighed. Har du travlt,
+    kan farsen formes dagen før og opbevares i køleskab – den bliver faktisk bedre af det.
+  </p>
+
+  <p>
+    Vil du lave børnevenlige julefrikadeller, så lav dem lidt mindre og stegetiden lidt kortere. Mini-frikadeller
+    er perfekte som snacks, til madpakker eller som små hapsere på julebuffeten.
+  </p>
+
+  <p>
+    Hvis du laver store mængder, kan du bruge bagepapir mellem lagene. Giv evt. 1–2 minutter ekstra stegetid.
+  </p>
+</section>
+
+<!-- SERVERING (dobbelt længde) -->
+<section style="margin-top:3rem;">
+  <h2 class="section-title">Sådan serverer du julefrikadeller</h2>
+
+  <p style="max-width:760px; margin-top:1rem;">
+    Julefrikadeller passer perfekt sammen med rødkål, kartofler, remoulade, rugbrød, syltede rødbeder eller brun sovs.
+    På et julefrokostbord er de nærmest obligatoriske – og ofte blandt de retter, der forsvinder hurtigst. Luftige,
+    varme frikadeller er nemlig noget af det mest hyggelige og trygge, man kan spise i december.
+  </p>
+
+  <p style="max-width:760px; margin-top:1rem;">
+    Som aftensmad er frikadellerne fantastiske med kartoffelsalat, flødekartofler eller ovnbagte rodfrugter.
+    Vil du gøre dem ekstra festlige, kan du servere dem med juleglaserede kartofler eller en frisk salat med appelsin.
+  </p>
+</section>
+
+<!-- RESTER -->
+<section style="margin-top:3rem;">
+  <h2 class="section-title">Brug af rester og opbevaring</h2>
+
+  <p style="max-width:760px; margin-top:1rem;">
+    Julefrikadeller er perfekte som rester! De kan holde sig 3–4 dage i køleskab, og når du varmer dem i airfryer ved
+    160 °C i 3–4 minutter, bliver de næsten som nystegte igen – sprøde udenpå og saftige indeni.
+  </p>
+
+  <p style="max-width:760px; margin-top:1rem;">
+    Du kan fryse dem rå eller færdigstegte. Rå frikadeller skal have ca. 18–20 minutter i airfryer direkte fra frost.
+  </p>
+</section>
+
+<!-- FAQ (dobbelt længde) -->
+<section style="margin-top:3rem; margin-bottom:3rem;">
+  <h2 class="section-title">Ofte stillede spørgsmål</h2>
+
+  <p style="max-width:760px; margin-top:1rem;">
+    <strong>Kan jeg lave dem uden æg?</strong><br>
+    Ja – brug 2 spsk mel eller 1 spsk kartoffelmel i stedet. Det binder farsen fint.
+  </p>
+
+  <p style="max-width:760px; margin-top:1rem;">
+    <strong>Kan jeg bruge ren svinekød?</strong><br>
+    Ja, 8–12 % fedt giver den bedste saftighed.
+  </p>
+
+  <p style="max-width:760px; margin-top:1rem;">
+    <strong>Hvorfor bliver mine frikadeller tørre?</strong><br>
+    De har fået for længe – prøv 12–14 min og tjek dem. Brug også lidt mere mælk.
+  </p>
+
+  <p style="max-width:760px; margin-top:1rem;">
+    <strong>Kan jeg lave dem mindre?</strong><br>
+    Ja – mini-frikadeller tager 10–12 minutter og er perfekte som snacks eller på julebuffet.
+  </p>
+</section>
+
+<section class="section-category" style="margin-top:3rem;">
+  <div class="category-header">
+    <h2 class="section-title">Relaterede opskrifter</h2>
+  </div>
+  <div class="category-grid" id="related-container"></div>
+</section>
+
+</article>
+</main>
+
+<div data-include="footer"></div>
+<div data-include="analytics"></div>
+
+<script src="../assets/include.js" defer></script>
+<script src="../assets/related.js" defer></script>
 
 </body>
 </html>
