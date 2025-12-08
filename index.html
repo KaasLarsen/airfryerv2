@@ -293,13 +293,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- SÆT DETTE SCRIPT LIGE HER -->
 <script>
-<script>
 document.addEventListener("DOMContentLoaded", () => {
+
   fetch("assets/data/recipes.json")
     .then(r => r.json())
-    .then(recipes => {
+    .then(data => {
 
       const counts = {};
+      const recipes = data.recipes;
 
       recipes.forEach(r => {
         r.categories.forEach(cat => {
@@ -315,6 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
     .catch(err => console.error("Fejl i recipes.json:", err));
+
 });
 </script>
 
