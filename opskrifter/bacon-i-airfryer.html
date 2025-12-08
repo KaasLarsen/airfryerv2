@@ -85,9 +85,13 @@
           <span>Morgenmad</span>
         </div>
 
-        <button class="save-recipe-btn" data-recipe="Bacon i airfryer">
-          ❤️ Gem opskrift
-        </button>
+       <button class="save-recipe-btn"
+        data-recipe="Bacon i airfryer"
+        data-url="/opskrifter/bacon-i-airfryer.html"
+        data-image="/assets/images/recipes/bacon-airfryer-768x768.jpg">
+  ❤️ Gem opskrift
+</button>
+
       </div>
     </header>
 
@@ -194,6 +198,55 @@
 
 <script src="../assets/include.js" defer></script>
 <script src="../assets/related.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelector(".save-recipe-btn");
+  if (!btn) return;
+
+  const title = btn.dataset.recipe;
+  const url   = btn.dataset.url;
+  const image = btn.dataset.image;
+
+  function getSaved() {
+    try { 
+      return JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveList(arr) {
+    localStorage.setItem("savedRecipes", JSON.stringify(arr));
+  }
+
+  function updateButton() {
+    const saved = getSaved();
+    const exists = saved.some(r => r.title === title);
+
+    btn.textContent = exists
+      ? "💚 Opskrift gemt (klik for at fjerne)"
+      : "❤️ Gem opskrift";
+  }
+
+  updateButton();
+
+  btn.addEventListener("click", function () {
+    let saved = getSaved();
+    const index = saved.findIndex(r => r.title === title);
+
+    if (index !== -1) {
+      // fjern
+      saved.splice(index, 1);
+    } else {
+      // tilføj
+      saved.push({ title, url, image });
+    }
+
+    saveList(saved);
+    updateButton();
+  });
+});
+</script>
 
 </body>
 </html>
