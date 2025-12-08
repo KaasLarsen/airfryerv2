@@ -25,7 +25,17 @@ function loadPartials() {
       })
       .then(html => {
         el.innerHTML = html;
-        runInlineScripts(el); // vigtigt: kør <script> fra partials
+
+        // Kør <script>-tags i partials
+        runInlineScripts(el);
+
+        // ⭐ Når headeren er indlæst, loader vi OGSÅ save-recipe.js globalt
+        if (file === "header") {
+          const script = document.createElement("script");
+          script.src = "/assets/save-recipe.js";
+          script.defer = true;
+          document.body.appendChild(script);
+        }
       })
       .catch(err => {
         console.error(err);
@@ -39,12 +49,8 @@ function runInlineScripts(el) {
 
   scripts.forEach(oldScript => {
     const newScript = document.createElement("script");
-
-    if (oldScript.src) {
-      newScript.src = oldScript.src;
-    } else {
-      newScript.textContent = oldScript.textContent;
-    }
+    if (oldScript.src) newScript.src = oldScript.src;
+    else newScript.textContent = oldScript.textContent;
 
     document.body.appendChild(newScript);
     oldScript.remove();
