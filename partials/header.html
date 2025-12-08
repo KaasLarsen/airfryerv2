@@ -84,6 +84,13 @@
       return [];
     }
   }
+function getSavedRaw() {
+  try {
+    return JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+  } catch (e) {
+    return [];
+  }
+}
 
   function renderSavedList() {
   if (!listEl) return;
