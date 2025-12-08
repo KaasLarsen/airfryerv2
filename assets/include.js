@@ -11,8 +11,9 @@ function loadPartials() {
   const includeElements = document.querySelectorAll("[data-include]");
 
   includeElements.forEach((el) => {
-    const fileName = el.getAttribute("data-include"); // ← fix: fileName bruges nu
-    const path = `/partials/${fileName}.html`;
+
+    const file = el.getAttribute("data-include"); 
+    const path = `/partials/${file}.html`;
 
     fetch(path)
       .then(response => {
@@ -22,21 +23,21 @@ function loadPartials() {
         return response.text();
       })
       .then(html => {
-        el.innerHTML = html;
 
-        // ⭐ Load saved.js når headeren er indlæst
-        if (fileName === "header") {
+        el.innerHTML = html;
+        runInlineScripts(el);
+
+        // ⭐ Når vi loader HEADEREN → load header-events.js
+        if (file === "header") {
           const script = document.createElement("script");
-          script.src = "/assets/saved.js";
+          script.src = "/assets/header-events.js";
           script.defer = true;
           document.body.appendChild(script);
         }
-
-        runInlineScripts(el);
       })
       .catch(err => {
         console.error(err);
-        el.innerHTML = `<!-- FEJL: kunne ikke indlæse ${fileName}.html -->`;
+        el.innerHTML = `<!-- FEJL: kunne ikke indlæse ${file}.html -->`;
       });
   });
 }
@@ -46,8 +47,12 @@ function runInlineScripts(el) {
 
   scripts.forEach(oldScript => {
     const newScript = document.createElement("script");
-    if (oldScript.src) newScript.src = oldScript.src;
-    else newScript.textContent = oldScript.textContent;
+
+    if (oldScript.src) {
+      newScript.src = oldScript.src;
+    } else {
+      newScript.textContent = oldScript.textContent;
+    }
 
     document.body.appendChild(newScript);
     oldScript.remove();
