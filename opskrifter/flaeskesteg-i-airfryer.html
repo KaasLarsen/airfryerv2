@@ -8,6 +8,8 @@
         content="Flæskesteg i airfryer med knasende sprød svær og saftigt kød. Nem opskrift på kamsteg eller ribbensteg i airfryer – perfekt til julefrokost og familiemiddag.">
 
   <link rel="stylesheet" href="../assets/styles.css" />
+  <!-- NYT: styling til gem-knappen -->
+  <link rel="stylesheet" href="../assets/save-recipe.css" />
 
   <!-- JSON-LD RECIPE -->
   <script type="application/ld+json">
@@ -268,38 +270,8 @@
 
   <script src="../assets/include.js" defer></script>
   <script src="../assets/related.js" defer></script>
-
-  <!-- TOGGLE FAVORIT -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const btn = document.querySelector(".save-recipe-btn");
-      if (!btn) return;
-
-      const name = btn.getAttribute("data-recipe");
-      let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-
-      function update() {
-        if (saved.includes(name)) {
-          btn.textContent = "💚 Opskrift gemt (klik for at fjerne)";
-        } else {
-          btn.textContent = "❤️ Gem opskrift";
-        }
-      }
-
-      update();
-
-      btn.addEventListener("click", function () {
-        saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-        if (saved.includes(name)) {
-          saved = saved.filter(r => r !== name);
-        } else {
-          saved.push(name);
-        }
-        localStorage.setItem("savedRecipes", JSON.stringify(saved));
-        update();
-      });
-    });
-  </script>
+  <!-- NYT: global favorit-logik -->
+  <script src="../assets/save-recipe.js" defer></script>
 
 </body>
 </html>
