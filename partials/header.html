@@ -59,3 +59,77 @@
 
   </div>
 </div>
+<script>
+(function () {
+  const searchBtn  = document.getElementById("openSearch");
+  const searchBar  = document.getElementById("searchBar");
+  const openSaved  = document.getElementById("openSaved");
+  const closeSaved = document.getElementById("closeSaved");
+  const drawer     = document.querySelector(".saved-drawer");
+  const listEl     = document.getElementById("savedList");
+
+  // 🔎 Toggle søgefelt
+  if (searchBtn && searchBar) {
+    searchBtn.addEventListener("click", () => {
+      const isVisible = searchBar.style.display === "block";
+      searchBar.style.display = isVisible ? "none" : "block";
+    });
+  }
+
+  // Helpers til gemte opskrifter – VI BRUGER NØGLEN "savedRecipes"
+  function getSavedTitles() {
+    try {
+      return JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function renderSavedList() {
+    if (!listEl) return;
+
+    const saved = getSavedTitles();
+
+    if (!saved || saved.length === 0) {
+      listEl.innerHTML = '<p class="empty-text">Du har ingen gemte opskrifter endnu ❤️</p>';
+      return;
+    }
+
+    listEl.innerHTML = saved
+      .map(title => `
+        <div class="saved-item">
+          <div>
+            <span class="saved-item-title">${title}</span>
+          </div>
+        </div>
+      `)
+      .join("");
+  }
+
+  // ❤️ Åbn / luk panel via knap
+  if (openSaved && drawer) {
+    openSaved.addEventListener("click", () => {
+      drawer.classList.add("open");
+      renderSavedList();
+    });
+  }
+
+  if (closeSaved && drawer) {
+    closeSaved.addEventListener("click", () => {
+      drawer.classList.remove("open");
+    });
+  }
+
+  // Luk ved klik udenfor
+  document.addEventListener("click", (e) => {
+    if (!drawer || !drawer.classList.contains("open")) return;
+
+    const clickInsideDrawer = drawer.contains(e.target);
+    const clickOnHeart      = openSaved && openSaved.contains(e.target);
+
+    if (!clickInsideDrawer && !clickOnHeart) {
+      drawer.classList.remove("open");
+    }
+  });
+})();
+</script>
