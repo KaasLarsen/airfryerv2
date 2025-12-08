@@ -43,56 +43,56 @@
 <!-- MAIN CONTENT -->
 <main>
 
-  <!-- POPULÆRE TEMAER -->
   <section class="section-popular">
   <h2 class="section-title">Populære temaer</h2>
 
   <div class="popular-grid">
 
-    <div class="theme-card">
+    <a class="theme-card" href="kategori.html?k=sproede-kartofler">
       <img src="assets/images/tema/sproede-kartofler-768x768.jpg" class="theme-img-round" alt="Sprøde kartofler">
       <h3>Sprøde kartofler</h3>
       <p class="theme-meta" data-category="sproede-kartofler">0 opskrifter</p>
-    </div>
+    </a>
 
-    <div class="theme-card">
+    <a class="theme-card" href="kategori.html?k=kyllingefavoritter">
       <img src="assets/images/tema/kyllingefavoritter-768x768.jpg" class="theme-img-round" alt="Kyllingefavoritter">
       <h3>Kyllingefavoritter</h3>
       <p class="theme-meta" data-category="kyllingefavoritter">0 opskrifter</p>
-    </div>
+    </a>
 
-    <div class="theme-card">
+    <a class="theme-card" href="kategori.html?k=nem-aftensmad">
       <img src="assets/images/tema/nem-aftensmad-768x768.jpg" class="theme-img-round" alt="Nem aftensmad">
       <h3>Nem aftensmad</h3>
       <p class="theme-meta" data-category="nem-aftensmad">0 opskrifter</p>
-    </div>
+    </a>
 
-    <div class="theme-card">
+    <a class="theme-card" href="kategori.html?k=snacks-tilbehor">
       <img src="assets/images/tema/snacks-tilbehor-768x768.jpg" class="theme-img-round" alt="Snacks & tilbehør">
       <h3>Snacks & tilbehør</h3>
       <p class="theme-meta" data-category="snacks-tilbehor">0 opskrifter</p>
-    </div>
+    </a>
 
-    <div class="theme-card">
+    <a class="theme-card" href="kategori.html?k=sund-airfryer">
       <img src="assets/images/tema/sund-airfryer-768x768.jpg" class="theme-img-round" alt="Sundere airfryer-retter">
       <h3>Sundere airfryer-retter</h3>
       <p class="theme-meta" data-category="sund-airfryer">0 opskrifter</p>
-    </div>
+    </a>
 
-    <div class="theme-card">
+    <a class="theme-card" href="kategori.html?k=morgenmad">
       <img src="assets/images/tema/morgenmad-airfryer-768x768.jpg" class="theme-img-round" alt="Morgenmad i airfryer">
       <h3>Morgenmad i airfryer</h3>
       <p class="theme-meta" data-category="morgenmad">0 opskrifter</p>
-    </div>
+    </a>
 
-    <div class="theme-card">
+    <a class="theme-card" href="kategori.html?k=bagvaerk">
       <img src="assets/images/tema/bagvaerk-soede-sager-768x768.jpg" class="theme-img-round" alt="Bagværk & søde sager">
       <h3>Bagværk & søde sager</h3>
       <p class="theme-meta" data-category="bagvaerk">0 opskrifter</p>
-    </div>
+    </a>
 
   </div>
 </section>
+
 
 
 
@@ -293,10 +293,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Vent 150 ms på at include.js får indlæst header/footer
-  setTimeout(() => {
+  function updateCounts() {
 
-    fetch("assets/data/recipes.json")
+    fetch("assets/data/recipes.json?cb=" + Date.now())
       .then(r => r.json())
       .then(data => {
 
@@ -305,8 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         recipes.forEach(r => {
           r.categories.forEach(cat => {
-            if (!counts[cat]) counts[cat] = 0;
-            counts[cat]++;
+            counts[cat] = (counts[cat] || 0) + 1;
           });
         });
 
@@ -314,15 +312,15 @@ document.addEventListener("DOMContentLoaded", () => {
           const cat = el.dataset.category;
           el.textContent = (counts[cat] || 0) + " opskrifter";
         });
-
-        console.log("📌 Kategorier opdateret:", counts);
-
       })
-      .catch(err => console.error("Fejl i recipes.json:", err));
+      .catch(err => console.error("FEJL i recipes.json →", err));
+  }
 
-  }, 150); // ← VIGTIGT
+  // Vent til header/footer er loadet af include.js
+  setTimeout(updateCounts, 200);
 
 });
 </script>
+
 </body>
 </html>
