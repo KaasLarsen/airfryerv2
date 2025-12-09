@@ -204,6 +204,15 @@ function normalize(str) {
 }
 
 function findBestImage(slug) {
+  const exactFile = `${slug}-768x768.jpg`;
+  const exactPath = `../assets/images/recipes/${exactFile}`;
+
+  // 1) Brug EXAKT filnavn hvis den findes
+  if (IMAGE_FILES.includes(exactFile)) {
+    return exactPath;
+  }
+
+  // 2) Ellers → fallback match-system
   const normSlug = normalize(slug);
   const slugWords = normSlug.split(" ").filter(Boolean);
 
@@ -222,6 +231,12 @@ function findBestImage(slug) {
       bestScore = score;
       bestMatch = file;
     }
+  });
+
+  return bestMatch
+    ? `../assets/images/recipes/${bestMatch}`
+    : "../assets/images/recipes/placeholder.jpg";
+}
   });
 
   return bestMatch
