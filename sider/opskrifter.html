@@ -228,15 +228,77 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   grid.insertAdjacentElement("afterend", loadMoreBtn);
 
+  <script>
+// Hent alle filnavne fra recipes-mappen
+// Vi hardcoder dem, fordi frontend ikke kan læse mappe-indhold automatisk.
+// Du skal bare copy/paste din reelle fil-liste her:
+
+const IMAGE_FILES = [
+  "bacon-airfryer-768x768.jpg",
+  "chicken-nuggets-airfryer-768x768.jpg",
+  "fiskefilet-768x768.jpg",
+  "flaeskesteg-i-airfryer-768x768.jpg",
+  "flaeskestegssandwich-768x768.jpg",
+  "frikadeller-768x768.jpg",
+  "grillede-groentsager-airfryer-768x768.jpg",
+  "hvidloegsbroed-airfryer-768x768.jpg",
+  "kyllinge-laar-airfryer-768x768.jpg",
+  "kyllingebryst-airfryer-768x768.jpg",
+  "kyllingevinger-i-airfryer-768x768.jpg",
+  "laks-i-airfryer-768x768.jpg",
+  "pommes-frites-768x768.jpg",
+  "vegetar-tarteletter-768x768.jpg"
+];
+
+// Hjælpefunktion – fjern specialtegn og bindestreger
+function normalize(str) {
+  return str
+    .toLowerCase()
+    .replace(/-/g, " ")
+    .replace(/æ/g, "ae")
+    .replace(/ø/g, "oe")
+    .replace(/å/g, "aa")
+    .replace(/[^\w\s]/g, "");
+}
+
+// Fuzzy-match: Find bedste billednavn til en given slug
+function findBestImage(slug) {
+  const normSlug = normalize(slug);
+
+  let bestScore = -1;
+  let bestMatch = null;
+
+  IMAGE_FILES.forEach(file => {
+    const normFile = normalize(file);
+
+    // Score: hvor mange ord i slug findes i filnavnet?
+    const slugWords = normSlug.split(" ");
+
+    let score = 0;
+    slugWords.forEach(word => {
+      if (normFile.includes(word)) score++;
+    });
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestMatch = file;
+    }
+  });
+
+  return bestMatch
+    ? `../assets/images/recipes/${bestMatch}`
+    : "../assets/images/recipes/placeholder.jpg"; // fallback
+}
+</script>
+
 function createCard(recipe) {
+  const imgSrc = findBestImage(recipe.slug);
+
   return `
     <article class="category-card">
       <a class="category-card-link" href="./${recipe.slug}.html">
         <div class="category-card-image">
-          <img 
-            src="../assets/images/recipes/${recipe.slug}-768x768.jpg"
-            onerror="this.onerror=null; this.src='../assets/images/recipes/${recipe.slug}-airfryer-768x768.jpg';"
-            alt="${recipe.title}">
+          <img src="${imgSrc}" alt="${recipe.title}">
         </div>
         <div class="category-card-body">
           <h3 class="category-card-title">${recipe.title}</h3>
@@ -244,6 +306,7 @@ function createCard(recipe) {
       </a>
     </article>`;
 }
+
 
 
   function renderChunk() {
