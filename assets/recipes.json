@@ -11,12 +11,6 @@
       "categories": ["sproede-kartofler"]
     },
     {
-      "slug": "sprode-pomfritter-i-airfryer",
-      "title": "Sprøde pomfritter i airfryer",
-      "categories": ["sproede-kartofler"]
-    },
-
-    {
       "slug": "kyllinge-laar-airfryer",
       "title": "Kyllingelår i airfryer",
       "categories": ["kyllingefavoritter"]
@@ -72,12 +66,6 @@
       "title": "Grillede grøntsager i airfryer",
       "categories": ["nem-aftensmad", "snacks-tilbehor", "sund-airfryer"]
     },
-    {
-      "slug": "ristede-groentsager-i-airfryer",
-      "title": "Ristede grøntsager i airfryer",
-      "categories": ["nem-aftensmad"]
-    },
-
     {
       "slug": "hvidloegsbroed-airfryer",
       "title": "Hvidløgsbrød i airfryer",
