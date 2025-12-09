@@ -189,7 +189,8 @@ const IMAGE_FILES = [
   "kyllingevinger-i-airfryer-768x768.jpg",
   "laks-i-airfryer-768x768.jpg",
   "pommes-frites-768x768.jpg",
-  "vegetar-tarteletter-768x768.jpg"
+  "vegetar-tarteletter-768x768.jpg",
+  "hel-and-i-airfryer-768x768.jpg"   // ← TILFØJET
 ];
 
 function normalize(str) {
@@ -283,7 +284,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     return `
       <article class="category-card">
-        <a class="category-card-link" href="./${recipe.slug}.html">
+        <a class="category-card-link" href="../opskrifter/${recipe.slug}.html">
           <div class="category-card-image">
             <img src="${imgSrc}" alt="${recipe.title}">
           </div>
