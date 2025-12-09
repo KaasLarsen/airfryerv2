@@ -66,23 +66,4 @@
   <!-- Nye hvis relevant -->
   <url><loc>https://opskrift-airfryer.dk/opskrifter/grillede-groentsager-airfryer.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
 
-  <!-- Kategori/univers-sider -->
-  <url>
-    <loc>https://opskrift-airfryer.dk/opskrifter.html</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://opskrift-airfryer.dk/madplaner.html</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://opskrift-airfryer.dk/guides.html</loc>
-    <priority>0.7</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
 </urlset>
