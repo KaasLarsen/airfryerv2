@@ -1,69 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset 
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Forside -->
-  <url>
-    <loc>https://opskrift-airfryer.dk/</loc>
-    <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <!-- Søgning -->
-  <url>
-    <loc>https://opskrift-airfryer.dk/search.html</loc>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <!-- Opskrifter (de tre gamle) -->
-  <url>
-    <loc>https://opskrift-airfryer.dk/saftig-kylling-i-airfryer.html</loc>
-    <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://opskrift-airfryer.dk/sprode-pomfritter-i-airfryer.html</loc>
-    <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://opskrift-airfryer.dk/ristede-groentsager-i-airfryer.html</loc>
-    <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <!-- Alle nye opskrifter (Airfryer klassikere + julefrokost + særskilte) -->
-
-  <url><loc>https://opskrift-airfryer.dk/opskrifter/flaeskesteg-i-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
-
-  <url><loc>https://opskrift-airfryer.dk/opskrifter/flaeskestegssandwich.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-
-  <url><loc>https://opskrift-airfryer.dk/opskrifter/vegetar-tarteletter.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
-
-  <url><loc>https://opskrift-airfryer.dk/opskrifter/fiskefilet.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-
-  <url><loc>https://opskrift-airfryer.dk/opskrifter/frikadeller-juleudgave.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-
+  <!-- SPROEDE KARTOFLER -->
   <url><loc>https://opskrift-airfryer.dk/opskrifter/pommes-frites.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/kartoffelbaade.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/sprode-pomfritter-i-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
 
+  <!-- KYLLING -->
   <url><loc>https://opskrift-airfryer.dk/opskrifter/kyllinge-laar-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
-
   <url><loc>https://opskrift-airfryer.dk/opskrifter/kyllingebryst-i-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
-
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/kyllingevinger-i-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://opskrift-airfryer.dk/opskrifter/chicken-nuggets-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/saftig-kylling-i-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
 
-  <url><loc>https://opskrift-airfryer.dk/opskrifter/bacon-i-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
-
-  <url><loc>https://opskrift-airfryer.dk/opskrifter/hvidloegsbroed-airfryer.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
-
+  <!-- FISK -->
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/fiskefilet.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://opskrift-airfryer.dk/opskrifter/laks-i-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
 
-  <url><loc>https://opskrift-airfryer.dk/opskrifter/kyllingevinger-i-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <!-- JUL & AFTENSMAD -->
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/flaeskesteg-i-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/flaeskestegssandwich.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/frikadeller-juleudgave.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/hel-and-i-airfryer.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
 
-  <!-- Nye hvis relevant -->
+  <!-- GRØNTSAGER -->
   <url><loc>https://opskrift-airfryer.dk/opskrifter/grillede-groentsager-airfryer.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/ristede-groentsager-i-airfryer.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+
+  <!-- SNACKS / BRØD -->
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/hvidloegsbroed-airfryer.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/bacon-i-airfryer.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+  <!-- VEGETAR -->
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/vegetar-tarteletter.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
 
 </urlset>
