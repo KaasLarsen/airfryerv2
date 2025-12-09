@@ -5,249 +5,168 @@
   <title>Alle opskrifter i airfryer – Opskrift-Airfryer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Få overblikket over alle opskrifter i airfryer – kylling, fisk, kartofler, grøntsager, tilbehør, snacks, morgenmad, dessert og julemad. Søg og filtrér blandt alle opskrifter her.">
+        content="Se alle vores airfryeropskrifter samlet ét sted. Søg, filtrér og find præcis den opskrift du leder efter.">
 
-  <!-- ✔ Korrekt sti fra /sider/ til /assets/styles.css -->
   <link rel="stylesheet" href="../assets/styles.css" />
 </head>
 
 <body>
 
-  <div data-include="icons"></div>
-  <div data-include="header"></div>
+<div data-include="icons"></div>
+<div data-include="header"></div>
 
-  <!-- HERO – samme komponent som forsiden -->
-  <section class="hero-large"
-           style="background-image: url('../assets/images/hero/hero-julebord-airfryer-1920x1080.jpg');">
-    <div class="hero-large-overlay"></div>
+<!-- HERO som forsiden -->
+<section class="hero-large"
+         style="background-image: url('../assets/images/hero/hero-julebord-airfryer-1920x1080.jpg');">
+  <div class="hero-large-overlay"></div>
 
-    <div class="hero-large-content">
-      <h1 class="hero-large-title">alle opskrifter i airfryer</h1>
-      <p class="hero-large-subtitle">
-        Her finder du alle vores airfryeropskrifter samlet ét sted. Søg efter retter, filtrér på kategori
-        eller scroll igennem listen med de nyeste opskrifter øverst.
-      </p>
+  <div class="hero-large-content">
 
-      <!-- Søgning på selve siden -->
-      <form class="hero-large-search" id="recipe-search-form">
-        <input
-          type="search"
-          id="recipe-search-input"
-          placeholder="Søg efter opskrift, ingrediens eller kategori…"
-          autocomplete="off"
-        />
-        <button type="submit">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
-               stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="10" cy="10" r="7"></circle>
-            <line x1="15" y1="15" x2="21" y2="21"></line>
-          </svg>
-        </button>
-      </form>
+    <h1 class="hero-large-title">alle opskrifter i airfryer</h1>
 
-      <button class="hero-large-filter-btn" type="button" onclick="document.getElementById('recipe-categories').scrollIntoView({behavior:'smooth'})">
-        vælg kategori ↓
+    <p class="hero-large-subtitle">
+      Scroll gennem alle opskrifter eller brug søgning og kategorier for at finde præcis det, du leder efter.
+    </p>
+
+    <form class="hero-large-search" id="recipe-search-form">
+      <input type="search" id="recipe-search" placeholder="Søg på opskrift, ingrediens eller kategori …" />
+      <button type="submit">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="10" cy="10" r="7"></circle>
+          <line x1="15" y1="15" x2="21" y2="21"></line>
+        </svg>
       </button>
+    </form>
+
+  </div>
+</section>
+
+
+<main>
+
+  <!-- KATEGORIER UNDER HERO -->
+  <section class="section-category" id="recipe-categories">
+    <div class="filter-bar-inner">
+      <div class="filter-buttons">
+        <button class="filter-btn is-active" data-filter="Alle">Alle</button>
+        <button class="filter-btn" data-filter="sproede-kartofler">Sprøde kartofler</button>
+        <button class="filter-btn" data-filter="kyllingefavoritter">Kylling</button>
+        <button class="filter-btn" data-filter="nem-aftensmad">Aftensmad</button>
+        <button class="filter-btn" data-filter="snacks-tilbehor">Snacks & tilbehør</button>
+        <button class="filter-btn" data-filter="sund-airfryer">Sundere</button>
+        <button class="filter-btn" data-filter="morgenmad">Morgenmad</button>
+        <button class="filter-btn" data-filter="bagvaerk">Bagværk</button>
+        <button class="filter-btn" data-filter="jul">Jul</button>
+      </div>
     </div>
   </section>
 
-  <main>
+  <!-- OPSKRIFTSGRID -->
+  <section class="section-category" style="margin-top:2.5rem; margin-bottom:3rem;">
+    <div class="category-header">
+      <h2 class="section-title">alle opskrifter</h2>
+      <p class="section-desc" id="recipes-count">Indlæser opskrifter …</p>
+    </div>
 
-    <!-- KATEGORIER UNDER HERO -->
-    <section class="section-category" id="recipe-categories">
-      <div class="category-header">
-        <div>
-          <h2 class="section-title">vælg kategori</h2>
-          <p class="section-desc">
-            Filtrér opskrifterne efter tema – du kan altid kombinere kategori og søgning.
-          </p>
-        </div>
-      </div>
+    <div class="category-grid" id="recipes-grid"></div>
 
-      <div class="filter-bar-inner" style="margin-top:1rem;">
-        <div class="filter-buttons">
-          <!-- pill-knapper (A) -->
-          <button class="filter-btn is-active" data-filter="Alle">Alle</button>
-          <button class="filter-btn" data-filter="sproede-kartofler">sprøde kartofler</button>
-          <button class="filter-btn" data-filter="kyllingefavoritter">kyllingefavoritter</button>
-          <button class="filter-btn" data-filter="nem-aftensmad">nem aftensmad</button>
-          <button class="filter-btn" data-filter="snacks-tilbehor">snacks & tilbehør</button>
-          <button class="filter-btn" data-filter="sund-airfryer">sund airfryer</button>
-          <button class="filter-btn" data-filter="morgenmad">morgenmad</button>
-          <button class="filter-btn" data-filter="bagvaerk">bagværk & søde sager</button>
-          <button class="filter-btn" data-filter="jul">jul</button>
-        </div>
-      </div>
-    </section>
+    <div id="recipes-empty-state" style="display:none; text-align:center; margin-top:2rem;">
+      Ingen opskrifter matcher dine filtre.
+    </div>
+  </section>
 
-    <!-- ALLE OPSKRIFTER – grid som på kategorisider (A) -->
-    <section class="section-category" style="margin-top:2.5rem; margin-bottom:3rem;">
-      <div class="category-header">
-        <div>
-          <h2 class="section-title">alle opskrifter</h2>
-          <p class="section-desc" id="recipes-count">
-            Indlæser opskrifter …
-          </p>
-        </div>
-      </div>
+</main>
 
-      <div class="category-grid" id="recipes-grid">
-        <!-- Fyldes dynamisk -->
-      </div>
+<div data-include="footer"></div>
 
-      <div id="recipes-empty-state" style="display:none; max-width:720px; margin:2rem auto 0; text-align:center; color:#666;">
-        <p style="margin-bottom:0.75rem;">
-          Der er ingen opskrifter, der matcher din søgning eller de valgte kategorier.
-        </p>
-        <p style="font-size:0.95rem;">
-          Prøv at rydde søgefeltet, skifte kategori til <strong>Alle</strong> eller søge bredere (fx
-          “kylling” i stedet for en specifik ret).
-        </p>
-      </div>
-    </section>
+<script src="../assets/include.js" defer></script>
+<script src="../assets/header.js" defer></script>
 
-  </main>
+<!-- HENTER recipes.json - KORREKT STI! -->
+<script>
+let ALL_RECIPES = [];
 
-  <div data-include="footer"></div>
-  <div data-include="analytics"></div>
+async function loadRecipes() {
+  const res = await fetch("/assets/recipes.json");  // ← RETTET
+  const data = await res.json();
+  ALL_RECIPES = [...data.recipes].reverse();
+}
+</script>
 
-  <!-- Samme scripts som forsiden, men med korrekt sti fra /sider/ -->
-  <script src="../assets/include.js" defer></script>
-  <script src="../assets/header.js" defer></script>
+<!-- FILTER + SØGNING -->
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
 
-  <!-- Hent alle opskrifter fra assets/recipes.json -->
-  <script>
-    let ALL_RECIPES = [];
+  await loadRecipes();
 
-    async function loadRecipes() {
-      try {
-        const res = await fetch("../assets/recipes.json");
-        const data = await res.json();
+  const grid = document.getElementById("recipes-grid");
+  const countEl = document.getElementById("recipes-count");
+  const searchInput = document.getElementById("recipe-search");
+  const filterButtons = document.querySelectorAll(".filter-btn");
 
-        // vi antager at nye opskrifter tilføjes nederst i JSON → vi vender rækkefølgen, så nyeste vises først
-        ALL_RECIPES = [...(data.recipes || [])].reverse();
-      } catch (err) {
-        console.error("Fejl ved indlæsning af recipes.json:", err);
-        ALL_RECIPES = [];
-      }
+  let activeFilter = "Alle";
+  let searchQuery = "";
+
+  function render(list) {
+    grid.innerHTML = "";
+
+    if (!list.length) {
+      document.getElementById("recipes-empty-state").style.display = "block";
+      return;
     }
-  </script>
 
-  <!-- Logik til søgning + filtrering + render -->
-  <script>
-    document.addEventListener("DOMContentLoaded", async function () {
-      await loadRecipes();
+    document.getElementById("recipes-empty-state").style.display = "none";
 
-      const grid = document.getElementById("recipes-grid");
-      const countEl = document.getElementById("recipes-count");
-      const emptyState = document.getElementById("recipes-empty-state");
-      const filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
-      const searchForm = document.getElementById("recipe-search-form");
-      const searchInput = document.getElementById("recipe-search-input");
-
-      let activeFilter = "Alle";
-      let searchQuery = "";
-
-      function createCard(recipe) {
-        const article = document.createElement("article");
-        article.className = "category-card";
-
-        const url = `./${recipe.slug}.html`;
-        const image = `../assets/images/recipes/${recipe.slug}-768x768.jpg`;
-
-        article.innerHTML = `
-          <a href="${url}" class="category-card-link">
+    list.forEach(r => {
+      grid.innerHTML += `
+        <article class="category-card">
+          <a class="category-card-link" href="./${r.slug}.html">
             <div class="category-card-image">
-              <img src="${image}" alt="${recipe.title}">
+              <img src="../assets/images/recipes/${r.slug}-768x768.jpg" alt="${r.title}">
             </div>
             <div class="category-card-body">
-              <h3 class="category-card-title">${recipe.title}</h3>
+              <h3 class="category-card-title">${r.title}</h3>
             </div>
           </a>
-        `;
-        return article;
-      }
+        </article>`;
+    });
 
-      function renderRecipes(list) {
-        grid.innerHTML = "";
+    countEl.textContent = \`Viser \${list.length} opskrifter\`;
+  }
 
-        if (!list.length) {
-          emptyState.style.display = "block";
-          if (countEl) countEl.textContent = "Ingen opskrifter matcher dine filtre.";
-          return;
-        }
+  function applyFilters() {
+    const q = searchQuery.toLowerCase();
 
-        emptyState.style.display = "none";
+    const filtered = ALL_RECIPES.filter(r => {
+      const cats = r.categories.join(" ").toLowerCase();
+      const title = r.title.toLowerCase();
 
-        list.forEach(r => {
-          grid.appendChild(createCard(r));
-        });
+      const inCat = activeFilter === "Alle" || r.categories.includes(activeFilter);
+      const inSearch = !q || title.includes(q) || cats.includes(q);
 
-        if (countEl) {
-          const total = ALL_RECIPES.length;
-          let txt = `Viser ${list.length} ud af ${total} opskrifter`;
-          if (activeFilter !== "Alle") {
-            txt += ` i kategorien “${activeFilter}”`;
-          }
-          if (searchQuery.trim()) {
-            txt += ` – filtreret efter “${searchQuery.trim()}”`;
-          }
-          countEl.textContent = txt + ".";
-        }
-      }
+      return inCat && inSearch;
+    });
 
-      function applyFilters() {
-        const q = searchQuery.trim().toLowerCase();
+    render(filtered);
+  }
 
-        const filtered = ALL_RECIPES.filter(recipe => {
-          const cats = recipe.categories || [];
-          const haystack = [
-            recipe.title || "",
-            cats.join(" ")
-          ].join(" ").toLowerCase();
-
-          const matchesFilter =
-            activeFilter === "Alle" ||
-            (Array.isArray(cats) && cats.includes(activeFilter));
-
-          const matchesSearch = !q || haystack.includes(q);
-
-          return matchesFilter && matchesSearch;
-        });
-
-        renderRecipes(filtered);
-      }
-
-      // kategori-knapper
-      filterButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-          filterButtons.forEach(b => b.classList.remove("is-active"));
-          btn.classList.add("is-active");
-          activeFilter = btn.getAttribute("data-filter") || "Alle";
-          applyFilters();
-        });
-      });
-
-      // søgning fra hero
-      if (searchForm) {
-        searchForm.addEventListener("submit", (e) => {
-          e.preventDefault();
-          searchQuery = searchInput.value || "";
-          applyFilters();
-        });
-      }
-
-      if (searchInput) {
-        searchInput.addEventListener("input", () => {
-          searchQuery = searchInput.value || "";
-          applyFilters();
-        });
-      }
-
-      // første render – alle opskrifter, nyeste først
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterButtons.forEach(b => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      activeFilter = btn.dataset.filter;
       applyFilters();
     });
-  </script>
+  });
+
+  searchInput.addEventListener("input", () => {
+    searchQuery = searchInput.value;
+    applyFilters();
+  });
+
+  applyFilters();
+});
+</script>
 
 </body>
 </html>
