@@ -164,103 +164,138 @@
 
 <!-- Søgning + filtrering + render -->
 <script>
-  document.addEventListener("DOMContentLoaded", async () => {
-    await loadRecipes();
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadRecipes();
 
-    const grid = document.getElementById("recipes-grid");
-    const countEl = document.getElementById("recipes-count");
-    const emptyState = document.getElementById("recipes-empty-state");
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const searchForm = document.getElementById("recipe-search-form");
-    const searchInput = document.getElementById("recipe-search");
+  const grid = document.getElementById("recipes-grid");
+  const countEl = document.getElementById("recipes-count");
+  const emptyState = document.getElementById("recipes-empty-state");
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const searchForm = document.getElementById("recipe-search-form");
+  const searchInput = document.getElementById("recipe-search");
 
-    let activeFilter = "Alle";
-    let searchQuery = "";
+  let activeFilter = "Alle";
+  let searchQuery = "";
+  let currentIndex = 0;             // hvor langt vi er nået i listen
+  const PAGE_SIZE = 10;             // 10 opskrifter per klik
 
-    function renderRecipes(list) {
-      grid.innerHTML = "";
+  // Opret “Vis flere”-knappen
+  const loadMoreBtn = document.createElement("button");
+  loadMoreBtn.textContent = "Vis flere opskrifter";
+  loadMoreBtn.className = "btn btn-primary";
+  loadMoreBtn.style.display = "block";
+  loadMoreBtn.style.margin = "2rem auto 0";
+  loadMoreBtn.style.padding = "0.75rem 1.5rem";
+  loadMoreBtn.style.borderRadius = "999px";
+  loadMoreBtn.style.fontSize = "1rem";
+  loadMoreBtn.style.cursor = "pointer";
+  loadMoreBtn.style.background = "#fff";
+  loadMoreBtn.style.border = "1px solid #ddd";
+  loadMoreBtn.style.transition = "all .2s ease";
+  loadMoreBtn.onmouseover = () => (loadMoreBtn.style.boxShadow = "0 2px 8px rgba(0,0,0,0.12)");
+  loadMoreBtn.onmouseout = () => (loadMoreBtn.style.boxShadow = "none");
 
-      if (!list.length) {
-        emptyState.style.display = "block";
-        if (countEl) countEl.textContent = "Ingen opskrifter matcher dine filtre.";
-        return;
-      }
+  grid.insertAdjacentElement("afterend", loadMoreBtn);
 
-      emptyState.style.display = "none";
+  function createCard(recipe) {
+    const card = document.createElement("article");
+    card.className = "category-card";
+    card.innerHTML = `
+      <a class="category-card-link" href="./${recipe.slug}.html">
+        <div class="category-card-image">
+          <img src="../assets/images/recipes/${recipe.slug}-768x768.jpg" alt="${recipe.title}">
+        </div>
+        <div class="category-card-body">
+          <h3 class="category-card-title">${recipe.title}</h3>
+        </div>
+      </a>
+    `;
+    return card;
+  }
 
-      list.forEach(r => {
-        const card = document.createElement("article");
-        card.className = "category-card";
-        card.innerHTML = `
-          <a class="category-card-link" href="./${r.slug}.html">
-            <div class="category-card-image">
-              <img src="../assets/images/recipes/${r.slug}-768x768.jpg" alt="${r.title}">
-            </div>
-            <div class="category-card-body">
-              <h3 class="category-card-title">${r.title}</h3>
-            </div>
-          </a>
-        `;
-        grid.appendChild(card);
-      });
+  let CURRENT_LIST = [];
 
-      if (countEl) {
-        const total = ALL_RECIPES.length;
-        let txt = `Viser ${list.length} ud af ${total} opskrifter`;
-        if (activeFilter !== "Alle") txt += ` i kategorien “${activeFilter}”`;
-        if (searchQuery.trim()) txt += ` – filtreret efter “${searchQuery.trim()}”`;
-        countEl.textContent = txt + ".";
-      }
-    }
+  function renderChunk() {
+    const slice = CURRENT_LIST.slice(currentIndex, currentIndex + PAGE_SIZE);
 
-    function applyFilters() {
-      const q = searchQuery.trim().toLowerCase();
-
-      const filtered = ALL_RECIPES.filter(r => {
-        const cats = (r.categories || []).join(" ").toLowerCase();
-        const title = (r.title || "").toLowerCase();
-
-        const matchesFilter =
-          activeFilter === "Alle" ||
-          (Array.isArray(r.categories) && r.categories.includes(activeFilter));
-
-        const matchesSearch = !q || title.includes(q) || cats.includes(q);
-
-        return matchesFilter && matchesSearch;
-      });
-
-      renderRecipes(filtered);
-    }
-
-    // Filter-knapper
-    filterButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        filterButtons.forEach(b => b.classList.remove("is-active"));
-        btn.classList.add("is-active");
-        activeFilter = btn.getAttribute("data-filter") || "Alle";
-        applyFilters();
-      });
+    slice.forEach(recipe => {
+      grid.appendChild(createCard(recipe));
     });
 
-    // Søgning
-    if (searchForm) {
-      searchForm.addEventListener("submit", e => {
-        e.preventDefault();
-        searchQuery = searchInput.value || "";
-        applyFilters();
-      });
+    currentIndex += PAGE_SIZE;
+
+    // Hvis vi har vist det hele: skjul knappen
+    if (currentIndex >= CURRENT_LIST.length) {
+      loadMoreBtn.style.display = "none";
+    } else {
+      loadMoreBtn.style.display = "block";
+    }
+  }
+
+  function renderRecipes(list) {
+    grid.innerHTML = "";
+    currentIndex = 0;
+
+    if (list.length === 0) {
+      emptyState.style.display = "block";
+      loadMoreBtn.style.display = "none";
+      return;
     }
 
-    if (searchInput) {
-      searchInput.addEventListener("input", () => {
-        searchQuery = searchInput.value || "";
-        applyFilters();
-      });
-    }
+    emptyState.style.display = "none";
 
-    // Første render
+    CURRENT_LIST = list;
+
+    // Første chunk (10 opskrifter)
+    renderChunk();
+
+    // Opdater tekst
+    if (countEl) {
+      countEl.textContent = `Viser ${list.length} opskrifter`;
+    }
+  }
+
+  function applyFilters() {
+    const q = searchQuery.toLowerCase();
+
+    const filtered = ALL_RECIPES.filter(r => {
+      const cats = (r.categories || []).join(" ").toLowerCase();
+      const title = r.title.toLowerCase();
+
+      const matchesFilter =
+        activeFilter === "Alle" ||
+        (Array.isArray(r.categories) && r.categories.includes(activeFilter));
+
+      const matchesSearch = !q || title.includes(q) || cats.includes(q);
+
+      return matchesFilter && matchesSearch;
+    });
+
+    renderRecipes(filtered);
+  }
+
+  // Filter knapper
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterButtons.forEach(b => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      activeFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  // Søgning i hero
+  searchInput.addEventListener("input", () => {
+    searchQuery = searchInput.value;
     applyFilters();
   });
+
+  // “Vis flere”
+  loadMoreBtn.addEventListener("click", renderChunk);
+
+  // Første render
+  applyFilters();
+});
 </script>
 
 </body>
