@@ -45,4 +45,10 @@
     <changefreq>yearly</changefreq>
   </url>
 
+    <url>
+    <loc>https://opskrift-airfryer.dk/sider/opskrifter.html</loc>
+    <priority>0.9</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  
 </urlset>
