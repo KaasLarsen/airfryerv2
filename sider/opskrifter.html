@@ -9,22 +9,17 @@
 
   <link rel="stylesheet" href="../assets/styles.css" />
 
-  <!-- Ekstra styling til filterknapper + grid -->
   <style>
-
-    /* FILTER KNAPPER */
     .filter-bar-inner {
       max-width: 1100px;
       margin: 0 auto;
       padding: 1.5rem 1.25rem 0;
     }
-
     .filter-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-
     .filter-btn {
       border: 1px solid #e0e0e0;
       background: #ffffff;
@@ -34,12 +29,10 @@
       cursor: pointer;
       transition: all 0.15s ease;
     }
-
     .filter-btn:hover {
       transform: translateY(-1px);
       box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     }
-
     .filter-btn.is-active {
       background: #111;
       color: #fff;
@@ -47,7 +40,6 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
-    /* GRID */
     .category-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -57,7 +49,6 @@
       padding: 1rem;
     }
 
-    /* KORT */
     .category-card {
       border: 1px solid #e5e5e5;
       border-radius: 14px;
@@ -65,7 +56,6 @@
       overflow: hidden;
       transition: transform .15s ease, box-shadow .15s ease;
     }
-
     .category-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 14px rgba(0,0,0,0.10);
@@ -89,7 +79,6 @@
       font-weight: 600;
       color: #111;
     }
-
   </style>
 </head>
 
@@ -98,7 +87,6 @@
 <div data-include="icons"></div>
 <div data-include="header"></div>
 
-<!-- HERO -->
 <section class="hero-large"
          style="background-image: url('../assets/images/hero/hero-julebord-airfryer-1920x1080.jpg');">
   <div class="hero-large-overlay"></div>
@@ -123,16 +111,12 @@
   </div>
 </section>
 
-
 <main>
 
-  <!-- KATEGORIER -->
   <section class="section-category">
     <div class="category-header">
       <h2 class="section-title">Vælg kategori</h2>
-      <p class="section-desc">
-        Kombinér søgning og filtrering – eller vælg “Alle” for fuld oversigt.
-      </p>
+      <p class="section-desc">Kombinér søgning og filtrering – eller vælg “Alle”.</p>
     </div>
 
     <div class="filter-bar-inner">
@@ -150,7 +134,6 @@
     </div>
   </section>
 
-  <!-- OPSKRIFTSGRID -->
   <section class="section-category" style="margin-top:2rem; margin-bottom:3rem;">
     <div class="category-header">
       <h2 class="section-title" id="recipes-title">Alle opskrifter</h2>
@@ -173,24 +156,27 @@
 <script src="../assets/include.js" defer></script>
 <script src="../assets/header.js" defer></script>
 
-<!-- BILLEDE-MATCHING SYSTEM -->
+<!-- 🔥 BILLEDE-MATCH SYSTEM (REN VERSION) -->
 <script>
 const IMAGE_FILES = [
-  "bacon-airfryer-768x768.jpg",
+  "bacon-i-airfryer-768x768.jpg",
   "chicken-nuggets-airfryer-768x768.jpg",
   "fiskefilet-768x768.jpg",
   "flaeskesteg-i-airfryer-768x768.jpg",
   "flaeskestegssandwich-768x768.jpg",
-  "frikadeller-768x768.jpg",
+  "frikadeller-juleudgave-768x768.jpg",
   "grillede-groentsager-airfryer-768x768.jpg",
   "hvidloegsbroed-airfryer-768x768.jpg",
   "kyllinge-laar-airfryer-768x768.jpg",
-  "kyllingebryst-airfryer-768x768.jpg",
+  "kyllingebryst-i-airfryer-768x768.jpg",
   "kyllingevinger-i-airfryer-768x768.jpg",
   "laks-i-airfryer-768x768.jpg",
   "pommes-frites-768x768.jpg",
   "vegetar-tarteletter-768x768.jpg",
-  "hel-and-i-airfryer-768x768.jpg"
+  "hel-and-i-airfryer-768x768.jpg",
+  "brunede-kartofler-i-airfryer-768x768.jpg",
+  "roedkaal-i-airfryer-768x768.jpg",
+  "kartoffelbaade-i-airfryer-768x768.jpg"
 ];
 
 function normalize(str) {
@@ -205,14 +191,9 @@ function normalize(str) {
 
 function findBestImage(slug) {
   const exactFile = `${slug}-768x768.jpg`;
-  const exactPath = `../assets/images/recipes/${exactFile}`;
+  if (IMAGE_FILES.includes(exactFile))
+    return `../assets/images/recipes/${exactFile}`;
 
-  // 1) Brug EXAKT filnavn hvis den findes
-  if (IMAGE_FILES.includes(exactFile)) {
-    return exactPath;
-  }
-
-  // 2) Ellers → fallback match-system
   const normSlug = normalize(slug);
   const slugWords = normSlug.split(" ").filter(Boolean);
 
@@ -237,15 +218,9 @@ function findBestImage(slug) {
     ? `../assets/images/recipes/${bestMatch}`
     : "../assets/images/recipes/placeholder.jpg";
 }
-  });
-
-  return bestMatch
-    ? `../assets/images/recipes/${bestMatch}`
-    : "../assets/images/recipes/placeholder.jpg";
-}
 </script>
 
-<!-- OPSKRIFT HÅNDTERING -->
+<!-- 🔥 OPSKRIFT SYSTEM -->
 <script>
 let ALL_RECIPES = [];
 
@@ -253,14 +228,11 @@ async function loadRecipes() {
   try {
     const res = await fetch("/assets/recipes.json");
     const data = await res.json();
-
-    ALL_RECIPES = (data.recipes || [])
-      .map(r => ({
-        slug: r.slug,
-        title: r.title,
-        categories: r.categories || []
-      }))
-      .reverse();
+    ALL_RECIPES = (data.recipes || []).map(r => ({
+      slug: r.slug,
+      title: r.title,
+      categories: r.categories || []
+    })).reverse();
   } catch (err) {
     console.error("Fejl ved recipes.json:", err);
     ALL_RECIPES = [];
@@ -270,14 +242,12 @@ async function loadRecipes() {
 document.addEventListener("DOMContentLoaded", async () => {
   await loadRecipes();
 
-  const grid         = document.getElementById("recipes-grid");
-  const countEl      = document.getElementById("recipes-count");
-  const emptyState   = document.getElementById("recipes-empty-state");
+  const grid = document.getElementById("recipes-grid");
+  const countEl = document.getElementById("recipes-count");
+  const emptyState = document.getElementById("recipes-empty-state");
   const filterButtons = document.querySelectorAll(".filter-btn");
-  const searchInput   = document.getElementById("recipe-search");
-  const titleEl       = document.getElementById("recipes-title");
-
-  const PAGE_SIZE = 12;
+  const searchInput = document.getElementById("recipe-search");
+  const titleEl = document.getElementById("recipes-title");
 
   const CATEGORY_LABELS = {
     "Alle": "Alle opskrifter",
@@ -294,12 +264,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
   let activeFilter = params.get("filter") || "Alle";
   let searchQuery = "";
-  let currentIndex = 0;
-  let CURRENT_LIST = [];
 
   filterButtons.forEach(btn => {
-    const v = btn.dataset.filter;
-    btn.classList.toggle("is-active", v === activeFilter);
+    btn.classList.toggle("is-active", btn.dataset.filter === activeFilter);
   });
 
   const loadMoreBtn = document.createElement("button");
@@ -309,22 +276,21 @@ document.addEventListener("DOMContentLoaded", async () => {
   loadMoreBtn.style.display = "block";
   loadMoreBtn.style.padding = "0.75rem 1.5rem";
   loadMoreBtn.style.borderRadius = "999px";
-  loadMoreBtn.style.background = "#fff";
-  loadMoreBtn.style.border = "1px solid #ddd";
-  loadMoreBtn.style.cursor = "pointer";
-
   grid.insertAdjacentElement("afterend", loadMoreBtn);
+
+  let PAGE_SIZE = 12;
+  let CURRENT_LIST = [];
+  let currentIndex = 0;
 
   function updateTitle() {
     titleEl.textContent =
       activeFilter === "Alle"
         ? "Alle opskrifter"
-        : `Opskrifter i: ${CATEGORY_LABELS[activeFilter] || activeFilter}`;
+        : `Opskrifter i: ${CATEGORY_LABELS[activeFilter]}`;
   }
 
   function createCard(recipe) {
     const imgSrc = findBestImage(recipe.slug);
-
     return `
       <article class="category-card">
         <a class="category-card-link" href="../opskrifter/${recipe.slug}.html">
@@ -340,10 +306,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function renderChunk() {
     const slice = CURRENT_LIST.slice(currentIndex, currentIndex + PAGE_SIZE);
-    slice.forEach(r =>
-      grid.insertAdjacentHTML("beforeend", createCard(r))
-    );
-
+    slice.forEach(r => grid.insertAdjacentHTML("beforeend", createCard(r)));
     currentIndex += PAGE_SIZE;
 
     loadMoreBtn.style.display =
@@ -365,7 +328,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     emptyState.style.display = "none";
     countEl.textContent = `Viser ${list.length} opskrifter`;
-
     updateTitle();
     renderChunk();
   }
@@ -374,11 +336,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const q = searchQuery.toLowerCase();
 
     const filtered = ALL_RECIPES.filter(r => {
-      const matchesFilter =
-        activeFilter === "Alle" || r.categories.includes(activeFilter);
-      const matchesSearch =
-        r.title.toLowerCase().includes(q);
-
+      const matchesFilter = activeFilter === "Alle" || r.categories.includes(activeFilter);
+      const matchesSearch = r.title.toLowerCase().includes(q);
       return matchesFilter && matchesSearch;
     });
 
