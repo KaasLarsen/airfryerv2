@@ -228,22 +228,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   grid.insertAdjacentElement("afterend", loadMoreBtn);
 
-  function createCard(recipe) {
-    return `
-      <article class="category-card">
-        <a class="category-card-link" href="./${recipe.slug}.html">
-          <div class="category-card-image">
-            <img 
-             src="../assets/images/recipes/${recipe.slug}-768x768.jpg"
-onerror="this.onerror=null; this.src='../assets/images/recipes/${recipe.slug}-airfryer-768x768.jpg';"
-              alt="${recipe.title}">
-          </div>
-          <div class="category-card-body">
-            <h3 class="category-card-title">${recipe.title}</h3>
-          </div>
-        </a>
-      </article>`;
-  }
+function createCard(recipe) {
+  return `
+    <article class="category-card">
+      <a class="category-card-link" href="./${recipe.slug}.html">
+        <div class="category-card-image">
+          <img 
+            src="../assets/images/recipes/${recipe.slug}-768x768.jpg"
+            onerror="this.onerror=null; this.src='../assets/images/recipes/${recipe.slug}-airfryer-768x768.jpg';"
+            alt="${recipe.title}">
+        </div>
+        <div class="category-card-body">
+          <h3 class="category-card-title">${recipe.title}</h3>
+        </div>
+      </a>
+    </article>`;
+}
+
 
   function renderChunk() {
     const slice = CURRENT_LIST.slice(currentIndex, currentIndex + PAGE_SIZE);
