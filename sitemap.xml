@@ -32,5 +32,6 @@
 
   <!-- VEGETAR -->
   <url><loc>https://opskrift-airfryer.dk/opskrifter/vegetar-tarteletter.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/brunede-kartofler-airfryer.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
 
 </urlset>
