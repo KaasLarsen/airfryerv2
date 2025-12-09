@@ -2,19 +2,17 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>Opskrifter i airfryer – alle opskrifter samlet ét sted</title>
+  <title>Opskrifter i airfryer – alle opskrifter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="Få overblikket over alle opskrifter i airfryer – kylling, fisk, kartofler, grøntsager, tilbehør, snacks, julemad og klassiske favoritter.">
 
-  <!-- 🚀 Styling – SIKKER sti -->
+  <!-- ✔️ KORREKT STILSTI -->
   <link rel="stylesheet" href="../assets/styles.css" />
 </head>
 
 <body>
 
-  <div data-include="icons"></div>
-  <div data-include="header"></div>
+  <!-- ✔️ KORREKT INCLUDE PATH HÅNDTERES VIA include.js -->
+  <div data-include="../header"></div>
 
   <main>
     <article class="page-recipes">
@@ -24,9 +22,7 @@
         <div class="hero-inner-content">
           <p class="hero-kicker">alle opskrifter</p>
           <h1 class="hero-title">Opskrifter i airfryer</h1>
-          <p class="hero-lead">
-            Her finder du alle opskrifter samlet ét sted. Brug søgning, kategorier og filtrering for at finde præcis det du leder efter.
-          </p>
+          <p class="hero-lead">Her finder du alle opskrifter samlet ét sted.</p>
         </div>
       </section>
 
@@ -42,7 +38,7 @@
             <button class="filter-btn" data-filter="snacks-tilbehor">Snacks & tilbehør</button>
             <button class="filter-btn" data-filter="morgenmad">Morgenmad</button>
             <button class="filter-btn" data-filter="jul">Jul</button>
-            <button class="filter-btn" data-filter="sund-airfryer">Sundt</button>
+            <button class="filter-btn" data-filter="sund-airfryer">Sund</button>
           </div>
         </div>
       </section>
@@ -52,53 +48,48 @@
         <div class="category-header">
           <div>
             <h2 class="section-title">Alle opskrifter</h2>
-            <p class="section-desc" id="recipes-count">
-              Indlæser opskrifter …
-            </p>
+            <p class="section-desc" id="recipes-count">Indlæser opskrifter...</p>
           </div>
         </div>
 
-        <div class="category-grid" id="recipes-grid">
-          <!-- Dynamisk indhold -->
-        </div>
+        <div id="recipes-grid" class="category-grid"></div>
 
-        <div id="recipes-empty-state" style="display:none; max-width:700px; margin:2rem auto; text-align:center; color:#666;">
-          <p>Ingen opskrifter matcher filtrene.</p>
+        <div id="recipes-empty-state" style="display:none; text-align:center; color:#666; margin-top:1rem;">
+          Ingen opskrifter matcher filtrene.
         </div>
       </section>
 
     </article>
   </main>
 
-  <div data-include="footer"></div>
-  <div data-include="analytics"></div>
+  <div data-include="../footer"></div>
 
-  <!-- INCLUDE -->
+  <!-- ✔ KORREKT INCLUDE SCRIPT -->
   <script src="../assets/include.js" defer></script>
 
-  <!-- 🔥 LOAD recipes.json → alt dynamisk -->
+  <!-- LOAD RECIPES.JSON -->
   <script>
     let ALL_RECIPES = [];
 
     async function loadRecipes() {
-      const response = await fetch("../assets/recipes.json");
-      const data = await response.json();
+      const res = await fetch("../assets/recipes.json");
+      const data = await res.json();
 
       ALL_RECIPES = data.recipes.map(r => ({
         slug: r.slug,
         title: r.title,
         url: `./${r.slug}.html`,
         image: `../assets/images/recipes/${r.slug}-768x768.jpg`,
-        categories: r.categories || []
+        categories: r.categories
       }));
     }
   </script>
 
-  <!-- 🔥 RENDER -->
+  <!-- RENDER LOGIK -->
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
 
-      await loadRecipes(); // hent JSON
+      await loadRecipes();
 
       const grid = document.querySelector("#recipes-grid");
       const count = document.querySelector("#recipes-count");
@@ -112,7 +103,7 @@
 
         if (!list.length) {
           empty.style.display = "block";
-          count.textContent = "Ingen opskrifter fundet";
+          count.textContent = "Ingen opskrifter fundet.";
           return;
         }
 
@@ -154,7 +145,6 @@
         });
       });
 
-      // Første render
       render(ALL_RECIPES);
     });
   </script>
