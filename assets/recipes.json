@@ -35,7 +35,6 @@
       "title": "Saftig kylling i airfryer",
       "categories": ["kyllingefavoritter"]
     },
-
     {
       "slug": "fiskefilet",
       "title": "Fiskefilet i airfryer",
@@ -80,11 +79,11 @@
       "slug": "bacon-i-airfryer",
       "title": "Bacon i airfryer",
       "categories": ["snacks-tilbehor", "morgenmad"]
-    }
-    {
-  "slug": "brunede-kartofler-airfryer",
-  "title": "Brunede kartofler i airfryer",
-  "categories": ["jul", "tilbehor"]
     },
+    {
+      "slug": "brunede-kartofler-airfryer",
+      "title": "Brunede kartofler i airfryer",
+      "categories": ["jul", "tilbehor"]
+    }
   ]
 }
