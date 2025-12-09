@@ -901,3 +901,44 @@ body {
   0%   { transform: translateY(0) scale(1); opacity: 1; }
   100% { transform: translateY(-60px) scale(1.6); opacity: 0; }
 }
+/* GRID TIL OPSKRIFTSOVERSIGT */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.75rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* SELVE KORTET */
+.category-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.category-card-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.category-card-body {
+  padding: 1rem;
+}
+
+.category-card-title {
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 600;
+  color: #111;
+}
