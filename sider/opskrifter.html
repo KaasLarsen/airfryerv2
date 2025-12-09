@@ -5,8 +5,9 @@
   <title>Opskrifter i airfryer – alle opskrifter samlet ét sted</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Få overblikket over alle opskrifter i airfryer – kylling, fisk, kartofler, grøntsager, tilbehør, snacks, julemad og klassiske favoritter. Søg, filtrér og find den rette opskrift på få sekunder.">
+    content="Få overblikket over alle opskrifter i airfryer – kylling, fisk, kartofler, grøntsager, tilbehør, snacks, julemad og klassiske favoritter.">
 
+  <!-- 🚀 Styling – SIKKER sti -->
   <link rel="stylesheet" href="../assets/styles.css" />
 </head>
 
@@ -24,18 +25,15 @@
           <p class="hero-kicker">alle opskrifter</p>
           <h1 class="hero-title">Opskrifter i airfryer</h1>
           <p class="hero-lead">
-            Her finder du alle opskrifter samlet ét sted – sprøde kartofler, saftig kylling, nem hverdagsmad,
-            juleklassikere, grøntsager, snacks og tilbehør. Siden er lavet som din centrale opskrifts-hub:
-            du kan søge frit, filtrere efter kategori og hurtigt klikke dig videre til den opskrift, der passer perfekt
-            til din airfryer og din hverdag.
+            Her finder du alle opskrifter samlet ét sted. Brug søgning, kategorier og filtrering for at finde præcis det du leder efter.
           </p>
         </div>
       </section>
 
-      <!-- FILTER-BAR -->
+      <!-- FILTER -->
       <section class="filter-bar">
         <div class="filter-bar-inner">
-          <span class="filter-label">Filtrér efter kategori:</span>
+          <span class="filter-label">Filtrér:</span>
           <div class="filter-buttons">
             <button class="filter-btn is-active" data-filter="Alle">Alle</button>
             <button class="filter-btn" data-filter="sproede-kartofler">Sprøde kartofler</button>
@@ -49,13 +47,13 @@
         </div>
       </section>
 
-      <!-- OPSKRIFT-GRID -->
+      <!-- GRID -->
       <section class="section-category" style="margin-top:2.5rem; margin-bottom:3rem;">
         <div class="category-header">
           <div>
             <h2 class="section-title">Alle opskrifter</h2>
             <p class="section-desc" id="recipes-count">
-              Indlæser opskrifter…
+              Indlæser opskrifter …
             </p>
           </div>
         </div>
@@ -64,10 +62,8 @@
           <!-- Dynamisk indhold -->
         </div>
 
-        <div id="recipes-empty-state" style="display:none; max-width:760px; margin:2rem auto 0; text-align:center; color:#666;">
-          <p style="margin-bottom:0.75rem;">
-            Der er ingen opskrifter, der matcher dine filtre.
-          </p>
+        <div id="recipes-empty-state" style="display:none; max-width:700px; margin:2rem auto; text-align:center; color:#666;">
+          <p>Ingen opskrifter matcher filtrene.</p>
         </div>
       </section>
 
@@ -77,79 +73,76 @@
   <div data-include="footer"></div>
   <div data-include="analytics"></div>
 
+  <!-- INCLUDE -->
+  <script src="../assets/include.js" defer></script>
 
-  <!-- 👇 1. Indlæs recipes.js som JSON og konverter -->
+  <!-- 🔥 LOAD recipes.json → alt dynamisk -->
   <script>
     let ALL_RECIPES = [];
 
-    async function loadExternalRecipes() {
-      try {
-        const response = await fetch("../assets/recipes.js");
-        const text = await response.text();
-        const json = JSON.parse(text.trim());
+    async function loadRecipes() {
+      const response = await fetch("../assets/recipes.json");
+      const data = await response.json();
 
-        ALL_RECIPES = json.recipes.map(r => ({
-          slug: r.slug,
-          title: r.title,
-          url: `./${r.slug}.html`,
-          image: `../assets/images/recipes/${r.slug}-768x768.jpg`,
-          categories: r.categories || []
-        }));
-      } catch (err) {
-        console.error("Fejl ved indlæsning af recipes.js:", err);
-      }
+      ALL_RECIPES = data.recipes.map(r => ({
+        slug: r.slug,
+        title: r.title,
+        url: `./${r.slug}.html`,
+        image: `../assets/images/recipes/${r.slug}-768x768.jpg`,
+        categories: r.categories || []
+      }));
     }
   </script>
 
-
-  <!-- 👇 2. Når JSON er hentet, start hele opskriftssystemet -->
+  <!-- 🔥 RENDER -->
   <script>
-    document.addEventListener("DOMContentLoaded", async function () {
-      await loadExternalRecipes(); // hent dine opskrifter
+    document.addEventListener("DOMContentLoaded", async () => {
 
-      const grid = document.getElementById("recipes-grid");
-      const countEl = document.getElementById("recipes-count");
-      const emptyState = document.getElementById("recipes-empty-state");
-      const filterButtons = [...document.querySelectorAll(".filter-btn")];
+      await loadRecipes(); // hent JSON
+
+      const grid = document.querySelector("#recipes-grid");
+      const count = document.querySelector("#recipes-count");
+      const empty = document.querySelector("#recipes-empty-state");
+      const filterButtons = document.querySelectorAll(".filter-btn");
 
       let activeFilter = "Alle";
 
-      function renderRecipes(list) {
+      function render(list) {
         grid.innerHTML = "";
 
         if (!list.length) {
-          emptyState.style.display = "block";
-          countEl.textContent = "Ingen opskrifter matcher filtrene.";
+          empty.style.display = "block";
+          count.textContent = "Ingen opskrifter fundet";
           return;
         }
 
-        emptyState.style.display = "none";
+        empty.style.display = "none";
 
-        list.forEach(recipe => {
-          const card = document.createElement("article");
-          card.className = "category-card";
-          card.innerHTML = `
-            <a href="${recipe.url}" class="category-card-link">
+        list.forEach(r => {
+          const el = document.createElement("article");
+          el.className = "category-card";
+          el.innerHTML = `
+            <a href="${r.url}" class="category-card-link">
               <div class="category-card-image">
-                <img src="${recipe.image}" alt="${recipe.title}">
+                <img src="${r.image}" alt="${r.title}">
               </div>
               <div class="category-card-body">
-                <h3 class="category-card-title">${recipe.title}</h3>
+                <h3 class="category-card-title">${r.title}</h3>
               </div>
-            </a>
-          `;
-          grid.appendChild(card);
+            </a>`;
+          grid.appendChild(el);
         });
+
+        count.textContent = \`Viser \${list.length} opskrifter\`;
       }
 
-      function applyFilters() {
+      function applyFilter() {
         const filtered =
           activeFilter === "Alle"
             ? ALL_RECIPES
             : ALL_RECIPES.filter(r => r.categories.includes(activeFilter));
 
-        renderRecipes(filtered);
-        countEl.textContent = `Viser ${filtered.length} opskrifter`;
+        render(filtered);
       }
 
       filterButtons.forEach(btn => {
@@ -157,11 +150,12 @@
           filterButtons.forEach(b => b.classList.remove("is-active"));
           btn.classList.add("is-active");
           activeFilter = btn.dataset.filter;
-          applyFilters();
+          applyFilter();
         });
       });
 
-      applyFilters(); // første load
+      // Første render
+      render(ALL_RECIPES);
     });
   </script>
 
