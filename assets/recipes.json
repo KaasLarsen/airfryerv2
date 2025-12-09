@@ -83,6 +83,11 @@
       "title": "Hvidløgsbrød i airfryer",
       "categories": ["snacks-tilbehor", "morgenmad"]
     },
+        {
+      "slug": "hel-and-i-airfryer",
+      "title": "Hel and i airfryer",
+      "categories": ["nem-aftensmad", "jul"]
+    },
     {
       "slug": "bacon-i-airfryer",
       "title": "Bacon i airfryer",
