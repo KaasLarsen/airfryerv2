@@ -29,31 +29,6 @@
             du kan søge frit, filtrere efter kategori og hurtigt klikke dig videre til den opskrift, der passer perfekt
             til din airfryer og din hverdag.
           </p>
-          <p class="hero-lead">
-            Uanset om du leder efter hurtig aftensmad, sund hverdagsmad, noget lækkert til weekenden eller ideer til jul
-            og gæster, kan du bruge både søgefelt og kategorier her på siden. Opskrifterne er optimeret til airfryer,
-            så du får konkrete tider, temperaturer og tips – og naturligvis sprøde, saftige og gennemtænkte resultater.
-          </p>
-
-          <!-- SØGNING -->
-          <form class="search-form" id="recipe-search-form">
-            <div class="search-input-wrapper">
-              <input
-                type="search"
-                id="recipe-search"
-                class="search-input"
-                placeholder="Søg efter opskrift, ingrediens eller kategori… (fx kylling, jul, kartofler)"
-                autocomplete="off"
-              />
-              <button type="submit" class="btn btn-primary">
-                Søg
-              </button>
-            </div>
-            <p class="search-helper">
-              Tip: Prøv at søge på <strong>“kylling”</strong>, <strong>“laks”</strong>, <strong>“jul”</strong> eller
-              <strong>“pommes”</strong>.
-            </p>
-          </form>
         </div>
       </section>
 
@@ -63,18 +38,13 @@
           <span class="filter-label">Filtrér efter kategori:</span>
           <div class="filter-buttons">
             <button class="filter-btn is-active" data-filter="Alle">Alle</button>
-            <button class="filter-btn" data-filter="Airfryer">Airfryer</button>
-            <button class="filter-btn" data-filter="Kylling">Kylling</button>
-            <button class="filter-btn" data-filter="Fisk">Fisk</button>
-            <button class="filter-btn" data-filter="Oksekød">Oksekød</button>
-            <button class="filter-btn" data-filter="Svin">Svin</button>
-            <button class="filter-btn" data-filter="Tilbehør">Tilbehør</button>
-            <button class="filter-btn" data-filter="Aftensmad">Aftensmad</button>
-            <button class="filter-btn" data-filter="Snack">Snack</button>
-            <button class="filter-btn" data-filter="Pasta">Pasta</button>
-            <button class="filter-btn" data-filter="Jul">Jul</button>
-            <button class="filter-btn" data-filter="Grill">Grill</button>
-            <button class="filter-btn" data-filter="Dessert">Dessert</button>
+            <button class="filter-btn" data-filter="sproede-kartofler">Sprøde kartofler</button>
+            <button class="filter-btn" data-filter="kyllingefavoritter">Kylling</button>
+            <button class="filter-btn" data-filter="nem-aftensmad">Aftensmad</button>
+            <button class="filter-btn" data-filter="snacks-tilbehor">Snacks & tilbehør</button>
+            <button class="filter-btn" data-filter="morgenmad">Morgenmad</button>
+            <button class="filter-btn" data-filter="jul">Jul</button>
+            <button class="filter-btn" data-filter="sund-airfryer">Sundt</button>
           </div>
         </div>
       </section>
@@ -85,22 +55,18 @@
           <div>
             <h2 class="section-title">Alle opskrifter</h2>
             <p class="section-desc" id="recipes-count">
-              Viser alle opskrifter.
+              Indlæser opskrifter…
             </p>
           </div>
         </div>
 
         <div class="category-grid" id="recipes-grid">
-          <!-- Fyldes dynamisk via script -->
+          <!-- Dynamisk indhold -->
         </div>
 
         <div id="recipes-empty-state" style="display:none; max-width:760px; margin:2rem auto 0; text-align:center; color:#666;">
           <p style="margin-bottom:0.75rem;">
-            Der er ingen opskrifter, der matcher din søgning eller filter endnu.
-          </p>
-          <p style="font-size:0.95rem;">
-            Prøv at fjerne nogle filtre, søg bredere (fx <strong>kylling</strong> i stedet for en ret),
-            eller klik på <strong>Alle</strong> for at se hele oversigten igen.
+            Der er ingen opskrifter, der matcher dine filtre.
           </p>
         </div>
       </section>
@@ -111,267 +77,91 @@
   <div data-include="footer"></div>
   <div data-include="analytics"></div>
 
-  <script src="../assets/include.js" defer></script>
-  <script src="../assets/related.js" defer></script>
-  <script src="../assets/save-recipe.js" defer></script>
 
-  <!-- OPSKRIFTS-LISTE + SØG / FILTER LOGIK -->
+  <!-- 👇 1. Indlæs recipes.js som JSON og konverter -->
   <script>
-    // Hvis du senere lægger en global ALL_RECIPES ind i related.js,
-    // vil denne side automatisk bruge den i stedet for RECIPES her.
-    const RECIPES_FALLBACK = [
-      {
-        slug: "flaeskestegssandwich",
-        title: "Flæskestegssandwich i airfryer",
-        url: "./flaeskestegssandwich.html",
-        image: "../assets/images/recipes/flaeskestegssandwich-768x768.jpg",
-        time: "15 min",
-        portions: "4 personer",
-        category: "Aftensmad",
-        categories: ["Airfryer", "Svin", "Aftensmad", "Jul"],
-        tags: ["flæskesteg", "sandwich", "jul", "restemad"],
-        excerpt: "Flæskestegssandwich med sprød svær, saftigt kød, rødkål og agurkesalat – perfekt til julefrokost, gæster og resteflæskesteg."
-      },
-      {
-        slug: "vegetar-tarteletter",
-        title: "Vegetar tarteletter i airfryer",
-        url: "./vegetar-tarteletter.html",
-        image: "../assets/images/recipes/vegetar-tarteletter-768x768.jpg",
-        time: "45 min",
-        portions: "4 personer",
-        category: "Aftensmad",
-        categories: ["Airfryer", "Aftensmad", "Tilbehør", "Jul", "Vegetar"],
-        tags: ["tarteletter", "vegetar", "svampestuvning", "juleforret"],
-        excerpt: "Cremede vegetar tarteletter med svampe, porrer og ærter – alt lavet i airfryer. Perfekte som forret, let aftensmad eller til julefrokost."
-      },
-      {
-        slug: "frikadeller",
-        title: "Julefrikadeller i airfryer",
-        url: "./frikadeller.html",
-        image: "../assets/images/recipes/frikadeller-768x768.jpg",
-        time: "31 min",
-        portions: "4 personer",
-        category: "Aftensmad",
-        categories: ["Airfryer", "Svin", "Aftensmad", "Jul"],
-        tags: ["frikadeller", "julefrokost", "dansk klassiker"],
-        excerpt: "Sprøde, saftige julefrikadeller med muskat og allehånde – perfekte til julefrokost, buffet og vinterhygge."
-      },
-      {
-        slug: "grillede-groentsager-airfryer",
-        title: "Grillede grøntsager i airfryer",
-        url: "./grillede-groentsager-airfryer.html",
-        image: "../assets/images/recipes/grillede-groentsager-airfryer-768x768.jpg",
-        time: "25 min",
-        portions: "4 personer",
-        category: "Tilbehør",
-        categories: ["Airfryer", "Tilbehør", "Vegetar", "Sundt"],
-        tags: ["grøntsager", "tilbehør", "sundt"],
-        excerpt: "Farverige, grillede grøntsager med masser af smag – perfekt som tilbehør til kød, fisk, pasta eller bowls."
-      },
-      {
-        slug: "hvidloegsbroed-airfryer",
-        title: "Hvidløgsbrød i airfryer",
-        url: "./hvidloegsbroed-airfryer.html",
-        image: "../assets/images/recipes/hvidloegsbroed-airfryer-768x768.jpg",
-        time: "18 min",
-        portions: "4 personer",
-        category: "Tilbehør",
-        categories: ["Airfryer", "Tilbehør", "Snack"],
-        tags: ["hvidløgsbrød", "brød", "tilbehør"],
-        excerpt: "Sprødt, gyldent og smørfyldt hvidløgsbrød med masser af smag – perfekt til pasta, supper, grill og tapas."
-      },
-      {
-        slug: "kyllinge-laar-airfryer",
-        title: "Kyllingelår i airfryer",
-        url: "./kyllinge-laar-airfryer.html",
-        image: "../assets/images/recipes/kyllinge-laar-airfryer-768x768.jpg",
-        time: "45 min",
-        portions: "4 personer",
-        category: "Aftensmad",
-        categories: ["Airfryer", "Kylling", "Aftensmad"],
-        tags: ["kyllingelår", "sprødt skind", "nem aftensmad"],
-        excerpt: "Kyllingelår med knasende sprødt skind og saftigt kød – perfekt som hverdagsfavorit med kartofler og salat."
-      },
-      {
-        slug: "kyllingebryst-i-airfryer",
-        title: "Kyllingebryst i airfryer",
-        url: "./kyllingebryst-i-airfryer.html",
-        image: "../assets/images/recipes/kyllingebryst-airfryer-768x768.jpg",
-        time: "25 min",
-        portions: "2 personer",
-        category: "Aftensmad",
-        categories: ["Airfryer", "Kylling", "Aftensmad", "Sundt"],
-        tags: ["kyllingebryst", "sund hverdagsmad", "meal prep"],
-        excerpt: "Saftigt, mørt kyllingebryst med enkel kryddermarinade – perfekt til salater, bowls, wraps og nem aftensmad."
-      },
-      {
-        slug: "kyllingevinger-i-airfryer",
-        title: "Kyllingevinger i airfryer",
-        url: "./kyllingevinger-i-airfryer.html",
-        image: "../assets/images/recipes/kyllingevinger-i-airfryer-768x768.jpg",
-        time: "32 min",
-        portions: "2–3 personer",
-        category: "Aftensmad",
-        categories: ["Airfryer", "Kylling", "Snack", "Aftensmad"],
-        tags: ["chicken wings", "snack", "fredagsmenu"],
-        excerpt: "Sprøde, krydrede kyllingevinger – perfekte til fredagsmenu, kamp-aften eller som snack med dip og grøntsagsstænger."
-      },
-      {
-        slug: "laks-i-airfryer",
-        title: "Laks i airfryer",
-        url: "./laks-i-airfryer.html",
-        image: "../assets/images/recipes/laks-i-airfryer-768x768.jpg",
-        time: "20–22 min",
-        portions: "2–3 personer",
-        category: "Hovedret",
-        categories: ["Airfryer", "Fisk", "Hovedret", "Sundt"],
-        tags: ["laks", "fisk", "citron", "sund aftensmad"],
-        excerpt: "Saftig laks med citron, hvidløg og urter – nem og sund hverdagsmad, der er klar på under 25 minutter."
-      },
-      {
-        slug: "pommes-frites-i-airfryer",
-        title: "Pommes frites i airfryer",
-        url: "./pommes-frites-i-airfryer.html",
-        image: "../assets/images/recipes/pommes-frites-768x768.jpg",
-        time: "25–30 min",
-        portions: "4 portioner",
-        category: "Tilbehør",
-        categories: ["Airfryer", "Tilbehør", "Snack", "Klassiker"],
-        tags: ["pommes frites", "kartofler", "sprøde fritter"],
-        excerpt: "Sprøde, gyldne pommes frites med blød midte – både til hjemmelavede kartofler og frosne fritter."
+    let ALL_RECIPES = [];
+
+    async function loadExternalRecipes() {
+      try {
+        const response = await fetch("../assets/recipes.js");
+        const text = await response.text();
+        const json = JSON.parse(text.trim());
+
+        ALL_RECIPES = json.recipes.map(r => ({
+          slug: r.slug,
+          title: r.title,
+          url: `./${r.slug}.html`,
+          image: `../assets/images/recipes/${r.slug}-768x768.jpg`,
+          categories: r.categories || []
+        }));
+      } catch (err) {
+        console.error("Fejl ved indlæsning af recipes.js:", err);
       }
-    ];
+    }
+  </script>
 
-    const ALL_RECIPES = (window.ALL_RECIPES && Array.isArray(window.ALL_RECIPES))
-      ? window.ALL_RECIPES
-      : RECIPES_FALLBACK;
 
-    document.addEventListener("DOMContentLoaded", function () {
+  <!-- 👇 2. Når JSON er hentet, start hele opskriftssystemet -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      await loadExternalRecipes(); // hent dine opskrifter
+
       const grid = document.getElementById("recipes-grid");
       const countEl = document.getElementById("recipes-count");
       const emptyState = document.getElementById("recipes-empty-state");
-      const searchInput = document.getElementById("recipe-search");
-      const searchForm = document.getElementById("recipe-search-form");
-      const filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
+      const filterButtons = [...document.querySelectorAll(".filter-btn")];
 
       let activeFilter = "Alle";
-      let searchQuery = "";
 
       function renderRecipes(list) {
         grid.innerHTML = "";
 
-        if (!list || list.length === 0) {
+        if (!list.length) {
           emptyState.style.display = "block";
-          if (countEl) {
-            countEl.textContent = "Ingen opskrifter matcher din søgning eller dine filtre.";
-          }
+          countEl.textContent = "Ingen opskrifter matcher filtrene.";
           return;
         }
 
         emptyState.style.display = "none";
 
         list.forEach(recipe => {
-          const article = document.createElement("article");
-          article.className = "category-card";
-
-          article.innerHTML = `
+          const card = document.createElement("article");
+          card.className = "category-card";
+          card.innerHTML = `
             <a href="${recipe.url}" class="category-card-link">
               <div class="category-card-image">
-                <img src="${recipe.image}" alt="${recipe.title}" loading="lazy">
+                <img src="${recipe.image}" alt="${recipe.title}">
               </div>
               <div class="category-card-body">
                 <h3 class="category-card-title">${recipe.title}</h3>
-                <p class="category-card-meta">
-                  ${recipe.time ? recipe.time + " · " : ""}${recipe.portions ? recipe.portions + " · " : ""}${recipe.category || ""}
-                </p>
-                ${recipe.excerpt ? `<p class="category-card-excerpt">${recipe.excerpt}</p>` : ""}
-                ${Array.isArray(recipe.tags) && recipe.tags.length
-                  ? `<div class="category-card-tags">
-                      ${recipe.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
-                     </div>`
-                  : ""
-                }
               </div>
             </a>
           `;
-
-          grid.appendChild(article);
+          grid.appendChild(card);
         });
-      }
-
-      function updateCount(filteredLength, totalLength) {
-        if (!countEl) return;
-
-        let base = "";
-        if (activeFilter === "Alle") {
-          base = `Viser ${filteredLength} ud af ${totalLength} opskrifter.`;
-        } else {
-          base = `Viser ${filteredLength} opskrifter i kategorien “${activeFilter}”.`;
-        }
-
-        if (searchQuery.trim()) {
-          base += ` Filtreret efter søgning: “${searchQuery.trim()}”.`;
-        }
-
-        countEl.textContent = base;
       }
 
       function applyFilters() {
-        const q = searchQuery.trim().toLowerCase();
-
-        const filtered = ALL_RECIPES.filter(recipe => {
-          const cats = recipe.categories || [];
-          const tags = recipe.tags || [];
-          const text = [
-            recipe.title || "",
-            recipe.excerpt || "",
-            recipe.category || "",
-            cats.join(" "),
-            tags.join(" ")
-          ].join(" ").toLowerCase();
-
-          const matchFilter =
-            activeFilter === "Alle" ||
-            (Array.isArray(cats) && cats.includes(activeFilter));
-
-          const matchSearch = !q || text.includes(q);
-
-          return matchFilter && matchSearch;
-        });
+        const filtered =
+          activeFilter === "Alle"
+            ? ALL_RECIPES
+            : ALL_RECIPES.filter(r => r.categories.includes(activeFilter));
 
         renderRecipes(filtered);
-        updateCount(filtered.length, ALL_RECIPES.length);
+        countEl.textContent = `Viser ${filtered.length} opskrifter`;
       }
 
-      // Filterknapper
       filterButtons.forEach(btn => {
         btn.addEventListener("click", () => {
           filterButtons.forEach(b => b.classList.remove("is-active"));
           btn.classList.add("is-active");
-          activeFilter = btn.getAttribute("data-filter") || "Alle";
+          activeFilter = btn.dataset.filter;
           applyFilters();
         });
       });
 
-      // Søgning (submit + live)
-      if (searchForm) {
-        searchForm.addEventListener("submit", (e) => {
-          e.preventDefault();
-          searchQuery = searchInput.value || "";
-          applyFilters();
-        });
-      }
-
-      if (searchInput) {
-        searchInput.addEventListener("input", () => {
-          searchQuery = searchInput.value || "";
-          applyFilters();
-        });
-      }
-
-      // Første render
-      renderRecipes(ALL_RECIPES);
-      updateCount(ALL_RECIPES.length, ALL_RECIPES.length);
+      applyFilters(); // første load
     });
   </script>
 
