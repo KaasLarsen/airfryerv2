@@ -81,5 +81,10 @@
       "title": "Bacon i airfryer",
       "categories": ["snacks-tilbehor", "morgenmad"]
     }
+    {
+  "slug": "brunede-kartofler-airfryer",
+  "title": "Brunede kartofler i airfryer",
+  "categories": ["jul", "tilbehor"]
+    },
   ]
 }
