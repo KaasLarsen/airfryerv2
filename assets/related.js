@@ -2,22 +2,69 @@
   const container = document.getElementById("related-container");
   if (!container) return;
 
-  // Load recipes.json
-  const response = await fetch("../assets/recipes.json");
-  const data = await response.json();
-  const allRecipes = data.recipes || [];
+  // Lav wrapper til slider
+  container.outerHTML = `
+    <div class="slider-wrapper related-slider-wrapper">
+      <button class="slider-btn related-prev">‹</button>
+      <div class="recipe-slider" id="related-slider"></div>
+      <button class="slider-btn related-next">›</button>
+    </div>
+  `;
 
-  const currentCategories = window.recipeTags || []; 
-  const currentSlug = window.recipeSlug;
+  const slider = document.getElementById("related-slider");
 
-  // Auto image finder (samme som dit grid-system)
+  // Hent alle opskrifter
+  const res = await fetch("../assets/recipes.json");
+  const data = await res.json();
+  const recipes = data.recipes || [];
+
+  const currentSlug = window.recipeSlug || "";
+  const currentTags = window.recipeTags || [];
+
+  // Fallback baseret på kategori
+  const fallbackCategories = {
+    jul: ["jul", "nem-aftensmad"],
+    kylling: ["kyllingefavoritter"],
+    kartofler: ["sproede-kartofler"],
+    morgenmad: ["morgenmad", "snacks-tilbehor"],
+  };
+
+  function findFallbackCategories(tags) {
+    for (const key in fallbackCategories) {
+      if (tags.includes(key)) return fallbackCategories[key];
+    }
+    return ["nem-aftensmad"]; // generisk fallback
+  }
+
+  // Find relaterede opskrifter
+  let related = recipes
+    .filter(r => r.slug !== currentSlug)
+    .filter(r => (r.tags || []).some(tag => currentTags.includes(tag)));
+
+  // Hvis for få → brug fallback kategori logik
+  if (related.length < 4) {
+    const fallbackCats = findFallbackCategories(currentTags);
+    related = recipes.filter(r =>
+      r.categories && r.categories.some(cat => fallbackCats.includes(cat))
+    );
+  }
+
+  // Stadig for få → bare vis de nyeste
+  if (related.length < 4) {
+    related = recipes.slice().reverse().slice(0, 6);
+  }
+
+  // Begræns antal
+  related = related.slice(0, 6);
+
+  // Auto-match billeder
   function normalize(str) {
     return (str || "")
       .toLowerCase()
-      .replace(/-/g, " ")
       .replace(/æ/g, "ae")
       .replace(/ø/g, "oe")
       .replace(/å/g, "aa")
+      .replace(/-/g, " ")
       .replace(/[^\w\s]/g, "");
   }
 
@@ -41,59 +88,51 @@
 
   function findBestImage(slug) {
     const normSlug = normalize(slug);
-    const slugWords = normSlug.split(" ").filter(Boolean);
-
+    let best = IMAGE_FILES[0];
     let bestScore = -1;
-    let bestMatch = null;
 
     IMAGE_FILES.forEach(file => {
       const normFile = normalize(file);
       let score = 0;
 
-      slugWords.forEach(word => {
+      normSlug.split(" ").forEach(word => {
         if (normFile.includes(word)) score++;
       });
 
       if (score > bestScore) {
         bestScore = score;
-        bestMatch = file;
+        best = file;
       }
     });
 
-    return bestMatch
-      ? `../assets/images/recipes/${bestMatch}`
-      : "../assets/images/recipes/placeholder.jpg";
+    return `../assets/images/recipes/${best}`;
   }
 
-  // Find relaterede via categories
-  const related = allRecipes
-    .filter(r => r.slug !== currentSlug)
-    .filter(r => r.categories.some(cat => currentCategories.includes(cat)))
-    .slice(0, 3);
-
-  // Fall-back: hvis der er 0 matches → tag 3 tilfældige
-  const finalRecipes = related.length ? related : allRecipes.filter(r => r.slug !== currentSlug).slice(0, 3);
-
-  finalRecipes.forEach(r => {
-    const imgPath = findBestImage(r.slug);
-
+  // Render cards i slider
+  related.forEach(r => {
     const card = document.createElement("a");
-    card.href = `../opskrifter/${r.slug}.html`;
-    card.className = "recipe-card";
+    card.className = "recipe-slide-card";
+    card.href = `./${r.slug}.html`;
+
+    const img = findBestImage(r.slug);
 
     card.innerHTML = `
-      <div class="recipe-img" style="
-        background-image: url('${imgPath}');
-        background-size: cover;
-        background-position: center;
-        border-radius: 12px;
-        width: 100%;
-        aspect-ratio: 1/1;
-      "></div>
-
-      <h3 class="recipe-title">${r.title}</h3>
+      <img src="${img}" alt="${r.title}">
+      <h3>${r.title}</h3>
     `;
 
-    container.appendChild(card);
+    slider.appendChild(card);
+  });
+
+  // Slider funktionalitet
+  const prev = document.querySelector(".related-prev");
+  const next = document.querySelector(".related-next");
+
+  prev.addEventListener("click", () => {
+    slider.scrollBy({ left: -320, behavior: "smooth" });
+  });
+
+  next.addEventListener("click", () => {
+    slider.scrollBy({ left: 320, behavior: "smooth" });
   });
 })();
