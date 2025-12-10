@@ -11,6 +11,11 @@
   "categories": ["sproede-kartofler", "nem-aftensmad", "tilbehor"]
     },
     {
+  "slug": "grillede-groentsager-airfryer",
+  "title": "Grillede grøntsager i airfryer",
+  "categories": ["nem-aftensmad", "sund-airfryer", "snacks-tilbehor"]
+},
+    {
   "slug": "toast-i-airfryer",
   "title": "Toast i airfryer",
   "categories": ["snacks-tilbehor", "morgenmad"]
