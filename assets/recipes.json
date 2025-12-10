@@ -11,6 +11,11 @@
   "categories": ["sproede-kartofler", "nem-aftensmad", "tilbehor"]
     },
     {
+  "slug": "toast-i-airfryer",
+  "title": "Toast i airfryer",
+  "categories": ["snacks-tilbehor", "morgenmad"]
+  },
+    {
       "slug": "kyllinge-laar-airfryer",
       "title": "Kyllingelår i airfryer",
       "categories": ["kyllingefavoritter"]
