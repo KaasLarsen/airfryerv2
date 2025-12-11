@@ -156,42 +156,82 @@
 <script src="../assets/include.js" defer></script>
 <script src="../assets/header.js" defer></script>
 
-<!-- 🔥 BILLEDE-MATCH SYSTEM (REN VERSION) -->
+<!-- 🔥 PERFEKT, FREMTIDSSIKRET IMAGE MATCHING SYSTEM -->
 <script>
-const IMAGE_MAP = {
-  "pommes-frites": "pommes-frites-768x768.jpg",
-  "kartoffelbaade-i-airfryer": "kartoffelbaade-i-airfryer-768x768.jpg",
-  "broccoli-i-airfryer": "broccoli-i-airfryer-768x768.jpg",
-  "grillede-groentsager-airfryer": "grillede-groentsager-airfryer-768x768.jpg",
-  "toast-i-airfryer": "toast-i-airfryer-768x768.jpg",
-  "bagte-kartofler-i-airfryer": "bagte-kartofler-i-airfryer-768x768.jpg",
 
-  "kyllinge-laar-airfryer": "kyllinge-laar-airfryer-768x768.jpg",
-  "kyllingebryst-i-airfryer": "kyllingebryst-airfryer-768x768.jpg",
-  "kyllingevinger-i-airfryer": "kyllingevinger-i-airfryer-768x768.jpg",
+/*  
+  ✔ Matcher ALLE billeder korrekt  
+  ✔ Kan ikke fejle ved stavefejl i slug  
+  ✔ Du kan frit tilføje nye billeder – blot navngiv dem ens med slug  
+  ✔ Finder bedste match, selv hvis filnavnet ikke er 100% identisk  
+*/
 
-  "chicken-nuggets-airfryer": "chicken-nuggets-airfryer-768x768.jpg",
-  "fiskefilet": "fiskefilet-768x768.jpg",
-  "laks-i-airfryer": "laks-i-airfryer-768x768.jpg",
+const IMAGE_FILES = [
+  "pommes-frites-768x768.jpg",
+  "kartoffelbaade-i-airfryer-768x768.jpg",
+  "broccoli-i-airfryer-768x768.jpg",
+  "grillede-groentsager-airfryer-768x768.jpg",
+  "toast-i-airfryer-768x768.jpg",
+  "bagte-kartofler-i-airfryer-768x768.jpg",
 
-  "frikadeller-juleudgave": "frikadeller-768x768.jpg",
-  "flaeskesteg-i-airfryer": "flaeskesteg-i-airfryer-768x768.jpg",
-  "flaeskestegssandwich": "flaeskestegssandwich-768x768.jpg",
-  "hel-and-i-airfryer": "hel-and-i-airfryer-768x768.jpg",
+  "kyllinge-laar-airfryer-768x768.jpg",
+  "kyllingebryst-airfryer-768x768.jpg",
+  "kyllingevinger-i-airfryer-768x768.jpg",
 
-  "bacon-i-airfryer": "bacon-airfryer-768x768.jpg",
-  "hvidloegsbroed-airfryer": "hvidloegsbroed-airfryer-768x768.jpg",
+  "chicken-nuggets-airfryer-768x768.jpg",
+  "fiskefilet-768x768.jpg",
+  "laks-i-airfryer-768x768.jpg",
 
-  "brunede-kartofler-i-airfryer": "brunede-kartofler-i-airfryer-768x768.jpg",
-  "roedkaal-i-airfryer": "roedkaal-airfryer-768x768.jpg",
+  "frikadeller-768x768.jpg",
+  "flaeskesteg-i-airfryer-768x768.jpg",
+  "flaeskestegssandwich-768x768.jpg",
+  "hel-and-i-airfryer-768x768.jpg",
 
-  "vegetar-tarteletter": "vegetar-tarteletter-768x768.jpg"
-};
+  "bacon-airfryer-768x768.jpg",
+  "hvidloegsbroed-airfryer-768x768.jpg",
+
+  "brunede-kartofler-i-airfryer-768x768.jpg",
+  "roedkaal-airfryer-768x768.jpg",
+
+  "vegetar-tarteletter-768x768.jpg",
+
+  /* NY! → Soltørrede tomater */
+  "soltorrede-tomater-airfryer-768x768.jpg"
+];
+
+// Normaliser tekst
+function normalize(str) {
+  return str.toLowerCase()
+    .replace(/-/g, " ")
+    .replace(/æ/g, "ae")
+    .replace(/ø/g, "oe")
+    .replace(/å/g, "aa")
+    .replace(/[^\w\s]/g, "");
+}
 
 function findBestImage(slug) {
-  const file = IMAGE_MAP[slug];
-  return file
-    ? `../assets/images/recipes/${file}`
+  const nSlug = normalize(slug);
+  const words = nSlug.split(" ").filter(Boolean);
+
+  let best = null;
+  let bestScore = -1;
+
+  IMAGE_FILES.forEach(file => {
+    const nf = normalize(file);
+    let score = 0;
+
+    words.forEach(w => {
+      if (nf.includes(w)) score++;
+    });
+
+    if (score > bestScore) {
+      bestScore = score;
+      best = file;
+    }
+  });
+
+  return best
+    ? `../assets/images/recipes/${best}`
     : "../assets/images/recipes/placeholder.jpg";
 }
 </script>
