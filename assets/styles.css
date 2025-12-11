@@ -1118,3 +1118,19 @@ body {
 .featured-grid--reverse > * {
   direction: ltr;
 }
+.featured-grid--reverse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.featured-grid--reverse .featured-content {
+  order: 1;
+}
+
+.featured-grid--reverse .featured-image {
+  order: 2;
+}
