@@ -3,122 +3,146 @@
     {
       "slug": "pommes-frites",
       "title": "Pommes frites i airfryer",
+      "image": "pommes-frites-768x768.jpg",
       "categories": ["sproede-kartofler"]
-    },
-    {
-  "slug": "soltorrede-tomater-i-airfryer",
-  "title": "Soltørrede tomater i airfryer",
-  "categories": ["tilbehor", "groentsager", "snacks-tilbehor"]
     },
     {
       "slug": "kartoffelbaade-i-airfryer",
       "title": "Kartoffelbåde i airfryer",
+      "image": "kartoffelbaade-i-airfryer-768x768.jpg",
       "categories": ["sproede-kartofler", "nem-aftensmad", "tilbehor"]
-    },
-    {
-  "slug": "gulerods-chunks-i-airfryer",
-  "title": "Gulerods-chunks i airfryer",
-  "categories": ["groentsager", "sund-airfryer", "tilbehor", "nem-aftensmad"]
-    },
-    {
-  "slug": "grillede-blomkaal-i-airfryer",
-  "title": "Grillede blomkål i airfryer",
-  "categories": ["groentsager", "sund-airfryer", "tilbehor", "nem-aftensmad"]
     },
     {
       "slug": "broccoli-i-airfryer",
       "title": "Broccoli i airfryer",
-      "categories": ["sund-airfryer", "nem-aftensmad", "tilbehor"]
-    },
-    {
-      "slug": "toast-i-airfryer",
-      "title": "Toast i airfryer",
-      "categories": ["snacks-tilbehor", "morgenmad"]
+      "image": "broccoli-i-airfryer-768x768.jpg",
+      "categories": ["nem-aftensmad", "sund-airfryer", "groentsager"]
     },
     {
       "slug": "grillede-groentsager-airfryer",
       "title": "Grillede grøntsager i airfryer",
+      "image": "grillede-groentsager-airfryer-768x768.jpg",
       "categories": ["nem-aftensmad", "sund-airfryer", "snacks-tilbehor"]
     },
     {
-      "slug": "bagte-kartofler-i-airfryer",
-      "title": "Bagte kartofler i airfryer",
-      "categories": ["sproede-kartofler", "tilbehor", "nem-aftensmad"]
+      "slug": "toast-i-airfryer",
+      "title": "Toast i airfryer",
+      "image": "toast-i-airfryer-768x768.jpg",
+      "categories": ["snacks-tilbehor", "morgenmad"]
     },
     {
       "slug": "kyllinge-laar-airfryer",
       "title": "Kyllingelår i airfryer",
+      "image": "kyllinge-laar-airfryer-768x768.jpg",
       "categories": ["kyllingefavoritter"]
+    },
+    {
+      "slug": "bagte-kartofler-i-airfryer",
+      "title": "Bagte kartofler i airfryer",
+      "image": "bagte-kartofler-i-airfryer-768x768.jpg",
+      "categories": ["sproede-kartofler", "tilbehor", "nem-aftensmad"]
     },
     {
       "slug": "kyllingebryst-i-airfryer",
       "title": "Kyllingebryst i airfryer",
+      "image": "kyllingebryst-airfryer-768x768.jpg",
       "categories": ["kyllingefavoritter", "sund-airfryer"]
     },
     {
       "slug": "kyllingevinger-i-airfryer",
       "title": "Kyllingevinger i airfryer",
+      "image": "kyllingevinger-i-airfryer-768x768.jpg",
       "categories": ["kyllingefavoritter", "sund-airfryer"]
     },
     {
       "slug": "chicken-nuggets-airfryer",
       "title": "Chicken nuggets i airfryer",
+      "image": "chicken-nuggets-airfryer-768x768.jpg",
       "categories": ["kyllingefavoritter", "snacks-tilbehor"]
     },
     {
       "slug": "fiskefilet",
       "title": "Fiskefilet i airfryer",
+      "image": "fiskefilet-768x768.jpg",
       "categories": ["nem-aftensmad", "jul"]
     },
     {
       "slug": "laks-i-airfryer",
       "title": "Laks i airfryer",
+      "image": "laks-i-airfryer-768x768.jpg",
       "categories": ["nem-aftensmad", "sund-airfryer"]
     },
     {
       "slug": "frikadeller-juleudgave",
       "title": "Julefrikadeller i airfryer",
+      "image": "frikadeller-768x768.jpg",
       "categories": ["nem-aftensmad", "jul"]
     },
     {
       "slug": "flaeskesteg-i-airfryer",
       "title": "Flæskesteg i airfryer",
+      "image": "flaeskesteg-i-airfryer-768x768.jpg",
       "categories": ["nem-aftensmad", "jul"]
     },
     {
       "slug": "flaeskestegssandwich",
       "title": "Flæskestegssandwich",
+      "image": "flaeskestegssandwich-768x768.jpg",
       "categories": ["nem-aftensmad", "jul"]
     },
     {
       "slug": "hvidloegsbroed-airfryer",
       "title": "Hvidløgsbrød i airfryer",
+      "image": "hvidloegsbroed-airfryer-768x768.jpg",
       "categories": ["snacks-tilbehor", "morgenmad"]
     },
     {
       "slug": "hel-and-i-airfryer",
       "title": "Hel and i airfryer",
+      "image": "hel-and-i-airfryer-768x768.jpg",
       "categories": ["nem-aftensmad", "jul"]
     },
     {
       "slug": "bacon-i-airfryer",
       "title": "Bacon i airfryer",
+      "image": "bacon-airfryer-768x768.jpg",
       "categories": ["snacks-tilbehor", "morgenmad"]
     },
     {
       "slug": "brunede-kartofler-i-airfryer",
       "title": "Brunede kartofler i airfryer",
+      "image": "brunede-kartofler-i-airfryer-768x768.jpg",
       "categories": ["jul", "tilbehor", "sproede-kartofler"]
     },
     {
       "slug": "roedkaal-i-airfryer",
       "title": "Rødkål i airfryer",
+      "image": "roedkaal-airfryer-768x768.jpg",
       "categories": ["jul", "tilbehor"]
     },
     {
       "slug": "vegetar-tarteletter",
       "title": "Vegetar-tarteletter i airfryer",
+      "image": "vegetar-tarteletter-768x768.jpg",
       "categories": ["nem-aftensmad"]
+    },
+    {
+      "slug": "grillet-blomkaal-i-airfryer",
+      "title": "Grillet blomkål i airfryer",
+      "image": "grillede-blomkaal-airfryer-768x768.jpg",
+      "categories": ["groentsager", "tilbehor"]
+    },
+    {
+      "slug": "blomkaals-chunks-i-airfryer",
+      "title": "Blomkålschunks i airfryer",
+      "image": "blomkaals-chunks-airfryer-768x768.jpg",
+      "categories": ["groentsager", "snacks-tilbehor"]
+    },
+    {
+      "slug": "soltorrede-tomater-i-airfryer",
+      "title": "Soltørrede tomater i airfryer",
+      "image": "soltorrede-tomater-airfryer-768x768.jpg",
+      "categories": ["snacks-tilbehor", "tilbehor"]
     }
   ]
 }
