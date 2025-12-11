@@ -11,6 +11,11 @@
   "categories": ["sproede-kartofler", "nem-aftensmad", "tilbehor"]
     },
     {
+  "slug": "broccoli-i-airfryer",
+  "title": "Broccoli i airfryer",
+  "categories": ["nem-aftensmad", "sund-airfryer", "groentsager"]
+    },
+    {
   "slug": "grillede-groentsager-airfryer",
   "title": "Grillede grøntsager i airfryer",
   "categories": ["nem-aftensmad", "sund-airfryer", "snacks-tilbehor"]
