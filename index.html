@@ -566,12 +566,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  const openBtn = document.querySelector(".hero button, .hero-filters-button");
+  // KORRIGERET: Dette er den rigtige knap!
+  const openBtn = document.querySelector(".hero-large-filter-btn");
+
   const panel = document.getElementById("filterPanel");
   const overlay = document.getElementById("filterOverlay");
   const closeBtn = document.getElementById("filterClose");
   const applyBtn = document.getElementById("filterApply");
 
+  // OBS: Denne del virker kun hvis der findes .recipe-card på siden.
+  // På forsiden gør der ikke – men vi lader det stå uden at ændre noget.
   const recipeCards = document.querySelectorAll(".recipe-card");
 
   // Åbn filterpanel
@@ -591,23 +595,26 @@ document.addEventListener("DOMContentLoaded", () => {
   closeBtn.addEventListener("click", closePanel);
   overlay.addEventListener("click", closePanel);
 
-  // Anvend filtre
+  // Anvend filtre (vigtigt: redirect til opskrifter-siden)
   applyBtn.addEventListener("click", () => {
     const selected = Array.from(
       panel.querySelectorAll("input[type='checkbox']:checked")
     ).map(cb => cb.value);
 
-    recipeCards.forEach(card => {
-      const cardCats = card.getAttribute("data-categories").split(",");
-      const match = selected.every(cat => cardCats.includes(cat));
-      card.style.display = match || selected.length === 0 ? "" : "none";
-    });
+    // Gå til opskrifter-siden med filter i URL
+    if (selected.length > 0) {
+      const query = selected.join(",");
+      window.location.href = `/sider/opskrifter.html?filter=${query}`;
+    } else {
+      window.location.href = `/sider/opskrifter.html`;
+    }
 
     closePanel();
   });
 
 });
 </script>
+
 
 </body>
 </html>
