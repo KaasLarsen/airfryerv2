@@ -1087,3 +1087,21 @@ body {
   opacity: 1;
   visibility: visible;
 }
+/* Spejlvendt featured layout */
+.featured-grid-alt {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .featured-grid-alt {
+    grid-template-columns: 1fr;
+  }
+
+  /* På mobil skal billedet komme før teksten */
+  .featured-grid-alt .featured-image {
+    order: -1;
+  }
+}
