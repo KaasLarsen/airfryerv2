@@ -563,6 +563,51 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const openBtn = document.querySelector(".hero button, .hero-filters-button");
+  const panel = document.getElementById("filterPanel");
+  const overlay = document.getElementById("filterOverlay");
+  const closeBtn = document.getElementById("filterClose");
+  const applyBtn = document.getElementById("filterApply");
+
+  const recipeCards = document.querySelectorAll(".recipe-card");
+
+  // Åbn filterpanel
+  if (openBtn) {
+    openBtn.addEventListener("click", () => {
+      panel.classList.add("open");
+      overlay.classList.add("open");
+    });
+  }
+
+  // Luk panel
+  function closePanel() {
+    panel.classList.remove("open");
+    overlay.classList.remove("open");
+  }
+
+  closeBtn.addEventListener("click", closePanel);
+  overlay.addEventListener("click", closePanel);
+
+  // Anvend filtre
+  applyBtn.addEventListener("click", () => {
+    const selected = Array.from(
+      panel.querySelectorAll("input[type='checkbox']:checked")
+    ).map(cb => cb.value);
+
+    recipeCards.forEach(card => {
+      const cardCats = card.getAttribute("data-categories").split(",");
+      const match = selected.every(cat => cardCats.includes(cat));
+      card.style.display = match || selected.length === 0 ? "" : "none";
+    });
+
+    closePanel();
+  });
+
+});
+</script>
 
 </body>
 </html>
