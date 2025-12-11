@@ -6,34 +6,34 @@
       "categories": ["sproede-kartofler"]
     },
     {
-  "slug": "kartoffelbaade-i-airfryer",
-  "title": "Kartoffelbåde i airfryer",
-  "categories": ["sproede-kartofler", "nem-aftensmad", "tilbehor"]
+      "slug": "kartoffelbaade-i-airfryer",
+      "title": "Kartoffelbåde i airfryer",
+      "categories": ["sproede-kartofler", "nem-aftensmad", "tilbehor"]
     },
     {
-  "slug": "broccoli-i-airfryer",
-  "title": "Broccoli i airfryer",
-  "categories": ["nem-aftensmad", "sund-airfryer", "groentsager"]
+      "slug": "broccoli-i-airfryer",
+      "title": "Broccoli i airfryer",
+      "categories": ["sund-airfryer", "nem-aftensmad", "tilbehor"]
     },
     {
-  "slug": "grillede-groentsager-airfryer",
-  "title": "Grillede grøntsager i airfryer",
-  "categories": ["nem-aftensmad", "sund-airfryer", "snacks-tilbehor"]
-},
+      "slug": "toast-i-airfryer",
+      "title": "Toast i airfryer",
+      "categories": ["snacks-tilbehor", "morgenmad"]
+    },
     {
-  "slug": "toast-i-airfryer",
-  "title": "Toast i airfryer",
-  "categories": ["snacks-tilbehor", "morgenmad"]
-  },
+      "slug": "grillede-groentsager-airfryer",
+      "title": "Grillede grøntsager i airfryer",
+      "categories": ["nem-aftensmad", "sund-airfryer", "snacks-tilbehor"]
+    },
+    {
+      "slug": "bagte-kartofler-i-airfryer",
+      "title": "Bagte kartofler i airfryer",
+      "categories": ["sproede-kartofler", "tilbehor", "nem-aftensmad"]
+    },
     {
       "slug": "kyllinge-laar-airfryer",
       "title": "Kyllingelår i airfryer",
       "categories": ["kyllingefavoritter"]
-    },
-    {
-  "slug": "bagte-kartofler-i-airfryer",
-  "title": "Bagte kartofler i airfryer",
-  "categories": ["sproede-kartofler", "tilbehor", "nem-aftensmad"]
     },
     {
       "slug": "kyllingebryst-i-airfryer",
@@ -74,11 +74,6 @@
       "slug": "flaeskestegssandwich",
       "title": "Flæskestegssandwich",
       "categories": ["nem-aftensmad", "jul"]
-    },
-    {
-      "slug": "grillede-groentsager-airfryer",
-      "title": "Grillede grøntsager i airfryer",
-      "categories": ["nem-aftensmad", "snacks-tilbehor", "sund-airfryer"]
     },
     {
       "slug": "hvidloegsbroed-airfryer",
