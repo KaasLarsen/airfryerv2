@@ -114,6 +114,34 @@
 
     <button class="hero-large-filter-btn">Filtre +</button>
   </div>
+  <!-- FILTER PANEL -->
+<div class="filter-panel" id="filterPanel">
+  <div class="filter-header">
+    <h3>Filtrér opskrifter</h3>
+    <button class="filter-close" id="filterClose">✕</button>
+  </div>
+
+  <div class="filter-section">
+    <h4>Kategorier</h4>
+    <div class="filter-options">
+      <label><input type="checkbox" value="nem-aftensmad"> Nem aftensmad</label>
+      <label><input type="checkbox" value="jul"> Jul</label>
+      <label><input type="checkbox" value="sproede-kartofler"> Sprøde kartofler</label>
+      <label><input type="checkbox" value="sund-airfryer"> Sund airfryer</label>
+      <label><input type="checkbox" value="snacks-tilbehor"> Snacks & tilbehør</label>
+      <label><input type="checkbox" value="morgenmad"> Morgenmad</label>
+      <label><input type="checkbox" value="kyllingefavoritter"> Kyllingefavoritter</label>
+      <label><input type="checkbox" value="groentsager"> Grøntsager</label>
+      <label><input type="checkbox" value="tilbehor"> Tilbehør</label>
+    </div>
+  </div>
+
+  <button class="filter-apply" id="filterApply">Anvend filtre</button>
+</div>
+
+<!-- DARK OVERLAY -->
+<div class="filter-overlay" id="filterOverlay"></div>
+
 </section>
 
 <!-- Søgeresultater – placeres lige under hero, med samme max-width / layout -->
