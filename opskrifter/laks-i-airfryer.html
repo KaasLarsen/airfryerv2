@@ -349,35 +349,49 @@
 
   <!-- TOGGLE FAVORIT -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const btn = document.querySelector(".save-recipe-btn");
-      if (!btn) return;
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelector(".save-recipe-btn");
+  if (!btn) return;
 
-      const name = btn.getAttribute("data-recipe");
-      let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+  // hent metadata fra head
+  const slug = window.recipeSlug;
+  const title = btn.getAttribute("data-recipe");
+  const image = `${slug}-768x768.jpg`;
 
-      function update() {
-        if (saved.includes(name)) {
-          btn.textContent = "💚 Opskrift gemt (klik for at fjerne)";
-        } else {
-          btn.textContent = "❤️ Gem opskrift";
-        }
-      }
+  let saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
 
-      update();
+  function update() {
+    const exists = saved.find(r => r.slug === slug);
+    btn.textContent = exists
+      ? "💚 Opskrift gemt (klik for at fjerne)"
+      : "❤️ Gem opskrift";
+  }
 
-      btn.addEventListener("click", function () {
-        saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
-        if (saved.includes(name)) {
-          saved = saved.filter(r => r !== name);
-        } else {
-          saved.push(name);
-        }
-        localStorage.setItem("savedRecipes", JSON.stringify(saved));
-        update();
+  update();
+
+  btn.addEventListener("click", function () {
+    saved = JSON.parse(localStorage.getItem("savedRecipes") || "[]");
+
+    const exists = saved.find(r => r.slug === slug);
+
+    if (exists) {
+      // Fjern opskrift
+      saved = saved.filter(r => r.slug !== slug);
+    } else {
+      // Tilføj opskrift med fuld info
+      saved.push({
+        slug,
+        title,
+        image
       });
-    });
-  </script>
+    }
+
+    localStorage.setItem("savedRecipes", JSON.stringify(saved));
+    update();
+  });
+});
+</script>
+
 
 </body>
 </html>
