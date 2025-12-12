@@ -689,6 +689,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("pricerunner-slider");
+  const prev = document.querySelector(".pricerunner-prev");
+  const next = document.querySelector(".pricerunner-next");
+
+  prev.addEventListener("click", () => {
+    slider.scrollBy({ left: -350, behavior: "smooth" });
+  });
+
+  next.addEventListener("click", () => {
+    slider.scrollBy({ left: 350, behavior: "smooth" });
+  });
+});
+</script>
 
 
 </body>
