@@ -15,29 +15,27 @@
       margin: 0 auto;
       padding: 1.5rem 1.25rem 0;
     }
+
     .filter-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
+
     .filter-btn {
       border: 1px solid #e0e0e0;
-      background: #ffffff;
+      background: #fff;
       border-radius: 999px;
       padding: 0.35rem 0.9rem;
       font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.15s ease;
     }
-    .filter-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    }
+
     .filter-btn.is-active {
       background: #111;
       color: #fff;
       border-color: #111;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     .category-grid {
@@ -56,17 +54,17 @@
       overflow: hidden;
       transition: transform .15s ease, box-shadow .15s ease;
     }
+
     .category-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 14px rgba(0,0,0,0.10);
     }
 
     .category-card-image img {
-      display: block;
       width: 100%;
-      aspect-ratio: 1/1;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
-      background: #fafafa;
+      display: block;
     }
 
     .category-card-body {
@@ -79,6 +77,17 @@
       font-weight: 600;
       color: #111;
     }
+
+    .load-more-btn {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -90,63 +99,30 @@
 <section class="hero-large"
          style="background-image: url('../assets/images/hero/hero-julebord-airfryer-1920x1080.jpg');">
   <div class="hero-large-overlay"></div>
-
   <div class="hero-large-content">
     <h1 class="hero-large-title">Alle opskrifter i airfryer</h1>
-
     <p class="hero-large-subtitle">
-      Scroll gennem alle opskrifter eller brug søgning og kategorier for at finde præcis det, du leder efter.
+      Brug søgning og kategorier – eller scroll dig gennem alle opskrifter.
     </p>
 
-    <form class="hero-large-search" id="recipe-search-form" onsubmit="return false;">
-      <input type="search" id="recipe-search" placeholder="Søg efter opskrift, ingrediens eller kategori …" />
-      <button type="submit">
-        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="10" cy="10" r="7"></circle>
-          <line x1="15" y1="15" x2="21" y2="21"></line>
-        </svg>
-      </button>
+    <form class="hero-large-search" onsubmit="return false;">
+      <input type="search" id="recipe-search" placeholder="Søg efter opskrift…" />
     </form>
   </div>
 </section>
 
 <main>
 
-  <section class="section-category">
-    <div class="category-header">
-      <h2 class="section-title">Vælg kategori</h2>
-      <p class="section-desc">Kombinér søgning og filtrering – eller vælg “Alle”.</p>
-    </div>
+<section class="section-category">
+  <div class="category-header">
+    <h2 class="section-title" id="recipes-title">Alle opskrifter</h2>
+    <p class="section-desc" id="recipes-count">Indlæser opskrifter …</p>
+  </div>
 
-    <div class="filter-bar-inner">
-      <div class="filter-buttons">
-        <button class="filter-btn" data-filter="Alle">Alle</button>
-        <button class="filter-btn" data-filter="sproede-kartofler">Sprøde kartofler</button>
-        <button class="filter-btn" data-filter="kyllingefavoritter">Kyllingefavoritter</button>
-        <button class="filter-btn" data-filter="nem-aftensmad">Nem aftensmad</button>
-        <button class="filter-btn" data-filter="snacks-tilbehor">Snacks & tilbehør</button>
-        <button class="filter-btn" data-filter="sund-airfryer">Sund airfryer</button>
-        <button class="filter-btn" data-filter="morgenmad">Morgenmad</button>
-        <button class="filter-btn" data-filter="bagvaerk">Bagværk & søde sager</button>
-        <button class="filter-btn" data-filter="jul">Jul</button>
-      </div>
-    </div>
-  </section>
+  <div class="category-grid" id="recipes-grid"></div>
 
-  <section class="section-category" style="margin-top:2rem; margin-bottom:3rem;">
-    <div class="category-header">
-      <h2 class="section-title" id="recipes-title">Alle opskrifter</h2>
-      <p class="section-desc" id="recipes-count">Indlæser opskrifter …</p>
-    </div>
-
-    <div class="category-grid" id="recipes-grid"></div>
-
-    <div id="recipes-empty-state"
-         style="display:none; text-align:center; margin-top:2rem; max-width:720px; margin-left:auto; margin-right:auto; color:#666;">
-      <p>Der er ingen opskrifter, der matcher din søgning eller filtrering.</p>
-    </div>
-  </section>
+  <button class="load-more-btn" id="load-more-btn">Vis flere opskrifter</button>
+</section>
 
 </main>
 
@@ -156,229 +132,67 @@
 <script src="../assets/include.js" defer></script>
 <script src="../assets/header.js" defer></script>
 
-<!-- 🔥 PERFEKT, FREMTIDSSIKRET IMAGE MATCHING SYSTEM -->
-<script>
-
-/*  
-  ✔ Matcher ALLE billeder korrekt  
-  ✔ Kan ikke fejle ved stavefejl i slug  
-  ✔ Du kan frit tilføje nye billeder – blot navngiv dem ens med slug  
-  ✔ Finder bedste match, selv hvis filnavnet ikke er 100% identisk  
-*/
-
-const IMAGE_FILES = [
-  "pommes-frites-768x768.jpg",
-  "kartoffelbaade-i-airfryer-768x768.jpg",
-  "broccoli-i-airfryer-768x768.jpg",
-  "grillede-groentsager-airfryer-768x768.jpg",
-  "toast-i-airfryer-768x768.jpg",
-  "bagte-kartofler-i-airfryer-768x768.jpg",
-
-  "kyllinge-laar-airfryer-768x768.jpg",
-  "kyllingebryst-airfryer-768x768.jpg",
-  "kyllingevinger-i-airfryer-768x768.jpg",
-
-  "chicken-nuggets-airfryer-768x768.jpg",
-  "fiskefilet-768x768.jpg",
-  "laks-i-airfryer-768x768.jpg",
-
-  "frikadeller-768x768.jpg",
-  "flaeskesteg-i-airfryer-768x768.jpg",
-  "flaeskestegssandwich-768x768.jpg",
-  "hel-and-i-airfryer-768x768.jpg",
-
-  "bacon-airfryer-768x768.jpg",
-  "hvidloegsbroed-airfryer-768x768.jpg",
-
-  "brunede-kartofler-i-airfryer-768x768.jpg",
-  "roedkaal-airfryer-768x768.jpg",
-
-  "vegetar-tarteletter-768x768.jpg",
-
-  /* NY! → Soltørrede tomater */
-  "soltorrede-tomater-airfryer-768x768.jpg"
-];
-
-// Normaliser tekst
-function normalize(str) {
-  return str.toLowerCase()
-    .replace(/-/g, " ")
-    .replace(/æ/g, "ae")
-    .replace(/ø/g, "oe")
-    .replace(/å/g, "aa")
-    .replace(/[^\w\s]/g, "");
-}
-
-function findBestImage(slug) {
-  const nSlug = normalize(slug);
-  const words = nSlug.split(" ").filter(Boolean);
-
-  let best = null;
-  let bestScore = -1;
-
-  IMAGE_FILES.forEach(file => {
-    const nf = normalize(file);
-    let score = 0;
-
-    words.forEach(w => {
-      if (nf.includes(w)) score++;
-    });
-
-    if (score > bestScore) {
-      bestScore = score;
-      best = file;
-    }
-  });
-
-  return best
-    ? `../assets/images/recipes/${best}`
-    : "../assets/images/recipes/placeholder.jpg";
-}
-</script>
-
-
-<!-- 🔥 OPSKRIFT SYSTEM -->
 <script>
 let ALL_RECIPES = [];
+let CURRENT_LIST = [];
+let currentIndex = 0;
+const PAGE_SIZE = 12;
 
-async function loadRecipes() {
-  try {
-    const res = await fetch("/assets/recipes.json");
-    const data = await res.json();
-    ALL_RECIPES = (data.recipes || []).map(r => ({
-      slug: r.slug,
-      title: r.title,
-      categories: r.categories || []
-    })).reverse();
-  } catch (err) {
-    console.error("Fejl ved recipes.json:", err);
-    ALL_RECIPES = [];
-  }
+function getRecipeImage(recipe) {
+  return recipe.image
+    ? `../assets/images/recipes/${recipe.image}`
+    : "../assets/images/recipes/placeholder.jpg";
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  await loadRecipes();
-
+function renderChunk() {
   const grid = document.getElementById("recipes-grid");
-  const countEl = document.getElementById("recipes-count");
-  const emptyState = document.getElementById("recipes-empty-state");
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const searchInput = document.getElementById("recipe-search");
-  const titleEl = document.getElementById("recipes-title");
+  const slice = CURRENT_LIST.slice(currentIndex, currentIndex + PAGE_SIZE);
 
-  const CATEGORY_LABELS = {
-    "Alle": "Alle opskrifter",
-    "sproede-kartofler": "Sprøde kartofler",
-    "kyllingefavoritter": "Kyllingefavoritter",
-    "nem-aftensmad": "Nem aftensmad",
-    "snacks-tilbehor": "Snacks & tilbehør",
-    "sund-airfryer": "Sund airfryer",
-    "morgenmad": "Morgenmad",
-    "bagvaerk": "Bagværk & søde sager",
-    "jul": "Jul"
-  };
-
-  const params = new URLSearchParams(window.location.search);
-  let activeFilter = params.get("filter") || "Alle";
-  let searchQuery = "";
-
-  filterButtons.forEach(btn => {
-    btn.classList.toggle("is-active", btn.dataset.filter === activeFilter);
-  });
-
-  const loadMoreBtn = document.createElement("button");
-  loadMoreBtn.textContent = "Vis flere opskrifter";
-  loadMoreBtn.className = "btn btn-primary";
-  loadMoreBtn.style.margin = "2rem auto";
-  loadMoreBtn.style.display = "block";
-  loadMoreBtn.style.padding = "0.75rem 1.5rem";
-  loadMoreBtn.style.borderRadius = "999px";
-  grid.insertAdjacentElement("afterend", loadMoreBtn);
-
-  let PAGE_SIZE = 12;
-  let CURRENT_LIST = [];
-  let currentIndex = 0;
-
-  function updateTitle() {
-    titleEl.textContent =
-      activeFilter === "Alle"
-        ? "Alle opskrifter"
-        : `Opskrifter i: ${CATEGORY_LABELS[activeFilter]}`;
-  }
-
-  function createCard(recipe) {
-    const imgSrc = findBestImage(recipe.slug);
-    return `
+  slice.forEach(recipe => {
+    grid.insertAdjacentHTML("beforeend", `
       <article class="category-card">
         <a class="category-card-link" href="../opskrifter/${recipe.slug}.html">
           <div class="category-card-image">
-            <img src="${imgSrc}" alt="${recipe.title}">
+            <img src="${getRecipeImage(recipe)}" alt="${recipe.title}">
           </div>
           <div class="category-card-body">
             <h3 class="category-card-title">${recipe.title}</h3>
           </div>
         </a>
-      </article>`;
-  }
-
-  function renderChunk() {
-    const slice = CURRENT_LIST.slice(currentIndex, currentIndex + PAGE_SIZE);
-    slice.forEach(r => grid.insertAdjacentHTML("beforeend", createCard(r)));
-    currentIndex += PAGE_SIZE;
-
-    loadMoreBtn.style.display =
-      currentIndex < CURRENT_LIST.length ? "block" : "none";
-  }
-
-  function renderRecipes(list) {
-    grid.innerHTML = "";
-    CURRENT_LIST = list;
-    currentIndex = 0;
-
-    if (!list.length) {
-      emptyState.style.display = "block";
-      loadMoreBtn.style.display = "none";
-      countEl.textContent = "Ingen opskrifter fundet.";
-      updateTitle();
-      return;
-    }
-
-    emptyState.style.display = "none";
-    countEl.textContent = `Viser ${list.length} opskrifter`;
-    updateTitle();
-    renderChunk();
-  }
-
-  function applyFilters() {
-    const q = searchQuery.toLowerCase();
-
-    const filtered = ALL_RECIPES.filter(r => {
-      const matchesFilter = activeFilter === "Alle" || r.categories.includes(activeFilter);
-      const matchesSearch = r.title.toLowerCase().includes(q);
-      return matchesFilter && matchesSearch;
-    });
-
-    renderRecipes(filtered);
-  }
-
-  filterButtons.forEach(btn =>
-    btn.addEventListener("click", () => {
-      filterButtons.forEach(b => b.classList.remove("is-active"));
-      btn.classList.add("is-active");
-
-      activeFilter = btn.dataset.filter;
-      applyFilters();
-    })
-  );
-
-  searchInput.addEventListener("input", () => {
-    searchQuery = searchInput.value;
-    applyFilters();
+      </article>
+    `);
   });
 
-  loadMoreBtn.addEventListener("click", renderChunk);
+  currentIndex += PAGE_SIZE;
 
-  applyFilters();
+  document.getElementById("load-more-btn").style.display =
+    currentIndex < CURRENT_LIST.length ? "block" : "none";
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const res = await fetch("/assets/recipes.json");
+  const data = await res.json();
+  ALL_RECIPES = data.recipes || [];
+
+  CURRENT_LIST = ALL_RECIPES.slice();
+  document.getElementById("recipes-count").textContent =
+    `Viser ${ALL_RECIPES.length} opskrifter`;
+
+  renderChunk();
+
+  document.getElementById("load-more-btn")
+    .addEventListener("click", renderChunk);
+
+  document.getElementById("recipe-search")
+    .addEventListener("input", e => {
+      const q = e.target.value.toLowerCase();
+      CURRENT_LIST = ALL_RECIPES.filter(r =>
+        r.title.toLowerCase().includes(q)
+      );
+      document.getElementById("recipes-grid").innerHTML = "";
+      currentIndex = 0;
+      renderChunk();
+    });
 });
 </script>
 
