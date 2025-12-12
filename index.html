@@ -695,19 +695,36 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.getElementById("pricerunner-slider");
-  const prev = document.querySelector(".pricerunner-prev");
-  const next = document.querySelector(".pricerunner-next");
+  const slider = document.getElementById("pricerunnerHeroSlider");
+  const slides = slider.children;
+  const total = slides.length;
 
-  prev.addEventListener("click", () => {
-    slider.scrollBy({ left: -350, behavior: "smooth" });
+  let index = 0;
+  let autoplaySpeed = 6000; // 6 sekunder per slide
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  // Knapper
+  document.querySelector(".pricerunner-hero-prev").addEventListener("click", () => {
+    index = (index - 1 + total) % total;
+    updateSlider();
   });
 
-  next.addEventListener("click", () => {
-    slider.scrollBy({ left: 350, behavior: "smooth" });
+  document.querySelector(".pricerunner-hero-next").addEventListener("click", () => {
+    index = (index + 1) % total;
+    updateSlider();
   });
+
+  // Autoplay
+  setInterval(() => {
+    index = (index + 1) % total;
+    updateSlider();
+  }, autoplaySpeed);
 });
 </script>
+
 
 
 </body>
