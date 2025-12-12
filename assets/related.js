@@ -31,7 +31,7 @@ const IMAGE_MAP = {
   "vegetar-tarteletter": "vegetar-tarteletter-768x768.jpg",
 
   // nye grøntsager osv.
-  "grillede-blomkaal-airfryer": "grillede-blomkaal-airfryer-768x768.jpg",
+   "grillede-blomkaal-i-airfryer": "grillede-blomkaal-airfryer-768x768.jpg",
   "gulerods-chunks-i-airfryer": "gulerods-chunks-i-airfryer-768x768.jpg",
   "soltorrede-tomater-i-airfryer": "soltorrede-tomater-airfryer-768x768.jpg"
 };
