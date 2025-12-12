@@ -1170,3 +1170,50 @@ body {
 
 .pricerunner-prev { left: -10px; }
 .pricerunner-next { right: -10px; }
+.pricerunner-hero-section {
+  margin-top: 4rem;
+}
+
+.pricerunner-hero-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.pricerunner-hero-slider {
+  display: flex;
+  transition: transform 0.55s ease;
+}
+
+.pricerunner-hero-slide {
+  min-width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.pricerunner-hero-wrapper .slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.pricerunner-hero-prev { left: -10px; }
+.pricerunner-hero-next { right: -10px; }
+
+.pricerunner-note {
+  text-align: center;
+  margin-top: 0.7rem;
+  font-style: italic;
+  font-size: 14px;
+  color: #666;
+}
