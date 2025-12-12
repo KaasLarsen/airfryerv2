@@ -1,4 +1,6 @@
-// assets/related.js
+// -------------------------------------------------------
+// RELATED RECIPES SLIDER – KOMPLET KORRIGERET VERSION
+// -------------------------------------------------------
 
 // 1) Samme billed–mapping som på opskrifter.html
 const IMAGE_MAP = {
@@ -25,25 +27,25 @@ const IMAGE_MAP = {
   "bacon-i-airfryer": "bacon-airfryer-768x768.jpg",
   "hvidloegsbroed-airfryer": "hvidloegsbroed-airfryer-768x768.jpg",
 
-  "brunede-kartofler-i-airfryer": "brunede-kartofler-i-airfryer-768x768.jpg",
+  "brunede-kartofler-airfryer": "brunede-kartofler-i-airfryer-768x768.jpg",
   "roedkaal-i-airfryer": "roedkaal-airfryer-768x768.jpg",
 
   "vegetar-tarteletter": "vegetar-tarteletter-768x768.jpg",
 
-  // nye grøntsager osv.
-   "grillede-blomkaal-i-airfryer": "grillede-blomkaal-airfryer-768x768.jpg",
-  "gulerods-chunks-i-airfryer": "gulerods-chunks-airfryer-768x768.jpg",
+  // nye grøntsager
+  "grillede-blomkaal-airfryer": "grillede-blomkaal-airfryer-768x768.jpg",
+  "gulerods-chunks-airfryer": "gulerods-chunks-airfryer-768x768.jpg",
   "soltorrede-tomater-i-airfryer": "soltorrede-tomater-airfryer-768x768.jpg"
 };
 
 // Henter korrekt billedsti til en opskrift
 function getRecipeImage(recipe) {
-  // hvis du senere tilføjer "image" direkte i recipes.json,
-  // bruger vi det først:
+  // 1) Brug recipe.image direkte hvis det findes
   if (recipe.image) {
     return "../assets/images/recipes/" + recipe.image;
   }
 
+  // 2) Brug IMAGE_MAP hvis slug findes
   const file = IMAGE_MAP[recipe.slug];
   return file
     ? "../assets/images/recipes/" + file
@@ -51,10 +53,12 @@ function getRecipeImage(recipe) {
 }
 
 (async function () {
+
+  // Find container
   const container = document.getElementById("related-container");
   if (!container) return;
 
-  // Lav wrapper til slider
+  // Lav slider layout
   container.outerHTML = `
     <div class="slider-wrapper related-slider-wrapper">
       <button class="slider-btn related-prev">‹</button>
@@ -76,15 +80,20 @@ function getRecipeImage(recipe) {
     return;
   }
 
+  // Hent slug + tags fra siden
   const currentSlug = window.recipeSlug || "";
   const currentTags = window.recipeTags || [];
 
-  // 🔎 1) Prøv først at matche på tags
+  // --------------------------------------------------------
+  // 1) MATCH EFTER TAGS
+  // --------------------------------------------------------
   let related = recipes
     .filter(r => r.slug !== currentSlug)
     .filter(r => (r.tags || []).some(tag => currentTags.includes(tag)));
 
-  // 2) Hvis der er for få, brug kategori fallback
+  // --------------------------------------------------------
+  // 2) FALLBACK: MATCH EFTER KATEGORIER
+  // --------------------------------------------------------
   if (related.length < 4) {
     const current = recipes.find(r => r.slug === currentSlug);
     const cats = current && current.categories ? current.categories : [];
@@ -96,7 +105,9 @@ function getRecipeImage(recipe) {
     );
   }
 
-  // 3) Stadig for få → brug bare de nyeste
+  // --------------------------------------------------------
+  // 3) FALLBACK: NYESTE OPSKRIFTER
+  // --------------------------------------------------------
   if (related.length < 4) {
     related = recipes
       .filter(r => r.slug !== currentSlug)
@@ -108,7 +119,9 @@ function getRecipeImage(recipe) {
   // Begræns antal
   related = related.slice(0, 6);
 
-  // Render cards i slider
+  // --------------------------------------------------------
+  // 4) Renderer kort i slider
+  // --------------------------------------------------------
   related.forEach(r => {
     const card = document.createElement("a");
     card.className = "recipe-slide-card";
@@ -124,7 +137,9 @@ function getRecipeImage(recipe) {
     slider.appendChild(card);
   });
 
-  // Slider funktionalitet
+  // --------------------------------------------------------
+  // 5) SLIDER KNAPPER
+  // --------------------------------------------------------
   const prev = document.querySelector(".related-prev");
   const next = document.querySelector(".related-next");
 
