@@ -119,3 +119,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Indsæt i DOM
   content.insertAdjacentHTML("afterend", breadcrumbHTML + navHTML);
 });
+// -------------------------------------------------------
+// GOOGLE ADSENSE – INDSÆT GLOBALT (kun 1 gang)
+// -------------------------------------------------------
+(function injectAdSense() {
+  const CLIENT = "ca-pub-7373148222153531";
+  const SRC = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${CLIENT}`;
+
+  // Undgå dobbelt-indlæsning
+  if (document.querySelector(`script[src="${SRC}"]`)) return;
+
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = SRC;
+  s.crossOrigin = "anonymous";
+  document.head.appendChild(s);
+})();
