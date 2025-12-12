@@ -127,15 +127,15 @@
       "categories": ["nem-aftensmad"]
     },
     {
-      "slug": "grillet-blomkaal-i-airfryer",
+      "slug": "grillede-blomkaal-i-airfryer",
       "title": "Grillet blomkål i airfryer",
       "image": "grillede-blomkaal-airfryer-768x768.jpg",
       "categories": ["groentsager", "tilbehor"]
     },
     {
-      "slug": "blomkaals-chunks-i-airfryer",
-      "title": "Blomkålschunks i airfryer",
-      "image": "blomkaals-chunks-airfryer-768x768.jpg",
+      "slug": "gulerods-chunks-i-airfryer",
+      "title": "Gulerods-chunks i airfryer",
+      "image": "gulerods-chunks-airfryer-768x768.jpg",
       "categories": ["groentsager", "snacks-tilbehor"]
     },
     {
@@ -143,6 +143,12 @@
       "title": "Soltørrede tomater i airfryer",
       "image": "soltorrede-tomater-airfryer-768x768.jpg",
       "categories": ["snacks-tilbehor", "tilbehor"]
+    },
+    {
+      "slug": "saftig-kylling-i-airfryer",
+      "title": "Saftig kylling i airfryer",
+      "image": "saftig-kylling-i-airfryer-768x768.jpg",
+      "categories": ["kyllingefavoritter", "nem-aftensmad"]
     }
   ]
 }
