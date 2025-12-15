@@ -1,19 +1,29 @@
 <header class="site-header">
   <div class="header-inner">
 
+    <!-- LOGO -->
     <div class="header-logo">
       <a href="/">Opskrift-Airfryer</a>
     </div>
 
-<nav class="header-nav">
-  <a href="/">Forside</a>
-  <a href="/sider/opskrifter.html">Opskrifter</a>
-</nav>
+    <!-- NAV -->
+    <nav class="header-nav" id="mainNav">
+      <a href="/">Forside</a>
+      <a href="/sider/opskrifter.html">Opskrifter</a>
+    </nav>
 
+    <!-- BURGER (kun mobil via CSS) -->
+    <button class="burger-btn" id="burgerToggle" aria-label="Åbn menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- ACTIONS -->
     <div class="header-actions">
 
-      <!-- Søg -->
-      <button class="header-icon" id="openSearch">
+      <!-- SØG -->
+      <button class="header-icon" id="openSearch" aria-label="Søg">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="7"></circle>
@@ -21,8 +31,8 @@
         </svg>
       </button>
 
-      <!-- Favoritter -->
-      <button class="header-icon" id="openSaved">
+      <!-- FAVORITTER -->
+      <button class="header-icon" id="openSaved" aria-label="Gemte opskrifter">
         <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 21s-6.3-4.2-9.3-8.1C-1.2 7 2 2 6.5 2c2.3 0 4 1.2 5.5 3 1.5-1.8 3.2-3 5.5-3C22 2 25.2 7 21.3 12.9C18.3 16.8 12 21 12 21z"/>
@@ -32,7 +42,7 @@
     </div>
   </div>
 
-  <!-- SØG -->
+  <!-- SØGEBAR -->
   <div class="header-searchbar" id="searchBar">
     <form action="/search.html" method="get">
       <input type="search" name="q" placeholder="Søg efter opskrifter…" />
@@ -46,7 +56,7 @@
 
     <div class="saved-drawer-header">
       <h2>Gemte opskrifter</h2>
-      <button id="closeSaved" class="close-btn">×</button>
+      <button id="closeSaved" class="close-btn" aria-label="Luk">×</button>
     </div>
 
     <div class="saved-drawer-list" id="savedList">
@@ -59,18 +69,29 @@
 <script>
 (function () {
 
-  const searchBtn  = document.getElementById("openSearch");
-  const searchBar  = document.getElementById("searchBar");
-  const openSaved  = document.getElementById("openSaved");
-  const closeSaved = document.getElementById("closeSaved");
-  const drawer     = document.querySelector(".saved-drawer");
-  const listEl     = document.getElementById("savedList");
+  const searchBtn   = document.getElementById("openSearch");
+  const searchBar   = document.getElementById("searchBar");
+  const openSaved   = document.getElementById("openSaved");
+  const closeSaved  = document.getElementById("closeSaved");
+  const drawer      = document.querySelector(".saved-drawer");
+  const listEl      = document.getElementById("savedList");
+
+  const burgerBtn   = document.getElementById("burgerToggle");
+  const mainNav     = document.getElementById("mainNav");
 
   /* Toggle søg */
-  if (searchBtn) {
+  if (searchBtn && searchBar) {
     searchBtn.addEventListener("click", () => {
       searchBar.style.display =
         searchBar.style.display === "block" ? "none" : "block";
+    });
+  }
+
+  /* Burger menu */
+  if (burgerBtn && mainNav) {
+    burgerBtn.addEventListener("click", () => {
+      mainNav.classList.toggle("active");
+      burgerBtn.classList.toggle("active");
     });
   }
 
@@ -84,11 +105,11 @@
     localStorage.setItem("savedRecipes", JSON.stringify(arr));
   }
 
-  /* Render liste */
+  /* Render gemte opskrifter */
   function renderSavedList() {
     if (!listEl) return;
 
-    let saved = getSaved().reverse(); // nyeste først
+    let saved = getSaved().reverse();
 
     if (saved.length === 0) {
       listEl.innerHTML =
@@ -96,9 +117,7 @@
       return;
     }
 
-    listEl.innerHTML = saved
-      .map(
-        (item) => `
+    listEl.innerHTML = saved.map(item => `
       <div class="saved-item">
         <a href="${item.url}">
           <img src="${item.image}" alt="${item.title}">
@@ -114,37 +133,38 @@
           <span></span><span></span>
         </button>
       </div>
-    `
-      )
-      .join("");
+    `).join("");
 
-    // Slet én opskrift
-    document.querySelectorAll(".remove-saved-item").forEach((btn) => {
+    document.querySelectorAll(".remove-saved-item").forEach(btn => {
       btn.addEventListener("click", () => {
         const title = btn.dataset.title;
-        let saved = getSaved().filter((r) => r.title !== title);
+        let saved = getSaved().filter(r => r.title !== title);
         saveAll(saved);
         renderSavedList();
       });
     });
   }
 
-  /* Åbn panel */
-  openSaved.addEventListener("click", () => {
-    drawer.classList.add("open");
-    renderSavedList();
-  });
+  /* Åbn favorit-panel */
+  if (openSaved) {
+    openSaved.addEventListener("click", () => {
+      drawer.classList.add("open");
+      renderSavedList();
+    });
+  }
 
-  /* Luk panel */
-  closeSaved.addEventListener("click", () => {
-    drawer.classList.remove("open");
-  });
+  /* Luk favorit-panel */
+  if (closeSaved) {
+    closeSaved.addEventListener("click", () => {
+      drawer.classList.remove("open");
+    });
+  }
 
-  /* Klik udenfor = luk */
+  /* Klik udenfor lukker panel */
   document.addEventListener("click", (e) => {
     if (!drawer.classList.contains("open")) return;
     if (drawer.contains(e.target)) return;
-    if (openSaved.contains(e.target)) return;
+    if (openSaved && openSaved.contains(e.target)) return;
     drawer.classList.remove("open");
   });
 
