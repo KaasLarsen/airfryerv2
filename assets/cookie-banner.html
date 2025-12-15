@@ -1,0 +1,46 @@
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-banner-inner">
+
+    <p class="cookie-text">
+      Vi bruger cookies til at forbedre din oplevelse, vise gemte opskrifter og
+      analysere trafik. Ved at fortsætte accepterer du vores brug af cookies.
+      <a href="/sider/cookiepolitik.html">Læs mere</a> og
+      <a href="/sider/privatlivspolitik.html">privatlivspolitik</a>.
+    </p>
+
+    <div class="cookie-actions">
+      <button class="cookie-accept" id="acceptCookies">
+        Accepter
+      </button>
+
+      <button class="cookie-close" id="closeCookies" aria-label="Luk">
+        ×
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  const banner = document.getElementById("cookieBanner");
+  const acceptBtn = document.getElementById("acceptCookies");
+  const closeBtn = document.getElementById("closeCookies");
+
+  if (!banner) return;
+
+  const consent = localStorage.getItem("cookieConsent");
+
+  if (!consent) {
+    banner.style.display = "block";
+  }
+
+  function acceptCookies() {
+    localStorage.setItem("cookieConsent", "accepted");
+    banner.remove();
+  }
+
+  if (acceptBtn) acceptBtn.addEventListener("click", acceptCookies);
+  if (closeBtn) closeBtn.addEventListener("click", acceptCookies);
+})();
+</script>
