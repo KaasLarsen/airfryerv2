@@ -2,120 +2,199 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>Saftig Kylling I Airfryer – Opskrift-Airfryer</title>
+  <title>[RET] i airfryer – [USP / fordel] | Opskrift-Airfryer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="description"
-        content="Saftig kylling i airfryer med sprød overflade. En nem opskrift udviklet til airfryer med klare tider og temperaturer.">
+        content="[Kort SEO-beskrivelse på 150–160 tegn. Hvad retten er, hvorfor den er god, og hvorfor airfryer.]">
 
-  <link rel="stylesheet" href="assets/styles.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <link rel="stylesheet" href="../assets/save-recipe.css" />
 
-  <!-- Schema (dynamic placeholders you swap per recipe) -->
+  <!-- Metadata til related.js -->
+  <script>
+    window.recipeSlug = "[slug-uden-html]";
+    window.recipeTags = ["airfryer", "aftensmad", "nem", "klassiker"];
+  </script>
+
+  <!-- SCHEMA. Udfyld pr opskrift -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Recipe",
-    "name": "Saftig Kylling I Airfryer",
-    "image": ["images/saftig-kylling-hero.jpg"],
-    "description": "En lækker og saftig kyllingeopskrift lavet perfekt i airfryer.",
-    "keywords": "kylling, airfryer, sprød kylling",
+    "name": "[RET] i airfryer",
+    "description": "[Samme som meta description, evt. lidt længere]",
+    "image": [
+      "https://www.opskrift-airfryer.dk/assets/images/recipes/[billede-768x768].jpg"
+    ],
     "author": {
-      "@type": "Person",
+      "@type": "Organization",
       "name": "Opskrift-Airfryer"
     },
-    "datePublished": "2025-01-01",
     "prepTime": "PT10M",
     "cookTime": "PT20M",
     "totalTime": "PT30M",
     "recipeYield": "4 personer",
-    "recipeCategory": "Hovedret",
-    "recipeCuisine": "Dansk",
-    "recipeIngredient": [
-      "800 g kyllingebryst",
-      "2 spsk olie",
-      "1 tsk salt",
-      "1 tsk paprika"
-    ],
-    "recipeInstructions": [
-      { "@type": "HowToStep", "text": "Forvarm airfryer." },
-      { "@type": "HowToStep", "text": "Krydr kyllingen." },
-      { "@type": "HowToStep", "text": "Steg til den er saftig og gennemstegt." }
-    ]
+    "recipeCategory": "Aftensmad",
+    "recipeCuisine": "Dansk"
   }
   </script>
-
 </head>
+
 <body>
 
-  <div data-include="icons"></div>
-  <div data-include="header"></div>
+<div data-include="icons"></div>
+<div data-include="header"></div>
 
-  <main>
+<main>
+<article class="recipe-page">
 
-    <article class="recipe-page">
+  <!-- HERO / HEADER -->
+  <header class="recipe-page-header">
 
-      <!-- Top: billede + meta -->
-      <header class="recipe-page-header">
-        <div class="recipe-page-image">
-          <img src="images/saftig-kylling-hero.jpg" alt="Saftig kylling i airfryer" class="recipe-main-img" />
-        </div>
+    <div class="recipe-page-image">
+      <img
+        src="../assets/images/recipes/[billede-768x768].jpg"
+        alt="[RET] i airfryer"
+        class="recipe-main-img"
+      />
+    </div>
 
-        <div class="recipe-page-intro">
-          <h1 class="recipe-page-title">Saftig Kylling I Airfryer Med Sprød Overflade</h1>
+    <div class="recipe-page-intro">
+      <h1 class="recipe-page-title">[RET] i airfryer</h1>
 
-          <button class="heart-button" onclick="saveRecipe('Saftig Kylling I Airfryer Med Sprød Overflade')">♥ Gem opskrift</button>
+      <p class="recipe-page-lead">
+        [Lang introduktion – 2–3 afsnit. Forklar hvorfor retten er populær,
+        hvorfor airfryer er perfekt, og hvornår man bruger opskriften.]
+      </p>
 
-          <p class="recipe-page-lead">
-            Denne introduktion beskriver kort, hvorfor opskriften er lækker, hurtig og passer perfekt til en travl hverdag.
-          </p>
+      <p class="recipe-page-lead">
+        [Andet afsnit: konsistens, smag, forskel fra ovn/pande,
+        og hvad læseren konkret får ud af opskriften.]
+      </p>
 
-          <div class="recipe-page-meta">
-            <span>30 min</span>
-            <span>4 personer</span>
-            <span>Airfryer</span>
-          </div>
+      <div class="recipe-page-meta">
+        <span>⏱ [tid]</span>
+        <span>🍽 [antal personer]</span>
+        <span>🔥 Airfryer</span>
+      </div>
 
-          <div class="recipe-tags">
-            <span>Kylling</span>
-            <span>Aftensmad</span>
-            <span>Nemt</span>
-          </div>
-        </div>
-      </header>
+      <button class="save-recipe-btn" data-recipe="[RET] i airfryer">
+        ❤️ Gem opskrift
+      </button>
+    </div>
+  </header>
 
-      <!-- Indhold -->
-      <section class="recipe-page-content">
+  <!-- INDHOLD -->
+  <section class="recipe-page-content">
 
-        <!-- Ingredienser -->
-        <div class="recipe-page-ingredients">
-          <h2>Ingredienser</h2>
-          <ul>
-            <li>800 g kyllingebryst</li>
-            <li>2 spsk olie</li>
-            <li>1 tsk salt</li>
-            <li>1 tsk paprika</li>
-          </ul>
-        </div>
+    <!-- INGREDIENSER -->
+    <div class="recipe-page-ingredients">
+      <h2>Ingredienser</h2>
+      <ul>
+        <li>[Ingrediens]</li>
+        <li>[Ingrediens]</li>
+        <li>[Ingrediens]</li>
+      </ul>
 
-        <!-- Fremgangsmåde -->
-        <div class="recipe-page-steps">
-          <h2>Sådan Gør Du</h2>
-          <ol>
-            <li>Forvarm din airfryer til den ønskede temperatur.</li>
-            <li>Krydr kyllingen grundigt, og tilsæt en smule olie.</li>
-            <li>Tilbered kyllingen, og kontroller at den er gennemstegt.</li>
-          </ol>
-        </div>
+      <h2 style="margin-top:2rem;">Udstyr</h2>
+      <ul>
+        <li>Airfryer</li>
+        <li>Skål</li>
+        <li>Evt. stegetermometer</li>
+      </ul>
+    </div>
 
-      </section>
+    <!-- FREMGANGSMÅDE -->
+    <div class="recipe-page-steps">
+      <h2>Sådan gør du</h2>
+      <ol>
+        <li>
+          <strong>Forberedelse.</strong>
+          [Forklaring – ikke kun én linje]
+        </li>
+        <li>
+          <strong>Krydring / marinade.</strong>
+          [Detaljeret beskrivelse]
+        </li>
+        <li>
+          <strong>Tilberedning i airfryer.</strong>
+          [Tid + temperatur + hvorfor]
+        </li>
+        <li>
+          <strong>Hviletid / afslutning.</strong>
+          [Hvorfor det er vigtigt]
+        </li>
+      </ol>
+    </div>
 
-    </article>
+  </section>
 
-  </main>
+  <!-- TIPS -->
+  <section class="recipe-tip">
+    <h2>Tips og variationer</h2>
 
-  <div data-include="footer"></div>
+    <p>
+      <strong>Sprødere version:</strong>
+      [Forklaring]
+    </p>
 
-  <script src="assets/include.js" defer></script>
-  <script src="assets/header.js" defer></script>
+    <p>
+      <strong>Smagsvariationer:</strong>
+      [BBQ, krydret, urter osv.]
+    </p>
+
+    <p>
+      <strong>Typiske fejl:</strong>
+      [Hvad folk gør forkert – og hvordan man undgår det]
+    </p>
+  </section>
+
+  <!-- SERVERING -->
+  <section style="margin-top:3rem;">
+    <h2 class="section-title">Serveringsforslag</h2>
+    <p>
+      [Hvordan retten serveres – til hverdag, gæster, børn, osv.]
+    </p>
+  </section>
+
+  <!-- OPBEVARING -->
+  <section style="margin-top:3rem;">
+    <h2 class="section-title">Rester og opbevaring</h2>
+    <p>
+      [Køleskab, genopvarmning i airfryer, meal prep]
+    </p>
+  </section>
+
+  <!-- FAQ -->
+  <section style="margin-top:3rem;">
+    <h2 class="section-title">Ofte stillede spørgsmål</h2>
+
+    <p><strong>Spørgsmål?</strong><br>
+    Svar.</p>
+
+    <p><strong>Spørgsmål?</strong><br>
+    Svar.</p>
+  </section>
+
+  <!-- RELATERET -->
+  <section class="section-category" style="margin-top:3rem;">
+    <div class="category-header">
+      <h2 class="section-title">Relaterede opskrifter</h2>
+    </div>
+    <div class="category-grid" id="related-container"></div>
+  </section>
+
+</article>
+</main>
+
+<div data-include="footer"></div>
+<div data-include="analytics"></div>
+
+<script src="../assets/include.js" defer></script>
+<script src="../assets/related.js" defer></script>
+<script src="../assets/save-recipe.js" defer></script>
 
 </body>
 </html>
