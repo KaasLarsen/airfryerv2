@@ -43,6 +43,12 @@
   "categories": ["groentsager", "tilbehor", "snacks-tilbehor", "sund-airfryer"]
     },
     {
+  "slug": "koldhaevede-boller-i-airfryer",
+  "title": "Koldhævede boller i airfryer",
+  "image": "koldhaevede-boller-i-airfryer-768x768.jpg",
+  "categories": ["bagvaerk", "broed", "morgenmad", "madpakke"]
+    },
+    {
   "slug": "gulerodsstave-i-airfryer",
   "title": "Gulerodsstave i airfryer",
   "image": "gulerodsstave-i-airfryer-768x768.jpg",
