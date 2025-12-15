@@ -7,6 +7,12 @@
       "categories": ["sproede-kartofler"]
     },
     {
+  "slug": "boller-i-airfryer",
+  "title": "Boller i airfryer",
+  "image": "boller-i-airfryer-768x768.jpg",
+  "categories": ["bagvaerk", "broed", "morgenmad", "madpakke"]
+    },
+    {
   "slug": "hvidloegsbroed-i-airfryer",
   "title": "Hvidløgsbrød i airfryer",
   "image": "hvidloegsbroed-i-airfryer-768x768.jpg",
