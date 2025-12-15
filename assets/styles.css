@@ -1260,3 +1260,78 @@ body {
     display: flex;
   }
 }
+/* ================================
+   GLOBAL MOBIL STABILITET
+   Forhindrer horisontal "flydning"
+   ================================ */
+
+/* 1. Lås horisontal scroll globalt */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 2. Stop scroll-chaining på mobil */
+body {
+  overscroll-behavior-x: none;
+}
+
+/* 3. Sikr at intet element kan sprænge bredden */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 4. Billeder må aldrig skubbe layout */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================================
+   SWIPE-SEKTIONER (KUN DER)
+   ================================ */
+
+.swipe-row {
+  display: flex;
+  gap: 1rem;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: none;
+
+  touch-action: pan-x;
+
+  padding: 0.5rem 1rem 1rem;
+}
+
+/* Swipe-kort */
+.swipe-row > * {
+  flex: 0 0 75%;
+  scroll-snap-align: start;
+}
+
+/* ================================
+   DESKTOP / LAPTOP (SAFE MODE)
+   ================================ */
+
+@media (min-width: 769px) {
+  .swipe-row {
+    overflow-x: visible;
+    overflow-y: visible;
+    touch-action: auto;
+    scroll-snap-type: none;
+  }
+
+  .swipe-row > * {
+    flex: 1 1 auto;
+  }
+}
