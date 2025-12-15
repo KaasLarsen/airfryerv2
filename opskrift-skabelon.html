@@ -2,43 +2,46 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>[RET] i airfryer – [USP / fordel] | Opskrift-Airfryer</title>
+  <title>[OPSkriftstitel] – [kort SEO-undertitel]</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="[SEO-beskrivelse i fuld sætning – 150–160 tegn]">
 
-  <meta name="description"
-        content="[Kort SEO-beskrivelse på 150–160 tegn. Hvad retten er, hvorfor den er god, og hvorfor airfryer.]">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="../assets/styles.css" />
   <link rel="stylesheet" href="../assets/save-recipe.css" />
 
-  <!-- Metadata til related.js -->
-  <script>
-    window.recipeSlug = "[slug-uden-html]";
-    window.recipeTags = ["airfryer", "aftensmad", "nem", "klassiker"];
-  </script>
-
-  <!-- SCHEMA. Udfyld pr opskrift -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Recipe",
-    "name": "[RET] i airfryer",
-    "description": "[Samme som meta description, evt. lidt længere]",
+    "name": "[Opskriftens navn]",
+    "description": "[Samme eller udvidet beskrivelse som meta]",
     "image": [
-      "https://www.opskrift-airfryer.dk/assets/images/recipes/[billede-768x768].jpg"
+      "https://opskrift-airfryer.dk/assets/images/recipes/[billede-768x768].jpg"
     ],
-    "author": {
-      "@type": "Organization",
-      "name": "Opskrift-Airfryer"
-    },
-    "prepTime": "PT10M",
-    "cookTime": "PT20M",
-    "totalTime": "PT30M",
-    "recipeYield": "4 personer",
-    "recipeCategory": "Aftensmad",
-    "recipeCuisine": "Dansk"
+    "author": { "@type": "Organization", "name": "Opskrift-Airfryer" },
+    "prepTime": "PT[XM]",
+    "cookTime": "PT[YM]",
+    "totalTime": "PT[ZM]",
+    "recipeYield": "[antal personer]",
+    "recipeCategory": "[kategori]",
+    "recipeCuisine": "[køkken]",
+    "keywords": "[kommaseparerede keywords]",
+    "recipeIngredient": [
+      "[ingrediens 1]",
+      "[ingrediens 2]"
+    ],
+    "recipeInstructions": [
+      { "@type": "HowToStep", "text": "[kort trin 1]" },
+      { "@type": "HowToStep", "text": "[kort trin 2]" }
+    ]
   }
+  </script>
+
+  <!-- Related + save metadata -->
+  <script>
+    window.recipeSlug = "[slug]";
+    window.recipeTags = ["tag1", "tag2", "tag3"];
   </script>
 </head>
 
@@ -50,59 +53,63 @@
 <main>
 <article class="recipe-page">
 
-  <!-- HERO / HEADER -->
+  <!-- HEADER -->
   <header class="recipe-page-header">
-
     <div class="recipe-page-image">
       <img
         src="../assets/images/recipes/[billede-768x768].jpg"
-        alt="[RET] i airfryer"
+        alt="[alt-tekst]"
         class="recipe-main-img"
       />
     </div>
 
     <div class="recipe-page-intro">
-      <h1 class="recipe-page-title">[RET] i airfryer</h1>
+      <h1 class="recipe-page-title">[Opskriftens navn]</h1>
 
       <p class="recipe-page-lead">
-        [Lang introduktion – 2–3 afsnit. Forklar hvorfor retten er populær,
-        hvorfor airfryer er perfekt, og hvornår man bruger opskriften.]
+        [Intro afsnit 1 – hvorfor retten er god, relevant, populær eller svær at ramme]
       </p>
 
       <p class="recipe-page-lead">
-        [Andet afsnit: konsistens, smag, forskel fra ovn/pande,
-        og hvad læseren konkret får ud af opskriften.]
+        [Intro afsnit 2 – hvad man får ud af opskriften, og hvad der adskiller den fra andre]
+      </p>
+
+      <p class="recipe-page-lead">
+        [Intro afsnit 3 – løfte: metode, tips, fejl der undgås]
       </p>
 
       <div class="recipe-page-meta">
-        <span>⏱ [tid]</span>
-        <span>🍽 [antal personer]</span>
-        <span>🔥 Airfryer</span>
+        <span>[samlet tid]</span>
+        <span>[antal personer]</span>
+        <span>[ret-type]</span>
       </div>
 
-      <button class="save-recipe-btn" data-recipe="[RET] i airfryer">
+      <div style="height:1rem;"></div>
+
+      <button class="save-recipe-btn" data-recipe="[Opskriftens navn]">
         ❤️ Gem opskrift
       </button>
     </div>
   </header>
 
-  <!-- INDHOLD -->
+  <!-- CONTENT -->
   <section class="recipe-page-content">
 
     <!-- INGREDIENSER -->
     <div class="recipe-page-ingredients">
       <h2>Ingredienser</h2>
       <ul>
-        <li>[Ingrediens]</li>
-        <li>[Ingrediens]</li>
-        <li>[Ingrediens]</li>
+        <li>[ingrediens]</li>
+      </ul>
+
+      <h2 style="margin-top:2rem;">Valgfrit (men det løfter retten)</h2>
+      <ul>
+        <li>[valgfrit]</li>
       </ul>
 
       <h2 style="margin-top:2rem;">Udstyr</h2>
       <ul>
-        <li>Airfryer</li>
-        <li>Skål</li>
-        <li>Evt. stegetermometer</li>
+        <li>[udstyr]</li>
       </ul>
     </div>
 
@@ -110,72 +117,48 @@
     <div class="recipe-page-steps">
       <h2>Sådan gør du</h2>
       <ol>
-        <li>
-          <strong>Forberedelse.</strong>
-          [Forklaring – ikke kun én linje]
-        </li>
-        <li>
-          <strong>Krydring / marinade.</strong>
-          [Detaljeret beskrivelse]
-        </li>
-        <li>
-          <strong>Tilberedning i airfryer.</strong>
-          [Tid + temperatur + hvorfor]
-        </li>
-        <li>
-          <strong>Hviletid / afslutning.</strong>
-          [Hvorfor det er vigtigt]
-        </li>
+        <li><strong>[Trin titel]</strong> – forklaring.</li>
       </ol>
+
+      <div style="height:1.25rem;"></div>
+
+      <h2>Sådan ved du, det er perfekt</h2>
+      <ul>
+        <li>[kontrolpunkt]</li>
+      </ul>
     </div>
 
   </section>
 
   <!-- TIPS -->
   <section class="recipe-tip">
-    <h2>Tips og variationer</h2>
-
-    <p>
-      <strong>Sprødere version:</strong>
-      [Forklaring]
-    </p>
-
-    <p>
-      <strong>Smagsvariationer:</strong>
-      [BBQ, krydret, urter osv.]
-    </p>
-
-    <p>
-      <strong>Typiske fejl:</strong>
-      [Hvad folk gør forkert – og hvordan man undgår det]
-    </p>
+    <h2>Tips, fejl og variationer</h2>
+    <p><strong>[Tip 1]</strong><br>[forklaring]</p>
   </section>
 
   <!-- SERVERING -->
   <section style="margin-top:3rem;">
     <h2 class="section-title">Serveringsforslag</h2>
-    <p>
-      [Hvordan retten serveres – til hverdag, gæster, børn, osv.]
-    </p>
+    <ul>
+      <li>[forslag]</li>
+    </ul>
   </section>
 
   <!-- OPBEVARING -->
   <section style="margin-top:3rem;">
-    <h2 class="section-title">Rester og opbevaring</h2>
-    <p>
-      [Køleskab, genopvarmning i airfryer, meal prep]
-    </p>
+    <h2 class="section-title">Opbevaring og genopvarmning</h2>
+    <ul>
+      <li>[info]</li>
+    </ul>
   </section>
 
-  <!-- FAQ -->
+  <!-- KATEGORIER -->
   <section style="margin-top:3rem;">
-    <h2 class="section-title">Ofte stillede spørgsmål</h2>
-
-    <p><strong>Spørgsmål?</strong><br>
-    Svar.</p>
-
-    <p><strong>Spørgsmål?</strong><br>
-    Svar.</p>
+    <h2 class="section-title">Kategorier og tags</h2>
+    <p>
+      <strong>Kategorier:</strong> [kategori]<br>
+      <strong>Tags:</strong> [tags]
+    </p>
   </section>
 
   <!-- RELATERET -->
