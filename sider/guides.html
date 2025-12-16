@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guides & inspiration – Airfryer tips og viden</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Find guides, tips og inspiration til airfryer. Lær teknikker, undgå fejl og få mest muligt ud af din airfryer.">
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+
+<body>
+
+<div data-include="icons"></div>
+<div data-include="header"></div>
+
+<!-- HERO -->
+<section class="hero-large"
+         style="background-image: url('../assets/images/hero/hero-guides-airfryer-1920x1080.jpg');">
+  <div class="hero-large-overlay"></div>
+
+  <div class="hero-large-content">
+    <h1 class="hero-large-title">Guides & inspiration</h1>
+    <p class="hero-large-subtitle">
+      Tips, viden og inspiration til dig, der vil have mere ud af din airfryer.
+    </p>
+
+    <form class="hero-large-search" onsubmit="return false;">
+      <input type="search" id="guide-search" placeholder="Søg i guides…" />
+    </form>
+  </div>
+</section>
+
+<main>
+
+<section class="section-category">
+  <div class="category-header">
+    <h2 class="section-title" id="guides-title">Alle guides</h2>
+    <p class="section-desc" id="guides-count">Indlæser guides …</p>
+  </div>
+
+  <div class="category-grid" id="guides-grid"></div>
+
+  <button class="load-more-btn" id="guides-load-more">Vis flere guides</button>
+</section>
+
+</main>
+
+<div data-include="footer"></div>
+<div data-include="analytics"></div>
+
+<script src="../assets/include.js" defer></script>
+<script src="../assets/header.js" defer></script>
+
+<script>
+let ALL_GUIDES = [];
+let CURRENT_GUIDES = [];
+let guideIndex = 0;
+const PAGE_SIZE = 12;
+
+function renderGuideChunk() {
+  const grid = document.getElementById("guides-grid");
+  const slice = CURRENT_GUIDES.slice(guideIndex, guideIndex + PAGE_SIZE);
+
+  slice.forEach(guide => {
+    grid.insertAdjacentHTML("beforeend", `
+      <article class="category-card">
+        <a class="category-card-link" href="../guides/${guide.slug}.html">
+          <div class="category-card-image">
+            <img src="../assets/images/guides/${guide.image}" alt="${guide.title}">
+          </div>
+          <div class="category-card-body">
+            <h3 class="category-card-title">${guide.title}</h3>
+          </div>
+        </a>
+      </article>
+    `);
+  });
+
+  guideIndex += PAGE_SIZE;
+
+  document.getElementById("guides-load-more").style.display =
+    guideIndex < CURRENT_GUIDES.length ? "block" : "none";
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const res = await fetch("/assets/guides.json");
+  const data = await res.json();
+
+  ALL_GUIDES = data.guides || [];
+  CURRENT_GUIDES = ALL_GUIDES.slice();
+
+  document.getElementById("guides-count").textContent =
+    `Viser ${CURRENT_GUIDES.length} guides`;
+
+  renderGuideChunk();
+
+  document.getElementById("guides-load-more")
+    .addEventListener("click", renderGuideChunk);
+
+  document.getElementById("guide-search")
+    .addEventListener("input", e => {
+      const q = e.target.value.toLowerCase();
+
+      CURRENT_GUIDES = ALL_GUIDES.filter(g =>
+        g.title.toLowerCase().includes(q)
+      );
+
+      document.getElementById("guides-grid").innerHTML = "";
+      guideIndex = 0;
+
+      document.getElementById("guides-count").textContent =
+        `Viser ${CURRENT_GUIDES.length} guides`;
+
+      renderGuideChunk();
+    });
+});
+</script>
+
+</body>
+</html>
