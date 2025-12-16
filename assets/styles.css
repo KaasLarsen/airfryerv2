@@ -1447,3 +1447,7 @@ img {
     justify-content: space-between;
   }
 }
+/* spacing efter hero på guides */
+.hero-large + main .guide-wrap {
+  margin-top: 3rem;
+}
