@@ -726,18 +726,27 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <div data-include="cookie-banner"></div>
-<script>
+
+  <script>
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".theme-card").forEach(card => {
+
+    // Mobile touch-fix (DETTE er nøglen)
+    card.addEventListener("touchend", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = card.getAttribute("href");
+    }, { passive: false });
+
+    // Desktop fallback (ufarlig)
     card.addEventListener("click", e => {
-      // Hvis browseren har "glemt" href pga. swipe
-      if (card.href) {
-        window.location.href = card.href;
-      }
+      window.location.href = card.getAttribute("href");
     });
+
   });
 });
 </script>
+
 
 
 </body>
