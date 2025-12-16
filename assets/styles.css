@@ -1468,3 +1468,19 @@ img {
 .guide-lead:first-of-type {
   font-size: 1.15rem;
 }
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .header-nav.active {
+    display: flex;
+  }
+
+  .header-nav a {
+    display: block;
+  }
+}
