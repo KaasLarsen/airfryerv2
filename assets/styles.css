@@ -1497,3 +1497,8 @@ img {
 .guide-card p {
   text-decoration: none;
 }
+/* fjern understregning på guide-kort */
+.category-card-link,
+.category-card-link * {
+  text-decoration: none !important;
+}
