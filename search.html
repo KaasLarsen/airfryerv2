@@ -2,10 +2,11 @@
 <html lang="da">
 <head>
   <meta charset="utf-8">
-  <title>søg opskrifter i airfryer</title>
+  <title>Søg opskrifter i airfryer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
         content="Søg efter opskrifter i airfryer. Find kylling, pomfritter, grøntsager og meget mere.">
+
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body class="page">
@@ -14,32 +15,46 @@
   <div data-include="header"></div>
 
   <main class="page-main">
+
+    <!-- SØG -->
     <section class="section">
       <div class="section-header">
-        <h1 class="section-title">søg i opskrifter</h1>
+        <h1 class="section-title">Søg i opskrifter</h1>
       </div>
+
       <form class="search-bar" action="search.html" method="get">
         <svg class="icon icon-24" aria-hidden="true">
           <use href="#icon-search"></use>
         </svg>
-        <input class="search-input" type="search" name="q" id="search-input"
-               placeholder="Skriv for eksempel kylling, pomfritter eller grøntsager">
-        <button class="btn btn-primary" type="submit">søg</button>
+
+        <input
+          class="search-input"
+          type="search"
+          name="q"
+          id="search-input"
+          placeholder="Skriv fx kylling, broccoli, kartofler…"
+        >
+
+        <button class="btn btn-primary" type="submit">Søg</button>
       </form>
     </section>
 
+    <!-- RESULTATER -->
     <section class="section">
       <div class="section-header">
-        <h2 class="section-title">resultater</h2>
+        <h2 class="section-title">Resultater</h2>
         <p class="section-subtitle js-search-summary"></p>
       </div>
+
       <div class="grid grid-3 js-search-results"></div>
     </section>
+
   </main>
 
   <div data-include="footer"></div>
 
   <script src="assets/include.js" defer></script>
+
   <script>
     function getQueryParam(name) {
       const params = new URLSearchParams(window.location.search);
@@ -48,12 +63,13 @@
 
     async function runSearch() {
       const q = getQueryParam("q").trim();
+      const qLower = q.toLowerCase();
+
       const input = document.getElementById("search-input");
       if (input) input.value = q;
 
       const summaryEl = document.querySelector(".js-search-summary");
       const resultsEl = document.querySelector(".js-search-results");
-      if (!resultsEl) return;
 
       if (!q) {
         summaryEl.textContent = "Skriv et søgeord for at se resultater.";
@@ -62,23 +78,24 @@
       }
 
       let recipes = [];
+
       try {
         const res = await fetch("assets/recipes.json");
-        recipes = await res.json();
+        const data = await res.json();
+        recipes = data.recipes || [];
       } catch (err) {
-        console.error("Fejl ved indlæsning af opskrifter", err);
+        console.error("Fejl ved indlæsning af recipes.json", err);
         summaryEl.textContent = "Der opstod en fejl ved indlæsning af opskrifter.";
         return;
       }
 
-      const qLower = q.toLowerCase();
-      const matches = recipes.filter((r) => {
+      const matches = recipes.filter(r => {
         const haystack = [
           r.title,
-          (r.description || ""),
-          (r.tags || []).join(" "),
-          (r.categories || []).join(" ")
+          (r.categories || []).join(" "),
+          r.slug
         ].join(" ").toLowerCase();
+
         return haystack.includes(qLower);
       });
 
@@ -90,22 +107,24 @@
 
       summaryEl.textContent = matches.length + " opskrift(er) fundet.";
 
-      resultsEl.innerHTML = matches.map((r) => `
+      resultsEl.innerHTML = matches.map(r => `
         <article class="card recipe-card">
-          <a href="${r.slug}.html">
+          <a href="/opskrifter/${r.slug}.html" class="recipe-card-link">
             <div class="recipe-card-image">
-              <img src="${r.image}" alt="${r.title}">
+              <img
+                src="assets/images/recipes/${r.image}"
+                alt="${r.title}"
+                loading="lazy"
+              >
             </div>
+            <h3 class="recipe-card-title">${r.title}</h3>
           </a>
-          <h3 class="recipe-card-title">${r.title}</h3>
-          <p class="recipe-card-meta">${r.time} · ${r.servings} · ${r.meta}</p>
         </article>
       `).join("");
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      runSearch();
-    });
+    document.addEventListener("DOMContentLoaded", runSearch);
   </script>
+
 </body>
 </html>
