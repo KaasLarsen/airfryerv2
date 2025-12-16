@@ -2,12 +2,27 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>Guides & inspiration – Airfryer tips og viden</title>
+  <title>Guides & inspiration – Airfryer tips og viden | Opskrift-Airfryer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
         content="Find guides, tips og inspiration til airfryer. Lær teknikker, undgå fejl og få mest muligt ud af din airfryer.">
 
   <link rel="stylesheet" href="../assets/styles.css" />
+
+  <!-- COLLECTION / GUIDES SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Guides & inspiration til airfryer",
+    "description": "Samling af guides, tips og viden om airfryer – fra julemad til hverdagsbrug.",
+    "url": "https://opskrift-airfryer.dk/sider/guides.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Opskrift-Airfryer"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -66,12 +81,13 @@ function renderGuideChunk() {
   slice.forEach(guide => {
     grid.insertAdjacentHTML("beforeend", `
       <article class="category-card">
-        <a class="category-card-link" href="../guides/${guide.slug}.html">
+        <a class="category-card-link" href="/sider/guides/${guide.slug}.html">
           <div class="category-card-image">
-            <img src="../assets/images/guides/${guide.image}" alt="${guide.title}">
+            <img src="/assets/images/guides/${guide.image}" alt="${guide.title}">
           </div>
           <div class="category-card-body">
             <h3 class="category-card-title">${guide.title}</h3>
+            ${guide.excerpt ? `<p class="category-card-text">${guide.excerpt}</p>` : ``}
           </div>
         </a>
       </article>
@@ -104,7 +120,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       const q = e.target.value.toLowerCase();
 
       CURRENT_GUIDES = ALL_GUIDES.filter(g =>
-        g.title.toLowerCase().includes(q)
+        g.title.toLowerCase().includes(q) ||
+        (g.tags && g.tags.join(" ").toLowerCase().includes(q))
       );
 
       document.getElementById("guides-grid").innerHTML = "";
