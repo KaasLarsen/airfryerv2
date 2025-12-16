@@ -6,6 +6,13 @@
       "image": "jul-i-airfryer-768x768.jpg",
       "excerpt": "Alt du skal vide om julemad i airfryer: sprødhed, timing, julefrokost og konkrete opskrifter.",
       "tags": ["jul", "julefrokost", "guide"]
+    },
+    {
+      "slug": "airfryer-fejltagelser",
+      "title": "Airfryer fejltagelser – de 10 mest almindelige fejl (og hvordan du undgår dem)",
+      "image": "airfryer-fejltagelser-768x768.jpg",
+      "excerpt": "De 10 mest almindelige airfryer-fejl – og præcis hvordan du undgår dem, så din mad bliver sprød, saftig og vellykket hver gang.",
+      "tags": ["airfryer", "fejl", "tips", "guide"]
     }
   ]
 }
