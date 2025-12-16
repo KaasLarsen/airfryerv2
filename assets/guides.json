@@ -1,10 +1,11 @@
 {
   "guides": [
     {
-      "slug": "saadan-bruger-du-en-airfryer",
-      "title": "Sådan bruger du en airfryer – komplet begynder-guide",
-      "image": "saadan-bruger-du-en-airfryer-768x768.jpg",
-      "categories": ["grundguide", "begynder"]
+      "slug": "jul-i-airfryer",
+      "title": "Jul i airfryer – den store guide til sprød julemad",
+      "image": "jul-i-airfryer-768x768.jpg",
+      "excerpt": "Alt du skal vide om julemad i airfryer: sprødhed, timing, julefrokost og konkrete opskrifter.",
+      "tags": ["jul", "julefrokost", "guide"]
     }
   ]
 }
