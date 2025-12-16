@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  
-  <style>
-  .guide-wrap { max-width: 1000px; margin: 0 auto; padding: 1rem 1rem 3rem; }
-  .guide-kicker { font-size: .85rem; letter-spacing: .06em; color: #666; }
-  .guide-lead { max-width: 820px; line-height: 1.75; }
-  .guide-toc { border-radius: 16px; background:#fff; box-shadow: ... }
-  .callout { border-radius: 16px; background:#fff; }
-  .mini-grid { display:grid; gap:1rem; }
-  .mini-card { border-radius:16px; background:#fff; }
-  ...
-</style>
-
   <meta charset="UTF-8" />
   <title>Airfryer temperatur-guide – den komplette oversigt til perfekte resultater</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -45,6 +33,53 @@
     }
   }
   </script>
+
+  <style>
+    .guide-wrap { max-width: 1000px; margin: 0 auto; padding: 1rem 1rem 3rem; }
+    .guide-kicker { font-size:.85rem; letter-spacing:.06em; color:#666; margin-bottom:.5rem; }
+    .guide-lead { max-width:820px; line-height:1.75; color:#444; margin:.75rem 0; }
+
+    .guide-toc {
+      border:1px solid #eee;
+      border-radius:16px;
+      background:#fff;
+      padding:1rem 1.1rem;
+      margin:1.25rem 0 2rem;
+      box-shadow:0 8px 24px rgba(0,0,0,.06);
+    }
+    .guide-toc a {
+      display:inline-block;
+      margin:.25rem .6rem .25rem 0;
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .guide-section { margin-top:2.25rem; }
+    .guide-section p, .guide-section li { line-height:1.8; color:#444; }
+
+    .checklist {
+      margin:1rem 0;
+      padding:1rem 1.1rem;
+      border:1px solid #eee;
+      border-radius:16px;
+      background:#fff;
+    }
+
+    .callout {
+      border:1px solid #eee;
+      border-radius:16px;
+      background:#fff;
+      padding:1rem 1.1rem;
+      margin:1.75rem 0;
+    }
+
+    .note { color:#666; font-size:.95rem; }
+
+    @media (max-width:600px){
+      .guide-wrap { padding:.75rem .9rem 2.5rem; }
+      .guide-toc a { display:block; margin:.35rem 0; }
+    }
+  </style>
 </head>
 
 <body>
@@ -54,7 +89,7 @@
 
 <!-- HERO -->
 <section class="hero-large"
-         style="background-image:url('../../assets/images/hero/hero-guides-airfryer-1920x1080.jpg');">
+  style="background-image:url('../../assets/images/hero/hero-guides-airfryer-1920x1080.jpg');">
   <div class="hero-large-overlay"></div>
   <div class="hero-large-content">
     <p class="guide-kicker">guides</p>
@@ -68,101 +103,76 @@
 <main>
   <div class="guide-wrap">
 
-    <!-- INTRO -->
     <p class="guide-lead">
       Temperatur er den vigtigste – og mest misforståede – faktor, når du laver mad i airfryer.
-      Mange oplever tør kylling, bløde kartofler eller brændt panering, selvom opskriften ellers er fulgt.
-      I langt de fleste tilfælde skyldes det én ting: forkert temperatur.
+      Tør kylling, bløde kartofler og brændt panering skyldes næsten altid forkert varme.
     </p>
 
     <p class="guide-lead">
-      I denne guide får du en komplet og praktisk temperatur-oversigt til airfryer.
-      Du lærer, hvilke temperaturer der virker bedst til kød, fisk, grøntsager, frostvarer og bagværk,
-      hvornår høj varme er din ven – og hvornår lavere temperatur giver bedre resultat.
+      I denne guide får du en praktisk temperatur-oversigt, der virker i virkeligheden –
+      opdelt efter råvarer og med klare tommelfingerregler.
     </p>
 
-    <!-- TOC -->
-    <nav class="guide-toc" aria-label="indholdsfortegnelse">
+    <nav class="guide-toc">
       <h2 class="section-title">Indhold i guiden</h2>
-      <a href="#grundprincipper">Grundprincipper for temperatur i airfryer</a>
-      <a href="#kylling">Temperatur til kylling</a>
-      <a href="#koed">Temperatur til oksekød & svinekød</a>
-      <a href="#fisk">Temperatur til fisk</a>
-      <a href="#kartofler">Temperatur til kartofler</a>
-      <a href="#groent">Temperatur til grøntsager</a>
-      <a href="#frost">Temperatur til frostvarer</a>
-      <a href="#bagvaerk">Temperatur til bagværk & dessert</a>
-      <a href="#fejl">Typiske temperatur-fejl</a>
+      <a href="#grundprincipper">Grundprincipper</a>
+      <a href="#kylling">Kylling</a>
+      <a href="#koed">Okse & svin</a>
+      <a href="#fisk">Fisk</a>
+      <a href="#kartofler">Kartofler</a>
+      <a href="#groent">Grøntsager</a>
+      <a href="#frost">Frostvarer</a>
+      <a href="#bagvaerk">Bagværk</a>
+      <a href="#fejl">Typiske fejl</a>
     </nav>
 
-    <!-- PRINCIPLES -->
     <section class="guide-section" id="grundprincipper">
       <h2 class="section-title">Grundprincipper for temperatur i airfryer</h2>
 
       <p>
-        En airfryer fungerer anderledes end en almindelig ovn.
-        Den cirkulerer varm luft meget tæt på maden, hvilket betyder, at temperaturen opleves kraftigere.
-        Derfor kan du næsten altid skrue lidt ned i forhold til ovn-opskrifter.
+        En airfryer cirkulerer varm luft meget tæt på maden. Det betyder, at
+        temperaturen føles kraftigere end i en almindelig ovn.
       </p>
 
       <div class="checklist">
-        <strong>Husk disse grundregler:</strong>
+        <strong>Husk disse regler:</strong>
         <ul>
-          <li>Airfryer = hurtig varme → lavere temperatur end ovn</li>
-          <li>Sprødhed opnås ofte til sidst, ikke fra start</li>
-          <li>Overfyldning sænker den reelle temperatur</li>
-          <li>Små portioner kræver kortere tid og ofte lavere varme</li>
+          <li>Skru 10–20 °C ned i forhold til ovn</li>
+          <li>Sprødhed opnås ofte til sidst</li>
+          <li>Overfyldning sænker effektiv varme</li>
+          <li>Små portioner kræver kortere tid</li>
         </ul>
+      </div>
+
+      <div class="callout">
+        <strong>Hurtig regel:</strong>
+        <p>Start lavere – slut varmere. Det giver saftigt indeni og sprødt udenpå.</p>
       </div>
     </section>
 
-    <!-- KYLLING -->
     <section class="guide-section" id="kylling">
-      <h2 class="section-title">Temperatur til kylling i airfryer</h2>
-
-      <p>
-        Kylling er en af de mest populære råvarer i airfryer – og også en af dem, der lettest bliver tør.
-        Hemmeligheden er at kombinere moderat temperatur med en kort, varm finish.
-      </p>
-
+      <h2 class="section-title">Temperatur til kylling</h2>
       <ul>
         <li><strong>Kyllingebryst:</strong> 170–180 °C</li>
-        <li><strong>Kyllingelår / overlår:</strong> 180–190 °C</li>
-        <li><strong>Hel kylling:</strong> 170 °C → afslut ved 190 °C</li>
+        <li><strong>Lår / overlår:</strong> 180–190 °C</li>
+        <li><strong>Hel kylling:</strong> 170 °C → finish 190 °C</li>
         <li><strong>Paneret kylling:</strong> 180–200 °C</li>
       </ul>
-
-      <p class="note">
-        Tip: Brug stegetermometer. Kylling er perfekt ved ca. 75 °C i centrum.
-      </p>
+      <p class="note">Perfekt kernetemperatur: ca. 75 °C.</p>
     </section>
 
-    <!-- KØD -->
     <section class="guide-section" id="koed">
       <h2 class="section-title">Temperatur til oksekød & svinekød</h2>
-
-      <p>
-        Rødt kød og svinekød kræver lidt højere temperatur for at få en god overflade,
-        men stadig kort tilberedning for at bevare saftigheden.
-      </p>
-
       <ul>
         <li><strong>Bøffer:</strong> 190–200 °C</li>
         <li><strong>Frikadeller:</strong> 180 °C</li>
-        <li><strong>Flæskesteg:</strong> 170 °C → afslut ved 200 °C</li>
+        <li><strong>Flæskesteg:</strong> 170 °C → finish 200 °C</li>
         <li><strong>Bacon:</strong> 180–190 °C</li>
       </ul>
     </section>
 
-    <!-- FISK -->
     <section class="guide-section" id="fisk">
-      <h2 class="section-title">Temperatur til fisk i airfryer</h2>
-
-      <p>
-        Fisk kræver lavere temperatur end kød.
-        For høj varme tørrer fisken ud, før den når at blive færdig.
-      </p>
-
+      <h2 class="section-title">Temperatur til fisk</h2>
       <ul>
         <li><strong>Laks:</strong> 160–170 °C</li>
         <li><strong>Torsk:</strong> 160–170 °C</li>
@@ -170,15 +180,8 @@
       </ul>
     </section>
 
-    <!-- KARTOFLER -->
     <section class="guide-section" id="kartofler">
       <h2 class="section-title">Temperatur til kartofler</h2>
-
-      <p>
-        Kartofler elsker høj varme – men kun hvis de ligger i et jævnt lag.
-        Ellers bliver de bløde i stedet for sprøde.
-      </p>
-
       <ul>
         <li><strong>Pommes frites:</strong> 190–200 °C</li>
         <li><strong>Bådekartofler:</strong> 185–195 °C</li>
@@ -186,47 +189,26 @@
       </ul>
     </section>
 
-    <!-- GRØNT -->
     <section class="guide-section" id="groent">
       <h2 class="section-title">Temperatur til grøntsager</h2>
-
-      <p>
-        Grøntsager bliver bedst ved lidt lavere temperatur end kartofler.
-        Målet er let karamellisering uden at brænde.
-      </p>
-
       <ul>
         <li><strong>Rodfrugter:</strong> 180 °C</li>
         <li><strong>Broccoli & blomkål:</strong> 170–180 °C</li>
-        <li><strong>Peberfrugt & squash:</strong> 170 °C</li>
+        <li><strong>Squash & peberfrugt:</strong> 170 °C</li>
       </ul>
     </section>
 
-    <!-- FROST -->
     <section class="guide-section" id="frost">
       <h2 class="section-title">Temperatur til frostvarer</h2>
-
-      <p>
-        Frostvarer er oplagte i airfryer, fordi den fjerner fugt hurtigt.
-        De fleste fungerer bedst ved relativt høj temperatur.
-      </p>
-
       <ul>
         <li><strong>Pommes frites (frost):</strong> 200 °C</li>
-        <li><strong>Forårsruller:</strong> 190 °C</li>
         <li><strong>Nuggets:</strong> 190–200 °C</li>
+        <li><strong>Forårsruller:</strong> 190 °C</li>
       </ul>
     </section>
 
-    <!-- BAGVÆRK -->
     <section class="guide-section" id="bagvaerk">
       <h2 class="section-title">Temperatur til bagværk & dessert</h2>
-
-      <p>
-        Bagværk kræver lavere temperatur i airfryer end i ovn,
-        ellers bliver overfladen mørk før midten er færdig.
-      </p>
-
       <ul>
         <li><strong>Boller:</strong> 160–170 °C</li>
         <li><strong>Kage:</strong> 150–160 °C</li>
@@ -234,20 +216,15 @@
       </ul>
     </section>
 
-    <!-- FEJL -->
     <section class="guide-section" id="fejl">
-      <h2 class="section-title">Typiske temperatur-fejl i airfryer</h2>
-
+      <h2 class="section-title">Typiske temperatur-fejl</h2>
       <ul>
-        <li>For høj temperatur fra start</li>
-        <li>Ingen finish ved høj varme</li>
+        <li>For høj varme fra start</li>
+        <li>Ingen sprød finish</li>
         <li>Overfyldt kurv</li>
-        <li>Blind tillid til ovn-opskrifter</li>
+        <li>Blind brug af ovn-opskrifter</li>
       </ul>
-
-      <p class="note">
-        Husk: Airfryer belønner justering. Små ændringer i temperatur gør en stor forskel.
-      </p>
+      <p class="note">Små justeringer giver store forskelle.</p>
     </section>
 
   </div>
