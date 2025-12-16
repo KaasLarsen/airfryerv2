@@ -172,13 +172,31 @@ function renderChunk() {
 document.addEventListener("DOMContentLoaded", async () => {
   const res = await fetch("/assets/recipes.json");
   const data = await res.json();
-  ALL_RECIPES = data.recipes || [];
+ALL_RECIPES = data.recipes || [];
 
+// 🔑 URL-FILTER (DET DER MANGLER)
+const params = new URLSearchParams(window.location.search);
+const filterParam = params.get("filter");
+
+if (filterParam) {
+  const filters = filterParam.split(",").map(f => f.trim());
+  CURRENT_LIST = ALL_RECIPES.filter(r =>
+    r.categories && filters.some(f => r.categories.includes(f))
+  );
+
+  document.getElementById("recipes-title").textContent =
+    "Filtrerede opskrifter";
+
+  document.getElementById("recipes-count").textContent =
+    `Viser ${CURRENT_LIST.length} opskrifter`;
+} else {
   CURRENT_LIST = ALL_RECIPES.slice();
   document.getElementById("recipes-count").textContent =
     `Viser ${ALL_RECIPES.length} opskrifter`;
+}
 
-  renderChunk();
+renderChunk();
+
 
   document.getElementById("load-more-btn")
     .addEventListener("click", renderChunk);
