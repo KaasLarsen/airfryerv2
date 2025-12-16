@@ -195,6 +195,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const filter = params.get("filter");
+  if (!filter) return;
+
+  const selected = filter.split(",").map(s => s.trim()).filter(Boolean);
+
+  // 1) Hvis siden har checkboxes med value=category, så check dem ud fra URL
+  selected.forEach(val => {
+    const cb = document.querySelector(`input[type="checkbox"][value="${CSS.escape(val)}"]`);
+    if (cb) cb.checked = true;
+  });
+
+  // 2) Hvis siden har en "Anvend filtre" knap, så klik den
+  const applyBtn = document.getElementById("filterApply");
+  if (applyBtn) {
+    applyBtn.click();
+    return;
+  }
+
+  // 3) Fallback: hvis I har en global applyFilter-funktion, så brug den
+  if (typeof window.applyFilter === "function") {
+    window.applyFilter(selected);
+  }
+});
+</script>
 
 </body>
 </html>
