@@ -1456,3 +1456,15 @@ img {
     margin-top: 2rem;
   }
 }
+/* forbedret læsbarhed i guides */
+.guide-wrap p::first-letter {
+  text-transform: uppercase;
+}
+.guide-lead {
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.guide-lead:first-of-type {
+  font-size: 1.15rem;
+}
