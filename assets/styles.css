@@ -1484,3 +1484,16 @@ img {
     display: block;
   }
 }
+/* fjern understregning på guide-kort */
+.guides-grid a,
+.guide-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* sørg for at ingen tekst i kortet bliver understreget */
+.guide-card h2,
+.guide-card h3,
+.guide-card p {
+  text-decoration: none;
+}
