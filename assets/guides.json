@@ -11,8 +11,15 @@
       "slug": "airfryer-fejltagelser",
       "title": "Airfryer fejltagelser – de 10 mest almindelige fejl (og hvordan du undgår dem)",
       "image": "airfryer-fejltagelser-768x768.jpg",
-      "excerpt": "De 10 mest almindelige airfryer-fejl – og præcis hvordan du undgår dem, så din mad bliver sprød, saftig og vellykket hver gang.",
-      "tags": ["airfryer", "fejl", "tips", "guide"]
+      "excerpt": "Undgå de klassiske airfryer-fejl. Lær hvorfor maden bliver tør, blød eller ujævn – og hvordan du retter det.",
+      "tags": ["airfryer", "tips", "fejl", "guide"]
+    },
+    {
+      "slug": "airfryer-temperatur-guide",
+      "title": "Airfryer temperatur-guide – den komplette oversigt",
+      "image": "airfryer-temperatur-guide-768x768.jpg",
+      "excerpt": "Den komplette temperatur-guide til airfryer. Se præcise temperaturer til kød, fisk, grønt og færdigretter.",
+      "tags": ["airfryer", "temperatur", "guide"]
     }
   ]
 }
