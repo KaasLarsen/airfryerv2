@@ -9,6 +9,12 @@
   </url>
 
   <url>
+  <loc>https://opskrift-airfryer.dk/sider/guides/nytaarsmenu-i-airfryer.html</loc>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+  <url>
   <loc>https://opskrift-airfryer.dk/sider/guides/airfryer-temperatur-guide.html</loc>
   <priority>0.8</priority>
   <changefreq>yearly</changefreq>
