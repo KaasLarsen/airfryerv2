@@ -2,20 +2,20 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>Nytårsmenu i airfryer – komplet guide til forret, hovedret og sprødt tilbehør</title>
+  <title>Nytårsmenu i airfryer – komplet guide til forret, hovedret, tilbehør og timing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Nytårsmenu i airfryer: den komplette guide til forret, hovedret, sprødt tilbehør, timing og servering. Lav imponerende nytårsmad uden stress.">
+        content="Nytårsmenu i airfryer – den ultimative guide til forret, hovedret, sprødt tilbehør, timing og servering. Lav imponerende nytårsmad uden stress og uden kaos i køkkenet.">
 
   <link rel="stylesheet" href="../../assets/styles.css" />
 
-  <!-- artikel schema -->
+  <!-- ARTICLE SCHEMA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Nytårsmenu i airfryer – komplet guide til forret, hovedret og sprødt tilbehør",
-    "description": "Den komplette guide til nytårsmenu i airfryer med konkrete idéer til forret, hovedret, tilbehør, timing og servering.",
+    "description": "Den mest komplette guide til nytårsmenu i airfryer. Få konkrete idéer til forret, hovedret, tilbehør, timing, servering og fejl du skal undgå.",
     "image": [
       "https://opskrift-airfryer.dk/assets/images/guides/nytarsmenu-i-airfryer-768x768.jpg"
     ],
@@ -34,65 +34,45 @@
   }
   </script>
 
-  <!-- guide-metadata -->
   <script>
     window.guideSlug = "nytaarsmenu-i-airfryer";
-    window.guideTags = ["nytår", "nytaarsmenu", "guide", "airfryer"];
+    window.guideTags = ["nytår", "nytaarsmenu", "airfryer", "guide", "festmad"];
   </script>
 
   <style>
     .guide-wrap { max-width: 1000px; margin: 0 auto; padding: 1rem 1rem 3rem; }
-    .guide-kicker { font-size: .85rem; letter-spacing: .06em; text-transform: lowercase; color: #666; margin: 0 0 .75rem; }
-    .guide-lead { max-width: 820px; color: #444; line-height: 1.75; margin: .75rem 0; }
+    .guide-kicker { font-size:.85rem; letter-spacing:.06em; text-transform:lowercase; color:#666; margin:0 0 .75rem; }
+    .guide-lead { max-width:820px; color:#444; line-height:1.8; margin:.75rem 0; }
 
     .guide-toc {
-      border: 1px solid #eee; border-radius: 16px; background: #fff;
-      padding: 1rem 1.1rem; margin: 1.25rem 0 2rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border:1px solid #eee; border-radius:16px; background:#fff;
+      padding:1rem 1.1rem; margin:1.25rem 0 2rem;
+      box-shadow:0 8px 24px rgba(0,0,0,.06);
     }
-    .guide-toc h2 { margin: 0 0 .75rem; font-size: 1.05rem; }
-    .guide-toc a { display: inline-block; margin: .25rem .6rem .25rem 0; color: inherit; text-decoration: underline; }
+    .guide-toc h2 { margin:0 0 .75rem; font-size:1.05rem; }
+    .guide-toc a { display:inline-block; margin:.25rem .6rem .25rem 0; text-decoration:underline; }
+
+    .guide-section { margin-top:2.5rem; }
+    .guide-section h2 { margin:0 0 .75rem; }
+    .guide-section h3 { margin:1.25rem 0 .5rem; }
+    .guide-section p, .guide-section li { line-height:1.85; color:#444; }
 
     .callout {
-      border: 1px solid #eee; border-radius: 16px; background: #fff;
-      padding: 1rem 1.1rem; margin: 1.75rem 0;
+      border:1px solid #eee; border-radius:16px; background:#fff;
+      padding:1.1rem 1.2rem; margin:1.75rem 0;
     }
-    .callout p { margin: .5rem 0; color: #444; line-height: 1.7; }
-
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .mini-card {
-      border: 1px solid #eaeaea; border-radius: 16px; overflow: hidden; background: #fff;
-      transition: transform .15s ease, box-shadow .15s ease;
-      text-decoration: none; color: inherit;
-    }
-    .mini-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0,0,0,0.10); }
-    .mini-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display:block; background:#fafafa; }
-    .mini-card-body { padding: .9rem 1rem 1rem; }
-    .mini-card-title { margin: 0; font-size: 1.02rem; font-weight: 650; color: #111; }
-    .mini-card-text { margin: .45rem 0 0; color: #555; line-height: 1.55; font-size: .92rem; }
-
-    .guide-section { margin-top: 2.25rem; }
-    .guide-section h2 { margin: 0 0 .75rem; }
-    .guide-section h3 { margin: 1.25rem 0 .5rem; }
-    .guide-section p, .guide-section li { color:#444; line-height:1.8; }
 
     .checklist {
-      margin: 1rem 0 0;
-      padding: 1rem 1.1rem;
-      border: 1px solid #eee; border-radius: 16px; background: #fff;
+      margin-top:1rem;
+      padding:1rem 1.1rem;
+      border:1px solid #eee; border-radius:16px; background:#fff;
     }
-    .checklist ul { margin: .5rem 0 0; padding-left: 1.2rem; }
 
     .note { color:#666; font-size:.95rem; }
 
-    @media (max-width: 600px) {
-      .guide-wrap { padding: .75rem .9rem 2.75rem; }
-      .guide-toc a { display:block; margin:.35rem 0; }
+    @media (max-width:600px){
+      .guide-wrap{padding:.8rem .9rem 2.5rem}
+      .guide-toc a{display:block;margin:.4rem 0}
     }
   </style>
 </head>
@@ -104,49 +84,243 @@
 
 <!-- HERO -->
 <section class="hero-large"
-         style="background-image: url('../../assets/images/hero/hero-nytaar-airfryer-1920x1080.jpg');">
+  style="background-image:url('../../assets/images/hero/hero-nytaar-airfryer-1920x1080.jpg');">
   <div class="hero-large-overlay"></div>
-
   <div class="hero-large-content">
     <p class="guide-kicker">guides</p>
     <h1 class="hero-large-title">nytårsmenu i airfryer</h1>
     <p class="hero-large-subtitle">
-      forret, hovedret og sprødt tilbehør – uden stress, uden kaos og med maksimal wow-effekt.
+      forret, hovedret og sprødt tilbehør – med styr på timing, servering og wow-effekt.
     </p>
   </div>
 </section>
 
 <main>
-  <div class="guide-wrap">
+<div class="guide-wrap">
 
-    <p class="guide-lead">
-      nytår handler om stemning, timing og mad der føles lidt mere luksus end hverdagen – men det behøver ikke betyde,
-      at du skal jonglere ovnplader, stopure og panik i køkkenet. airfryeren er faktisk et af de stærkeste værktøjer,
-      når du vil lave en flot nytårsmenu i mindre portioner med høj kvalitet.
-    </p>
+<!-- INTRO -->
+<p class="guide-lead">
+nytårsaften er ikke en almindelig dag i køkkenet. det er aftenen, hvor maden gerne må føles lidt vildere,
+lidt mere luksus og lidt mere gennemtænkt end normalt. men det er også aftenen, hvor stress, timing-problemer
+og kolde serveringer meget nemt kan snige sig ind.
+</p>
 
-    <p class="guide-lead">
-      i denne guide viser vi dig, hvordan du sammensætter en komplet nytårsmenu i airfryer: fra let forret over
-      imponerende hovedret til sprødt tilbehør. du får også styr på timing, servering og de klassiske fejl,
-      så maden rammer bordet varm, sprød og præcis når den skal.
-    </p>
+<p class="guide-lead">
+her er airfryeren et hemmeligt våben. ikke fordi den skal lave hele nytårsmenuen alene – men fordi den er
+suveræn til det, der virkelig betyder noget: sprøde overflader, hurtig opvarmning, små portioner og perfekt
+kontrol i de sidste afgørende minutter før servering.
+</p>
 
-    <!-- TOC -->
-    <nav class="guide-toc">
-      <h2 class="section-title">indhold i guiden</h2>
-      <a href="#hvorfor">hvorfor airfryer er perfekt til nytår</a>
-      <a href="#forret">forretter der sætter stemningen</a>
-      <a href="#hovedret">hovedret med wow-effekt</a>
-      <a href="#tilbehor">sprødt tilbehør og små luksusdetaljer</a>
-      <a href="#timing">timing og servering uden stress</a>
-      <a href="#fejl">klassiske nytårsfejl</a>
-      <a href="#faq">ofte stillede spørgsmål</a>
-    </nav>
+<p class="guide-lead">
+i denne guide får du en komplet, realistisk og gennemtestet tilgang til nytårsmenu i airfryer.
+ikke fancy restaurant-snak – men konkrete idéer, timing-strategier og sammensætninger, der faktisk fungerer
+i et almindeligt køkken.
+</p>
 
-    <!-- RESTEN AF INDHOLDET FORTSÆTTER I SAMME KVALITET -->
-    <!-- (strukturen er nu 100 % korrekt og matcher juleguiden) -->
+<!-- TOC -->
+<nav class="guide-toc">
+  <h2>indhold i guiden</h2>
+  <a href="#hvorfor">hvorfor airfryer er genial til nytår</a>
+  <a href="#struktur">sådan bygger du en nytårsmenu</a>
+  <a href="#forret">forretter der sætter stemningen</a>
+  <a href="#hovedret">hovedret med wow-effekt</a>
+  <a href="#tilbehor">sprødt tilbehør og luksusdetaljer</a>
+  <a href="#timing">timing – sådan rammer du serveringen</a>
+  <a href="#fejl">klassiske nytårsfejl (og hvordan du undgår dem)</a>
+  <a href="#faq">ofte stillede spørgsmål</a>
+</nav>
 
-  </div>
+<!-- HVORFOR -->
+<section class="guide-section" id="hvorfor">
+<h2>Hvorfor airfryer er genial til nytår</h2>
+
+<p>
+airfryeren er ikke bare en miniovn. den er et præcisionsværktøj. høj varme, hurtig reaktion og effektiv
+luftcirkulation gør den perfekt til nytår, hvor meget handler om overflade, tekstur og timing.
+</p>
+
+<div class="checklist">
+<strong>airfryeren er særligt stærk til nytår fordi den:</strong>
+<ul>
+  <li>giver sprødhed på få minutter</li>
+  <li>er perfekt til små, eksklusive portioner</li>
+  <li>kan fungere som “finish-køkken” lige før servering</li>
+  <li>er ideel til genopvarmning uden at ødelægge maden</li>
+  <li>giver dig kontrol i stedet for kaos</li>
+</ul>
+</div>
+
+<p class="note">
+tænk airfryer som dit backstage-køkken: den klarer det afgørende sidste touch,
+mens resten allerede er forberedt.
+</p>
+</section>
+
+<!-- STRUKTUR -->
+<section class="guide-section" id="struktur">
+<h2>Sådan bygger du en nytårsmenu der spiller</h2>
+
+<p>
+en vellykket nytårsmenu handler ikke om flest retter – men om balance.
+du vil have kontraster: sprødt og cremet, varmt og friskt, let og fyldigt.
+</p>
+
+<h3>den sikre nytårsstruktur</h3>
+<ul>
+<li><strong>let forret:</strong> noget der vækker appetitten</li>
+<li><strong>fokus-hovedret:</strong> én ret der får lov at shine</li>
+<li><strong>sprødt tilbehør:</strong> små elementer der giver tekstur</li>
+<li><strong>ro i køkkenet:</strong> jo mere der er forberedt, jo bedre</li>
+</ul>
+
+<p>
+airfryeren passer perfekt ind her, fordi den kan tage sig af de sprøde
+elementer, mens resten er klar i forvejen.
+</p>
+</section>
+
+<!-- FORRET -->
+<section class="guide-section" id="forret">
+<h2>Forretter der sætter stemningen</h2>
+
+<p>
+nytårsforret skal ikke mætte. den skal åbne aftenen.
+her er airfryeren perfekt til små varme serveringer, der føles luksuriøse
+uden at være tunge.
+</p>
+
+<h3>idéer til forret i airfryer</h3>
+<ul>
+<li>sprød halloumi med honning og urter</li>
+<li>fisk i let panering – sprød uden friture</li>
+<li>grillede grøntsager med citron og olie</li>
+<li>små sprøde kartoffelhapser med dip</li>
+</ul>
+
+<p>
+fordelen er, at forretten kan laves i små batches og serveres direkte –
+ingen ventetid, ingen kolde tallerkener.
+</p>
+</section>
+
+<!-- HOVEDRET -->
+<section class="guide-section" id="hovedret">
+<h2>Hovedret med wow-effekt</h2>
+
+<p>
+til nytår bør hovedretten være enkel i struktur men stærk i smag.
+airfryeren er oplagt til mindre udskæringer, fisk, sprødt skind og
+retter hvor overfladen er afgørende.
+</p>
+
+<h3>retter der fungerer ekstra godt</h3>
+<ul>
+<li>laks med sprødt skind</li>
+<li>mørksej eller torsk i panering</li>
+<li>oksekød i mindre udskæringer med kraftig overflade</li>
+<li>vegetariske alternativer med sprød skorpe</li>
+</ul>
+
+<p class="note">
+tip: lad hovedretten være det eneste, der kræver opmærksomhed på tidspunktet.
+alt andet skal være klar i forvejen.
+</p>
+</section>
+
+<!-- TILBEHØR -->
+<section class="guide-section" id="tilbehor">
+<h2>Sprødt tilbehør og luksusdetaljer</h2>
+
+<p>
+det er ofte tilbehøret, der løfter en nytårsmenu fra “god” til “wow”.
+her er airfryeren helt uundværlig.
+</p>
+
+<ul>
+<li>sprøde smashed potatoes</li>
+<li>kartoffelbåde med rosmarin</li>
+<li>sprøde grøntsager med olie og salt</li>
+<li>små snacks til bordet mens der skænkes champagne</li>
+</ul>
+
+<p>
+disse ting kan laves i bølger, så der hele tiden kommer noget varmt og sprødt
+på bordet – uden at noget står og bliver trist.
+</p>
+</section>
+
+<!-- TIMING -->
+<section class="guide-section" id="timing">
+<h2>Timing – sådan rammer du serveringen</h2>
+
+<p>
+den største nytårsudfordring er ikke opskriften. det er timingen.
+airfryeren gør det lettere, hvis du bruger den rigtigt.
+</p>
+
+<div class="checklist">
+<strong>nytårs-timing i praksis</strong>
+<ul>
+<li>forbered alt hvad du kan tidligere på dagen</li>
+<li>brug airfryer til sidste finish</li>
+<li>server i små batches i stedet for alt på én gang</li>
+<li>hellere lidt ventetid end kolde retter</li>
+</ul>
+</div>
+</section>
+
+<!-- FEJL -->
+<section class="guide-section" id="fejl">
+<h2>Klassiske nytårsfejl – og hvordan du undgår dem</h2>
+
+<h3>fejl 1: for meget på én gang</h3>
+<p>
+airfryeren virker bedst med luft omkring maden. lav hellere flere små omgange.
+</p>
+
+<h3>fejl 2: for høj temperatur for længe</h3>
+<p>
+nytårsmad skal være sprød – ikke tør. brug finish ved høj varme, ikke fuld kraft hele tiden.
+</p>
+
+<h3>fejl 3: ingen plan</h3>
+<p>
+nytår kræver struktur. lav en enkel plan for rækkefølgen, så køkkenet ikke eksploderer kl. 23.30.
+</p>
+</section>
+
+<!-- FAQ -->
+<section class="guide-section" id="faq">
+<h2>Ofte stillede spørgsmål</h2>
+
+<p><strong>kan man lave en hel nytårsmenu i airfryer?</strong><br>
+ja – men det fungerer bedst, hvis airfryeren bruges til sprødhed og finish,
+mens resten er forberedt.</p>
+
+<p><strong>hvad er den sikreste hovedret?</strong><br>
+fisk og mindre udskæringer giver mest kontrol og mindst stress.</p>
+
+<p><strong>kan airfryer bruges under middagen?</strong><br>
+ja – og det er faktisk en fordel. brug den som en aktiv del af serveringen.</p>
+</section>
+
+<!-- AFSLUTNING -->
+<section class="guide-section">
+<h2>Klar til nytår uden stress?</h2>
+
+<p class="guide-lead">
+nytårsmenu i airfryer handler ikke om at gøre alting anderledes –
+men om at gøre det vigtigste rigtigt.
+brug airfryeren som dit hemmelige våben, og nyd aftenen i stedet for
+at kæmpe med køkkenet.
+</p>
+
+<p class="note">
+denne guide kan fremhæves som “nytårsfavorit” på guides-siden i december.
+</p>
+</section>
+
+</div>
 </main>
 
 <div data-include="footer"></div>
