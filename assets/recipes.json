@@ -6,6 +6,24 @@
       "image": "pommes-frites-768x768.jpg",
       "categories": ["sproede-kartofler"]
     },
+      {
+    "slug": "soede-kartofler-i-airfryer",
+    "title": "Søde kartofler i airfryer",
+    "image": "soede-kartofler-i-airfryer-768x768.jpg",
+    "categories": ["kartofler", "tilbehoer"]
+  },
+  {
+    "slug": "rosenkaal-i-airfryer-med-hvidloeg-og-parmesan",
+    "title": "Rosenkål i airfryer",
+    "image": "rosenkaal-i-airfryer-med-hvidloeg-og-parmesan-768x768.jpg",
+    "categories": ["groentsager", "tilbehoer"]
+  },
+  {
+    "slug": "majskolber-i-airfryer-med-smoer-og-krydderier",
+    "title": "Majskolber i airfryer",
+    "image": "majskolber-i-airfryer-med-smoer-og-krydderier-768x768.jpg",
+    "categories": ["groentsager", "tilbehoer"]
+    },
     {
   "slug": "lammekoelle-i-airfryer",
   "title": "Lammekølle i airfryer – saftig, mør og perfekt stegt",
