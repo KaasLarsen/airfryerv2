@@ -231,6 +231,66 @@
       "categories": ["groentsager", "snacks-tilbehor"]
     },
     {
+    "slug": "sproede-guleroedder-i-airfryer-med-parmesan",
+    "title": "Sprøde gulerødder i airfryer",
+    "image": "sproede-guleroedder-i-airfryer-med-parmesan-768x768.jpg",
+    "categories": ["groentsager", "tilbehoer"]
+  },
+  {
+    "slug": "broccoli-i-airfryer-med-hvidloeg-og-citron",
+    "title": "Broccoli i airfryer",
+    "image": "broccoli-i-airfryer-med-hvidloeg-og-citron-768x768.jpg",
+    "categories": ["groentsager", "tilbehoer"]
+  },
+  {
+    "slug": "blomkaal-i-airfryer-krydret-og-sproed",
+    "title": "Blomkål i airfryer",
+    "image": "blomkaal-i-airfryer-krydret-og-sproed-768x768.jpg",
+    "categories": ["groentsager", "tilbehoer"]
+  },
+  {
+    "slug": "asparges-i-airfryer-med-parmesan-og-citron",
+    "title": "Asparges i airfryer",
+    "image": "asparges-i-airfryer-med-parmesan-og-citron-768x768.jpg",
+    "categories": ["groentsager", "tilbehoer"]
+  },
+  {
+    "slug": "kartoffeltern-i-airfryer-med-rosmarin",
+    "title": "Kartoffeltern i airfryer",
+    "image": "kartoffeltern-i-airfryer-med-rosmarin-768x768.jpg",
+    "categories": ["sproede-kartofler", "tilbehoer"]
+  },
+  {
+    "slug": "aubergine-i-airfryer-med-feta-og-tomat",
+    "title": "Aubergine i airfryer",
+    "image": "aubergine-i-airfryer-med-feta-og-tomat-768x768.jpg",
+    "categories": ["groentsager", "tilbehoer"]
+  },
+  {
+    "slug": "spidskaal-i-airfryer-med-smoer-og-citron",
+    "title": "Spidskål i airfryer",
+    "image": "spidskaal-i-airfryer-med-smoer-og-citron-768x768.jpg",
+    "categories": ["groentsager", "tilbehoer"]
+  },
+  {
+    "slug": "roedloeg-i-airfryer-karamelliseret-med-balsamico",
+    "title": "Rødløg i airfryer",
+    "image": "roedloeg-i-airfryer-karamelliseret-med-balsamico-768x768.jpg",
+    "categories": ["groentsager", "tilbehoer"]
+  },
+  {
+    "slug": "groenne-boenner-i-airfryer-med-hvidloeg-og-citron",
+    "title": "Grønne bønner i airfryer",
+    "image": "groenne-boenner-i-airfryer-med-hvidloeg-og-citron-768x768.jpg",
+    "categories": ["groentsager", "tilbehoer"]
+  },
+  {
+    "slug": "champignon-i-airfryer-med-timian-og-smoer",
+    "title": "Champignon i airfryer",
+    "image": "champignon-i-airfryer-med-timian-og-smoer-768x768.jpg",
+    "categories": ["groentsager", "tilbehoer"]
+  },
+    {
   "slug": "oksespidsbryst-i-airfryer",
   "title": "Oksespidsbryst i airfryer – saftigt oksekød med sprød overflade",
   "image": "oksespidsbryst-i-airfryer-768x768.jpg",
