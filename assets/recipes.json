@@ -12,6 +12,12 @@
     "image": "soede-kartofler-i-airfryer-768x768.jpg",
     "categories": ["kartofler", "tilbehoer"]
   },
+    {
+  "slug": "svinekoteletter-i-airfryer",
+  "title": "Svinekoteletter i airfryer",
+  "image": "svinekoteletter-i-airfryer-768x768.jpg",
+  "categories": ["svinekød", "hovedret"]
+  },
   {
     "slug": "rosenkaal-i-airfryer-med-hvidloeg-og-parmesan",
     "title": "Rosenkål i airfryer",
