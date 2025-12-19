@@ -6,6 +6,12 @@
       "image": "pommes-frites-768x768.jpg",
       "categories": ["sproede-kartofler"]
     },
+    {
+  "slug": "kyllingeschnitzel-i-airfryer",
+  "title": "Kyllingeschnitzel i airfryer",
+  "image": "kyllingeschnitzel-i-airfryer-768x768.jpg",
+  "categories": ["kylling", "hovedret"]
+    },
       {
     "slug": "soede-kartofler-i-airfryer",
     "title": "Søde kartofler i airfryer",
