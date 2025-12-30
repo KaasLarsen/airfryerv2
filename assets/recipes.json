@@ -19,6 +19,12 @@
   "categories": ["oksekød", "hovedret"]
     },
     {
+  "slug": "tofu-i-airfryer",
+  "title": "Tofu i airfryer",
+  "image": "tofu-i-airfryer-768x768.jpg",
+  "categories": ["vegetar", "hovedret"]
+    },
+    {
   "slug": "roeraeg-i-airfryer",
   "title": "Røræg i airfryer",
   "image": "roeraeg-i-airfryer-768x768.jpg",
