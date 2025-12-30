@@ -623,12 +623,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     count.textContent = `Vi fandt ${matches.length} opskrifter`;
 
     matches.slice(0, 12).forEach(r => {
-      const img = fpFindImage(r.slug);
+      // ✅ FIX: Brug det rigtige billede fra recipes.json (ikke fuzzy-match på slug)
+      const img = r.image
+        ? `/assets/images/recipes/${r.image}`
+        : `/assets/images/recipes/placeholder.jpg`;
+
       grid.insertAdjacentHTML("beforeend", `
         <article class="category-card fade-in">
-          <a class="category-card-link" href="opskrifter/${r.slug}.html">
+          <a class="category-card-link" href="/opskrifter/${r.slug}.html">
             <div class="category-card-image">
-              <img src="${img}" alt="${r.title}">
+              <img src="${img}" alt="${r.title}" loading="lazy">
             </div>
             <div class="category-card-body">
               <h3 class="category-card-title">${r.title}</h3>
@@ -642,6 +646,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 });
 </script>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
