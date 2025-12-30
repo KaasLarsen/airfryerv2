@@ -13,6 +13,12 @@
   "categories": ["bagvaerk", "snack"]
     },
     {
+  "slug": "roeraeg-i-airfryer",
+  "title": "Røræg i airfryer",
+  "image": "roeraeg-i-airfryer-768x768.jpg",
+  "categories": ["morgenmad", "æg"]
+    },
+    {
   "slug": "osso-buco-i-airfryer",
   "title": "Osso buco i airfryer",
   "image": "osso-buco-i-airfryer-768x768.jpg",
