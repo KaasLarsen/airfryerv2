@@ -13,6 +13,12 @@
   "categories": ["bagvaerk", "protein"]
     },
     {
+  "slug": "popcorn-i-airfryer",
+  "title": "Popcorn i airfryer",
+  "image": "popcorn-i-airfryer-768x768.jpg",
+  "categories": ["snack"]  
+    },
+    {
   "slug": "ostebroed-i-airfryer",
   "title": "Ostebrød i airfryer",
   "image": "ostebroed-i-airfryer-768x768.jpg",
