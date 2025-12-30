@@ -13,6 +13,12 @@
   "categories": ["bagvaerk", "snack"]
     },
     {
+  "slug": "entrecote-i-airfryer",
+  "title": "Entrecôte i airfryer",
+  "image": "entrecote-i-airfryer-768x768.jpg",
+  "categories": ["oksekød", "hovedret"]
+    },
+    {
   "slug": "roeraeg-i-airfryer",
   "title": "Røræg i airfryer",
   "image": "roeraeg-i-airfryer-768x768.jpg",
