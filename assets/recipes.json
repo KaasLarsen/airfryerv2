@@ -78,6 +78,12 @@
   "image": "kyllingeschnitzel-i-airfryer-768x768.jpg",
   "categories": ["kylling", "hovedret"]
     },
+    {
+  "slug": "braendende-kaerlighed-i-airfryer",
+  "title": "Brændende kærlighed i airfryer",
+  "image": "braendende-kaerlighed-i-airfryer-768x768.jpg",
+  "categories": ["svinekød", "hovedret"]
+    },
       {
     "slug": "soede-kartofler-i-airfryer",
     "title": "Søde kartofler i airfryer",
