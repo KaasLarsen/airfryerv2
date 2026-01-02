@@ -12,6 +12,7 @@
   "image": "aeggemuffins-i-airfryer-768x768.jpg",
   "categories": ["morgenmad", "sund"]
     },
+    
     {
   "slug": "rosenkaal-i-airfryer",
   "title": "Rosenkål i airfryer",
@@ -23,6 +24,12 @@
   "title": "Grøntsagsfrikadeller i airfryer",
   "image": "groentsagsfrikadeller-i-airfryer-768x768.jpg",
   "categories": ["hovedret", "sund", "vegetar"]
+    },
+    {
+  "slug": "socca-i-airfryer",
+  "title": "Socca i airfryer",
+  "image": "socca-i-airfryer-768x768.jpg",
+  "categories": ["tilbehør", "sund", "vegetar"]
     },
     {
   "slug": "laksefrikadeller-light-i-airfryer",
