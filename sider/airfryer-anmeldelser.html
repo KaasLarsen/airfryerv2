@@ -4,17 +4,103 @@
   <meta charset="UTF-8" />
   <title>Airfryer anmeldelser – Tests og vurderinger af airfryers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Læs ærlige airfryer anmeldelser og tests. Find den bedste airfryer til dit behov og sammenlign modeller fra populære mærker som Ninja, Philips og Cosori." />
+  <meta name="description"
+        content="Se vores airfryer anmeldelser samlet ét sted. Søg på mærke og model og find den bedste airfryer til dit behov.">
 
   <link rel="stylesheet" href="../assets/styles.css" />
 
-  <!-- Schema: CollectionPage -->
+  <!-- Side styling (samme stil som opskrifter-grid) -->
+  <style>
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.75rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .category-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      background: #fff;
+      overflow: hidden;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+    }
+
+    .category-card-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .category-card-body {
+      padding: 1rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .category-card-title {
+      font-size: 1.05rem;
+      margin: 0;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .review-card-sub {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.35;
+    }
+
+    .review-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+      color: #111;
+      font-weight: 600;
+    }
+
+    .review-rating span {
+      color: #666;
+      font-weight: 500;
+    }
+
+    .load-more-btn {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      background: #111;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .empty-state {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem 1.25rem 2rem;
+      color: #444;
+      text-align: center;
+    }
+  </style>
+
+  <!-- Schema: Hubside -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Airfryer anmeldelser",
-    "description": "Samling af airfryer anmeldelser og tests, hvor du kan finde den bedste airfryer til dit behov.",
+    "description": "Se vores airfryer anmeldelser samlet ét sted. Søg på mærke og model og find den bedste airfryer til dit behov.",
     "url": "https://www.opskrift-airfryer.dk/sider/airfryer-anmeldelser.html",
     "inLanguage": "da-DK",
     "isPartOf": {
@@ -24,196 +110,135 @@
     }
   }
   </script>
-
-  <!-- Side-specifik styling (matcher opskrifter) -->
-  <style>
-    .review-search {
-      margin-top: 20px;
-    }
-
-    .review-search input {
-      width: 100%;
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(0,0,0,.15);
-      font-size: 16px;
-    }
-
-    .review-grid {
-      margin-top: 30px;
-      display: grid;
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    @media (min-width: 700px) {
-      .review-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (min-width: 1000px) {
-      .review-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    .review-card {
-      background: #fff;
-      border-radius: 18px;
-      border: 1px solid rgba(0,0,0,.08);
-      box-shadow: 0 10px 30px rgba(0,0,0,.06);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .review-card-image {
-      aspect-ratio: 16 / 10;
-      background: #f3f3f3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .review-card-body {
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex-grow: 1;
-    }
-
-    .review-card-title {
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.3;
-    }
-
-    .review-card-text {
-      margin: 0;
-      opacity: 0.85;
-      font-size: 15px;
-    }
-
-    .review-card-footer {
-      margin-top: auto;
-    }
-
-    .review-empty {
-      margin-top: 30px;
-      padding: 20px;
-      border-radius: 16px;
-      border: 1px dashed rgba(0,0,0,.2);
-      background: #fafafa;
-    }
-  </style>
 </head>
 
 <body>
 
-  <div data-include="icons"></div>
-  <div data-include="header"></div>
+<div data-include="icons"></div>
+<div data-include="header"></div>
 
-  <main>
-    <article class="page-recipes">
+<section class="hero-large"
+         style="background-image: url('../assets/images/hero/hero-airfryer-anmeldelser-1920x1080.jpg');">
+  <div class="hero-large-overlay"></div>
+  <div class="hero-large-content">
+    <h1 class="hero-large-title">Airfryer anmeldelser</h1>
+    <p class="hero-large-subtitle">
+      Brug søgning og find præcis den airfryer, du vil læse en anmeldelse af.
+    </p>
 
-      <!-- Hero -->
-      <section class="hero hero-inner">
-        <div class="hero-inner-content">
-          <p class="hero-kicker">Tests og vurderinger</p>
-          <h1 class="hero-title">Airfryer anmeldelser</h1>
-          <p class="hero-subtitle">
-            Her finder du ærlige og grundige anmeldelser af airfryers.
-            Søg efter mærke eller model og find den airfryer, der passer bedst til dit behov.
-          </p>
+    <form class="hero-large-search" onsubmit="return false;">
+      <input type="search" id="airfryer-search" placeholder="Søg efter airfryer, mærke eller model…" />
+    </form>
+  </div>
+</section>
 
-          <!-- Søgning -->
-          <div class="review-search">
-            <input
-              id="reviewSearch"
-              type="search"
-              placeholder="Søg fx: Ninja, Philips XXL, dual basket, Cosori"
-              aria-label="Søg i airfryer anmeldelser"
-            />
+<main>
+
+<section class="section-category">
+  <div class="category-header">
+    <h2 class="section-title" id="airfryers-title">Alle anmeldelser</h2>
+    <p class="section-desc" id="airfryers-count">Indlæser anmeldelser …</p>
+  </div>
+
+  <div class="category-grid" id="airfryers-grid"></div>
+
+  <div class="empty-state" id="airfryers-empty" style="display:none;">
+    Ingen anmeldelser matcher din søgning endnu. Prøv et andet mærke eller modelnavn.
+  </div>
+
+  <button class="load-more-btn" id="load-more-btn">Vis flere anmeldelser</button>
+</section>
+
+</main>
+
+<div data-include="footer"></div>
+<div data-include="analytics"></div>
+
+<script src="../assets/include.js" defer></script>
+<script src="../assets/header.js" defer></script>
+
+<script>
+let ALL_AIRFRYERS = [];
+let CURRENT_LIST = [];
+let currentIndex = 0;
+const PAGE_SIZE = 12;
+
+function getAirfryerImage(item) {
+  return item.image
+    ? `../assets/images/airfryers/${item.image}`
+    : "../assets/images/airfryers/placeholder.jpg";
+}
+
+function renderChunk() {
+  const grid = document.getElementById("airfryers-grid");
+  const empty = document.getElementById("airfryers-empty");
+
+  const slice = CURRENT_LIST.slice(currentIndex, currentIndex + PAGE_SIZE);
+
+  if (currentIndex === 0) {
+    grid.innerHTML = "";
+  }
+
+  slice.forEach(item => {
+    grid.insertAdjacentHTML("beforeend", `
+      <article class="category-card">
+        <a class="category-card-link" href="../anmeldelser/${item.slug}.html">
+          <div class="category-card-image">
+            <img src="${getAirfryerImage(item)}" alt="${item.title}">
           </div>
-        </div>
-      </section>
-
-      <!-- Indhold -->
-      <section class="section">
-        <div class="container">
-
-          <div id="reviewGrid" class="review-grid"></div>
-
-          <div id="reviewEmpty" class="review-empty" style="display:none;">
-            <p>
-              Ingen anmeldelser matcher din søgning endnu.
-              Vi tilføjer løbende nye airfryer anmeldelser.
-            </p>
+          <div class="category-card-body">
+            <h3 class="category-card-title">${item.title}</h3>
+            <p class="review-card-sub">${item.excerpt || ""}</p>
+            <p class="review-rating">${item.ratingStars || ""} <span>${item.ratingText || ""}</span></p>
           </div>
+        </a>
+      </article>
+    `);
+  });
 
-        </div>
-      </section>
+  currentIndex += PAGE_SIZE;
 
-    </article>
-  </main>
+  empty.style.display = CURRENT_LIST.length === 0 ? "block" : "none";
 
-  <div data-include="footer"></div>
+  document.getElementById("load-more-btn").style.display =
+    currentIndex < CURRENT_LIST.length ? "block" : "none";
+}
 
-  <!-- Data + søgning (samme princip som opskrifter) -->
-  <script>
-    const reviews = [
-      /*
-      Eksempel:
-      {
-        title: "Ninja Foodi Dual Zone AF400",
-        description: "Stor dual basket airfryer med masser af kraft.",
-        url: "/anmeldelser/ninja-foodi-dual-zone-af400.html"
-      }
-      */
-    ];
+document.addEventListener("DOMContentLoaded", async () => {
+  const res = await fetch("/assets/airfryers.json");
+  const data = await res.json();
+  ALL_AIRFRYERS = data.airfryers || [];
 
-    const grid = document.getElementById("reviewGrid");
-    const empty = document.getElementById("reviewEmpty");
-    const search = document.getElementById("reviewSearch");
+  CURRENT_LIST = ALL_AIRFRYERS.slice();
 
-    function renderReviews(list) {
-      grid.innerHTML = "";
-      if (list.length === 0) {
-        empty.style.display = "block";
-        return;
-      }
-      empty.style.display = "none";
+  document.getElementById("airfryers-count").textContent =
+    `Viser ${ALL_AIRFRYERS.length} anmeldelser`;
 
-      list.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "review-card";
-        card.innerHTML = `
-          <div class="review-card-image"></div>
-          <div class="review-card-body">
-            <h2 class="review-card-title">${item.title}</h2>
-            <p class="review-card-text">${item.description}</p>
-            <div class="review-card-footer">
-              <a href="${item.url}" class="btn">Læs anmeldelse</a>
-            </div>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-    }
+  renderChunk();
 
-    renderReviews(reviews);
+  document.getElementById("load-more-btn")
+    .addEventListener("click", renderChunk);
 
-    search.addEventListener("input", () => {
-      const q = search.value.toLowerCase();
-      const filtered = reviews.filter(r =>
-        r.title.toLowerCase().includes(q) ||
-        r.description.toLowerCase().includes(q)
+  document.getElementById("airfryer-search")
+    .addEventListener("input", e => {
+      const q = e.target.value.toLowerCase();
+
+      CURRENT_LIST = ALL_AIRFRYERS.filter(r =>
+        (r.title || "").toLowerCase().includes(q) ||
+        (r.brand || "").toLowerCase().includes(q) ||
+        (r.model || "").toLowerCase().includes(q) ||
+        (r.excerpt || "").toLowerCase().includes(q)
       );
-      renderReviews(filtered);
+
+      currentIndex = 0;
+
+      document.getElementById("airfryers-count").textContent =
+        `Viser ${CURRENT_LIST.length} anmeldelser`;
+
+      renderChunk();
     });
-  </script>
+});
+</script>
 
 </body>
 </html>
