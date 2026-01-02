@@ -26,7 +26,6 @@
     @media (min-width: 980px) {
       .review-grid {
         grid-template-columns: 1.25fr 0.75fr;
-        align-items: start;
       }
     }
 
@@ -34,8 +33,8 @@
       border: 1px solid #e5e5e5;
       border-radius: 14px;
       background: #fff;
-      overflow: hidden;
       box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      overflow: hidden;
     }
 
     .review-card-body {
@@ -43,28 +42,48 @@
     }
 
     .review-h2 {
-      margin: 0 0 0.6rem;
+      margin: 1.1rem 0 0.6rem;
       font-size: 1.25rem;
-      line-height: 1.25;
       color: #111;
     }
 
     .review-p {
       margin: 0 0 0.85rem;
-      color: #333;
       line-height: 1.6;
+      color: #333;
     }
 
     .review-list {
       margin: 0.25rem 0 0.9rem;
       padding-left: 1.1rem;
-      color: #333;
       line-height: 1.6;
+    }
+
+    .product-media {
+      display: grid;
+      justify-items: center;
+      padding: 1.2rem 1rem 0;
+    }
+
+    .product-thumb {
+      width: min(420px, 100%);
+      height: auto;
+      object-fit: contain;
+      border-radius: 14px;
+      border: 1px solid #efefef;
+      background: #fff;
+      cursor: zoom-in;
+    }
+
+    .product-thumb-hint {
+      margin: 0.6rem 0 0;
+      font-size: 0.9rem;
+      color: #666;
     }
 
     .review-kpis {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 0.75rem;
       margin: 0.75rem 0 0;
     }
@@ -77,86 +96,25 @@
     }
 
     .kpi-title {
-      margin: 0;
       font-size: 0.9rem;
       color: #555;
+      margin: 0;
     }
 
     .kpi-value {
       margin: 0.2rem 0 0;
+      font-weight: 700;
       font-size: 1.05rem;
-      font-weight: 700;
-      color: #111;
-    }
-
-    .specs {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 0.25rem;
-    }
-
-    .specs th,
-    .specs td {
-      text-align: left;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid #efefef;
-      vertical-align: top;
-      color: #222;
-    }
-
-    .specs th {
-      width: 42%;
-      font-weight: 600;
-      color: #111;
-    }
-
-    .rating-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin: 0.25rem 0 0.75rem;
-    }
-
-    .stars {
-      display: inline-flex;
-      gap: 0.2rem;
-      align-items: center;
-    }
-
-    .stars svg {
-      width: 18px;
-      height: 18px;
-      display: block;
-    }
-
-    .rating-text {
-      font-weight: 700;
-      color: #111;
-    }
-
-    .muted {
-      color: #666;
-      font-size: 0.95rem;
-      margin: 0;
-      line-height: 1.55;
-    }
-
-    .note {
-      border: 1px dashed #e0e0e0;
-      border-radius: 12px;
-      padding: 0.9rem;
-      background: #fcfcfc;
-      color: #444;
-      line-height: 1.6;
-      margin-top: 0.75rem;
     }
 
     .toc {
+      margin: 1rem 0 1.4rem;
+      padding: 0.85rem 0.9rem;
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      background: #fafafa;
       display: grid;
-      gap: 0.35rem;
-      margin: 0.4rem 0 0;
+      gap: 0.55rem;
     }
 
     .toc a {
@@ -167,37 +125,70 @@
       text-decoration: underline;
     }
 
-    /* Mindre produktbillede + klik-forstør */
-    .product-media {
-      padding: 1rem 1rem 0;
+    .specs {
+      width: 100%;
+      border-collapse: collapse;
     }
 
-    .product-thumb {
-      width: min(360px, 100%);
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      border-radius: 14px;
+    .specs th,
+    .specs td {
+      text-align: left;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid #efefef;
+    }
+
+    .note {
+      border: 1px dashed #e0e0e0;
+      border-radius: 12px;
+      padding: 0.85rem;
+      background: #fcfcfc;
+      margin-top: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .related-grid {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 0.85rem;
+    }
+
+    .related-card {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 12px;
       border: 1px solid #efefef;
-      background: #f3f3f3;
-      cursor: zoom-in;
+      border-radius: 14px;
+      padding: 10px;
     }
 
-    .product-thumb-hint {
-      margin: 0.55rem 0 0;
+    .related-card img {
+      width: 84px;
+      height: 84px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #efefef;
+    }
+
+    .related-title {
+      margin: 0;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .related-sub {
+      margin: 0.25rem 0 0;
+      font-size: 0.9rem;
       color: #666;
-      font-size: 0.92rem;
     }
 
-    /* Lightbox */
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.72);
+      background: rgba(0,0,0,0.75);
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 18px;
       z-index: 9999;
     }
 
@@ -205,118 +196,48 @@
       display: flex;
     }
 
-    .lightbox-inner {
-      width: min(980px, 100%);
-      background: #111;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-      position: relative;
-    }
-
-    .lightbox-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      background: #111;
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      background: #fff;
+      border-radius: 14px;
     }
 
     .lightbox-close {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      border: none;
-      background: rgba(255,255,255,0.12);
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.15);
       color: #fff;
-      padding: 10px 12px;
+      border: none;
+      padding: 10px 14px;
       border-radius: 999px;
       cursor: pointer;
-      font-size: 14px;
-    }
-
-    /* Relateret airfryer */
-    .related-grid {
-      display: grid;
-      gap: 0.85rem;
-      margin-top: 0.75rem;
-    }
-
-    .related-card {
-      border: 1px solid #efefef;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #fff;
-      display: grid;
-      grid-template-columns: 84px 1fr;
-      gap: 12px;
-      align-items: center;
-      padding: 10px;
-    }
-
-    .related-card img {
-      width: 84px;
-      height: 84px;
-      object-fit: cover;
-      border-radius: 12px;
-      background: #f3f3f3;
-      border: 1px solid #efefef;
-      display: block;
-    }
-
-    .related-title {
-      margin: 0;
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: #111;
-      line-height: 1.2;
-    }
-
-    .related-sub {
-      margin: 0.25rem 0 0;
-      color: #666;
-      font-size: 0.92rem;
-      line-height: 1.35;
-    }
-
-    .related-card a {
-      text-decoration: none;
-      color: inherit;
-      display: contents;
     }
   </style>
 
-  <!-- Schema: Product + Review -->
+  <!-- Schema Product + Review -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Review",
     "name": "Ninja Foodi FlexDrawer AF500EU anmeldelse",
     "datePublished": "2026-01-02",
-    "inLanguage": "da-DK",
     "author": {
       "@type": "Organization",
-      "name": "Opskrift-Airfryer",
-      "url": "https://www.opskrift-airfryer.dk/"
+      "name": "Opskrift-Airfryer"
     },
     "itemReviewed": {
       "@type": "Product",
       "name": "Ninja Foodi FlexDrawer AF500EU",
-      "brand": {
-        "@type": "Brand",
-        "name": "Ninja"
-      },
+      "brand": { "@type": "Brand", "name": "Ninja" },
       "model": "AF500EU",
-      "category": "Airfryer",
-      "image": [
-        "https://www.opskrift-airfryer.dk/assets/images/airfryers/ninja-foodi-flexdrawer-af500eu-768x768.jpg"
-      ],
-      "description": "Airfryer med 10,4 L MegaZone og fleksibel opdeling i to zoner. 2470 W og flere tilberedningsprogrammer."
+      "image": "https://www.opskrift-airfryer.dk/assets/images/airfryers/ninja-foodi-flexdrawer-af500eu-768x768.jpg"
     },
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "4",
-      "bestRating": "5",
-      "worstRating": "1"
+      "bestRating": "5"
     }
   }
   </script>
@@ -328,216 +249,120 @@
 <div data-include="header"></div>
 
 <section class="hero-large"
-         style="background-image: url('../assets/images/hero/hero-airfryer-anmeldelser-1920x1080.jpg');">
+  style="background-image:url('../assets/images/hero/hero-airfryer-anmeldelser-1920x1080.jpg');">
   <div class="hero-large-overlay"></div>
   <div class="hero-large-content">
     <h1 class="hero-large-title">Ninja Foodi FlexDrawer AF500EU anmeldelse</h1>
     <p class="hero-large-subtitle">
-      Stor MegaZone på 10,4 liter, fleksibel opdeling i zoner og høj effekt til sprøde resultater.
+      Stor MegaZone på 10,4 liter og fleksibel opdeling i to zoner.
     </p>
   </div>
 </section>
 
 <main>
+<section class="section-category">
+<div class="review-wrap">
 
-  <section class="section-category">
-    <div class="review-wrap">
+<div class="review-grid">
 
-      <div class="review-grid">
+<!-- Venstre -->
+<div class="review-card">
+  <div class="product-media">
+    <img id="productThumb"
+         class="product-thumb"
+         src="../assets/images/airfryers/ninja-foodi-flexdrawer-af500eu-768x768.jpg"
+         alt="Ninja Foodi FlexDrawer AF500EU">
+    <p class="product-thumb-hint">Klik på billedet for at se det større.</p>
+  </div>
 
-        <!-- Venstre kolonne -->
-        <div class="review-card">
+  <div class="review-card-body">
 
-          <div class="product-media">
-            <img
-              id="productThumb"
-              class="product-thumb"
-              src="../assets/images/airfryers/ninja-foodi-flexdrawer-af500eu-768x768.jpg"
-              alt="Ninja Foodi FlexDrawer AF500EU airfryer"
-              loading="lazy"
-            />
-            <p class="product-thumb-hint">Klik på billedet for at se det større.</p>
-          </div>
-
-          <div class="review-card-body">
-
-            <div class="rating-row">
-              <div class="stars" aria-label="Vurdering 4 ud af 5">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
-              </div>
-              <div class="rating-text">4 ud af 5</div>
-            </div>
-
-            <p class="review-p">
-              Ninja Foodi FlexDrawer AF500EU er en airfryer til dig, der vil have en stor skuffe til hele måltider,
-              men stadig kunne splitte op, når du laver flere ting på én gang.
-              FlexDrawer betyder, at du kan køre én stor MegaZone eller dele den i to zoner.
-            </p>
-
-            <div class="review-kpis">
-              <div class="kpi">
-                <p class="kpi-title">Kapacitet</p>
-                <p class="kpi-value">10,4 liter</p>
-              </div>
-              <div class="kpi">
-                <p class="kpi-title">Zoner</p>
-                <p class="kpi-value">2 × 5,2 liter</p>
-              </div>
-              <div class="kpi">
-                <p class="kpi-title">Effekt</p>
-                <p class="kpi-value">2470 W</p>
-              </div>
-              <div class="kpi">
-                <p class="kpi-title">Maks temperatur</p>
-                <p class="kpi-value">Op til 240 °C</p>
-              </div>
-            </div>
-
-            <h2 class="review-h2" id="indhold">Indhold på siden</h2>
-            <div class="toc">
-              <a href="#hvem-er-den-til">Hvem er den til</a>
-              <a href="#funktioner">Funktioner og programmer</a>
-              <a href="#kapacitet">Kapacitet og FlexDrawer</a>
-              <a href="#rengoering">Rengøring og praktisk brug</a>
-              <a href="#fordele-ulemper">Fordele og ulemper</a>
-              <a href="#konklusion">Konklusion</a>
-            </div>
-
-            <h2 class="review-h2" id="hvem-er-den-til">Hvem er Ninja Foodi FlexDrawer AF500EU til</h2>
-            <p class="review-p">
-              Denne model passer især godt, hvis du ofte laver mad til flere personer, eller hvis du gerne vil lave hele måltider i airfryeren.
-              MegaZone-formatet gør den oplagt til større råvarer, som normalt er besværlige i klassiske to-skuffe airfryers.
-            </p>
-            <ul class="review-list">
-              <li>Familier, der vil lave større portioner i én skuffe.</li>
-              <li>Dig, der vil kunne kombinere hovedret og tilbehør i to zoner.</li>
-              <li>Dig, der vil have fleksibilitet mellem “stor skuffe” og “to zoner”.</li>
-            </ul>
-
-            <h2 class="review-h2" id="funktioner">Funktioner og programmer</h2>
-            <p class="review-p">
-              AF500EU har flere programmer, så du kan skifte mellem klassisk airfry, ekstra sprød varme og mere ovn-agtige funktioner.
-              Det gør det nemt at bruge den til både kød, grøntsager, bagning og genopvarmning.
-            </p>
-            <ul class="review-list">
-              <li>Air Fry.</li>
-              <li>Max Crisp.</li>
-              <li>Roast.</li>
-              <li>Bake.</li>
-              <li>Reheat.</li>
-              <li>Dehydrate.</li>
-              <li>Prove.</li>
-            </ul>
-
-            <h2 class="review-h2" id="kapacitet">Kapacitet og FlexDrawer</h2>
-            <p class="review-p">
-              FlexDrawer-konceptet er grunden til, at AF500EU skiller sig ud.
-              I stedet for to fysiske skuffer får du én stor skuffe, som du kan dele med en indsats.
-              Det betyder, at du kan vælge mellem stor MegaZone eller to mindre zoner.
-            </p>
-
-            <h2 class="review-h2" id="rengoering">Rengøring og praktisk brug</h2>
-            <p class="review-p">
-              Rengøring betyder meget i hverdagen.
-              Med en stor skuffe får du bedst flow, hvis du bruger bagepapir eller indsats ved fedtede retter,
-              så du sparer tid på opvask.
-            </p>
-
-            <h2 class="review-h2" id="fordele-ulemper">Fordele og ulemper</h2>
-
-            <p class="review-p"><strong>Fordele.</strong></p>
-            <ul class="review-list">
-              <li>Meget stor kapacitet på 10,4 liter til hele måltider.</li>
-              <li>Fleksibel opdeling i zoner, når du vil lave flere ting på én gang.</li>
-              <li>Høj effekt, som typisk giver hurtig og kraftig varme.</li>
-              <li>Flere programmer, så du kan bruge den til mere end bare pommes.</li>
-            </ul>
-
-            <p class="review-p"><strong>Ulemper.</strong></p>
-            <ul class="review-list">
-              <li>Fylder mere på køkkenbordet end mindre airfryers.</li>
-              <li>Den store skuffe kan føles tung, når den er fyldt.</li>
-              <li>Kan være overkill til 1-2 personer.</li>
-            </ul>
-
-            <h2 class="review-h2" id="konklusion">Konklusion</h2>
-            <p class="review-p">
-              Ninja Foodi FlexDrawer AF500EU er et stærkt valg, hvis du vil have fleksibiliteten fra to zoner,
-              men samtidig mulighed for at lave store retter i én sammenhængende skuffe.
-              Den passer især godt til familier og til dig, der ofte laver hele måltider i airfryeren.
-            </p>
-
-          </div>
-        </div>
-
-        <!-- Højre kolonne -->
-        <aside class="review-card">
-          <div class="review-card-body">
-
-            <h2 class="review-h2">Specifikationer</h2>
-            <table class="specs" aria-label="Specifikationer for Ninja Foodi FlexDrawer AF500EU">
-              <tr><th>Model</th><td>AF500EU</td></tr>
-              <tr><th>Kapacitet</th><td>10,4 liter (MegaZone)</td></tr>
-              <tr><th>Zoner</th><td>2 × 5,2 liter (med indsats)</td></tr>
-              <tr><th>Effekt</th><td>2470 W</td></tr>
-              <tr><th>Mål</th><td>Ca. 32,7 × 45 × 27 cm</td></tr>
-              <tr><th>Vægt</th><td>Ca. 9,4 kg</td></tr>
-            </table>
-
-            <div class="note" style="margin-top: 0.9rem;">
-              <strong>Bedst til.</strong><br />
-              Familier, store portioner og dig der vil kunne skifte mellem MegaZone og to zoner i hverdagen.
-            </div>
-
-            <h2 class="review-h2" id="priser" style="margin-top: 1.15rem;">Priser</h2>
-            <p class="muted">
-              Se aktuelle priser og lagerstatus her.
-              Widgetten viser typisk de bedste tilbud lige nu.
-            </p>
-
-            <div style="margin-top: 0.75rem;">
-              <div id="pr-product-widget-d3884240" style="display: block; width: 100%"></div>
-              <script type="text/javascript" src="https://api.pricerunner.com/publisher-widgets/uk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3208440524&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-d3884240" async></script>
-              <div style="display: inline-block">
-                <a href="https://www.pricerunner.com/pl/81-3208440524/Fryers/Ninja-Foodi-FlexDrawer-AF500EU-Compare-Prices" rel="nofollow">
-                  <p style="font: 14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color: var(--grayscale100); text-decoration: underline;">
-                    powered by <span style="font-weight:bold">PriceRunner</span>
-                  </p>
-                </a>
-              </div>
-            </div>
-
-            <h2 class="review-h2" style="margin-top: 1.15rem;">Relateret airfryer</h2>
-            <p class="muted">
-              Her er en anden airfryer, du også kan overveje.
-            </p>
-
-            <div class="related-grid" id="relatedGrid">
-              <div class="note">
-                Vi tilføjer automatisk relaterede airfryers her, så snart der ligger flere end én i airfryers.json.
-              </div>
-            </div>
-
-          </div>
-        </aside>
-
-      </div>
-
+    <div class="review-kpis">
+      <div class="kpi"><p class="kpi-title">Kapacitet</p><p class="kpi-value">10,4 liter</p></div>
+      <div class="kpi"><p class="kpi-title">Zoner</p><p class="kpi-value">2 × 5,2 liter</p></div>
+      <div class="kpi"><p class="kpi-title">Effekt</p><p class="kpi-value">2470 W</p></div>
+      <div class="kpi"><p class="kpi-title">Maks temperatur</p><p class="kpi-value">Op til 240 °C</p></div>
     </div>
-  </section>
 
+    <h2 class="review-h2">Indhold på siden</h2>
+    <div class="toc">
+      <a href="#hvem">Hvem er den til</a>
+      <a href="#funktioner">Funktioner og programmer</a>
+      <a href="#kapacitet">Kapacitet og FlexDrawer</a>
+      <a href="#rengoering">Rengøring og praktisk brug</a>
+      <a href="#fordele">Fordele og ulemper</a>
+      <a href="#konklusion">Konklusion</a>
+    </div>
+
+    <h2 id="hvem" class="review-h2">Hvem er Ninja Foodi FlexDrawer AF500EU til</h2>
+    <p class="review-p">
+      Denne model passer især godt til familier og dig, der laver større portioner og hele måltider i airfryeren.
+    </p>
+
+    <h2 id="funktioner" class="review-h2">Funktioner og programmer</h2>
+    <ul class="review-list">
+      <li>Air Fry</li>
+      <li>Max Crisp</li>
+      <li>Roast</li>
+      <li>Bake</li>
+      <li>Reheat</li>
+      <li>Dehydrate</li>
+    </ul>
+
+    <h2 id="kapacitet" class="review-h2">Kapacitet og FlexDrawer</h2>
+    <p class="review-p">
+      FlexDrawer giver mulighed for både én stor MegaZone og opdeling i to zoner.
+    </p>
+
+    <h2 id="rengoering" class="review-h2">Rengøring og praktisk brug</h2>
+    <p class="review-p">
+      Den store skuffe er nem at tage ud, men kan være tung når den er fyldt.
+    </p>
+
+    <h2 id="fordele" class="review-h2">Fordele og ulemper</h2>
+    <ul class="review-list">
+      <li>Meget stor kapacitet</li>
+      <li>Fleksibel opdeling</li>
+      <li>Høj effekt</li>
+    </ul>
+
+    <h2 id="konklusion" class="review-h2">Konklusion</h2>
+    <p class="review-p">
+      En stærk airfryer til større husholdninger, der vil have fleksibilitet.
+    </p>
+
+  </div>
+</div>
+
+<!-- Højre -->
+<aside class="review-card">
+  <div class="review-card-body">
+    <h2 class="review-h2">Specifikationer</h2>
+    <table class="specs">
+      <tr><th>Model</th><td>AF500EU</td></tr>
+      <tr><th>Kapacitet</th><td>10,4 liter</td></tr>
+      <tr><th>Zoner</th><td>2</td></tr>
+      <tr><th>Effekt</th><td>2470 W</td></tr>
+    </table>
+
+    <div class="note">
+      <strong>Bedst til.</strong><br>
+      Familier og store portioner.
+    </div>
+
+    <h2 class="review-h2">Relateret airfryer</h2>
+    <div class="related-grid" id="relatedGrid" style="display:none;"></div>
+  </div>
+</aside>
+
+</div>
+</div>
+</section>
 </main>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Forstørret billede">
-    <button class="lightbox-close" id="lightboxClose" type="button">Luk</button>
-    <img class="lightbox-img" id="lightboxImg" alt="Forstørret billede" />
-  </div>
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">Luk</button>
+  <img id="lightboxImg">
 </div>
 
 <div data-include="footer"></div>
@@ -547,69 +372,42 @@
 <script src="../assets/header.js" defer></script>
 
 <script>
-  // Lightbox
-  document.addEventListener("DOMContentLoaded", () => {
-    const thumb = document.getElementById("productThumb");
-    const box = document.getElementById("lightbox");
-    const boxImg = document.getElementById("lightboxImg");
-    const closeBtn = document.getElementById("lightboxClose");
+document.addEventListener("DOMContentLoaded", () => {
+  const thumb = document.getElementById("productThumb");
+  const box = document.getElementById("lightbox");
+  const img = document.getElementById("lightboxImg");
+  const close = document.getElementById("lightboxClose");
 
-    function openBox() {
-      boxImg.src = thumb.src;
-      box.classList.add("is-open");
-      box.setAttribute("aria-hidden", "false");
-    }
+  thumb.onclick = () => {
+    img.src = thumb.src;
+    box.classList.add("is-open");
+  };
 
-    function closeBox() {
-      box.classList.remove("is-open");
-      box.setAttribute("aria-hidden", "true");
-      boxImg.src = "";
-    }
+  close.onclick = () => box.classList.remove("is-open");
+  box.onclick = e => { if (e.target === box) box.classList.remove("is-open"); };
+});
+</script>
 
-    thumb.addEventListener("click", openBox);
-    closeBtn.addEventListener("click", closeBox);
-    box.addEventListener("click", (e) => {
-      if (e.target === box) closeBox();
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeBox();
-    });
-  });
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const res = await fetch("/assets/airfryers.json");
+  const data = await res.json();
+  const list = data.airfryers.filter(a => a.slug !== "ninja-foodi-flexdrawer-af500eu");
 
-  // Relateret airfryer fra /assets/airfryers.json
-  document.addEventListener("DOMContentLoaded", async () => {
-    const currentSlug = "ninja-foodi-flexdrawer-af500eu";
-    const relatedGrid = document.getElementById("relatedGrid");
+  if (!list.length) return;
 
-    try {
-      const res = await fetch("/assets/airfryers.json");
-      const data = await res.json();
-      const list = (data.airfryers || []).filter(a => a.slug && a.slug !== currentSlug);
-
-      if (list.length === 0) return;
-
-      // Vælg 1 relateret (første i listen). Når du har flere, kan vi gøre den smartere.
-      const item = list[0];
-
-      const img = item.image
-        ? `../assets/images/airfryers/${item.image}`
-        : "../assets/images/airfryers/placeholder.jpg";
-
-      relatedGrid.innerHTML = `
-        <div class="related-card">
-          <a href="../anmeldelser/${item.slug}.html">
-            <img src="${img}" alt="${item.title}">
-            <div>
-              <p class="related-title">${item.title}</p>
-              <p class="related-sub">${item.excerpt || "Læs anmeldelsen og se om den passer til dit behov."}</p>
-            </div>
-          </a>
-        </div>
-      `;
-    } catch (e) {
-      // Hvis fetch fejler, lader vi default beskeden stå.
-    }
-  });
+  const item = list[0];
+  document.getElementById("relatedGrid").style.display = "grid";
+  document.getElementById("relatedGrid").innerHTML = `
+    <a class="related-card" href="../anmeldelser/${item.slug}.html">
+      <img src="../assets/images/airfryers/${item.image}">
+      <div>
+        <p class="related-title">${item.title}</p>
+        <p class="related-sub">${item.excerpt || ""}</p>
+      </div>
+    </a>
+  `;
+});
 </script>
 
 </body>
