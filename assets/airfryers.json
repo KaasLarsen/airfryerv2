@@ -8,13 +8,19 @@
       "model": "AF500EU",
       "excerpt": "Stor FlexDrawer airfryer, hvor du kan lave hele måltider i én skuffe eller opdele i zoner.",
       "ratingStars": "",
-      "ratingText": ""
+      "ratingText": "",
+      "categories": []
     },
     {
-  "slug": "cosori-caf-tf101s",
-  "title": "Cosori CAF-TF101S",
-  "image": "cosori-caf-tf101s-768x768.jpg",
-  "categories": ["mellemklasse", "value-for-money", "familie"]
-}
+      "slug": "cosori-caf-tf101s",
+      "title": "Cosori CAF-TF101S",
+      "image": "cosori-caf-tf101s-768x768.jpg",
+      "brand": "Cosori",
+      "model": "CAF-TF101S",
+      "excerpt": "Populær airfryer i mellemklassen med stærk value for money og enkel betjening til hverdagsmad.",
+      "ratingStars": "",
+      "ratingText": "",
+      "categories": ["mellemklasse", "value-for-money", "familie"]
+    }
   ]
 }
