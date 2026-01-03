@@ -2,17 +2,380 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8" />
-  <title>Cosori CAF-TF101S anmeldelse – Smart airfryer med fokus på enkelhed</title>
+  <title>Cosori CAF-TF101S anmeldelse – Value for money airfryer i mellemklassen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Læs vores anmeldelse af Cosori CAF-TF101S airfryer. Elegant design, brugervenlig betjening og solid kapacitet til hverdagsmad. Se fordele, ulemper og aktuelle priser." />
+        content="Læs vores grundige anmeldelse af Cosori CAF-TF101S. En populær airfryer i mellemklassen med fokus på value for money, brugervenlighed og stabile resultater. Se fordele, ulemper og aktuelle priser." />
 
   <link rel="stylesheet" href="../assets/styles.css" />
 
-  <!-- (Samme CSS som Ninja – uændret) -->
-  <!-- For at spare støj: genbrug CSS direkte fra forrige anmeldelse -->
-  <!-- ⚠️ Kopiér CSS-blokken 1:1 fra Ninja-anmeldelsen -->
+  <style>
+    .review-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 2.5rem;
+    }
 
+    .review-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (min-width: 980px) {
+      .review-grid {
+        grid-template-columns: 1.25fr 0.75fr;
+        align-items: start;
+      }
+    }
+
+    .review-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    }
+
+    .review-card-body {
+      padding: 1.1rem;
+    }
+
+    .review-h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.25rem;
+      line-height: 1.25;
+      color: #111;
+    }
+
+    .review-h3 {
+      margin: 1.0rem 0 0.45rem;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      color: #111;
+    }
+
+    .review-p {
+      margin: 0 0 0.85rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .review-list {
+      margin: 0.25rem 0 0.9rem;
+      padding-left: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .review-kpis {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 0.75rem 0 0;
+    }
+
+    .kpi {
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      padding: 0.85rem;
+      background: #fafafa;
+    }
+
+    .kpi-title {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .kpi-value {
+      margin: 0.2rem 0 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .specs {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.25rem;
+    }
+
+    .specs th,
+    .specs td {
+      text-align: left;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #efefef;
+      vertical-align: top;
+      color: #222;
+    }
+
+    .specs th {
+      width: 42%;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 0.25rem 0 0.75rem;
+    }
+
+    .stars {
+      display: inline-flex;
+      gap: 0.2rem;
+      align-items: center;
+    }
+
+    .stars svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .rating-text {
+      font-weight: 700;
+      color: #111;
+    }
+
+    .muted {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .widget-wrap {
+      margin-top: 0.75rem;
+    }
+
+    .note {
+      border: 1px dashed #e0e0e0;
+      border-radius: 12px;
+      padding: 0.9rem;
+      background: #fcfcfc;
+      color: #444;
+      line-height: 1.6;
+      margin-top: 0.75rem;
+    }
+
+    /* Indholdsfortegnelse: luft + pæn boks */
+    .toc {
+      display: grid;
+      gap: 0.55rem;
+      margin: 0.9rem 0 1.25rem;
+      padding: 0.85rem 0.9rem;
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      background: #fafafa;
+    }
+
+    .toc a {
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Produktbillede: vis hele billedet, uden at være for stort */
+    .product-media {
+      padding: 1.2rem 1rem 0;
+      display: grid;
+      justify-items: center;
+    }
+
+    .product-thumb {
+      width: min(420px, 100%);
+      height: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 14px;
+      border: 1px solid #efefef;
+      background: #fff;
+      cursor: zoom-in;
+    }
+
+    .product-thumb-hint {
+      margin: 0.55rem 0 0;
+      color: #666;
+      font-size: 0.92rem;
+    }
+
+    /* “Pros/cons” bokse */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+      margin: 0.25rem 0 0.9rem;
+    }
+    @media (min-width: 760px) {
+      .split { grid-template-columns: 1fr 1fr; }
+    }
+    .box {
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      padding: 0.9rem;
+      background: #fafafa;
+    }
+    .box strong { color: #111; }
+    .box ul { margin: 0.4rem 0 0; padding-left: 1.1rem; line-height: 1.6; }
+
+    /* Relateret */
+    .related-grid {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 0.75rem;
+    }
+
+    .related-card {
+      border: 1px solid #efefef;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .related-card img {
+      width: 84px;
+      height: 84px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #efefef;
+      display: block;
+    }
+
+    .related-title {
+      margin: 0;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.2;
+    }
+
+    .related-sub {
+      margin: 0.25rem 0 0;
+      color: #666;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .related-card a {
+      text-decoration: none;
+      color: inherit;
+      display: contents;
+    }
+
+    /* FAQ */
+    .faq {
+      margin-top: 0.25rem;
+    }
+    .faq-item {
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      padding: 0.9rem;
+      background: #fafafa;
+      margin: 0.6rem 0;
+    }
+    .faq-q {
+      margin: 0;
+      font-weight: 700;
+      color: #111;
+    }
+    .faq-a {
+      margin: 0.45rem 0 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 9999;
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      width: min(980px, 100%);
+      background: #111;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      position: relative;
+    }
+
+    .lightbox-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #111;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+
+  <!-- Schema: Product + Review -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "name": "Cosori CAF-TF101S anmeldelse",
+    "datePublished": "2026-01-02",
+    "inLanguage": "da-DK",
+    "author": {
+      "@type": "Organization",
+      "name": "Opskrift-Airfryer",
+      "url": "https://www.opskrift-airfryer.dk/"
+    },
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Cosori CAF-TF101S",
+      "brand": { "@type": "Brand", "name": "Cosori" },
+      "model": "CAF-TF101S",
+      "category": "Airfryer",
+      "image": [
+        "https://www.opskrift-airfryer.dk/assets/images/airfryers/cosori-caf-tf101s-768x768.jpg"
+      ],
+      "description": "Airfryer i mellemklassen med fokus på value for money, brugervenlig betjening og stabile hverdagsresultater."
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -21,166 +384,434 @@
 <div data-include="header"></div>
 
 <section class="hero-large"
-  style="background-image:url('../assets/images/hero/hero-airfryer-anmeldelser-1920x1080.jpg');">
+         style="background-image: url('../assets/images/hero/hero-airfryer-anmeldelser-1920x1080.jpg');">
   <div class="hero-large-overlay"></div>
   <div class="hero-large-content">
     <h1 class="hero-large-title">Cosori CAF-TF101S anmeldelse</h1>
     <p class="hero-large-subtitle">
-      Elegant og brugervenlig airfryer til nem hverdagsmad.
+      Value for money i mellemklassen, hvor du får det vigtigste – uden at betale for alt det ekstra.
     </p>
   </div>
 </section>
 
 <main>
-<section class="section-category">
-<div class="review-wrap">
 
-<div class="review-grid">
+  <section class="section-category">
+    <div class="review-wrap">
 
-<!-- Venstre kolonne -->
-<div class="review-card">
+      <div class="review-grid">
 
-  <div class="product-media">
-    <img
-      id="productThumb"
-      class="product-thumb"
-      src="../assets/images/airfryers/cosori-caf-tf101s-768x768.jpg"
-      alt="Cosori CAF-TF101S airfryer">
-    <p class="product-thumb-hint">Klik på billedet for at se det større.</p>
-  </div>
+        <!-- Venstre kolonne -->
+        <div class="review-card">
 
-  <div class="review-card-body">
+          <div class="product-media">
+            <img
+              id="productThumb"
+              class="product-thumb"
+              src="../assets/images/airfryers/cosori-caf-tf101s-768x768.jpg"
+              alt="Cosori CAF-TF101S airfryer"
+              loading="lazy"
+            />
+            <p class="product-thumb-hint">Klik på billedet for at se det større.</p>
+          </div>
 
-    <div class="rating-row">
-      <div class="stars" aria-label="Vurdering 4 ud af 5">
-        ★★★★☆
+          <div class="review-card-body">
+
+            <div class="rating-row">
+              <div class="stars" aria-label="Vurdering 4 ud af 5">
+                <!-- 4 fyldte + 1 tom -->
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+              </div>
+              <div class="rating-text">4 ud af 5</div>
+            </div>
+
+            <p class="review-p">
+              Cosori CAF-TF101S rammer et sweet spot, som mange faktisk leder efter:
+              En airfryer i mellemklassen, der er nem at bruge, laver sprød mad uden drama, og som ikke koster som de største “flagskibe”.
+              Den er ikke bygget for at være den mest avancerede på markedet, men for at være den, du bruger flest dage om året.
+            </p>
+
+            <p class="review-p">
+              Når vi kalder den “value for money”, handler det ikke om, at den er den billigste.
+              Det handler om, at du typisk får den kombination, de fleste ønsker: fornuftig størrelse, god varme, enkel betjening og et design,
+              der passer ind i køkkenet, uden at den fylder alt.
+              Hvis du vil undgå at betale ekstra for dual-zone, kæmpekapacitet eller specialprogrammer, er Cosori-linjen ofte et godt sted at starte.
+            </p>
+
+            <div class="review-kpis">
+              <div class="kpi">
+                <p class="kpi-title">Kapacitet</p>
+                <p class="kpi-value">Ca. 5,5 liter</p>
+              </div>
+              <div class="kpi">
+                <p class="kpi-title">Effekt</p>
+                <p class="kpi-value">Ca. 1700 W</p>
+              </div>
+              <div class="kpi">
+                <p class="kpi-title">Kurve</p>
+                <p class="kpi-value">1</p>
+              </div>
+              <div class="kpi">
+                <p class="kpi-title">Styring</p>
+                <p class="kpi-value">Touch-panel</p>
+              </div>
+            </div>
+
+            <h2 class="review-h2" id="indhold">Indhold på siden</h2>
+            <div class="toc">
+              <a href="#hvem-er-den-til">Hvem er den til</a>
+              <a href="#value">Hvorfor den er value for money</a>
+              <a href="#funktioner">Funktioner og programmer</a>
+              <a href="#resultater">Resultater i praksis</a>
+              <a href="#kapacitet">Kapacitet i praksis</a>
+              <a href="#rengoering">Rengøring og daglig brug</a>
+              <a href="#stoej">Støj, varme og placering</a>
+              <a href="#sammenligning">Cosori vs dyrere alternativer</a>
+              <a href="#fordele-ulemper">Fordele og ulemper</a>
+              <a href="#faq">Spørgsmål og svar</a>
+              <a href="#konklusion">Konklusion</a>
+            </div>
+
+            <h2 class="review-h2" id="hvem-er-den-til">Hvem er Cosori CAF-TF101S til</h2>
+            <p class="review-p">
+              CAF-TF101S passer bedst til dig, der vil have en airfryer, som føles “nem” at eje.
+              Du vil kunne lave hverdagsretter hurtigt, uden at skulle tænke for meget over indstillinger, zoner og tilbehør.
+              Det er typisk et godt match til par, små familier og dig, der primært bruger airfryeren som en hurtig mini-ovn.
+            </p>
+
+            <ul class="review-list">
+              <li>Dig der vil have en stabil airfryer til hverdagen.</li>
+              <li>Dig der prioriterer value for money frem for “flest features”.</li>
+              <li>Par og mindre familier, der ofte laver én ting ad gangen.</li>
+              <li>Dig der vil have sprøde resultater med minimal indsats.</li>
+            </ul>
+
+            <p class="review-p">
+              Hvis du derimod ofte vil lave hovedret og tilbehør samtidig i separate zoner,
+              eller du har brug for ekstra stor plads til store portioner, kan en større model give mere mening.
+              Cosori er stærk, når behovet er realistisk hverdagsbrug, og budgettet skal give mening.
+            </p>
+
+            <h2 class="review-h2" id="value">Hvorfor den er value for money</h2>
+            <p class="review-p">
+              “Value for money” i en airfryer handler i praksis om tre ting:
+              Du får nok kraft til sprød overflade, nok plads til de fleste måltider, og en betjening der gør, at du faktisk bruger den.
+              CAF-TF101S scorer typisk på alle tre, fordi den ikke overkomplicerer oplevelsen.
+            </p>
+
+            <h3 class="review-h3">Du betaler for det vigtige</h3>
+            <p class="review-p">
+              I mellemklassen er det fristende at jagte funktioner, men de fleste ender med at bruge de samme få ting:
+              Airfry/varmluft, lidt justering af tid og temperatur, og en kurv, der er nem at gøre ren.
+              Når Cosori rammer rigtigt, er det fordi pengene går til den daglige oplevelse, ikke til smarte overskrifter.
+            </p>
+
+            <h3 class="review-h3">Stabile resultater frem for “gimmicks”</h3>
+            <p class="review-p">
+              Mange airfryers kan lave sprød mad, men value for money viser sig, når resultaterne er stabile uge efter uge.
+              Her er en klar fordel ved en enkel konstruktion og en betjening, hvor du hurtigt lærer, hvad der virker.
+              Når du først har styr på din “standard” til pommes, kylling og grøntsager, bliver det en rutine-maskine.
+            </p>
+
+            <h3 class="review-h3">Den passer ind i hverdagen</h3>
+            <p class="review-p">
+              En airfryer er kun en god investering, hvis den bliver brugt.
+              CAF-TF101S er ofte en model, man lader stå fremme, fordi den er nem at håndtere og føles overskuelig.
+              Det er undervurderet, men det er præcis sådan value for money bliver til virkelighed.
+            </p>
+
+            <h2 class="review-h2" id="funktioner">Funktioner og programmer</h2>
+            <p class="review-p">
+              Cosori CAF-TF101S er designet til at være intuitiv.
+              Du får typisk et touch-panel med forudindstillinger til klassiske retter og mulighed for at justere manuelt.
+              Det betyder, at du både kan køre “hurtigt og nemt”, men stadig kan tilpasse til dine egne præferencer.
+            </p>
+
+            <h3 class="review-h3">Touch-panel og hverdagsflow</h3>
+            <p class="review-p">
+              Touch-panel giver et hurtigt workflow: vælg program eller set tid/temperatur og tryk start.
+              For mange er det præcis det, man vil have. Du undgår at stå med alt for mange valg.
+              Det gør det også nemt at lade andre i husstanden bruge airfryeren, uden at de skal “lære den”.
+            </p>
+
+            <h3 class="review-h3">Manuel kontrol er vigtigere end man tror</h3>
+            <p class="review-p">
+              Det lyder banalt, men manuel kontrol er det, der gør, at en airfryer kan bruges til mere end standard-tingene.
+              Når du kan justere tid og temperatur, kan du lave grøntsager mere nænsomt, gøre kylling ekstra sprød,
+              eller genopvarme, uden at det bliver tørt.
+            </p>
+
+            <h2 class="review-h2" id="resultater">Resultater i praksis</h2>
+            <p class="review-p">
+              Det er her value for money skal bevise sig.
+              CAF-TF101S er typisk bedst, når du laver de klassiske airfryer-retter, hvor varm luft og sprød overflade er pointen.
+              Den skal kunne levere sprødhed uden at gøre maden tør, og den skal gøre det uden at være besværlig.
+            </p>
+
+            <h3 class="review-h3">Pommes frites og frosne snacks</h3>
+            <p class="review-p">
+              Pommes er en af de mest brugte “benchmark”-retter, fordi det afslører luftcirkulation og varme.
+              I praksis handler det om to ting: ikke overfylde kurven og ryste/vente undervejs.
+              Med en mellemklasse-airfryer som denne får du typisk bedst resultat, når du giver maden plads.
+            </p>
+            <ul class="review-list">
+              <li>Fyld hellere mindre, men i et jævnt lag.</li>
+              <li>Ryst kurven 1–2 gange undervejs for mere ensartet sprødhed.</li>
+              <li>Brug “ekstra sprød” tilgang ved at give 2–4 minutter til sidst, hvis du vil have mere crunch.</li>
+            </ul>
+
+            <h3 class="review-h3">Kylling og kød</h3>
+            <p class="review-p">
+              Til kylling er styrken ved en airfryer, at du kan få sprød overflade med mindre fedtstof end i ovnen.
+              CAF-TF101S fungerer bedst, når du giver kyllingen plads og bruger en let olie/brush, hvis du vil have ekstra farve.
+              I value-for-money kategorien er det især positivt, hvis airfryeren er nem at finjustere, så du rammer saftighed.
+            </p>
+
+            <h3 class="review-h3">Grøntsager</h3>
+            <p class="review-p">
+              Grøntsager er ofte stedet, hvor man bliver overrasket positivt.
+              Broccoli, blomkål, gulerødder og peberfrugt kan blive både møre og sprøde.
+              Hemmeligheden er kortere tid og høj varme i slutningen, plus en smule olie og salt.
+              En airfryer i denne klasse er typisk god, hvis den er nem at “tjekke” og justere undervejs.
+            </p>
+
+            <h3 class="review-h3">Genopvarmning</h3>
+            <p class="review-p">
+              Genopvarmning er en undervurderet superkraft.
+              Pizza bliver sprød igen, pommes bliver spiselige, og rester får en bedre tekstur end i mikroovnen.
+              For mange er det netop genopvarmning, der gør, at airfryeren bliver brugt næsten dagligt.
+            </p>
+
+            <h2 class="review-h2" id="kapacitet">Kapacitet i praksis</h2>
+            <p class="review-p">
+              Kapacitet på papiret fortæller ikke alt.
+              Det vigtigste er, hvor meget du kan lægge i kurven uden at blokere luftcirkulationen.
+              For CAF-TF101S betyder det typisk, at du kan lave aftensmad til 2–4 personer, afhængigt af hvad du laver.
+              Det er “mellemklasse” i praksis: stor nok til hverdagen, men ikke en familie-kanon.
+            </p>
+
+            <h3 class="review-h3">Hvad kan du realistisk lave ad gangen</h3>
+            <ul class="review-list">
+              <li>Pommes: en solid portion til 2–3 personer, hvis du vil have dem sprøde.</li>
+              <li>Grøntsager: god mængde til 3–4 personer, fordi de falder sammen.</li>
+              <li>Kyllingestykker: nok til 2–4, afhængigt af størrelse og om du laver tilbehør samtidig.</li>
+              <li>Snacks/frosne varer: ofte nemt at fylde mere, men sprødheden falder hvis du overfylder.</li>
+            </ul>
+
+            <h3 class="review-h3">Det vigtigste trick i mellemklassen</h3>
+            <p class="review-p">
+              Hvis du vil presse kapaciteten, så gør det strategisk:
+              Start med tilbehør, hold det varmt kort, og lav hovedretten bagefter.
+              Alternativt: lav én ting ad gangen, men hurtigere end i ovnen – det er ofte den rigtige “airfryer-økonomi”.
+            </p>
+
+            <h2 class="review-h2" id="rengoering">Rengøring og daglig brug</h2>
+            <p class="review-p">
+              Rengøring er der, hvor mange airfryers vinder eller taber i hverdagen.
+              CAF-TF101S er bedst, hvis kurv og indsats er nemme at tage ud, og hvis belægningen ikke føles sart.
+              I praksis handler en god hverdag om at gøre det nemt for dig selv, så du ikke ender med at undgå airfryeren.
+            </p>
+
+            <h3 class="review-h3">Sådan gør du det nemmere</h3>
+            <ul class="review-list">
+              <li>Brug bagepapir/silikoneindsats ved fedtede retter.</li>
+              <li>Rengør mens kurven stadig er lun, så fedt løsner sig lettere.</li>
+              <li>Undgå metalredskaber, så belægningen holder længere.</li>
+            </ul>
+
+            <h3 class="review-h3">Daglig betjening og “flow”</h3>
+            <p class="review-p">
+              Den store fordel ved en enkel airfryer er, at du får et fast flow:
+              Forvarm (hvis du vil), læg maden i, sæt tid/temperatur, ryst én gang, og servér.
+              Når betjeningen er nem, bliver den en del af rutinen – og det er en vigtig del af value for money.
+            </p>
+
+            <h2 class="review-h2" id="stoej">Støj, varme og placering</h2>
+            <p class="review-p">
+              En airfryer larmer typisk som en kraftig blæser, og det er helt normalt.
+              Det vigtige er, om den føles generende i et åbent køkken-alrum, og om den sender varme op mod skabe.
+              I praksis er placering vigtigere end man tror: giv luft bagtil og over, og undgå at køre den helt op ad en væg.
+            </p>
+
+            <ul class="review-list">
+              <li>Placér den så der er luft omkring udblæsning/ventilation.</li>
+              <li>Undgå at skubbe den helt ind under overskabe, når den kører.</li>
+              <li>Brug en varmefast måtte, hvis dit bord er sart.</li>
+            </ul>
+
+            <h2 class="review-h2" id="sammenligning">Cosori vs dyrere alternativer</h2>
+            <p class="review-p">
+              Det store spørgsmål er altid: hvornår skal man betale mere?
+              CAF-TF101S giver god mening, hvis dine behov er klassiske: én kurv, solid kapacitet, nem betjening og gode resultater.
+              Du betaler typisk mere for større fleksibilitet (dual-zone), ekstra stor kapacitet, eller mere “premium” byggekvalitet.
+            </p>
+
+            <h3 class="review-h3">Hvornår Cosori er det kloge valg</h3>
+            <ul class="review-list">
+              <li>Du laver typisk én ting ad gangen.</li>
+              <li>Du vil have sprød hverdagsmad uden at lære en masse.</li>
+              <li>Du vil holde budgettet fornuftigt, men stadig have kvalitet.</li>
+              <li>Du vil have en model, der er nem at få i gang og nem at gøre ren.</li>
+            </ul>
+
+            <h3 class="review-h3">Hvornår du bør kigge dyrere</h3>
+            <ul class="review-list">
+              <li>Du vil lave to forskellige ting samtidig (dual-zone).</li>
+              <li>Du laver ofte meget store portioner.</li>
+              <li>Du vil have maksimal fleksibilitet i skuffe/rum og specialfunktioner.</li>
+              <li>Du vil kunne “meal preppe” store mængder i én omgang.</li>
+            </ul>
+
+            <p class="review-p">
+              Hvis du står og vælger mellem “mellemklasse der gør alt det vigtige” og “premium med ekstra muligheder”,
+              er det ofte smartere at starte med Cosori, hvis du er i tvivl.
+              Du får en maskine, du bruger meget, og så kan du altid opgradere senere, hvis du reelt savner dual-zone eller større format.
+            </p>
+
+            <h2 class="review-h2" id="fordele-ulemper">Fordele og ulemper</h2>
+
+            <div class="split">
+              <div class="box">
+                <strong>Fordele</strong>
+                <ul>
+                  <li>Stærk value for money i mellemklassen.</li>
+                  <li>Nem betjening og hurtigt hverdagsflow.</li>
+                  <li>God kapacitet til de fleste standardmåltider.</li>
+                  <li>Stabile resultater til klassiske airfryer-retter.</li>
+                  <li>Design der typisk passer ind i køkkenet.</li>
+                </ul>
+              </div>
+
+              <div class="box">
+                <strong>Ulemper</strong>
+                <ul>
+                  <li>Kun én kurv, så du planlægger mere end med dual-zone.</li>
+                  <li>Ikke til de største familieportioner på én gang.</li>
+                  <li>Premium-modeller kan give mere fleksibilitet og plads.</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="review-h2" id="faq">Spørgsmål og svar</h2>
+            <div class="faq">
+              <div class="faq-item">
+                <p class="faq-q">Er Cosori CAF-TF101S stor nok til en familie?</p>
+                <p class="faq-a">
+                  Til en mindre familie kan den være fin til mange retter, men hvis I ofte laver store portioner eller vil lave to ting samtidig,
+                  giver en større model mere komfort. Til hverdagsbrug er den dog ofte “nok”, hvis man tænker i ét element ad gangen.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <p class="faq-q">Er den god til sprøde pommes?</p>
+                <p class="faq-a">
+                  Ja, især hvis du ikke overfylder kurven og ryster 1–2 gange undervejs. Sprødhed handler mere om luft og plads end om “liter”.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <p class="faq-q">Hvad gør den til value for money?</p>
+                <p class="faq-a">
+                  Kombinationen af enkel betjening, passende størrelse, solid varme og en hverdagsoplevelse, der gør den nem at bruge ofte.
+                  Du betaler for det vigtigste, ikke for ekstra rum og avancerede løsninger.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <p class="faq-q">Skal man forvarme?</p>
+                <p class="faq-a">
+                  Det afhænger af retten. Mange får gode resultater uden forvarmning, men for sprødhed kan 2–3 minutter hjælpe.
+                  Det vigtigste er, at du bliver konsistent, så du lærer din airfryer at kende.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="review-h2" id="konklusion">Konklusion</h2>
+            <p class="review-p">
+              Cosori CAF-TF101S er et stærkt bud, hvis du vil have en airfryer i mellemklassen, hvor pengene giver mening.
+              Den gør det vigtigste rigtigt: den er nem at bruge, leverer gode hverdagsresultater og har en størrelse, der passer til de fleste.
+              Du får ikke dual-zone eller gigantisk kapacitet, men til gengæld får du en maskine, som typisk bliver brugt meget.
+            </p>
+
+            <p class="review-p">
+              Hvis du vil have “mest mulig airfryer for pengene” og du primært laver én ting ad gangen, er det her en rigtig fornuftig retning.
+              Og hvis du en dag savner ekstra rum eller mere plads, har du i det mindste startet med en model, der leverer på det, en airfryer skal kunne.
+            </p>
+
+          </div>
+        </div>
+
+        <!-- Højre kolonne -->
+        <aside class="review-card">
+          <div class="review-card-body">
+
+            <h2 class="review-h2">Specifikationer</h2>
+            <table class="specs" aria-label="Specifikationer for Cosori CAF-TF101S">
+              <tr><th>Model</th><td>CAF-TF101S</td></tr>
+              <tr><th>Kapacitet</th><td>Ca. 5,5 liter</td></tr>
+              <tr><th>Effekt</th><td>Ca. 1700 W</td></tr>
+              <tr><th>Kurv</th><td>1</td></tr>
+              <tr><th>Styring</th><td>Touch-panel</td></tr>
+              <tr><th>Type</th><td>Airfryer / varmluft</td></tr>
+            </table>
+
+            <div class="note" style="margin-top: 0.9rem;">
+              <strong>Bedst til.</strong><br />
+              Dig der vil have mest mulig kvalitet for pengene i mellemklassen, uden dual-zone og uden at gå på kompromis med hverdagsresultater.
+            </div>
+
+            <h2 class="review-h2" id="priser" style="margin-top: 1.15rem;">Priser</h2>
+            <p class="muted">
+              Se aktuelle priser og lagerstatus her.
+              Widgetten viser typisk de bedste tilbud lige nu.
+            </p>
+
+            <div class="widget-wrap">
+              <!-- PriceRunner DK widget: Cosori CAF-TF101S -->
+              <div id="pr-product-widget-9f2c6a31" style="display: block; width: 100%"></div>
+              <script
+                type="text/javascript"
+                src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3320113707&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-9f2c6a31"
+                async>
+              </script>
+              <div style="display: inline-block">
+                <a href="https://www.pricerunner.dk/pl/81-3320113707/Frituregryder/Cosori-CAF-TF101S-Sammenlign-Priser" rel="nofollow">
+                  <p style="font: 14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color: var(--grayscale100); text-decoration: underline;">
+                    Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+                  </p>
+                </a>
+              </div>
+            </div>
+
+            <h2 class="review-h2" style="margin-top: 1.15rem;">Relateret airfryer</h2>
+            <p class="muted">
+              Se også en anden airfryer, der kan være relevant.
+            </p>
+
+            <!-- Skjules automatisk hvis der ikke findes en relateret -->
+            <div class="related-grid" id="relatedGrid" style="display:none;"></div>
+
+          </div>
+        </aside>
+
       </div>
-      <div class="rating-text">4 ud af 5</div>
+
     </div>
+  </section>
 
-    <p class="review-p">
-      Cosori CAF-TF101S er en stilren og brugervenlig airfryer, der henvender sig til dig,
-      som vil lave nem og sund hverdagsmad uden at rode med avancerede indstillinger.
-      Den er kendt for sin enkle betjening, stabile resultater og et design,
-      der passer godt ind i de fleste køkkener.
-    </p>
-
-    <div class="review-kpis">
-      <div class="kpi"><p class="kpi-title">Kapacitet</p><p class="kpi-value">Ca. 5,5 liter</p></div>
-      <div class="kpi"><p class="kpi-title">Effekt</p><p class="kpi-value">1700 W</p></div>
-      <div class="kpi"><p class="kpi-title">Betjening</p><p class="kpi-value">Touch-panel</p></div>
-      <div class="kpi"><p class="kpi-title">Design</p><p class="kpi-value">Mat sort / rustfri</p></div>
-    </div>
-
-    <h2 class="review-h2">Indhold på siden</h2>
-    <div class="toc">
-      <a href="#hvem">Hvem er den til</a>
-      <a href="#funktioner">Funktioner</a>
-      <a href="#brug">Daglig brug</a>
-      <a href="#fordele">Fordele og ulemper</a>
-      <a href="#konklusion">Konklusion</a>
-    </div>
-
-    <h2 id="hvem" class="review-h2">Hvem er Cosori CAF-TF101S til</h2>
-    <p class="review-p">
-      Denne airfryer passer perfekt til singler, par og mindre familier,
-      der vil lave sprød og velsmagende mad uden besvær.
-    </p>
-
-    <ul class="review-list">
-      <li>Dig der vil have en nem og overskuelig airfryer.</li>
-      <li>Hverdagsmad uden mange indstillinger.</li>
-      <li>Køkkener hvor design også betyder noget.</li>
-    </ul>
-
-    <h2 id="funktioner" class="review-h2">Funktioner</h2>
-    <p class="review-p">
-      Cosori CAF-TF101S har forudindstillede programmer til de mest populære retter
-      som pommes frites, kylling, grøntsager og fisk.
-      Det gør den velegnet til hurtige måltider i en travl hverdag.
-    </p>
-
-    <h2 id="brug" class="review-h2">Daglig brug</h2>
-    <p class="review-p">
-      Airfryeren er let at betjene med sit touch-panel,
-      og kurven er nem at tage ud og rengøre.
-      Den er ikke blandt de største modeller,
-      men netop derfor nem at have stående fremme.
-    </p>
-
-    <h2 id="fordele" class="review-h2">Fordele og ulemper</h2>
-
-    <p class="review-p"><strong>Fordele.</strong></p>
-    <ul class="review-list">
-      <li>Meget brugervenlig.</li>
-      <li>Stilrent og kompakt design.</li>
-      <li>Stabile og ensartede resultater.</li>
-    </ul>
-
-    <p class="review-p"><strong>Ulemper.</strong></p>
-    <ul class="review-list">
-      <li>Kun én kurv.</li>
-      <li>Ikke ideel til meget store portioner.</li>
-    </ul>
-
-    <h2 id="konklusion" class="review-h2">Konklusion</h2>
-    <p class="review-p">
-      Cosori CAF-TF101S er et stærkt valg,
-      hvis du vil have en enkel, flot og pålidelig airfryer til daglig brug.
-      Den er ikke den største på markedet,
-      men til gengæld meget let at leve med.
-    </p>
-
-  </div>
-</div>
-
-<!-- Højre kolonne -->
-<aside class="review-card">
-  <div class="review-card-body">
-
-    <h2 class="review-h2">Specifikationer</h2>
-    <table class="specs">
-      <tr><th>Model</th><td>CAF-TF101S</td></tr>
-      <tr><th>Kapacitet</th><td>Ca. 5,5 liter</td></tr>
-      <tr><th>Effekt</th><td>1700 W</td></tr>
-      <tr><th>Kurve</th><td>1</td></tr>
-    </table>
-
-    <div class="note">
-      <strong>Bedst til.</strong><br>
-      Hverdagsmad, mindre husholdninger og dig der vil have enkel betjening.
-    </div>
-
-    <h2 class="review-h2">Priser</h2>
-    <p class="muted">
-      Se aktuelle priser og lagerstatus her.
-    </p>
-
-    <!-- ✅ PriceRunner DK widget -->
-    <div id="pr-product-widget-9f2c6a31" style="display: block; width: 100%"></div>
-    <script
-      type="text/javascript"
-      src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3320113707&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-9f2c6a31"
-      async>
-    </script>
-    <div style="display: inline-block">
-      <a href="https://www.pricerunner.dk/pl/81-3320113707/Frituregryder/Cosori-CAF-TF101S-Sammenlign-Priser" rel="nofollow">
-        <p style="font: 14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color: var(--grayscale100); text-decoration: underline;">
-          Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
-        </p>
-      </a>
-    </div>
-
-    <h2 class="review-h2">Relateret airfryer</h2>
-    <div class="related-grid" id="relatedGrid" style="display:none;"></div>
-
-  </div>
-</aside>
-
-</div>
-</div>
-</section>
 </main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Forstørret billede">
+    <button class="lightbox-close" id="lightboxClose" type="button">Luk</button>
+    <img class="lightbox-img" id="lightboxImg" alt="Forstørret billede" />
+  </div>
+</div>
 
 <div data-include="footer"></div>
 <div data-include="analytics"></div>
@@ -189,25 +820,73 @@
 <script src="../assets/header.js" defer></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", async () => {
-  const res = await fetch("/assets/airfryers.json");
-  const data = await res.json();
-  const list = data.airfryers.filter(a => a.slug !== "cosori-caf-tf101s");
+  // Lightbox
+  document.addEventListener("DOMContentLoaded", () => {
+    const thumb = document.getElementById("productThumb");
+    const box = document.getElementById("lightbox");
+    const boxImg = document.getElementById("lightboxImg");
+    const closeBtn = document.getElementById("lightboxClose");
 
-  if (!list.length) return;
+    function openBox() {
+      boxImg.src = thumb.src;
+      box.classList.add("is-open");
+      box.setAttribute("aria-hidden", "false");
+    }
 
-  const item = list[0];
-  document.getElementById("relatedGrid").style.display = "grid";
-  document.getElementById("relatedGrid").innerHTML = `
-    <a class="related-card" href="../anmeldelser/${item.slug}.html">
-      <img src="../assets/images/airfryers/${item.image}">
-      <div>
-        <p class="related-title">${item.title}</p>
-        <p class="related-sub">${item.excerpt || ""}</p>
-      </div>
-    </a>
-  `;
-});
+    function closeBox() {
+      box.classList.remove("is-open");
+      box.setAttribute("aria-hidden", "true");
+      boxImg.src = "";
+    }
+
+    thumb.addEventListener("click", openBox);
+    closeBtn.addEventListener("click", closeBox);
+    box.addEventListener("click", (e) => {
+      if (e.target === box) closeBox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeBox();
+    });
+  });
+
+  // Relateret airfryer fra /assets/airfryers.json (vis kun hvis der findes mindst 1 anden)
+  document.addEventListener("DOMContentLoaded", async () => {
+    const currentSlug = "cosori-caf-tf101s";
+    const relatedGrid = document.getElementById("relatedGrid");
+
+    try {
+      const res = await fetch("/assets/airfryers.json");
+      const data = await res.json();
+      const list = (data.airfryers || []).filter(a => a.slug && a.slug !== currentSlug);
+
+      if (list.length === 0) {
+        relatedGrid.style.display = "none";
+        return;
+      }
+
+      const item = list[0];
+
+      const img = item.image
+        ? `../assets/images/airfryers/${item.image}`
+        : "../assets/images/airfryers/placeholder.jpg";
+
+      relatedGrid.innerHTML = `
+        <div class="related-card">
+          <a href="../anmeldelser/${item.slug}.html">
+            <img src="${img}" alt="${item.title}">
+            <div>
+              <p class="related-title">${item.title}</p>
+              <p class="related-sub">${item.excerpt || "Læs anmeldelsen og se om den passer til dit behov."}</p>
+            </div>
+          </a>
+        </div>
+      `;
+
+      relatedGrid.style.display = "grid";
+    } catch (e) {
+      relatedGrid.style.display = "none";
+    }
+  });
 </script>
 
 </body>
