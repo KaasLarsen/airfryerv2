@@ -5,10 +5,378 @@
   <title>Ninja Foodi Max AF400EU anmeldelse – Bedste Dual Zone airfryer til familier</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Læs vores grundige anmeldelse af Ninja Foodi Max AF400EU. En kraftfuld Dual Zone airfryer til familier, der vil lave to ting samtidig. Se kapacitet, fordele, ulemper og aktuelle priser." />
+        content="Læs vores grundige anmeldelse af Ninja Foodi Max AF400EU. En kraftfuld Dual Zone airfryer til familier, der vil lave to ting samtidig. Se fordele, ulemper og aktuelle priser." />
 
   <link rel="stylesheet" href="../assets/styles.css" />
-  <!-- CSS, lightbox, layout: IDENTISK med Cosori -->
+
+  <style>
+    .review-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 2.5rem;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (min-width: 980px) {
+      .review-grid {
+        grid-template-columns: 1.25fr 0.75fr;
+        align-items: start;
+      }
+    }
+
+    .review-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      background: #fff;
+      overflow: hidden;
+      transition: transform .15s ease, box-shadow .15s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    }
+
+    .review-card-body {
+      padding: 1.1rem;
+    }
+
+    .review-h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.25rem;
+      line-height: 1.25;
+      color: #111;
+    }
+
+    .review-h3 {
+      margin: 1.0rem 0 0.45rem;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      color: #111;
+    }
+
+    .review-p {
+      margin: 0 0 0.85rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .review-list {
+      margin: 0.25rem 0 0.9rem;
+      padding-left: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .review-kpis {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 0.75rem 0 0;
+    }
+
+    .kpi {
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      padding: 0.85rem;
+      background: #fafafa;
+    }
+
+    .kpi-title {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .kpi-value {
+      margin: 0.2rem 0 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .specs {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.25rem;
+    }
+
+    .specs th,
+    .specs td {
+      text-align: left;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #efefef;
+      vertical-align: top;
+      color: #222;
+    }
+
+    .specs th {
+      width: 42%;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 0.25rem 0 0.75rem;
+    }
+
+    .stars {
+      display: inline-flex;
+      gap: 0.2rem;
+      align-items: center;
+    }
+
+    .stars svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .rating-text {
+      font-weight: 700;
+      color: #111;
+    }
+
+    .muted {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .widget-wrap {
+      margin-top: 0.75rem;
+    }
+
+    .note {
+      border: 1px dashed #e0e0e0;
+      border-radius: 12px;
+      padding: 0.9rem;
+      background: #fcfcfc;
+      color: #444;
+      line-height: 1.6;
+      margin-top: 0.75rem;
+    }
+
+    /* Indholdsfortegnelse */
+    .toc {
+      display: grid;
+      gap: 0.55rem;
+      margin: 0.9rem 0 1.25rem;
+      padding: 0.85rem 0.9rem;
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      background: #fafafa;
+    }
+
+    .toc a {
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Produktbillede */
+    .product-media {
+      padding: 1.2rem 1rem 0;
+      display: grid;
+      justify-items: center;
+    }
+
+    .product-thumb {
+      width: min(420px, 100%);
+      height: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 14px;
+      border: 1px solid #efefef;
+      background: #fff;
+      cursor: zoom-in;
+    }
+
+    .product-thumb-hint {
+      margin: 0.55rem 0 0;
+      color: #666;
+      font-size: 0.92rem;
+    }
+
+    /* Split bokse */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+      margin: 0.25rem 0 0.9rem;
+    }
+    @media (min-width: 760px) {
+      .split { grid-template-columns: 1fr 1fr; }
+    }
+    .box {
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      padding: 0.9rem;
+      background: #fafafa;
+    }
+    .box strong { color: #111; }
+    .box ul { margin: 0.4rem 0 0; padding-left: 1.1rem; line-height: 1.6; }
+
+    /* Relateret */
+    .related-grid {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 0.75rem;
+    }
+
+    .related-card {
+      border: 1px solid #efefef;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .related-card img {
+      width: 84px;
+      height: 84px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #efefef;
+      display: block;
+    }
+
+    .related-title {
+      margin: 0;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.2;
+    }
+
+    .related-sub {
+      margin: 0.25rem 0 0;
+      color: #666;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .related-card a {
+      text-decoration: none;
+      color: inherit;
+      display: contents;
+    }
+
+    /* FAQ */
+    .faq {
+      margin-top: 0.25rem;
+    }
+    .faq-item {
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      padding: 0.9rem;
+      background: #fafafa;
+      margin: 0.6rem 0;
+    }
+    .faq-q {
+      margin: 0;
+      font-weight: 700;
+      color: #111;
+    }
+    .faq-a {
+      margin: 0.45rem 0 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 9999;
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      width: min(980px, 100%);
+      background: #111;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      position: relative;
+    }
+
+    .lightbox-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #111;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+
+  <!-- Schema: Product + Review -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "name": "Ninja Foodi Max AF400EU anmeldelse",
+    "datePublished": "2026-01-02",
+    "inLanguage": "da-DK",
+    "author": {
+      "@type": "Organization",
+      "name": "Opskrift-Airfryer",
+      "url": "https://www.opskrift-airfryer.dk/"
+    },
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "Ninja Foodi Max AF400EU",
+      "brand": { "@type": "Brand", "name": "Ninja" },
+      "model": "AF400EU",
+      "category": "Airfryer",
+      "image": [
+        "https://www.opskrift-airfryer.dk/assets/images/airfryers/ninja-foodi-max-af400eu-768x768.jpg"
+      ],
+      "description": "Dual Zone airfryer med to uafhængige skuffer til familier, der vil lave hovedret og tilbehør samtidig."
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -17,7 +385,7 @@
 <div data-include="header"></div>
 
 <section class="hero-large"
-  style="background-image:url('../assets/images/hero/hero-airfryer-anmeldelser-1920x1080.jpg');">
+         style="background-image: url('../assets/images/hero/hero-airfryer-anmeldelser-1920x1080.jpg');">
   <div class="hero-large-overlay"></div>
   <div class="hero-large-content">
     <h1 class="hero-large-title">Ninja Foodi Max AF400EU anmeldelse</h1>
@@ -28,331 +396,404 @@
 </section>
 
 <main>
-<section class="section-category">
-<div class="review-wrap">
-<div class="review-grid">
+  <section class="section-category">
+    <div class="review-wrap">
 
-<!-- VENSTRE KOLONNE -->
-<div class="review-card">
+      <div class="review-grid">
 
-  <div class="product-media">
-    <img
-      id="productThumb"
-      class="product-thumb"
-      src="../assets/images/airfryers/ninja-foodi-max-af400eu-768x768.jpg"
-      alt="Ninja Foodi Max AF400EU airfryer">
-    <p class="product-thumb-hint">Klik på billedet for at se det større.</p>
-  </div>
+        <!-- Venstre kolonne -->
+        <div class="review-card">
 
-  <div class="review-card-body">
+          <div class="product-media">
+            <img
+              id="productThumb"
+              class="product-thumb"
+              src="../assets/images/airfryers/ninja-foodi-max-af400eu-768x768.jpg"
+              alt="Ninja Foodi Max AF400EU airfryer"
+              loading="lazy"
+            />
+            <p class="product-thumb-hint">Klik på billedet for at se det større.</p>
+          </div>
 
-    <div class="rating-row">
-      <div class="stars" aria-label="Vurdering 4 ud af 5">
-        ★★★★☆
+          <div class="review-card-body">
+
+            <div class="rating-row">
+              <div class="stars" aria-label="Vurdering 4 ud af 5">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+              </div>
+              <div class="rating-text">4 ud af 5</div>
+            </div>
+
+            <p class="review-p">
+              Ninja Foodi Max AF400EU er en af de mest kendte Dual Zone airfryers på markedet,
+              og den rammer især familier, der vil lave et helt måltid i airfryeren uden at lave tingene i flere omgange.
+              Hvor én stor kurv ofte ender med kompromiser, er AF400EU bygget til at splitte måltidet op.
+            </p>
+
+            <p class="review-p">
+              Konceptet er simpelt: to skuffer, to programmer, to tider – og stadig mulighed for at få det hele færdigt samtidig.
+              Det er præcis det, der gør Dual Zone relevant i en travl hverdag.
+              Når hovedret og tilbehør kan køre parallelt, bliver airfryeren en erstatning for ovnen, ikke bare et ekstra køkken-gadget.
+            </p>
+
+            <div class="review-kpis">
+              <div class="kpi"><p class="kpi-title">Samlet kapacitet</p><p class="kpi-value">9,5 liter</p></div>
+              <div class="kpi"><p class="kpi-title">Zoner</p><p class="kpi-value">2 uafhængige skuffer</p></div>
+              <div class="kpi"><p class="kpi-title">Effekt</p><p class="kpi-value">2470 W</p></div>
+              <div class="kpi"><p class="kpi-title">Maks temperatur</p><p class="kpi-value">Op til 240 °C</p></div>
+            </div>
+
+            <h2 class="review-h2" id="indhold">Indhold på siden</h2>
+            <div class="toc">
+              <a href="#hvem-er-den-til">Hvem er den til</a>
+              <a href="#dual-zone">Hvorfor Dual Zone er ideel til familier</a>
+              <a href="#funktioner">Funktioner og programmer</a>
+              <a href="#hverdagsbrug">Hverdagsbrug i praksis</a>
+              <a href="#kapacitet">Kapacitet i praksis</a>
+              <a href="#rengoering">Rengøring og daglig brug</a>
+              <a href="#stoej">Støj, varme og placering</a>
+              <a href="#sammenligning">AF400EU vs FlexDrawer og Cosori</a>
+              <a href="#fordele-ulemper">Fordele og ulemper</a>
+              <a href="#faq">Spørgsmål og svar</a>
+              <a href="#konklusion">Konklusion</a>
+            </div>
+
+            <h2 class="review-h2" id="hvem-er-den-til">Hvem er Ninja Foodi Max AF400EU til</h2>
+            <p class="review-p">
+              AF400EU er lavet til familier og husholdninger, hvor man ofte laver flere elementer til aftensmaden.
+              Det kan være kød i den ene skuffe og kartofler eller grøntsager i den anden.
+              Det er også et godt match til dig, der gerne vil have struktur: én skuffe til “sprødt”, én skuffe til “mørt”.
+            </p>
+            <ul class="review-list">
+              <li>Familier, der vil lave hovedret og tilbehør samtidig.</li>
+              <li>Dig der ofte laver mad til 3–6 personer.</li>
+              <li>Dig der vil undgå at holde maden varm, mens resten bliver færdigt.</li>
+              <li>Dig der vil have fleksibilitet uden en kompleks maskine.</li>
+            </ul>
+
+            <h2 class="review-h2" id="dual-zone">Hvorfor Dual Zone er ideel til familier</h2>
+            <p class="review-p">
+              Dual Zone er ikke bare “to skuffer”.
+              Den store fordel er, at hver zone kan køre sin egen temperatur og tid,
+              og at du kan synkronisere, så begge sider rammer færdig på samme tidspunkt.
+              Det er en kæmpe gevinst for børnefamilier, hvor aftensmad sjældent må trække ud.
+            </p>
+            <p class="review-p">
+              I praksis betyder det: kylling i den ene skuffe, pommes i den anden.
+              Eller laks i én skuffe og grøntsager i den anden.
+              Det er den måde, man reelt bruger Dual Zone på i hverdagen – og her er AF400EU stærk.
+            </p>
+
+            <h2 class="review-h2" id="funktioner">Funktioner og programmer</h2>
+            <p class="review-p">
+              AF400EU har et klassisk Ninja-sæt af programmer, der dækker de fleste situationer.
+              Det vigtigste er ikke, at der står mange ord på panelet – men at betjeningen er hurtig og logisk,
+              så du kan bruge den uden at tænke for meget.
+            </p>
+            <ul class="review-list">
+              <li>Air Fry.</li>
+              <li>Max Crisp.</li>
+              <li>Roast.</li>
+              <li>Bake.</li>
+              <li>Reheat.</li>
+              <li>Dehydrate.</li>
+            </ul>
+            <p class="review-p">
+              Derudover er det Dual Zone-funktionerne, der gør forskellen i praksis:
+              Sync (færdig samtidig) og Match (samme indstillinger i begge skuffer).
+              Det er præcis de funktioner, der gør den familiefokuseret.
+            </p>
+
+            <h2 class="review-h2" id="hverdagsbrug">Hverdagsbrug i praksis</h2>
+            <p class="review-p">
+              Når AF400EU føles som “bedste Dual Zone til familier”, er det fordi den gør hverdagen let.
+              Du kan tænke måltidet i to spor: protein i den ene, tilbehør i den anden.
+              Når først man vænner sig til det, føles én kurv pludselig som et kompromis.
+            </p>
+
+            <h3 class="review-h3">Pommes frites og sprøde kartofler</h3>
+            <p class="review-p">
+              Pommes er en klassiker, fordi de viser luftcirkulation og varme.
+              I Dual Zone-formatet kan du give pommes den perfekte sprødhed i den ene skuffe,
+              uden at stjæle plads fra hovedretten.
+              Det giver typisk bedre resultat end at fylde én stor kurv for meget.
+            </p>
+            <ul class="review-list">
+              <li>Ryst undervejs for mere ensartet sprødhed.</li>
+              <li>Fyld hellere mindre ad gangen end at overfylde.</li>
+              <li>Giv 2–4 minutter ekstra til sidst, hvis du vil have mere crunch.</li>
+            </ul>
+
+            <h3 class="review-h3">Kylling og kød</h3>
+            <p class="review-p">
+              Kyllingelår, bryst, nuggets og koteletter fungerer rigtig godt i AF400EU,
+              især fordi du kan tilpasse varmen uafhængigt.
+              Det er en fordel, hvis tilbehøret kræver lavere temperatur eller kortere tid.
+              I en familiehverdag er det præcis det, der giver ro: maden kan “følges ad”, uden at du står og jonglerer.
+            </p>
+
+            <h3 class="review-h3">Grøntsager</h3>
+            <p class="review-p">
+              Grøntsager bliver ofte bedre i airfryer end i ovn, fordi varmen er mere intens og cirkulerer tættere.
+              Broccoli, blomkål, gulerødder og peberfrugt får både farve og en sprød kant,
+              og i AF400EU kan de køre i den ene skuffe, mens hovedretten kører i den anden.
+            </p>
+
+            <h3 class="review-h3">Genopvarmning</h3>
+            <p class="review-p">
+              Genopvarmning er en undervurderet styrke for familier.
+              Pizza bliver sprød igen, pommes bliver spiselige, og rester får en bedre tekstur end i mikroovnen.
+              Med to skuffer kan du endda genopvarme to forskellige ting samtidig.
+            </p>
+
+            <h2 class="review-h2" id="kapacitet">Kapacitet i praksis</h2>
+            <p class="review-p">
+              Den samlede kapacitet er stor på papiret, men det vigtige er skufferne:
+              To skuffer gør, at du kan holde luftcirkulationen høj, fordi maden kan fordeles.
+              Det betyder mere ensartet sprødhed og mindre “damp”.
+            </p>
+
+            <h3 class="review-h3">Realistiske portionsstørrelser</h3>
+            <ul class="review-list">
+              <li>Pommes: en solid portion til 2–3 personer pr. skuffe, hvis du vil have dem sprøde.</li>
+              <li>Kylling: 2–3 store stykker pr. skuffe (afhænger af størrelse).</li>
+              <li>Grøntsager: rigeligt til 3–4 personer pr. skuffe, da de falder sammen.</li>
+              <li>Snacks: let at lave til flere, fordi du kan køre to skuffer med samme program.</li>
+            </ul>
+
+            <p class="review-p">
+              Til familier er det netop pointen: du behøver ikke én gigantisk skuffe,
+              hvis du kan dele måltidet op og få bedre flow.
+              Dual Zone handler lige så meget om praktik som om liter.
+            </p>
+
+            <h2 class="review-h2" id="rengoering">Rengøring og daglig brug</h2>
+            <p class="review-p">
+              Rengøring er et af de steder, hvor to skuffer faktisk kan være en fordel:
+              Du kan nøjes med at rengøre den skuffe, du har brugt,
+              og du kan lettere håndtere dem i vasken end én meget stor skuffe.
+              Brug bagepapir eller silikoneindsats ved fedtede retter, så sparer du tid.
+            </p>
+
+            <h2 class="review-h2" id="stoej">Støj, varme og placering</h2>
+            <p class="review-p">
+              En Dual Zone airfryer med høj effekt larmer som en kraftig blæser, især hvis begge skuffer kører.
+              Det er normalt, men det er værd at tænke over placering, især i køkken-alrum.
+              Sørg også for luft omkring udblæsning, og undgå at køre den helt tæt på en væg eller under overskabe.
+            </p>
+
+            <h2 class="review-h2" id="sammenligning">AF400EU vs FlexDrawer og Cosori</h2>
+            <p class="review-p">
+              De tre modeller dækker tre forskellige behov:
+              AF400EU er familie-favoritten til parallel madlavning.
+              FlexDrawer er god til store, sammenhængende retter i én skuffe.
+              Cosori er value for money til mindre husholdninger, hvor én kurv er nok.
+            </p>
+            <ul class="review-list">
+              <li><strong>AF400EU:</strong> bedst til familier og to ting samtidig.</li>
+              <li><strong>AF500EU FlexDrawer:</strong> bedst til store retter i én MegaZone.</li>
+              <li><strong>Cosori CAF-TF101S:</strong> bedst til budget og enkelhed.</li>
+            </ul>
+
+            <h2 class="review-h2" id="fordele-ulemper">Fordele og ulemper</h2>
+            <div class="split">
+              <div class="box">
+                <strong>Fordele</strong>
+                <ul>
+                  <li>Ægte Dual Zone med Sync og Match.</li>
+                  <li>Perfekt familie-flow: hovedret + tilbehør samtidig.</li>
+                  <li>Høj effekt og stabile resultater.</li>
+                  <li>Let at fordele maden for bedre sprødhed.</li>
+                </ul>
+              </div>
+              <div class="box">
+                <strong>Ulemper</strong>
+                <ul>
+                  <li>Fylder en del på køkkenbordet.</li>
+                  <li>Mindre egnet til meget store, sammenhængende retter end FlexDrawer.</li>
+                  <li>Overkill til 1–2 personer, der laver én ting ad gangen.</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="review-h2" id="faq">Spørgsmål og svar</h2>
+            <div class="faq">
+              <div class="faq-item">
+                <p class="faq-q">Er AF400EU bedre end FlexDrawer?</p>
+                <p class="faq-a">
+                  Til familier, der vil lave to ting samtidig, ja. FlexDrawer er stærk, hvis du vil lave store retter i én MegaZone.
+                  Det handler mest om, om du prioriterer parallel madlavning eller stor sammenhængende skuffe.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <p class="faq-q">Kan man køre begge skuffer med forskellige indstillinger?</p>
+                <p class="faq-a">
+                  Ja, det er hele pointen. Du kan køre forskellige programmer, tider og temperaturer, og stadig synkronisere, så maden er færdig samtidig.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <p class="faq-q">Er den stor nok til en familie?</p>
+                <p class="faq-a">
+                  Ja, det er netop her den skinner. Du får to separate skuffer, så du kan lave et komplet måltid uden at lave flere omgange.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="review-h2" id="konklusion">Konklusion</h2>
+            <p class="review-p">
+              Ninja Foodi Max AF400EU er et af de bedste bud, hvis du vil have en Dual Zone airfryer til familier.
+              Den løser et praktisk problem: at få hele måltidet færdigt på samme tid.
+              Når du først har prøvet at køre to skuffer parallelt, er det svært at gå tilbage.
+            </p>
+            <p class="review-p">
+              Hvis du ofte laver mad til flere, og du vil have fleksibilitet, uden at det bliver kompliceret,
+              er AF400EU et virkelig stærkt valg.
+            </p>
+
+          </div>
+        </div>
+
+        <!-- Højre kolonne -->
+        <aside class="review-card">
+          <div class="review-card-body">
+
+            <h2 class="review-h2">Specifikationer</h2>
+            <table class="specs" aria-label="Specifikationer for Ninja Foodi Max AF400EU">
+              <tr><th>Model</th><td>AF400EU</td></tr>
+              <tr><th>Samlet kapacitet</th><td>9,5 liter</td></tr>
+              <tr><th>Zoner</th><td>2</td></tr>
+              <tr><th>Effekt</th><td>2470 W</td></tr>
+              <tr><th>Maks temperatur</th><td>Op til 240 °C</td></tr>
+            </table>
+
+            <div class="note" style="margin-top: 0.9rem;">
+              <strong>Bedst til.</strong><br />
+              Familier, der vil lave hovedret og tilbehør samtidig i to skuffer, og have maden færdig på samme tid.
+            </div>
+
+            <h2 class="review-h2" id="priser" style="margin-top: 1.15rem;">Priser</h2>
+            <p class="muted">
+              Se aktuelle priser og lagerstatus her.
+              Widgetten viser typisk de bedste tilbud lige nu.
+            </p>
+
+            <div class="widget-wrap">
+              <!-- PriceRunner DK widget: Ninja Foodi Max AF400EU -->
+              <div id="pr-product-widget-6c0f2b91" style="display: block; width: 100%"></div>
+              <script
+                type="text/javascript"
+                src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3405103592&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-6c0f2b91"
+                async>
+              </script>
+              <div style="display: inline-block">
+                <a href="https://www.pricerunner.dk/pl/81-3405103592/Frituregryder/Ninja-Foodi-Max-AF400EU-Sammenlign-Priser" rel="nofollow">
+                  <p style="font: 14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color: var(--grayscale100); text-decoration: underline;">
+                    Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+                  </p>
+                </a>
+              </div>
+            </div>
+
+            <h2 class="review-h2" style="margin-top: 1.15rem;">Relateret airfryer</h2>
+            <p class="muted">
+              Se også en anden airfryer, der kan være relevant.
+            </p>
+
+            <div class="related-grid" id="relatedGrid" style="display:none;"></div>
+
+          </div>
+        </aside>
+
       </div>
-      <div class="rating-text">4 ud af 5</div>
+
     </div>
-
-    <p class="review-p">
-      Ninja Foodi Max AF400EU er en af de mest populære Dual Zone airfryers i Danmark – og det er ikke tilfældigt.
-      Hvor mange airfryers tvinger dig til at lave maden i flere omgange, er AF400EU bygget til familier,
-      der vil have hele måltidet klar på samme tid.
-    </p>
-
-    <p class="review-p">
-      Med to fuldstændigt separate skuffer kan du lave hovedret og tilbehør parallelt,
-      uden at gå på kompromis med temperatur eller tid.
-      Det gør AF400EU til et oplagt valg i hverdagen,
-      hvor effektivitet og overblik ofte er vigtigere end eksperimenterende madlavning.
-    </p>
-
-    <p class="review-p">
-      Hvor FlexDrawer-modellen satser på én stor MegaZone,
-      og Cosori CAF-TF101S fokuserer på value for money,
-      rammer AF400EU et andet behov:
-      den klassiske familie-airfryer med to uafhængige zoner,
-      som gør hverdagsmaden mere smidig.
-    </p>
-
-    <div class="review-kpis">
-      <div class="kpi"><p class="kpi-title">Samlet kapacitet</p><p class="kpi-value">9,5 liter</p></div>
-      <div class="kpi"><p class="kpi-title">Zoner</p><p class="kpi-value">2 uafhængige</p></div>
-      <div class="kpi"><p class="kpi-title">Effekt</p><p class="kpi-value">2470 W</p></div>
-      <div class="kpi"><p class="kpi-title">Styring</p><p class="kpi-value">Digital</p></div>
-    </div>
-
-    <h2 class="review-h2">Indhold på siden</h2>
-    <div class="toc">
-      <a href="#hvem-er-den-til">Hvem er den til</a>
-      <a href="#dual-zone">Hvorfor Dual Zone er ideel til familier</a>
-      <a href="#funktioner">Funktioner og programmer</a>
-      <a href="#hverdagsbrug">Hverdagsbrug i praksis</a>
-      <a href="#kapacitet">Kapacitet i praksis</a>
-      <a href="#rengoering">Rengøring og daglig brug</a>
-      <a href="#stoej">Støj, varme og placering</a>
-      <a href="#sammenligning">AF400EU vs FlexDrawer og Cosori</a>
-      <a href="#fordele-ulemper">Fordele og ulemper</a>
-      <a href="#faq">Spørgsmål og svar</a>
-      <a href="#konklusion">Konklusion</a>
-    </div>
-
-    <h2 id="hvem-er-den-til" class="review-h2">Hvem er Ninja Foodi Max AF400EU til</h2>
-    <p class="review-p">
-      AF400EU er først og fremmest til familier.
-      Ikke nødvendigvis store familier,
-      men husholdninger hvor der ofte laves flere elementer til samme måltid.
-      Det kan være kylling i den ene skuffe og kartofler i den anden,
-      eller fisk og grøntsager med forskellig tilberedningstid.
-    </p>
-
-    <p class="review-p">
-      Hvis du ofte oplever, at én stor skuffe bliver et kompromis,
-      eller at maden skal holdes varm, mens resten bliver færdigt,
-      er Dual Zone-løsningen netop det,
-      der gør AF400EU attraktiv i daglig brug.
-    </p>
-
-    <ul class="review-list">
-      <li>Familier med travle hverdage.</li>
-      <li>Husstande der laver hovedret og tilbehør samtidig.</li>
-      <li>Dig der vil undgå mad i flere omgange.</li>
-      <li>Dig der vil have fleksibilitet uden at lære en kompleks maskine.</li>
-    </ul>
-
-    <h2 id="dual-zone" class="review-h2">Hvorfor Dual Zone er ideel til familier</h2>
-    <p class="review-p">
-      Dual Zone er ikke bare en gimmick – det er en løsning på et helt konkret problem i hverdagen.
-      Når man laver mad til flere, er det sjældent, at alt skal have samme temperatur og tid.
-      AF400EU giver dig mulighed for at tilpasse hver skuffe præcist til retten.
-    </p>
-
-    <p class="review-p">
-      Sync-funktionen betyder,
-      at selvom de to skuffer kører med forskellige indstillinger,
-      bliver maden færdig på samme tid.
-      Det er især en fordel,
-      når man vil servere hele måltidet samlet,
-      uden at noget bliver koldt eller overstegt.
-    </p>
-
-    <h2 id="funktioner" class="review-h2">Funktioner og programmer</h2>
-    <p class="review-p">
-      Ninja Foodi Max AF400EU er udstyret med de klassiske Ninja-programmer,
-      som dækker langt de fleste behov i hverdagen.
-      Betjeningen er digital,
-      men stadig overskuelig,
-      selvom der er flere muligheder end på enklere airfryers.
-    </p>
-
-    <ul class="review-list">
-      <li>Air Fry</li>
-      <li>Max Crisp</li>
-      <li>Roast</li>
-      <li>Bake</li>
-      <li>Reheat</li>
-      <li>Dehydrate</li>
-    </ul>
-
-    <p class="review-p">
-      Programmerne fungerer bedst som udgangspunkt.
-      I praksis justerer de fleste hurtigt tid og temperatur manuelt,
-      når de har lært deres foretrukne indstillinger at kende.
-    </p>
-
-    <h2 id="hverdagsbrug" class="review-h2">Hverdagsbrug i praksis</h2>
-    <p class="review-p">
-      Det er i hverdagen, AF400EU for alvor viser sin styrke.
-      Kombinationen af to skuffer og høj effekt betyder,
-      at du kan lave komplette måltider hurtigere end i ovnen,
-      og uden at skulle planlægge i flere trin.
-    </p>
-
-    <h3 class="review-h3">Pommes frites og kartofler</h3>
-    <p class="review-p">
-      Pommes kan laves i den ene skuffe,
-      mens hovedretten tilberedes i den anden.
-      Det giver en mere fleksibel timing,
-      og sprødheden bliver typisk bedre,
-      fordi kurven ikke overfyldes.
-    </p>
-
-    <h3 class="review-h3">Kylling og kød</h3>
-    <p class="review-p">
-      Kyllingelår, bryst eller koteletter fungerer særligt godt,
-      fordi du kan give dem høj varme i én skuffe,
-      mens tilbehøret får mere skånsom tilberedning i den anden.
-    </p>
-
-    <h3 class="review-h3">Grøntsager og genopvarmning</h3>
-    <p class="review-p">
-      Grøntsager får en god tekstur,
-      hvis de får plads og lidt olie.
-      Genopvarmning er også en klar styrke –
-      rester bliver sprøde igen,
-      uden at blive tørre som i mikroovnen.
-    </p>
-
-    <h2 id="kapacitet" class="review-h2">Kapacitet i praksis</h2>
-    <p class="review-p">
-      Selvom den samlede kapacitet er 9,5 liter,
-      er det vigtigere at se på hver skuffe individuelt.
-      Hver skuffe rummer ca. 4,75 liter,
-      hvilket i praksis passer perfekt til familieportioner.
-    </p>
-
-    <ul class="review-list">
-      <li>Pommes: god portion til 2–3 personer pr. skuffe.</li>
-      <li>Kyllingestykker: 2–3 store stykker pr. skuffe.</li>
-      <li>Grøntsager: rigeligt til 3–4 personer.</li>
-    </ul>
-
-    <p class="review-p">
-      Fordelen er,
-      at du kan fordele maden,
-      så luftcirkulationen forbliver god.
-      Det giver mere ensartede resultater end én stor, overfyldt skuffe.
-    </p>
-
-    <h2 id="rengoering" class="review-h2">Rengøring og daglig brug</h2>
-    <p class="review-p">
-      Rengøringen er relativt enkel,
-      især fordi hver skuffe kan tages ud separat.
-      Det betyder,
-      at du ikke nødvendigvis skal gøre hele airfryeren ren,
-      hvis du kun har brugt én zone.
-    </p>
-
-    <p class="review-p">
-      I hverdagen opleves AF400EU som en maskine,
-      der hurtigt bliver en fast del af køkkenrutinen.
-      Når først man har vænnet sig til to zoner,
-      er det svært at gå tilbage til én.
-    </p>
-
-    <h2 id="stoej" class="review-h2">Støj, varme og placering</h2>
-    <p class="review-p">
-      Som de fleste kraftige airfryers larmer AF400EU en del,
-      når begge zoner kører på høj effekt.
-      Det svarer dog til en kraftig blæser
-      og er sjældent et problem i et almindeligt køkken.
-    </p>
-
-    <p class="review-p">
-      På grund af størrelsen fylder den en del på køkkenbordet,
-      og det er værd at sikre god plads omkring ventilationen,
-      især hvis den står under overskabe.
-    </p>
-
-    <h2 id="sammenligning" class="review-h2">AF400EU vs FlexDrawer og Cosori</h2>
-    <p class="review-p">
-      Valget mellem AF400EU, FlexDrawer og Cosori CAF-TF101S handler primært om behov.
-      AF400EU er det oplagte valg,
-      hvis du vil lave to ting samtidig uden kompromiser.
-    </p>
-
-    <ul class="review-list">
-      <li><strong>AF400EU:</strong> Bedst til familier og parallel madlavning.</li>
-      <li><strong>FlexDrawer:</strong> Bedst til store, sammenhængende retter.</li>
-      <li><strong>Cosori:</strong> Bedst value for money til mindre husholdninger.</li>
-    </ul>
-
-    <h2 id="fordele-ulemper" class="review-h2">Fordele og ulemper</h2>
-
-    <p class="review-p"><strong>Fordele.</strong></p>
-    <ul class="review-list">
-      <li>Ægte Dual Zone med Sync-funktion.</li>
-      <li>Ideel kapacitet til familier.</li>
-      <li>Stabile og ensartede resultater.</li>
-      <li>Effektiv til hverdagsmad.</li>
-    </ul>
-
-    <p class="review-p"><strong>Ulemper.</strong></p>
-    <ul class="review-list">
-      <li>Fylder meget på køkkenbordet.</li>
-      <li>Mindre fleksibel til meget store, sammenhængende retter.</li>
-      <li>Overkill til små husholdninger.</li>
-    </ul>
-
-    <h2 id="faq" class="review-h2">Spørgsmål og svar</h2>
-    <p class="review-p">
-      <strong>Er AF400EU bedre end FlexDrawer?</strong><br>
-      Det afhænger af behov. Til familier, der vil lave to ting samtidig, ja.
-      Til store enkeltretter er FlexDrawer mere fleksibel.
-    </p>
-
-    <p class="review-p">
-      <strong>Er den nem at bruge?</strong><br>
-      Ja. Selvom den har mange funktioner,
-      er betjeningen logisk,
-      og de fleste lærer den hurtigt.
-    </p>
-
-    <h2 id="konklusion" class="review-h2">Konklusion</h2>
-    <p class="review-p">
-      Ninja Foodi Max AF400EU er en af de bedste Dual Zone airfryers til familier.
-      Den løser et reelt problem i hverdagen
-      og gør det nemmere at servere komplette måltider uden stress.
-    </p>
-
-    <p class="review-p">
-      Hvis du ofte laver mad til flere
-      og vil have fleksibilitet uden at gå på kompromis med kvalitet,
-      er AF400EU et særdeles stærkt valg.
-    </p>
-
-  </div>
-</div>
-
-<!-- HØJRE KOLONNE -->
-<aside class="review-card">
-  <div class="review-card-body">
-
-    <h2 class="review-h2">Specifikationer</h2>
-    <table class="specs">
-      <tr><th>Model</th><td>AF400EU</td></tr>
-      <tr><th>Kapacitet</th><td>9,5 liter</td></tr>
-      <tr><th>Zoner</th><td>2</td></tr>
-      <tr><th>Effekt</th><td>2470 W</td></tr>
-    </table>
-
-    <div class="note">
-      <strong>Bedst til.</strong><br>
-      Familier der vil lave hovedret og tilbehør samtidig – uden kompromiser.
-    </div>
-
-    <h2 class="review-h2">Priser</h2>
-    <p class="muted">Se aktuelle priser og lagerstatus her.</p>
-
-    <!-- PRICERUNNER DK WIDGET -->
-    <div id="pr-product-widget-af400eu" style="display:block;width:100%"></div>
-    <script
-      src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3405103592&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-af400eu"
-      async>
-    </script>
-    <div style="display:inline-block">
-      <a href="https://www.pricerunner.dk/pl/81-3405103592/Frituregryder/Ninja-Foodi-Max-AF400EU-Sammenlign-Priser" rel="nofollow">
-        <p style="font:14px 'Klarna Text', Helvetica, sans-serif; font-style:italic; text-decoration:underline;">
-          Annonce i samarbejde med <strong>PriceRunner</strong>
-        </p>
-      </a>
-    </div>
-
-    <h2 class="review-h2">Relateret airfryer</h2>
-    <div class="related-grid" id="relatedGrid" style="display:none;"></div>
-
-  </div>
-</aside>
-
-</div>
-</div>
-</section>
+  </section>
 </main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Forstørret billede">
+    <button class="lightbox-close" id="lightboxClose" type="button">Luk</button>
+    <img class="lightbox-img" id="lightboxImg" alt="Forstørret billede" />
+  </div>
+</div>
 
 <div data-include="footer"></div>
 <div data-include="analytics"></div>
 
 <script src="../assets/include.js" defer></script>
 <script src="../assets/header.js" defer></script>
+
+<script>
+  // Lightbox
+  document.addEventListener("DOMContentLoaded", () => {
+    const thumb = document.getElementById("productThumb");
+    const box = document.getElementById("lightbox");
+    const boxImg = document.getElementById("lightboxImg");
+    const closeBtn = document.getElementById("lightboxClose");
+
+    function openBox() {
+      boxImg.src = thumb.src;
+      box.classList.add("is-open");
+      box.setAttribute("aria-hidden", "false");
+    }
+
+    function closeBox() {
+      box.classList.remove("is-open");
+      box.setAttribute("aria-hidden", "true");
+      boxImg.src = "";
+    }
+
+    if (thumb) thumb.addEventListener("click", openBox);
+    if (closeBtn) closeBtn.addEventListener("click", closeBox);
+    if (box) box.addEventListener("click", (e) => { if (e.target === box) closeBox(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeBox(); });
+  });
+
+  // Relateret airfryer fra /assets/airfryers.json (vis kun hvis der findes mindst 1 anden)
+  document.addEventListener("DOMContentLoaded", async () => {
+    const currentSlug = "ninja-foodi-max-af400eu";
+    const relatedGrid = document.getElementById("relatedGrid");
+
+    try {
+      const res = await fetch("/assets/airfryers.json");
+      const data = await res.json();
+      const list = (data.airfryers || []).filter(a => a.slug && a.slug !== currentSlug);
+
+      if (list.length === 0) {
+        relatedGrid.style.display = "none";
+        return;
+      }
+
+      const item = list[0];
+      const img = item.image
+        ? `../assets/images/airfryers/${item.image}`
+        : "../assets/images/airfryers/placeholder.jpg";
+
+      relatedGrid.innerHTML = `
+        <div class="related-card">
+          <a href="../anmeldelser/${item.slug}.html">
+            <img src="${img}" alt="${item.title}">
+            <div>
+              <p class="related-title">${item.title}</p>
+              <p class="related-sub">${item.excerpt || "Læs anmeldelsen og se om den passer til dit behov."}</p>
+            </div>
+          </a>
+        </div>
+      `;
+
+      relatedGrid.style.display = "grid";
+    } catch (e) {
+      relatedGrid.style.display = "none";
+    }
+  });
+</script>
 
 </body>
 </html>
