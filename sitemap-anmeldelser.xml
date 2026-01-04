@@ -26,4 +26,10 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <url>
+    <loc>https://opskrift-airfryer.dk/anmeldelser/witt-premium-airfryer-bladeless-5l.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
 </urlset>
