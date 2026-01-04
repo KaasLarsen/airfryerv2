@@ -5,9 +5,338 @@
   <title>Witt Premium Airfryer Bladeless 5 L anmeldelse – Den mest støjsvage airfryer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Læs vores dybdegående anmeldelse af Witt Premium Airfryer Bladeless 5 L. En støjsvag airfryer til 1–3 personer med fokus på komfort, design og jævn varmefordeling." />
+        content="Læs vores grundige anmeldelse af Witt Premium Airfryer Bladeless 5 L. Fokus på støjniveau, komfort i hverdagen og hvem den passer til. Se fordele, ulemper og aktuelle priser." />
 
   <link rel="stylesheet" href="../assets/styles.css" />
+
+  <style>
+    .review-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 2.5rem;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    @media (min-width: 980px) {
+      .review-grid {
+        grid-template-columns: 1.25fr 0.75fr;
+        align-items: start;
+      }
+    }
+
+    .review-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    }
+
+    .review-card-body {
+      padding: 1.1rem;
+    }
+
+    .review-h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.25rem;
+      line-height: 1.25;
+      color: #111;
+    }
+
+    .review-h3 {
+      margin: 1.0rem 0 0.45rem;
+      font-size: 1.05rem;
+      line-height: 1.25;
+      color: #111;
+    }
+
+    .review-p {
+      margin: 0 0 0.85rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .review-list {
+      margin: 0.25rem 0 0.9rem;
+      padding-left: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .review-kpis {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 0.75rem 0 0;
+    }
+
+    .kpi {
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      padding: 0.85rem;
+      background: #fafafa;
+    }
+
+    .kpi-title {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .kpi-value {
+      margin: 0.2rem 0 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .specs {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.25rem;
+    }
+
+    .specs th,
+    .specs td {
+      text-align: left;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #efefef;
+      vertical-align: top;
+      color: #222;
+    }
+
+    .specs th {
+      width: 42%;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 0.25rem 0 0.75rem;
+    }
+
+    .stars {
+      display: inline-flex;
+      gap: 0.2rem;
+      align-items: center;
+    }
+
+    .stars svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .rating-text {
+      font-weight: 700;
+      color: #111;
+    }
+
+    .muted {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .widget-wrap {
+      margin-top: 0.75rem;
+    }
+
+    .note {
+      border: 1px dashed #e0e0e0;
+      border-radius: 12px;
+      padding: 0.9rem;
+      background: #fcfcfc;
+      color: #444;
+      line-height: 1.6;
+      margin-top: 0.75rem;
+    }
+
+    .toc {
+      display: grid;
+      gap: 0.55rem;
+      margin: 0.9rem 0 1.25rem;
+      padding: 0.85rem 0.9rem;
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      background: #fafafa;
+    }
+
+    .toc a {
+      text-decoration: none;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .product-media {
+      padding: 1.2rem 1rem 0;
+      display: grid;
+      justify-items: center;
+    }
+
+    .product-thumb {
+      width: min(420px, 100%);
+      height: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 14px;
+      border: 1px solid #efefef;
+      background: #fff;
+      cursor: zoom-in;
+    }
+
+    .product-thumb-hint {
+      margin: 0.55rem 0 0;
+      color: #666;
+      font-size: 0.92rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+      margin: 0.25rem 0 0.9rem;
+    }
+    @media (min-width: 760px) {
+      .split { grid-template-columns: 1fr 1fr; }
+    }
+    .box {
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      padding: 0.9rem;
+      background: #fafafa;
+    }
+    .box strong { color: #111; }
+    .box ul { margin: 0.4rem 0 0; padding-left: 1.1rem; line-height: 1.6; }
+
+    .related-grid {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 0.75rem;
+    }
+
+    .related-card {
+      border: 1px solid #efefef;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .related-card img {
+      width: 84px;
+      height: 84px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #efefef;
+      display: block;
+    }
+
+    .related-title {
+      margin: 0;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.2;
+    }
+
+    .related-sub {
+      margin: 0.25rem 0 0;
+      color: #666;
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .related-card a {
+      text-decoration: none;
+      color: inherit;
+      display: contents;
+    }
+
+    .faq {
+      margin-top: 0.25rem;
+    }
+    .faq-item {
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      padding: 0.9rem;
+      background: #fafafa;
+      margin: 0.6rem 0;
+    }
+    .faq-q {
+      margin: 0;
+      font-weight: 700;
+      color: #111;
+    }
+    .faq-a {
+      margin: 0.45rem 0 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 9999;
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      width: min(980px, 100%);
+      background: #111;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      position: relative;
+    }
+
+    .lightbox-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #111;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
 
   <!-- Schema: Product + Review -->
   <script type="application/ld+json">
@@ -15,22 +344,23 @@
     "@context": "https://schema.org",
     "@type": "Review",
     "name": "Witt Premium Airfryer Bladeless 5 L anmeldelse",
-    "datePublished": "2026-01-02",
+    "datePublished": "2026-01-04",
     "inLanguage": "da-DK",
     "author": {
       "@type": "Organization",
       "name": "Opskrift-Airfryer",
-      "url": "https://opskrift-airfryer.dk/"
+      "url": "https://www.opskrift-airfryer.dk/"
     },
     "itemReviewed": {
       "@type": "Product",
       "name": "Witt Premium Airfryer Bladeless 5 L",
       "brand": { "@type": "Brand", "name": "Witt" },
+      "model": "Premium Bladeless 5 L",
       "category": "Airfryer",
       "image": [
-        "https://opskrift-airfryer.dk/assets/images/airfryers/witt-premium-airfryer-bladeless-5l-768x768.jpg"
+        "https://www.opskrift-airfryer.dk/assets/images/airfryers/witt-premium-airfryer-bladeless-5l-768x768.jpg"
       ],
-      "description": "Støjsvag airfryer med bladeless-teknologi til mindre husholdninger, hvor komfort og lav støj er vigtigere end maksimal kapacitet."
+      "description": "Støjsvag airfryer med 5 liters kurv og bladeless-luftcirkulation, målrettet små husholdninger, hvor komfort og lav støj er vigtigere end maksimal kapacitet."
     },
     "reviewRating": {
       "@type": "Rating",
@@ -48,296 +378,471 @@
 <div data-include="header"></div>
 
 <section class="hero-large"
-  style="background-image:url('../assets/images/hero/hero-airfryer-anmeldelser-1920x1080.jpg');">
+         style="background-image: url('../assets/images/hero/hero-airfryer-anmeldelser-1920x1080.jpg');">
   <div class="hero-large-overlay"></div>
   <div class="hero-large-content">
     <h1 class="hero-large-title">Witt Premium Airfryer Bladeless 5 L anmeldelse</h1>
     <p class="hero-large-subtitle">
-      Den mest støjsvage airfryer til små husholdninger.
+      Den mest støjsvage airfryer til små husholdninger – når komfort og ro betyder mere end kæmpekapacitet.
     </p>
   </div>
 </section>
 
 <main>
-<section class="section-category">
-<div class="review-wrap">
-<div class="review-grid">
 
-<!-- VENSTRE KOLONNE -->
-<div class="review-card">
+  <section class="section-category">
+    <div class="review-wrap">
 
-  <div class="product-media">
-    <img
-      id="productThumb"
-      class="product-thumb"
-      src="../assets/images/airfryers/witt-premium-airfryer-bladeless-5l-768x768.jpg"
-      alt="Witt Premium Airfryer Bladeless 5 L"
-      loading="lazy">
-    <p class="product-thumb-hint">Klik på billedet for at se det større.</p>
-  </div>
+      <div class="review-grid">
 
-  <div class="review-card-body">
+        <!-- Venstre kolonne -->
+        <div class="review-card">
 
-    <div class="rating-row">
-      <div class="stars">★★★★☆</div>
-      <div class="rating-text">4 ud af 5</div>
-    </div>
+          <div class="product-media">
+            <img
+              id="productThumb"
+              class="product-thumb"
+              src="../assets/images/airfryers/witt-premium-airfryer-bladeless-5l-768x768.jpg"
+              alt="Witt Premium Airfryer Bladeless 5 L"
+              loading="lazy"
+            />
+            <p class="product-thumb-hint">Klik på billedet for at se det større.</p>
+          </div>
 
-    <p class="review-p">
-      Witt Premium Airfryer Bladeless 5 L er ikke udviklet til at konkurrere på liter,
-      Dual Zone eller rå effekt.
-      Den er udviklet til noget helt andet:
-      at være den mest behagelige airfryer at have stående fremme og bruge ofte.
-    </p>
+          <div class="review-card-body">
 
-    <p class="review-p">
-      Hvor mange airfryers larmer som en kraftig blæser og visuelt fylder meget,
-      er Witt Bladeless bygget med fokus på lavt støjniveau,
-      rolig luftcirkulation og et design,
-      der passer ind i mindre køkkener og køkken-alrum.
-    </p>
+            <div class="rating-row">
+              <div class="stars" aria-label="Vurdering 4 ud af 5">
+                <!-- 4 fyldte + 1 tom -->
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 17.3l-6.18 3.73 1.64-7.03L2 9.24l7.19-.61L12 2l2.81 6.63 7.19.61-5.46 4.76 1.64 7.03z"/></svg>
+              </div>
+              <div class="rating-text">4 ud af 5</div>
+            </div>
 
-    <p class="review-p">
-      Det er en niche – men en vigtig niche.
-      For der findes mange husholdninger,
-      hvor kapacitet på 8–10 liter er overkill,
-      men hvor støj, komfort og æstetik betyder langt mere i hverdagen.
-    </p>
+            <p class="review-p">
+              Witt Premium Airfryer Bladeless 5 L er ikke bygget til at vinde på “flest liter”, dual zone eller rå power.
+              Den er bygget til noget mere praktisk: at være den airfryer, der er rar at have stående fremme og bruge ofte.
+              For mange er støj og “køkken-uro” grunden til, at airfryeren ender i et skab. Her går Witt efter det modsatte.
+            </p>
 
-    <div class="review-kpis">
-      <div class="kpi"><p class="kpi-title">Kapacitet</p><p class="kpi-value">5 liter</p></div>
-      <div class="kpi"><p class="kpi-title">Teknologi</p><p class="kpi-value">Bladeless</p></div>
-      <div class="kpi"><p class="kpi-title">Støjniveau</p><p class="kpi-value">Meget lavt</p></div>
-      <div class="kpi"><p class="kpi-title">Målgruppe</p><p class="kpi-value">1–3 personer</p></div>
-    </div>
+            <p class="review-p">
+              Bladeless-konceptet handler i praksis om en mere rolig luftcirkulation og et lavere oplevet støjniveau.
+              Det gør en forskel i små køkkener og køkken-alrum, hvor en traditionel airfryer hurtigt kan dominere rummet.
+              Det er en niche, ja – men for den rigtige målgruppe er det præcis den niche, der betyder noget i hverdagen.
+            </p>
 
-    <h2 class="review-h2">Indhold på siden</h2>
-    <div class="toc">
-      <a href="#hvem-er-den-til">Hvem er den til</a>
-      <a href="#bladeless">Hvad betyder bladeless</a>
-      <a href="#stoej">Støjniveau i praksis</a>
-      <a href="#hverdagsbrug">Hverdagsbrug uge efter uge</a>
-      <a href="#madtyper">Madtyper i praksis</a>
-      <a href="#kapacitet">Kapacitet og portioner</a>
-      <a href="#design">Design og placering i køkkenet</a>
-      <a href="#hvad-giver-du-afkald-paa">Hvad giver du afkald på</a>
-      <a href="#sammenligning">Sammenligning med alternativer</a>
-      <a href="#fordele-ulemper">Fordele og ulemper</a>
-      <a href="#faq">Spørgsmål og svar</a>
-      <a href="#konklusion">Konklusion</a>
-    </div>
+            <div class="review-kpis">
+              <div class="kpi">
+                <p class="kpi-title">Kapacitet</p>
+                <p class="kpi-value">5 liter</p>
+              </div>
+              <div class="kpi">
+                <p class="kpi-title">Effekt</p>
+                <p class="kpi-value">1500 W</p>
+              </div>
+              <div class="kpi">
+                <p class="kpi-title">Teknologi</p>
+                <p class="kpi-value">Bladeless</p>
+              </div>
+              <div class="kpi">
+                <p class="kpi-title">Målgruppe</p>
+                <p class="kpi-value">1–3 personer</p>
+              </div>
+            </div>
 
-    <h2 id="hvem-er-den-til" class="review-h2">Hvem er Witt Bladeless 5 L til</h2>
-    <p class="review-p">
-      Denne airfryer er til dig,
-      der laver mad til dig selv eller én til to andre personer
-      og som prioriterer ro og komfort i køkkenet.
-      Det er også en oplagt model til lejligheder,
-      hvor støj hurtigt kan dominere rummet.
-    </p>
+            <h2 class="review-h2" id="indhold">Indhold på siden</h2>
+            <div class="toc">
+              <a href="#hvem-er-den-til">Hvem er den til</a>
+              <a href="#bladeless">Hvad betyder bladeless</a>
+              <a href="#stoej">Støjniveau i praksis</a>
+              <a href="#hverdagsbrug">Hverdagsbrug uge efter uge</a>
+              <a href="#madtyper">Madtyper i praksis</a>
+              <a href="#kapacitet">Kapacitet og portioner</a>
+              <a href="#design">Design og placering i køkkenet</a>
+              <a href="#afkald">Hvad giver du afkald på</a>
+              <a href="#sammenligning">Sammenligning med alternativer</a>
+              <a href="#fordele-ulemper">Fordele og ulemper</a>
+              <a href="#faq">Spørgsmål og svar</a>
+              <a href="#konklusion">Konklusion</a>
+            </div>
 
-    <ul class="review-list">
-      <li>Singler og par.</li>
-      <li>Små husholdninger med køkken-alrum.</li>
-      <li>Dig der laver mad ofte – men i mindre mængder.</li>
-      <li>Dig der irriteres af høj blæserstøj.</li>
-    </ul>
+            <h2 class="review-h2" id="hvem-er-den-til">Hvem er Witt Bladeless 5 L til</h2>
+            <p class="review-p">
+              Den her model giver mest mening til dig, der laver mad til dig selv – eller 1–2 andre – og som prioriterer ro og komfort i køkkenet.
+              I en lejlighed eller et åbent køkken-alrum kan støj føles “større” end den egentlig er, fordi den kører tæt på dig i længere tid.
+              Witt går efter at gøre oplevelsen mere behagelig i praksis.
+            </p>
+            <ul class="review-list">
+              <li>Singler og par, der laver mad ofte – men i mindre portioner.</li>
+              <li>Små husholdninger med køkken-alrum, hvor støj hurtigt bliver irriterende.</li>
+              <li>Dig der vil have en airfryer, som ikke føles “voldsom” i hverdagen.</li>
+              <li>Dig der prioriterer design og at den kan stå fremme.</li>
+            </ul>
+            <p class="review-p">
+              Hvis du derimod ofte laver aftensmad til 4+ personer, vil lave store portioner i én omgang,
+              eller vil køre hovedret og tilbehør samtidig, så er en større model eller dual-zone typisk mere praktisk.
+            </p>
 
-    <h2 id="bladeless" class="review-h2">Hvad betyder bladeless i praksis</h2>
-    <p class="review-p">
-      Bladeless betyder,
-      at luftstrømmen er skjult og mere jævnt fordelt,
-      uden synlige ventilatorblade tæt på madkammeret.
-      Det giver en mere rolig luftcirkulation,
-      mindre turbulens og et lavere oplevet støjniveau.
-    </p>
+            <h2 class="review-h2" id="bladeless">Hvad betyder bladeless i praksis</h2>
+            <p class="review-p">
+              “Bladeless” betyder, at luftstrømmen er mere skjult og jævnt fordelt, uden at du oplever den samme turbulente blæserfornemmelse
+              som på mange klassiske modeller. Du får stadig airfryer-princippet (varm luft + cirkulation), men oplevelsen føles mere rolig.
+            </p>
+            <p class="review-p">
+              Det ændrer ikke, at du stadig får sprøde resultater – men det ændrer “hvordan det føles”, når den kører.
+              For mange er det netop dér, Witt skiller sig ud: mindre stress i rummet, især ved længere tilberedninger.
+            </p>
 
-    <p class="review-p">
-      Det ændrer ikke grundprincippet bag airfrying,
-      men det ændrer oplevelsen.
-      For mange brugere betyder det,
-      at airfryeren kan køre,
-      uden at man hæver stemmen i samtaler
-      eller slukker for musik og tv.
-    </p>
+            <h2 class="review-h2" id="stoej">Støjniveau i praksis</h2>
+            <p class="review-p">
+              Støjniveauet er den klareste forskel på Witt Bladeless og mere traditionelle airfryers.
+              Hvor mange modeller lyder som en kraftig blæser (og kan overdøve samtale/TV), er lyden her typisk mere dæmpet og “jævn”.
+              Det gør, at den er rar at køre, uden at du føler du skal skrue op for alt andet.
+            </p>
+            <ul class="review-list">
+              <li>Bedst i små rum: støj føles markant lavere, når du står tæt på.</li>
+              <li>Behagelig ved længere programmer: lyden bliver ikke lige så “trættende”.</li>
+              <li>God til køkken-alrum: mindre dominerende i hverdagen.</li>
+            </ul>
 
-    <h2 id="stoej" class="review-h2">Støjniveau i praksis</h2>
-    <p class="review-p">
-      Støjniveauet er den klareste forskel på Witt Bladeless og traditionelle airfryers.
-      Hvor Ninja- og Cosori-modeller ofte har en tydelig, høj blæserlyd,
-      er lyden her mere dæmpet og jævn.
-    </p>
+            <h2 class="review-h2" id="hverdagsbrug">Hverdagsbrug – uge efter uge</h2>
+            <p class="review-p">
+              Witt Bladeless er ikke den model, der imponerer med “mest power på papiret”.
+              Den imponerer ved, hvor let den glider ind i hverdagen: du bruger den oftere, fordi den ikke føles som et projekt.
+              Når en airfryer er nem og behagelig at leve med, bliver den en rutine-maskine – og det er i praksis det vigtigste.
+            </p>
+            <p class="review-p">
+              Den er oplagt til aftensmad på hverdage, snacks, frokostrester og mindre måltider.
+              Og fordi støjen er lavere, ender den sjældnere med at blive gemt væk.
+            </p>
 
-    <p class="review-p">
-      Det er især tydeligt ved længere tilberedninger,
-      hvor lyden ikke bliver trættende.
-      I køkken-alrum eller mindre boliger
-      er det her en reel kvalitetsforskel i hverdagen.
-    </p>
+            <h2 class="review-h2" id="madtyper">Madtyper i praksis</h2>
 
-    <h2 id="hverdagsbrug" class="review-h2">Hverdagsbrug – uge efter uge</h2>
-    <p class="review-p">
-      Witt Bladeless er ikke en airfryer,
-      der imponerer med rå power.
-      Den imponerer ved,
-      hvor let den glider ind i hverdagen.
-    </p>
+            <h3 class="review-h3">Kartofler og pommes</h3>
+            <p class="review-p">
+              Pommes og kartofler bliver jævnt sprøde, når du giver maden plads og ikke overfylder kurven.
+              Det er den klassiske “airfryer-regel”: luft og plads slår liter på kassen.
+              Vil du presse sprødheden, så ryst 1–2 gange undervejs.
+            </p>
+            <ul class="review-list">
+              <li>Fyld hellere mindre i et jævnt lag.</li>
+              <li>Ryst kurven undervejs for ensartet sprødhed.</li>
+              <li>Giv 2–4 minutter ekstra til sidst, hvis du vil have mere crunch.</li>
+            </ul>
 
-    <p class="review-p">
-      Den bliver ofte brugt til aftensmad på hverdage,
-      små snacks,
-      frokostrester og lette måltider.
-      Netop fordi den er stille,
-      bliver den brugt oftere end større, mere støjende modeller.
-    </p>
+            <h3 class="review-h3">Fisk</h3>
+            <p class="review-p">
+              Fisk er et område, hvor den rolige varmefordeling virkelig kan være en fordel.
+              Laks og hvid fisk bliver ofte saftig, fordi du ikke får den samme “aggressive” udtørring,
+              som nogle stærke airfryers kan give, hvis man rammer lidt forkert på tid/temperatur.
+            </p>
 
-    <h2 id="madtyper" class="review-h2">Madtyper i praksis</h2>
+            <h3 class="review-h3">Kød</h3>
+            <p class="review-p">
+              Mindre kødportioner fungerer rigtig fint: kyllingestykker, små bøffer, koteletter til 1–2 personer.
+              Det er ikke modellen, du vælger til “mange på én gang”, men til den realistiske hverdagsportion.
+              Brug gerne lidt olie/brush for ekstra farve og overflade.
+            </p>
 
-    <h3 class="review-h3">Kartofler og pommes</h3>
-    <p class="review-p">
-      Pommes og kartofler bliver jævnt sprøde,
-      hvis man ikke overfylder kurven.
-      Her belønnes tålmodighed og luft frem for volumen.
-    </p>
+            <h3 class="review-h3">Genopvarmning</h3>
+            <p class="review-p">
+              Genopvarmning er en af de vigtigste grunde til at eje en airfryer.
+              Pizza bliver sprød igen, rester får bedre tekstur end mikroovnen, og du slipper for slatten overflade.
+              Den rolige drift gør det ekstra rart at bruge den til de “små ting” i hverdagen.
+            </p>
 
-    <h3 class="review-h3">Fisk</h3>
-    <p class="review-p">
-      Fisk er et område,
-      hvor den rolige varmefordeling virkelig kommer til sin ret.
-      Laks og hvid fisk bliver saftig,
-      uden at overfladen tørrer ud.
-    </p>
+            <h2 class="review-h2" id="kapacitet">Kapacitet og realistiske portioner</h2>
+            <p class="review-p">
+              5 liter lyder måske beskedent i en verden med 8–10 liter modeller, men i praksis passer det rigtig godt til små husholdninger.
+              Det afgørende er, hvor meget du kan lægge i kurven uden at blokere luftcirkulationen.
+              Her er 5 liter “nok” til 1–3 personer, så længe du tænker i ét lag og luft omkring maden.
+            </p>
+            <ul class="review-list">
+              <li>Pommes: solid portion til 1–2 (og 3 hvis du accepterer lidt mindre sprødhed).</li>
+              <li>Grøntsager: god mængde, fordi de falder sammen under tilberedning.</li>
+              <li>Kyllingestykker: typisk fint til 2, afhængigt af størrelse og tilbehør.</li>
+            </ul>
 
-    <h3 class="review-h3">Kød</h3>
-    <p class="review-p">
-      Mindre kødportioner fungerer fint,
-      men dette er ikke modellen til store bøffer eller mange stykker ad gangen.
-      Den er bedst til 1–2 portioner.
-    </p>
+            <h2 class="review-h2" id="design">Design og placering i køkkenet</h2>
+            <p class="review-p">
+              Designet er ikke bare pynt her – det er en del af produktidéen.
+              Pointen er, at den kan stå fremme uden at føles som et “industridyr” på bordet.
+              For mange er det netop det, der afgør, om airfryeren bliver brugt dagligt eller ender i et skab.
+            </p>
+            <ul class="review-list">
+              <li>Giv luft omkring udblæsning/ventilation.</li>
+              <li>Undgå at køre den helt op under overskabe.</li>
+              <li>Brug evt. en varmefast måtte, hvis bordpladen er sart.</li>
+            </ul>
 
-    <h2 id="kapacitet" class="review-h2">Kapacitet og realistiske portioner</h2>
-    <p class="review-p">
-      5 liter er rigeligt til små husholdninger,
-      men kræver,
-      at man respekterer luftcirkulationen.
-      Til gengæld får man mere ensartede resultater.
-    </p>
+            <h2 class="review-h2" id="afkald">Hvad giver du afkald på</h2>
+            <p class="review-p">
+              Når du vælger Witt Bladeless, vælger du komfort og lav støj over maksimal fleksibilitet.
+              Det betyder helt konkret, at du typisk giver afkald på de ting, der fylder i premium-kategorien:
+              dual-zone, kæmpekapacitet og “to retter samtidig”.
+            </p>
+            <ul class="review-list">
+              <li>Ingen dual-zone: du planlægger mere end med to skuffer.</li>
+              <li>Ikke til store portioner i én omgang.</li>
+              <li>Du betaler ofte en premium-pris for komforten.</li>
+            </ul>
+            <p class="review-p">
+              Til gengæld får du en airfryer, der passer til virkeligheden i små husholdninger:
+              ro, overskuelighed og en maskine, der er rar at leve med.
+            </p>
 
-    <h2 id="design" class="review-h2">Design og placering i køkkenet</h2>
-    <p class="review-p">
-      Designet er en væsentlig del af produktet.
-      Den kan stå fremme,
-      uden at ligne et industrielt køkkenapparat.
-      For mange er det afgørende for,
-      om airfryeren faktisk bliver brugt.
-    </p>
+            <h2 class="review-h2" id="sammenligning">Sammenligning med alternativer</h2>
+            <p class="review-p">
+              Det store spørgsmål er: hvornår giver det mening at gå med Witt – og hvornår skal du vælge en mere klassisk model?
+              Witt er det kloge valg, hvis du vægter støj/komfort højt og laver mad i mindre portioner.
+              Hvis du derimod prioriterer fleksibilitet og “mest muligt på én gang”, er dual-zone eller større modeller ofte bedre.
+            </p>
 
-    <h2 id="hvad-giver-du-afkald-paa" class="review-h2">Hvad giver du afkald på</h2>
-    <p class="review-p">
-      Du får ikke Dual Zone.
-      Du får ikke maksimal kapacitet.
-      Du får ikke den hurtigste opvarmning på markedet.
-    </p>
+            <h3 class="review-h3">Hvornår Witt er det kloge valg</h3>
+            <ul class="review-list">
+              <li>Du laver typisk mad til 1–2 (og indimellem 3).</li>
+              <li>Du vil have lavere støj og en mere behagelig køkkenoplevelse.</li>
+              <li>Du vil have en airfryer, der kan stå fremme og blive brugt ofte.</li>
+              <li>Du er træt af “blæser-støj” fra klassiske modeller.</li>
+            </ul>
 
-    <p class="review-p">
-      Til gengæld får du ro,
-      komfort
-      og en airfryer,
-      der er rar at leve med.
-    </p>
+            <h3 class="review-h3">Hvornår du bør kigge alternativer</h3>
+            <ul class="review-list">
+              <li>Du vil lave to ting samtidig (dual-zone).</li>
+              <li>Du laver ofte store portioner til familie/gæster.</li>
+              <li>Du jagter maksimal kapacitet og rå output frem for komfort.</li>
+            </ul>
 
-    <h2 id="sammenligning" class="review-h2">Sammenligning med alternativer</h2>
-    <ul class="review-list">
-      <li><strong>Witt Bladeless:</strong> Bedst til støj og komfort.</li>
-      <li><strong>Ninja Dual Zone:</strong> Bedst til familier.</li>
-      <li><strong>Cosori:</strong> Bedst value for money.</li>
-    </ul>
+            <h2 class="review-h2" id="fordele-ulemper">Fordele og ulemper</h2>
 
-    <h2 id="fordele-ulemper" class="review-h2">Fordele og ulemper</h2>
+            <div class="split">
+              <div class="box">
+                <strong>Fordele</strong>
+                <ul>
+                  <li>Meget lavt oplevet støjniveau i hverdagen.</li>
+                  <li>Elegant design, der kan stå fremme.</li>
+                  <li>Jævn og rolig varmefordeling.</li>
+                  <li>Perfekt størrelse til små husholdninger (1–3 personer).</li>
+                  <li>Rar at bruge ofte – især til genopvarmning og hverdagsmad.</li>
+                </ul>
+              </div>
 
-    <div class="split">
-      <div class="box">
-        <strong>Fordele</strong>
-        <ul>
-          <li>Meget lavt støjniveau.</li>
-          <li>Elegant design.</li>
-          <li>Jævn varmefordeling.</li>
-          <li>Behagelig i daglig brug.</li>
-        </ul>
+              <div class="box">
+                <strong>Ulemper</strong>
+                <ul>
+                  <li>Ingen dual-zone, så du planlægger mere.</li>
+                  <li>Ikke til store portioner i én omgang.</li>
+                  <li>Premium-pris for 5 liter, fordi fokus er komfort og design.</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="review-h2" id="faq">Spørgsmål og svar</h2>
+            <div class="faq">
+              <div class="faq-item">
+                <p class="faq-q">Er den bedre end Ninja eller Cosori?</p>
+                <p class="faq-a">
+                  Ikke “bedre” til alt – bare anderledes. Witt er stærk på komfort og lav støj,
+                  mens Ninja ofte er stærk på kapacitet/dual-zone, og Cosori ofte er stærk på value for money og klassisk allround.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <p class="faq-q">Er 5 liter nok til en lille familie?</p>
+                <p class="faq-a">
+                  Til en mindre familie kan den fungere fint til mange retter, men den er bedst, når du laver 1–2 portioner ad gangen.
+                  Hvis I ofte laver store portioner, er en større model mere komfortabel.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <p class="faq-q">Er den god til sprøde pommes?</p>
+                <p class="faq-a">
+                  Ja – især hvis du ikke overfylder kurven og ryster 1–2 gange undervejs.
+                  Sprødhed handler mest om luft og plads, ikke bare om liter.
+                </p>
+              </div>
+
+              <div class="faq-item">
+                <p class="faq-q">Hvad er “bladeless” fordelen i praksis?</p>
+                <p class="faq-a">
+                  En mere rolig luftcirkulation og lavere oplevet støj. Det gør den rarere at have kørende,
+                  især i køkken-alrum eller små boliger, hvor en traditionel airfryer kan føles dominerende.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="review-h2" id="konklusion">Konklusion</h2>
+            <p class="review-p">
+              Witt Premium Airfryer Bladeless 5 L er ikke til alle – men den er et virkelig stærkt match til den rigtige målgruppe.
+              Hvis lav støj, komfort og et roligt køkken betyder mere for dig end dual-zone og maksimal kapacitet,
+              så er det her en af de mest behagelige airfryers at leve med i hverdagen.
+            </p>
+
+            <p class="review-p">
+              Til små husholdninger (1–3 personer) giver 5 liter god mening, og du får en airfryer, der faktisk bliver brugt ofte.
+              Hvis du vil have “mest ro for pengene” – og ikke “flest liter” – er Witt Bladeless et oplagt valg.
+            </p>
+
+          </div>
+        </div>
+
+        <!-- Højre kolonne -->
+        <aside class="review-card">
+          <div class="review-card-body">
+
+            <h2 class="review-h2">Specifikationer</h2>
+            <table class="specs" aria-label="Specifikationer for Witt Premium Airfryer Bladeless 5 L">
+              <tr><th>Model</th><td>Witt Premium Bladeless 5 L</td></tr>
+              <tr><th>Kapacitet</th><td>5 liter</td></tr>
+              <tr><th>Effekt</th><td>1500 W</td></tr>
+              <tr><th>Programmer</th><td>12</td></tr>
+              <tr><th>Temperatur</th><td>80–200°C</td></tr>
+              <tr><th>Timer</th><td>Op til 60 min</td></tr>
+              <tr><th>Kurv</th><td>1</td></tr>
+              <tr><th>Styring</th><td>Touch-panel</td></tr>
+              <tr><th>Type</th><td>Airfryer / varmluft</td></tr>
+            </table>
+
+            <div class="note" style="margin-top: 0.9rem;">
+              <strong>Bedst til.</strong><br />
+              Dig der vil have en støjsvag airfryer til hverdagsbrug i små husholdninger, hvor komfort og ro vægter højere end maksimal kapacitet.
+            </div>
+
+            <h2 class="review-h2" id="priser" style="margin-top: 1.15rem;">Priser</h2>
+            <p class="muted">
+              Se aktuelle priser og lagerstatus her.
+              Widgetten viser typisk de bedste tilbud lige nu.
+            </p>
+
+            <div class="widget-wrap">
+              <!-- PriceRunner DK widget: Witt Premium Airfryer Bladeless 5 L -->
+              <div id="pr-product-widget-witt-bladeless-5l" style="display: block; width: 100%"></div>
+              <script
+                type="text/javascript"
+                src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3405050975&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-witt-bladeless-5l"
+                async>
+              </script>
+              <div style="display: inline-block">
+                <a href="https://www.pricerunner.dk/pl/81-3405050975/Frituregryder/Witt-Premium-Airfryer-Bladeless-5-L-Sammenlign-Priser" rel="nofollow">
+                  <p style="font: 14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color: var(--grayscale100); text-decoration: underline;">
+                    Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+                  </p>
+                </a>
+              </div>
+            </div>
+
+            <h2 class="review-h2" style="margin-top: 1.15rem;">Relateret airfryer</h2>
+            <p class="muted">
+              Se også en anden airfryer, der kan være relevant.
+            </p>
+
+            <!-- Skjules automatisk hvis der ikke findes en relateret -->
+            <div class="related-grid" id="relatedGrid" style="display:none;"></div>
+
+          </div>
+        </aside>
+
       </div>
 
-      <div class="box">
-        <strong>Ulemper</strong>
-        <ul>
-          <li>Ingen Dual Zone.</li>
-          <li>Ikke til store portioner.</li>
-          <li>Premium-pris for 5 liter.</li>
-        </ul>
-      </div>
     </div>
+  </section>
 
-    <h2 id="faq" class="review-h2">Spørgsmål og svar</h2>
-    <p class="review-p"><strong>Er den bedre end Ninja?</strong><br>
-      Ikke bedre – bare anderledes. Den er markant mere støjsvag.</p>
-
-    <p class="review-p"><strong>Er den god som første airfryer?</strong><br>
-      Ja, hvis du er 1–2 personer og vil have komfort.</p>
-
-    <h2 id="konklusion" class="review-h2">Konklusion</h2>
-    <p class="review-p">
-      Witt Premium Airfryer Bladeless 5 L er ikke til alle –
-      men den er fremragende til sin målgruppe.
-      Hvis lav støj og komfort betyder mere end rå kapacitet,
-      er den et stærkt valg.
-    </p>
-
-    <p class="review-p">
-      Til små husholdninger er det en af de mest behagelige airfryers,
-      man kan leve med i hverdagen.
-    </p>
-
-  </div>
-</div>
-
-<!-- HØJRE KOLONNE -->
-<aside class="review-card">
-  <div class="review-card-body">
-
-    <h2 class="review-h2">Specifikationer</h2>
-    <table class="specs">
-      <tr><th>Kapacitet</th><td>5 liter</td></tr>
-      <tr><th>Teknologi</th><td>Bladeless</td></tr>
-      <tr><th>Støjniveau</th><td>Lavt</td></tr>
-      <tr><th>Velegnet til</th><td>1–3 personer</td></tr>
-    </table>
-
-    <div class="note">
-      <strong>Bedst til.</strong><br>
-      Dig der vil have den mest støjsvage airfryer til hverdagsbrug.
-    </div>
-
-    <h2 class="review-h2">Priser</h2>
-    <p class="muted">Se aktuelle priser og lagerstatus her.</p>
-
-    <div id="pr-product-widget-witt" style="display:block;width:100%"></div>
-    <script
-      src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3405050975&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-witt"
-      async>
-    </script>
-
-  </div>
-</aside>
-
-</div>
-</div>
-</section>
 </main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Forstørret billede">
+    <button class="lightbox-close" id="lightboxClose" type="button">Luk</button>
+    <img class="lightbox-img" id="lightboxImg" alt="Forstørret billede" />
+  </div>
+</div>
 
 <div data-include="footer"></div>
 <div data-include="analytics"></div>
 
 <script src="../assets/include.js" defer></script>
 <script src="../assets/header.js" defer></script>
+
+<script>
+  // Lightbox
+  document.addEventListener("DOMContentLoaded", () => {
+    const thumb = document.getElementById("productThumb");
+    const box = document.getElementById("lightbox");
+    const boxImg = document.getElementById("lightboxImg");
+    const closeBtn = document.getElementById("lightboxClose");
+
+    function openBox() {
+      boxImg.src = thumb.src;
+      box.classList.add("is-open");
+      box.setAttribute("aria-hidden", "false");
+    }
+
+    function closeBox() {
+      box.classList.remove("is-open");
+      box.setAttribute("aria-hidden", "true");
+      boxImg.src = "";
+    }
+
+    if (thumb) {
+      thumb.addEventListener("click", openBox);
+    }
+    if (closeBtn) {
+      closeBtn.addEventListener("click", closeBox);
+    }
+    if (box) {
+      box.addEventListener("click", (e) => {
+        if (e.target === box) closeBox();
+      });
+    }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeBox();
+    });
+  });
+
+  // Relateret airfryer fra /assets/airfryers.json (vis kun hvis der findes mindst 1 anden)
+  document.addEventListener("DOMContentLoaded", async () => {
+    const currentSlug = "witt-premium-airfryer-bladeless-5l";
+    const relatedGrid = document.getElementById("relatedGrid");
+
+    try {
+      const res = await fetch("/assets/airfryers.json");
+      const data = await res.json();
+      const list = (data.airfryers || []).filter(a => a.slug && a.slug !== currentSlug);
+
+      if (!relatedGrid || list.length === 0) {
+        if (relatedGrid) relatedGrid.style.display = "none";
+        return;
+      }
+
+      const item = list[0];
+
+      const img = item.image
+        ? `../assets/images/airfryers/${item.image}`
+        : "../assets/images/airfryers/placeholder.jpg";
+
+      relatedGrid.innerHTML = `
+        <div class="related-card">
+          <a href="../anmeldelser/${item.slug}.html">
+            <img src="${img}" alt="${item.title}">
+            <div>
+              <p class="related-title">${item.title}</p>
+              <p class="related-sub">${item.excerpt || "Læs anmeldelsen og se om den passer til dit behov."}</p>
+            </div>
+          </a>
+        </div>
+      `;
+
+      relatedGrid.style.display = "grid";
+    } catch (e) {
+      if (relatedGrid) relatedGrid.style.display = "none";
+    }
+  });
+</script>
 
 </body>
 </html>
