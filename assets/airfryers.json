@@ -23,6 +23,17 @@
   "categories": ["familie", "dual-zone", "premium"]
     },
     {
+  "slug": "ninja-af451eu",
+  "title": "Ninja AF451EU",
+  "image": "ninja-af451eu-768x768.jpg",
+  "brand": "Ninja",
+  "model": "AF451EU",
+  "excerpt": "Fleksibel Dual Zone airfryer til travle familier, der vil lave hovedret og tilbehør samtidig og få maden færdig på samme tid.",
+  "ratingStars": "",
+  "ratingText": "",
+  "categories": ["familie", "dual-zone", "premium"]
+    },
+    {
       "slug": "cosori-caf-tf101s",
       "title": "Cosori CAF-TF101S",
       "image": "cosori-caf-tf101s-768x768.jpg",
