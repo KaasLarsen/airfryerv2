@@ -78,6 +78,20 @@
   "categories": []
     },
     {
+  "slug": "obh-nordica-dual-easy-fry-ag905bs0",
+  "title": "OBH Nordica Dual Easy Fry 8,3 L (AG905BS0)",
+  "brand": "OBH Nordica",
+  "model": "AG905BS0",
+  "image": "obh-nordica-dual-easy-fry-ag905bs0-768x768.jpg",
+  "excerpt": "Dual-zone airfryer med 2 skuffer (5,2 + 3,1 L) og sync-funktion – perfekt til hverdagsmåltider.",
+  "ratingStars": "★★★★☆",
+  "ratingText": "4,4/5 – stærk dual-zone til familien",
+  "ratingNumber": 4.4,
+  "capacityL": 8.3,
+  "basketType": "dual",
+  "features": ["dishwasher", "timer", "sync"]
+    },
+    {
   "slug": "philips-hd9880",
   "title": "Philips HD9880",
   "image": "philips-hd9880-768x768.jpg",
