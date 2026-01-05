@@ -2,15 +2,228 @@
 <html lang="da">
 <head>
   <meta charset="utf-8">
-  <title>Søg i airfryer-indhold</title>
+  <title>Søg på siden – Opskrift-Airfryer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="Søg i opskrifter, guides og airfryer-anmeldelser. Find hurtigt det, du leder efter.">
+  <meta name="description" content="Søg i opskrifter, guides og anmeldelser på Opskrift-Airfryer.">
 
   <link rel="stylesheet" href="assets/styles.css">
-</head>
-<body class="page">
 
+  <!-- =========================
+       SEARCH PAGE ONLY STYLES
+       Scopet til body.search-page
+       ========================= -->
+  <style>
+    body.search-page .page-main{
+      padding-top: 18px;
+    }
+
+    /* Overskrifter/spacing – fjern “tom forside-feel” */
+    body.search-page .section{
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+    body.search-page .section-header{
+      margin-bottom: 10px;
+    }
+
+    /* “Søg”-hero – kompakt og pænt */
+    body.search-page .search-hero{
+      border: 1px solid rgba(0,0,0,.06);
+      background: rgba(0,0,0,.02);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    body.search-page .search-hero .section-title{
+      margin: 0 0 8px 0;
+    }
+
+    /* Search bar – fix kæmpe ikon + bedre layout */
+    body.search-page .search-bar{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,.10);
+      background: #fff;
+    }
+
+    body.search-page .search-bar svg.icon{
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      opacity: .65;
+    }
+
+    body.search-page .search-input{
+      flex: 1 1 auto;
+      min-width: 0;
+      border: 0 !important;
+      outline: none !important;
+      background: transparent !important;
+      font-size: 16px;
+      padding: 6px 2px !important;
+    }
+
+    body.search-page .search-bar .btn{
+      white-space: nowrap;
+    }
+
+    /* Resultat-område – full width og “liste” */
+    body.search-page .search-results-wrap{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    body.search-page .js-search-summary{
+      margin: 0;
+    }
+
+    body.search-page .js-search-results{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      width: 100%;
+      margin: 0;
+    }
+
+    /* 2 kolonner på store skærme (giver flot overblik) */
+    @media (min-width: 980px){
+      body.search-page .js-search-results{
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+    }
+
+    /* Resultatkort – kompakt “Google/PriceRunner”-feel */
+    body.search-page .search-card{
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: none;
+      background: #fff;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+
+    body.search-page .search-card:hover{
+      transform: translateY(-1px);
+      border-color: rgba(0,0,0,.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+
+    body.search-page .search-card-link{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      height: 100%;
+    }
+
+    /* Thumbnail – små og ens, aldrig kæmpe */
+    body.search-page .search-thumb{
+      width: 92px;
+      height: 72px;
+      flex: 0 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(0,0,0,.04);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+
+    body.search-page .search-thumb img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background: #fff;
+    }
+
+    body.search-page .search-card-body{
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1 1 auto;
+    }
+
+    body.search-page .search-card-meta{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    body.search-page .search-badge{
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(0,0,0,.03);
+      white-space: nowrap;
+    }
+
+    body.search-page .type-recipe{ background: rgba(16,185,129,.10); border-color: rgba(16,185,129,.25); }
+    body.search-page .type-guide { background: rgba(59,130,246,.10); border-color: rgba(59,130,246,.25); }
+    body.search-page .type-review{ background: rgba(245,158,11,.12); border-color: rgba(245,158,11,.25); }
+
+    body.search-page .search-cats{
+      font-size: 12px;
+      opacity: .75;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 420px;
+    }
+
+    body.search-page .search-title{
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    body.search-page .search-mark{
+      padding: 0 .15em;
+      border-radius: .25em;
+      background: rgba(245, 158, 11, .22);
+    }
+
+    /* Tom state */
+    body.search-page .search-empty{
+      border: 1px dashed rgba(0,0,0,.18);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(0,0,0,.02);
+    }
+    body.search-page .search-empty-title{ margin: 0 0 6px 0; }
+    body.search-page .search-empty-text{ margin: 0; opacity: .8; }
+
+    /* Mobil */
+    @media (max-width: 599px){
+      body.search-page .search-card-link{
+        padding: 10px;
+      }
+      body.search-page .search-thumb{
+        width: 84px;
+        height: 66px;
+      }
+      body.search-page .search-title{
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body class="page search-page">
   <div data-include="icons"></div>
   <div data-include="header"></div>
 
@@ -18,35 +231,41 @@
 
     <!-- SØG -->
     <section class="section">
-      <div class="section-header">
-        <h1 class="section-title">Søg på siden</h1>
+      <div class="search-hero">
+        <div class="section-header">
+          <h1 class="section-title">Søg på siden</h1>
+          <p class="section-subtitle">Søg i opskrifter, guides og anmeldelser.</p>
+        </div>
+
+        <form class="search-bar" action="search.html" method="get">
+          <svg class="icon icon-24" aria-hidden="true">
+            <use href="#icon-search"></use>
+          </svg>
+
+          <input
+            class="search-input"
+            type="search"
+            name="q"
+            id="search-input"
+            placeholder="Søg fx ninja, kylling, rengøring…"
+            autocomplete="off"
+          >
+
+          <button class="btn btn-primary" type="submit">Søg</button>
+        </form>
       </div>
-
-      <form class="search-bar" action="search.html" method="get">
-        <svg class="icon icon-24" aria-hidden="true">
-          <use href="#icon-search"></use>
-        </svg>
-
-        <input
-          class="search-input"
-          type="search"
-          name="q"
-          id="search-input"
-          placeholder="Søg fx ninja, kylling, rengøring…"
-        >
-
-        <button class="btn btn-primary" type="submit">Søg</button>
-      </form>
     </section>
 
     <!-- RESULTATER -->
     <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">Resultater</h2>
-        <p class="section-subtitle js-search-summary"></p>
-      </div>
+      <div class="search-results-wrap">
+        <div class="section-header">
+          <h2 class="section-title">Resultater</h2>
+          <p class="section-subtitle js-search-summary"></p>
+        </div>
 
-      <div class="grid js-search-results"></div>
+        <div class="js-search-results"></div>
+      </div>
     </section>
 
   </main>
@@ -58,22 +277,13 @@
   <script>
     function getQueryParam(name) {
       const params = new URLSearchParams(window.location.search);
-      return params.get(name) || "";
+      return (params.get(name) || "").trim();
     }
 
     async function fetchJson(path) {
       const res = await fetch(path);
       if (!res.ok) throw new Error("Kunne ikke hente: " + path);
       return res.json();
-    }
-
-    function buildHaystack(item) {
-      return [
-        item.title || "",
-        (item.categories || []).join(" "),
-        (item.tags || []).join(" "),
-        item.slug || ""
-      ].join(" ").toLowerCase();
     }
 
     function escapeHtml(str) {
@@ -89,14 +299,20 @@
       const t = String(text || "");
       if (!query) return escapeHtml(t);
       const q = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      return escapeHtml(t).replace(
-        new RegExp(q, "ig"),
-        m => `<mark class="search-mark">${m}</mark>`
-      );
+      return escapeHtml(t).replace(new RegExp(q, "ig"), (m) => `<mark class="search-mark">${m}</mark>`);
+    }
+
+    function buildHaystack(item) {
+      return [
+        item.title || "",
+        (item.categories || []).join(" "),
+        (item.tags || []).join(" "),
+        item.slug || ""
+      ].join(" ").toLowerCase();
     }
 
     async function runSearch() {
-      const q = getQueryParam("q").trim();
+      const q = getQueryParam("q");
       const qLower = q.toLowerCase();
 
       const input = document.getElementById("search-input");
@@ -128,6 +344,7 @@
       } catch (err) {
         console.error(err);
         summaryEl.textContent = "Der opstod en fejl ved indlæsning af søgedata.";
+        resultsEl.innerHTML = "";
         return;
       }
 
@@ -155,62 +372,63 @@
         }))
       ];
 
+      // Basic relevans: titel-match vægter højere end kategori/slug
+      function score(item) {
+        const title = String(item.title || "").toLowerCase();
+        if (title.includes(qLower)) return 3;
+        const cats = (item.categories || []).join(" ").toLowerCase();
+        if (cats.includes(qLower)) return 2;
+        return 1;
+      }
+
       const matches = all
         .filter(item => buildHaystack(item).includes(qLower))
         .sort((a, b) => {
-          const order = { "Opskrift": 0, "Guide": 1, "Anmeldelse": 2 };
+          // score først
+          const s = score(b) - score(a);
+          if (s !== 0) return s;
+
+          // type-prioritet: anmeldelser øverst ved brandsøgning, ellers opskrifter først
+          const looksLikeBrand = ["ninja","cosori","philips","obh","caso","witt","sogo","instant","tefal"].includes(qLower);
+          const orderDefault = { "Opskrift": 0, "Guide": 1, "Anmeldelse": 2 };
+          const orderBrand   = { "Anmeldelse": 0, "Opskrift": 1, "Guide": 2 };
+          const order = looksLikeBrand ? orderBrand : orderDefault;
+
           return (order[a.__type] ?? 9) - (order[b.__type] ?? 9);
         });
 
       if (matches.length === 0) {
         summaryEl.innerHTML = `Ingen resultater for <strong>${escapeHtml(q)}</strong>.`;
         resultsEl.innerHTML = `
-          <div class="card search-empty">
+          <div class="search-empty">
             <h3 class="search-empty-title">Ingen resultater</h3>
-            <p class="search-empty-text">
-              Prøv fx “ninja”, “kylling”, “rengøring” eller “cosori”.
-            </p>
+            <p class="search-empty-text">Prøv fx “kylling”, “rengøring”, “ninja”, “cosori” eller “kartofler”.</p>
           </div>
         `;
         return;
       }
 
-      summaryEl.innerHTML =
-        `<strong>${matches.length}</strong> resultat(er) for <strong>${escapeHtml(q)}</strong>.`;
+      summaryEl.innerHTML = `<strong>${matches.length}</strong> resultat(er) for <strong>${escapeHtml(q)}</strong>.`;
 
       resultsEl.innerHTML = matches.map(item => {
         const cats = (item.categories || []).slice(0, 3);
 
         return `
-          <article class="card recipe-card search-card">
-            <a href="${item.__url}" class="recipe-card-link search-card-link">
-              ${item.__img ? `
-                <div class="recipe-card-image search-thumb">
-                  <img
-                    src="${item.__img}"
-                    alt="${escapeHtml(item.title)}"
-                    loading="lazy"
-                  >
-                </div>
-              ` : `
-                <div class="recipe-card-image search-thumb search-image-placeholder" aria-hidden="true"></div>
-              `}
+          <article class="search-card">
+            <a href="${item.__url}" class="search-card-link">
+              <div class="search-thumb">
+                ${item.__img ? `
+                  <img src="${item.__img}" alt="${escapeHtml(item.title)}" loading="lazy">
+                ` : ``}
+              </div>
 
               <div class="search-card-body">
                 <div class="search-card-meta">
-                  <span class="search-badge ${item.__typeClass}">
-                    ${escapeHtml(item.__type)}
-                  </span>
-                  ${cats.length ? `
-                    <span class="search-cats">
-                      ${escapeHtml(cats.join(" · "))}
-                    </span>
-                  ` : ``}
+                  <span class="search-badge ${item.__typeClass}">${escapeHtml(item.__type)}</span>
+                  ${cats.length ? `<span class="search-cats">${escapeHtml(cats.join(" · "))}</span>` : ``}
                 </div>
 
-                <h3 class="recipe-card-title search-title">
-                  ${highlight(item.title, q)}
-                </h3>
+                <h3 class="search-title">${highlight(item.title, q)}</h3>
               </div>
             </a>
           </article>
@@ -220,6 +438,5 @@
 
     document.addEventListener("DOMContentLoaded", runSearch);
   </script>
-
 </body>
 </html>
