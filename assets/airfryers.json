@@ -67,6 +67,17 @@
   "categories": ["stoejsvag", "premium", "kompakt"]
     },
     {
+  "slug": "ninja-foodi-af300",
+  "title": "Ninja Foodi AF300",
+  "image": "ninja-foodi-af300-768x768.jpg",
+  "brand": "Ninja",
+  "model": "AF300",
+  "excerpt": "Dual zone airfryer med to skuffer, Sync/Match-funktion og fleksibel hverdagsmad – perfekt til hovedret og tilbehør samtidig.",
+  "ratingStars": "",
+  "ratingText": "",
+  "categories": []
+    },
+    {
   "slug": "ninja-foodi-max-af400eu",
   "title": "Ninja Foodi Max AF400EU",
   "image": "ninja-foodi-max-af400eu-768x768.jpg",
