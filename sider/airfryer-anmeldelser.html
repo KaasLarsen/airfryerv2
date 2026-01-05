@@ -127,10 +127,79 @@
     </p>
 
     <form class="hero-large-search" onsubmit="return false;">
-      <input type="search" id="airfryer-search" placeholder="Søg efter airfryer, mærke eller model…" />
-    </form>
+  <input type="search" id="airfryer-search" placeholder="Søg efter airfryer, mærke eller model…" />
+</form>
+
+<button class="hero-large-filter-btn" type="button">Filtre +</button>
+
+<!-- FILTER PANEL -->
+<div class="filter-panel" id="filterPanelReviews">
+  <div class="filter-header">
+    <h3>Filtrér anmeldelser</h3>
+    <button class="filter-close" id="filterCloseReviews" type="button">✕</button>
   </div>
-</section>
+
+  <!-- MÆRKE -->
+  <div class="filter-section">
+    <h4>Mærke</h4>
+    <div class="filter-options" id="filterBrandOptions">
+      <!-- udfyldes dynamisk fra airfryers.json -->
+    </div>
+  </div>
+
+  <!-- KAPACITET -->
+  <div class="filter-section">
+    <h4>Størrelse (liter)</h4>
+    <div class="filter-options">
+      <label><input type="checkbox" name="capacity" value="0-3"> 0–3 L</label>
+      <label><input type="checkbox" name="capacity" value="3-5"> 3–5 L</label>
+      <label><input type="checkbox" name="capacity" value="5-7"> 5–7 L</label>
+      <label><input type="checkbox" name="capacity" value="7+"> 7+ L</label>
+    </div>
+  </div>
+
+  <!-- TYPE / KURV -->
+  <div class="filter-section">
+    <h4>Type</h4>
+    <div class="filter-options">
+      <label><input type="checkbox" name="basket" value="single"> Enkelt kurv</label>
+      <label><input type="checkbox" name="basket" value="dual"> Dobbelt kurv</label>
+      <label><input type="checkbox" name="basket" value="oven"> Ovn-model</label>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="filter-section">
+    <h4>Features</h4>
+    <div class="filter-options">
+      <label><input type="checkbox" name="feature" value="window"> Vindue</label>
+      <label><input type="checkbox" name="feature" value="wifi"> WiFi / App</label>
+      <label><input type="checkbox" name="feature" value="smart"> Smart-programmer</label>
+      <label><input type="checkbox" name="feature" value="dishwasher"> Tåler opvaskemaskine</label>
+    </div>
+  </div>
+
+  <!-- RATING -->
+  <div class="filter-section">
+    <h4>Vurdering</h4>
+    <div class="filter-options">
+      <label><input type="checkbox" name="rating" value="4.5"> 4,5+ (top)</label>
+      <label><input type="checkbox" name="rating" value="4.0"> 4,0+</label>
+      <label><input type="checkbox" name="rating" value="3.5"> 3,5+</label>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:.75rem; margin-top:1rem;">
+    <button class="filter-apply" id="filterApplyReviews" type="button">Anvend filtre</button>
+    <button class="filter-apply" id="filterResetReviews" type="button" style="background:#fff;color:#111;border:1px solid #e5e5e5;">
+      Nulstil
+    </button>
+  </div>
+</div>
+
+<!-- DARK OVERLAY -->
+<div class="filter-overlay" id="filterOverlayReviews"></div>
+
 
 <main>
 
