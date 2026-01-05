@@ -1771,3 +1771,54 @@ img {
   color: #fff;
   cursor: pointer;
 }
+<style>
+  .search-card { overflow: hidden; }
+  .search-card-link { display: block; height: 100%; }
+
+  .search-card-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .search-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    border: 1px solid rgba(0,0,0,.08);
+    background: rgba(0,0,0,.03);
+    white-space: nowrap;
+  }
+
+  .search-badge.type-recipe { background: rgba(16, 185, 129, .10); border-color: rgba(16, 185, 129, .25); }
+  .search-badge.type-guide  { background: rgba(59, 130, 246, .10); border-color: rgba(59, 130, 246, .25); }
+  .search-badge.type-review { background: rgba(245, 158, 11, .12); border-color: rgba(245, 158, 11, .25); }
+
+  .search-cats {
+    font-size: 12px;
+    opacity: .75;
+  }
+
+  .search-mark {
+    padding: 0 .15em;
+    border-radius: .25em;
+    background: rgba(245, 158, 11, .22);
+  }
+
+  .search-image-placeholder {
+    aspect-ratio: 1 / 1;
+    background: rgba(0,0,0,.04);
+  }
+
+  .search-empty {
+    grid-column: 1 / -1;
+    padding: 18px;
+  }
+  .search-empty-title { margin: 0 0 6px; }
+  .search-empty-text { margin: 0; opacity: .8; }
+</style>
