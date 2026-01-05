@@ -1822,3 +1822,75 @@ img {
   .search-empty-title { margin: 0 0 6px; }
   .search-empty-text { margin: 0; opacity: .8; }
 </style>
+/* ===========================
+   SEARCH – COMPACT RESULT CARDS
+   Påvirker KUN search-resultater
+   =========================== */
+
+.search-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Begræns billedet kraftigt */
+.search-card .recipe-card-image {
+  aspect-ratio: 16 / 10;
+  max-height: 140px;
+  overflow: hidden;
+}
+
+.search-card .recipe-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mere luft, mindre støj */
+.search-card-meta {
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+
+/* Titel mere kompakt */
+.search-card .recipe-card-title {
+  font-size: 16px;
+  line-height: 1.35;
+  margin-top: 4px;
+}
+
+/* Badge lidt mindre */
+.search-badge {
+  font-size: 11px;
+  padding: 5px 9px;
+}
+
+/* Gør grid mere “liste-agtigt” på desktop */
+@media (min-width: 900px) {
+  .js-search-results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 899px) {
+  .js-search-results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobil: ét kort pr række */
+@media (max-width: 599px) {
+  .js-search-results {
+    grid-template-columns: 1fr;
+  }
+
+  .search-card .recipe-card-image {
+    max-height: 120px;
+  }
+}
