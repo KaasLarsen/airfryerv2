@@ -1991,3 +1991,10 @@ img {
 .search-card{
   transition: transform .12s ease, box-shadow .12s ease;
 }
+/* SEARCH: fix stort søge-ikon */
+.search-bar svg.icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: .6;
+}
