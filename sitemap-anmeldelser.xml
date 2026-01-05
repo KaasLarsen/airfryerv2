@@ -7,7 +7,13 @@
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
-  
+
+    <url>
+    <loc>https://opskrift-airfryer.dk/anmeldelser/philips-5000-series-hd9255-90.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
     <url>
     <loc>https://opskrift-airfryer.dk/anmeldelser/obh-nordica-easy-fry-xl-surface-fw4018n0.html</loc>
     <priority>0.9</priority>
