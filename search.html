@@ -2,65 +2,12 @@
 <html lang="da">
 <head>
   <meta charset="utf-8">
-  <title>Søg opskrifter i airfryer</title>
+  <title>Søg i airfryer-indhold</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="Søg efter opskrifter i airfryer. Find kylling, pomfritter, grøntsager og meget mere.">
+        content="Søg i opskrifter, guides og airfryer-anmeldelser. Find hurtigt det, du leder efter.">
 
   <link rel="stylesheet" href="assets/styles.css">
-
-  <!-- search-only styling (påvirker kun elementer med search-* klasser) -->
-  <style>
-    .search-card { overflow: hidden; }
-    .search-card-link { display: block; height: 100%; }
-
-    .search-card-meta {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-top: 10px;
-    }
-
-    .search-badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      line-height: 1;
-      font-weight: 700;
-      border: 1px solid rgba(0,0,0,.08);
-      background: rgba(0,0,0,.03);
-      white-space: nowrap;
-    }
-
-    .search-badge.type-recipe { background: rgba(16, 185, 129, .10); border-color: rgba(16, 185, 129, .25); }
-    .search-badge.type-guide  { background: rgba(59, 130, 246, .10); border-color: rgba(59, 130, 246, .25); }
-    .search-badge.type-review { background: rgba(245, 158, 11, .12); border-color: rgba(245, 158, 11, .25); }
-
-    .search-cats {
-      font-size: 12px;
-      opacity: .75;
-    }
-
-    .search-mark {
-      padding: 0 .15em;
-      border-radius: .25em;
-      background: rgba(245, 158, 11, .22);
-    }
-
-    .search-image-placeholder {
-      aspect-ratio: 1 / 1;
-      background: rgba(0,0,0,.04);
-    }
-
-    .search-empty {
-      grid-column: 1 / -1;
-      padding: 18px;
-    }
-    .search-empty-title { margin: 0 0 6px; }
-    .search-empty-text { margin: 0; opacity: .8; }
-  </style>
 </head>
 <body class="page">
 
@@ -72,7 +19,7 @@
     <!-- SØG -->
     <section class="section">
       <div class="section-header">
-        <h1 class="section-title">Søg i opskrifter</h1>
+        <h1 class="section-title">Søg på siden</h1>
       </div>
 
       <form class="search-bar" action="search.html" method="get">
@@ -85,7 +32,7 @@
           type="search"
           name="q"
           id="search-input"
-          placeholder="Skriv fx kylling, broccoli, kartofler…"
+          placeholder="Søg fx ninja, kylling, rengøring…"
         >
 
         <button class="btn btn-primary" type="submit">Søg</button>
@@ -99,7 +46,7 @@
         <p class="section-subtitle js-search-summary"></p>
       </div>
 
-      <div class="grid grid-3 js-search-results"></div>
+      <div class="grid js-search-results"></div>
     </section>
 
   </main>
@@ -142,7 +89,10 @@
       const t = String(text || "");
       if (!query) return escapeHtml(t);
       const q = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      return escapeHtml(t).replace(new RegExp(q, "ig"), (m) => `<mark class="search-mark">${m}</mark>`);
+      return escapeHtml(t).replace(
+        new RegExp(q, "ig"),
+        m => `<mark class="search-mark">${m}</mark>`
+      );
     }
 
     async function runSearch() {
@@ -176,9 +126,8 @@
         guides = guidesData.guides || [];
         airfryers = airfryersData.airfryers || airfryersData.reviews || [];
       } catch (err) {
-        console.error("Fejl ved indlæsning af data", err);
+        console.error(err);
         summaryEl.textContent = "Der opstod en fejl ved indlæsning af søgedata.";
-        resultsEl.innerHTML = "";
         return;
       }
 
@@ -217,22 +166,26 @@
         summaryEl.innerHTML = `Ingen resultater for <strong>${escapeHtml(q)}</strong>.`;
         resultsEl.innerHTML = `
           <div class="card search-empty">
-            <h3 class="search-empty-title">Prøv igen</h3>
-            <p class="search-empty-text">Søg fx på “kylling”, “rengøring”, “ninja” eller “cosori”.</p>
+            <h3 class="search-empty-title">Ingen resultater</h3>
+            <p class="search-empty-text">
+              Prøv fx “ninja”, “kylling”, “rengøring” eller “cosori”.
+            </p>
           </div>
         `;
         return;
       }
 
-      summaryEl.innerHTML = `<strong>${matches.length}</strong> resultat(er) for <strong>${escapeHtml(q)}</strong>.`;
+      summaryEl.innerHTML =
+        `<strong>${matches.length}</strong> resultat(er) for <strong>${escapeHtml(q)}</strong>.`;
 
       resultsEl.innerHTML = matches.map(item => {
         const cats = (item.categories || []).slice(0, 3);
+
         return `
           <article class="card recipe-card search-card">
             <a href="${item.__url}" class="recipe-card-link search-card-link">
               ${item.__img ? `
-                <div class="recipe-card-image">
+                <div class="recipe-card-image search-thumb">
                   <img
                     src="${item.__img}"
                     alt="${escapeHtml(item.title)}"
@@ -240,13 +193,25 @@
                   >
                 </div>
               ` : `
-                <div class="recipe-card-image search-image-placeholder" aria-hidden="true"></div>
+                <div class="recipe-card-image search-thumb search-image-placeholder" aria-hidden="true"></div>
               `}
-              <div class="search-card-meta">
-                <span class="search-badge ${item.__typeClass}">${escapeHtml(item.__type)}</span>
-                ${cats.length ? `<span class="search-cats">${escapeHtml(cats.join(" · "))}</span>` : ``}
+
+              <div class="search-card-body">
+                <div class="search-card-meta">
+                  <span class="search-badge ${item.__typeClass}">
+                    ${escapeHtml(item.__type)}
+                  </span>
+                  ${cats.length ? `
+                    <span class="search-cats">
+                      ${escapeHtml(cats.join(" · "))}
+                    </span>
+                  ` : ``}
+                </div>
+
+                <h3 class="recipe-card-title search-title">
+                  ${highlight(item.title, q)}
+                </h3>
               </div>
-              <h3 class="recipe-card-title">${highlight(item.title, q)}</h3>
             </a>
           </article>
         `;
