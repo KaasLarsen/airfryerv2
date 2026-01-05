@@ -92,6 +92,102 @@
       color: #444;
       text-align: center;
     }
+
+    /* ====== NYT: Filter-knap + panel (samme idé som forsiden) ====== */
+    .hero-large-filter-btn{
+      margin-top: .9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.6);
+      background: rgba(17,17,17,.55);
+      color: #fff;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+
+    .filter-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease;
+      z-index: 80;
+    }
+    .filter-overlay.open{
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .filter-panel{
+      position: fixed;
+      right: 16px;
+      top: 16px;
+      width: min(420px, calc(100% - 32px));
+      height: calc(100% - 32px);
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.18);
+      transform: translateX(110%);
+      transition: transform .25s ease;
+      z-index: 90;
+      overflow: auto;
+      padding: 1rem;
+    }
+    .filter-panel.open{
+      transform: translateX(0);
+    }
+
+    .filter-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 1rem;
+      padding-bottom: .75rem;
+      border-bottom: 1px solid #eee;
+      margin-bottom: .75rem;
+    }
+    .filter-close{
+      border: none;
+      background: #f3f3f3;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      cursor:pointer;
+    }
+
+    .filter-section{
+      margin-top: 1rem;
+    }
+    .filter-section h4{
+      margin: 0 0 .5rem 0;
+      font-size: 1rem;
+    }
+    .filter-options{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: .45rem;
+    }
+    .filter-options label{
+      display:flex;
+      align-items:center;
+      gap:.55rem;
+      color:#222;
+      font-size:.95rem;
+    }
+
+    .filter-apply{
+      width: 100%;
+      padding: .75rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: #111;
+      color: #fff;
+      cursor: pointer;
+    }
   </style>
 
   <!-- Schema: Hubside -->
@@ -127,79 +223,82 @@
     </p>
 
     <form class="hero-large-search" onsubmit="return false;">
-  <input type="search" id="airfryer-search" placeholder="Søg efter airfryer, mærke eller model…" />
-</form>
+      <input type="search" id="airfryer-search" placeholder="Søg efter airfryer, mærke eller model…" />
+    </form>
 
-<button class="hero-large-filter-btn" type="button">Filtre +</button>
+    <!-- NYT: Filtre+ knap -->
+    <button class="hero-large-filter-btn" type="button">Filtre +</button>
 
-<!-- FILTER PANEL -->
-<div class="filter-panel" id="filterPanelReviews">
-  <div class="filter-header">
-    <h3>Filtrér anmeldelser</h3>
-    <button class="filter-close" id="filterCloseReviews" type="button">✕</button>
-  </div>
+    <!-- NYT: Filter panel -->
+    <div class="filter-panel" id="filterPanelReviews">
+      <div class="filter-header">
+        <h3>Filtrér anmeldelser</h3>
+        <button class="filter-close" id="filterCloseReviews" type="button">✕</button>
+      </div>
 
-  <!-- MÆRKE -->
-  <div class="filter-section">
-    <h4>Mærke</h4>
-    <div class="filter-options" id="filterBrandOptions">
-      <!-- udfyldes dynamisk fra airfryers.json -->
+      <!-- MÆRKE -->
+      <div class="filter-section">
+        <h4>Mærke</h4>
+        <div class="filter-options" id="filterBrandOptions">
+          <!-- udfyldes dynamisk fra airfryers.json -->
+        </div>
+      </div>
+
+      <!-- KAPACITET -->
+      <div class="filter-section">
+        <h4>Størrelse (liter)</h4>
+        <div class="filter-options">
+          <label><input type="checkbox" name="capacity" value="0-3"> 0–3 L</label>
+          <label><input type="checkbox" name="capacity" value="3-5"> 3–5 L</label>
+          <label><input type="checkbox" name="capacity" value="5-7"> 5–7 L</label>
+          <label><input type="checkbox" name="capacity" value="7+"> 7+ L</label>
+        </div>
+      </div>
+
+      <!-- TYPE / KURV -->
+      <div class="filter-section">
+        <h4>Type</h4>
+        <div class="filter-options">
+          <label><input type="checkbox" name="basket" value="single"> Enkelt kurv</label>
+          <label><input type="checkbox" name="basket" value="dual"> Dobbelt kurv</label>
+          <label><input type="checkbox" name="basket" value="oven"> Ovn-model</label>
+        </div>
+      </div>
+
+      <!-- FEATURES -->
+      <div class="filter-section">
+        <h4>Features</h4>
+        <div class="filter-options">
+          <label><input type="checkbox" name="feature" value="window"> Vindue</label>
+          <label><input type="checkbox" name="feature" value="wifi"> WiFi / App</label>
+          <label><input type="checkbox" name="feature" value="smart"> Smart-programmer</label>
+          <label><input type="checkbox" name="feature" value="dishwasher"> Tåler opvaskemaskine</label>
+        </div>
+      </div>
+
+      <!-- RATING -->
+      <div class="filter-section">
+        <h4>Vurdering</h4>
+        <div class="filter-options">
+          <label><input type="checkbox" name="rating" value="4.5"> 4,5+ (top)</label>
+          <label><input type="checkbox" name="rating" value="4.0"> 4,0+</label>
+          <label><input type="checkbox" name="rating" value="3.5"> 3,5+</label>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:.75rem; margin-top:1rem;">
+        <button class="filter-apply" id="filterApplyReviews" type="button">Anvend filtre</button>
+        <button class="filter-apply" id="filterResetReviews" type="button" style="background:#fff;color:#111;border:1px solid #e5e5e5;">
+          Nulstil
+        </button>
+      </div>
     </div>
+
+    <!-- NYT: overlay -->
+    <div class="filter-overlay" id="filterOverlayReviews"></div>
+
   </div>
-
-  <!-- KAPACITET -->
-  <div class="filter-section">
-    <h4>Størrelse (liter)</h4>
-    <div class="filter-options">
-      <label><input type="checkbox" name="capacity" value="0-3"> 0–3 L</label>
-      <label><input type="checkbox" name="capacity" value="3-5"> 3–5 L</label>
-      <label><input type="checkbox" name="capacity" value="5-7"> 5–7 L</label>
-      <label><input type="checkbox" name="capacity" value="7+"> 7+ L</label>
-    </div>
-  </div>
-
-  <!-- TYPE / KURV -->
-  <div class="filter-section">
-    <h4>Type</h4>
-    <div class="filter-options">
-      <label><input type="checkbox" name="basket" value="single"> Enkelt kurv</label>
-      <label><input type="checkbox" name="basket" value="dual"> Dobbelt kurv</label>
-      <label><input type="checkbox" name="basket" value="oven"> Ovn-model</label>
-    </div>
-  </div>
-
-  <!-- FEATURES -->
-  <div class="filter-section">
-    <h4>Features</h4>
-    <div class="filter-options">
-      <label><input type="checkbox" name="feature" value="window"> Vindue</label>
-      <label><input type="checkbox" name="feature" value="wifi"> WiFi / App</label>
-      <label><input type="checkbox" name="feature" value="smart"> Smart-programmer</label>
-      <label><input type="checkbox" name="feature" value="dishwasher"> Tåler opvaskemaskine</label>
-    </div>
-  </div>
-
-  <!-- RATING -->
-  <div class="filter-section">
-    <h4>Vurdering</h4>
-    <div class="filter-options">
-      <label><input type="checkbox" name="rating" value="4.5"> 4,5+ (top)</label>
-      <label><input type="checkbox" name="rating" value="4.0"> 4,0+</label>
-      <label><input type="checkbox" name="rating" value="3.5"> 3,5+</label>
-    </div>
-  </div>
-
-  <div style="display:flex; gap:.75rem; margin-top:1rem;">
-    <button class="filter-apply" id="filterApplyReviews" type="button">Anvend filtre</button>
-    <button class="filter-apply" id="filterResetReviews" type="button" style="background:#fff;color:#111;border:1px solid #e5e5e5;">
-      Nulstil
-    </button>
-  </div>
-</div>
-
-<!-- DARK OVERLAY -->
-<div class="filter-overlay" id="filterOverlayReviews"></div>
-
+</section>
 
 <main>
 
@@ -232,12 +331,62 @@ let CURRENT_LIST = [];
 let currentIndex = 0;
 const PAGE_SIZE = 12;
 
+// -------- helpers --------
 function getAirfryerImage(item) {
   return item.image
     ? `../assets/images/airfryers/${item.image}`
     : "../assets/images/airfryers/placeholder.jpg";
 }
 
+function normalize(str) {
+  return (str || "")
+    .toString()
+    .toLowerCase()
+    .replace(/æ/g, "ae").replace(/ø/g, "oe").replace(/å/g, "aa");
+}
+
+function parseStarsToNumber(item) {
+  if (typeof item.ratingNumber === "number") return item.ratingNumber;
+
+  const t = (item.ratingText || "").toString().replace(",", ".");
+  const m = t.match(/(\d+(\.\d+)?)/);
+  return m ? Number(m[1]) : null;
+}
+
+function getCapacityLiters(item) {
+  const v = item.capacityL ?? item.capacity ?? item.liters ?? null;
+  if (v == null) return null;
+  const num = Number(v);
+  return Number.isFinite(num) ? num : null;
+}
+
+function hasFeature(item, featureKey) {
+  if (Array.isArray(item.features)) {
+    return item.features.map(normalize).includes(normalize(featureKey));
+  }
+  return Boolean(item[featureKey]);
+}
+
+function matchesCapacityRange(liters, range) {
+  if (liters == null) return false;
+  if (range === "0-3") return liters <= 3;
+  if (range === "3-5") return liters > 3 && liters <= 5;
+  if (range === "5-7") return liters > 5 && liters <= 7;
+  if (range === "7+") return liters > 7;
+  return true;
+}
+
+function matchesBasketType(item, basketValue) {
+  const t = normalize(item.basketType || item.type || "");
+  if (!t) return false;
+
+  if (basketValue === "single") return t.includes("single") || t.includes("enkelt");
+  if (basketValue === "dual") return t.includes("dual") || t.includes("dobbelt") || t.includes("double");
+  if (basketValue === "oven") return t.includes("oven") || t.includes("ovn");
+  return true;
+}
+
+// -------- rendering --------
 function renderChunk() {
   const grid = document.getElementById("airfryers-grid");
   const empty = document.getElementById("airfryers-empty");
@@ -273,6 +422,109 @@ function renderChunk() {
     currentIndex < CURRENT_LIST.length ? "block" : "none";
 }
 
+// -------- filters ui --------
+function openPanel(panel, overlay) {
+  panel.classList.add("open");
+  overlay.classList.add("open");
+}
+
+function closePanel(panel, overlay) {
+  panel.classList.remove("open");
+  overlay.classList.remove("open");
+}
+
+function getSelectedValues(container, selector) {
+  return Array.from(container.querySelectorAll(selector))
+    .filter(el => el.checked)
+    .map(el => el.value);
+}
+
+function buildBrandOptions(airfryers) {
+  const wrap = document.getElementById("filterBrandOptions");
+  if (!wrap) return;
+
+  const brands = Array.from(new Set(
+    airfryers.map(a => (a.brand || "").trim()).filter(Boolean)
+  )).sort((a,b) => a.localeCompare(b, "da"));
+
+  wrap.innerHTML = brands.map(b => `
+    <label><input type="checkbox" name="brand" value="${b}"> ${b}</label>
+  `).join("");
+
+  if (!brands.length) {
+    wrap.innerHTML = `<p style="color:#666;margin:0;">(Ingen mærker fundet i airfryers.json endnu)</p>`;
+  }
+}
+
+// -------- apply logic (search + filters) --------
+function applySearchAndFilters() {
+  const q = normalize(document.getElementById("airfryer-search")?.value || "");
+
+  const panel = document.getElementById("filterPanelReviews");
+
+  const selectedBrands = getSelectedValues(panel, 'input[name="brand"]');
+  const selectedCapacity = getSelectedValues(panel, 'input[name="capacity"]');
+  const selectedBasket = getSelectedValues(panel, 'input[name="basket"]');
+  const selectedFeatures = getSelectedValues(panel, 'input[name="feature"]');
+  const selectedRatings = getSelectedValues(panel, 'input[name="rating"]');
+
+  CURRENT_LIST = ALL_AIRFRYERS.filter(item => {
+    // tekstsøgning
+    const hay = normalize([
+      item.title, item.brand, item.model, item.excerpt
+    ].filter(Boolean).join(" "));
+    if (q && !hay.includes(q)) return false;
+
+    // brand
+    if (selectedBrands.length) {
+      if (!selectedBrands.includes(item.brand)) return false;
+    }
+
+    // capacity (OR)
+    if (selectedCapacity.length) {
+      const liters = getCapacityLiters(item);
+      const ok = selectedCapacity.some(r => matchesCapacityRange(liters, r));
+      if (!ok) return false;
+    }
+
+    // basket type (OR)
+    if (selectedBasket.length) {
+      const ok = selectedBasket.some(v => matchesBasketType(item, v));
+      if (!ok) return false;
+    }
+
+    // features (AND)
+    if (selectedFeatures.length) {
+      const ok = selectedFeatures.every(f => hasFeature(item, f));
+      if (!ok) return false;
+    }
+
+    // rating (OR)
+    if (selectedRatings.length) {
+      const r = parseStarsToNumber(item);
+      const ok = selectedRatings.some(th => (r != null && r >= Number(th)));
+      if (!ok) return false;
+    }
+
+    return true;
+  });
+
+  currentIndex = 0;
+
+  document.getElementById("airfryers-count").textContent =
+    `Viser ${CURRENT_LIST.length} anmeldelser`;
+
+  renderChunk();
+}
+
+function resetFilters() {
+  const panel = document.getElementById("filterPanelReviews");
+  panel.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+  document.getElementById("airfryer-search").value = "";
+  applySearchAndFilters();
+}
+
+// -------- init --------
 document.addEventListener("DOMContentLoaded", async () => {
   const res = await fetch("/assets/airfryers.json");
   const data = await res.json();
@@ -283,29 +535,57 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("airfryers-count").textContent =
     `Viser ${ALL_AIRFRYERS.length} anmeldelser`;
 
+  // build brand list dynamically
+  buildBrandOptions(ALL_AIRFRYERS);
+
   renderChunk();
 
   document.getElementById("load-more-btn")
     .addEventListener("click", renderChunk);
 
+  // søgning
   document.getElementById("airfryer-search")
-    .addEventListener("input", e => {
-      const q = e.target.value.toLowerCase();
+    .addEventListener("input", applySearchAndFilters);
 
-      CURRENT_LIST = ALL_AIRFRYERS.filter(r =>
-        (r.title || "").toLowerCase().includes(q) ||
-        (r.brand || "").toLowerCase().includes(q) ||
-        (r.model || "").toLowerCase().includes(q) ||
-        (r.excerpt || "").toLowerCase().includes(q)
-      );
+  // panel open/close
+  const openBtn = document.querySelector(".hero-large-filter-btn");
 
-      currentIndex = 0;
+  const panel = document.getElementById("filterPanelReviews");
+  const overlay = document.getElementById("filterOverlayReviews");
+  const closeBtn = document.getElementById("filterCloseReviews");
+  const applyBtn = document.getElementById("filterApplyReviews");
+  const resetBtn = document.getElementById("filterResetReviews");
 
-      document.getElementById("airfryers-count").textContent =
-        `Viser ${CURRENT_LIST.length} anmeldelser`;
+  // Åbn filterpanel
+  if (openBtn) {
+    openBtn.addEventListener("click", () => openPanel(panel, overlay));
+  }
 
-      renderChunk();
+  // Luk panel
+  if (closeBtn) closeBtn.addEventListener("click", () => closePanel(panel, overlay));
+  if (overlay) overlay.addEventListener("click", () => closePanel(panel, overlay));
+
+  // Anvend / reset
+  if (applyBtn) {
+    applyBtn.addEventListener("click", () => {
+      applySearchAndFilters();
+      closePanel(panel, overlay);
     });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      resetFilters();
+      closePanel(panel, overlay);
+    });
+  }
+
+  // Live filtering når man klikker checkboxes
+  if (panel) {
+    panel.addEventListener("change", () => {
+      applySearchAndFilters();
+    });
+  }
 });
 </script>
 
