@@ -8,6 +8,59 @@
         content="Søg efter opskrifter i airfryer. Find kylling, pomfritter, grøntsager og meget mere.">
 
   <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- search-only styling (påvirker kun elementer med search-* klasser) -->
+  <style>
+    .search-card { overflow: hidden; }
+    .search-card-link { display: block; height: 100%; }
+
+    .search-card-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .search-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 700;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(0,0,0,.03);
+      white-space: nowrap;
+    }
+
+    .search-badge.type-recipe { background: rgba(16, 185, 129, .10); border-color: rgba(16, 185, 129, .25); }
+    .search-badge.type-guide  { background: rgba(59, 130, 246, .10); border-color: rgba(59, 130, 246, .25); }
+    .search-badge.type-review { background: rgba(245, 158, 11, .12); border-color: rgba(245, 158, 11, .25); }
+
+    .search-cats {
+      font-size: 12px;
+      opacity: .75;
+    }
+
+    .search-mark {
+      padding: 0 .15em;
+      border-radius: .25em;
+      background: rgba(245, 158, 11, .22);
+    }
+
+    .search-image-placeholder {
+      aspect-ratio: 1 / 1;
+      background: rgba(0,0,0,.04);
+    }
+
+    .search-empty {
+      grid-column: 1 / -1;
+      padding: 18px;
+    }
+    .search-empty-title { margin: 0 0 6px; }
+    .search-empty-text { margin: 0; opacity: .8; }
+  </style>
 </head>
 <body class="page">
 
@@ -61,6 +114,37 @@
       return params.get(name) || "";
     }
 
+    async function fetchJson(path) {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error("Kunne ikke hente: " + path);
+      return res.json();
+    }
+
+    function buildHaystack(item) {
+      return [
+        item.title || "",
+        (item.categories || []).join(" "),
+        (item.tags || []).join(" "),
+        item.slug || ""
+      ].join(" ").toLowerCase();
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function highlight(text, query) {
+      const t = String(text || "");
+      if (!query) return escapeHtml(t);
+      const q = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      return escapeHtml(t).replace(new RegExp(q, "ig"), (m) => `<mark class="search-mark">${m}</mark>`);
+    }
+
     async function runSearch() {
       const q = getQueryParam("q").trim();
       const qLower = q.toLowerCase();
@@ -78,49 +162,95 @@
       }
 
       let recipes = [];
+      let guides = [];
+      let airfryers = [];
 
       try {
-        const res = await fetch("assets/recipes.json");
-        const data = await res.json();
-        recipes = data.recipes || [];
+        const [recipesData, guidesData, airfryersData] = await Promise.all([
+          fetchJson("assets/recipes.json").catch(() => ({})),
+          fetchJson("assets/guides.json").catch(() => ({})),
+          fetchJson("assets/airfryers.json").catch(() => ({}))
+        ]);
+
+        recipes = recipesData.recipes || [];
+        guides = guidesData.guides || [];
+        airfryers = airfryersData.airfryers || airfryersData.reviews || [];
       } catch (err) {
-        console.error("Fejl ved indlæsning af recipes.json", err);
-        summaryEl.textContent = "Der opstod en fejl ved indlæsning af opskrifter.";
-        return;
-      }
-
-      const matches = recipes.filter(r => {
-        const haystack = [
-          r.title,
-          (r.categories || []).join(" "),
-          r.slug
-        ].join(" ").toLowerCase();
-
-        return haystack.includes(qLower);
-      });
-
-      if (matches.length === 0) {
-        summaryEl.textContent = "Ingen opskrifter matchede din søgning.";
+        console.error("Fejl ved indlæsning af data", err);
+        summaryEl.textContent = "Der opstod en fejl ved indlæsning af søgedata.";
         resultsEl.innerHTML = "";
         return;
       }
 
-      summaryEl.textContent = matches.length + " opskrift(er) fundet.";
+      const all = [
+        ...recipes.map(r => ({
+          ...r,
+          __type: "Opskrift",
+          __typeClass: "type-recipe",
+          __url: `/opskrifter/${r.slug}.html`,
+          __img: r.image ? `assets/images/recipes/${r.image}` : ""
+        })),
+        ...guides.map(g => ({
+          ...g,
+          __type: "Guide",
+          __typeClass: "type-guide",
+          __url: `/guides/${g.slug}.html`,
+          __img: g.image ? `assets/images/guides/${g.image}` : ""
+        })),
+        ...airfryers.map(a => ({
+          ...a,
+          __type: "Anmeldelse",
+          __typeClass: "type-review",
+          __url: `/anmeldelser/${a.slug}.html`,
+          __img: a.image ? `assets/images/airfryers/${a.image}` : ""
+        }))
+      ];
 
-      resultsEl.innerHTML = matches.map(r => `
-        <article class="card recipe-card">
-          <a href="/opskrifter/${r.slug}.html" class="recipe-card-link">
-            <div class="recipe-card-image">
-              <img
-                src="assets/images/recipes/${r.image}"
-                alt="${r.title}"
-                loading="lazy"
-              >
-            </div>
-            <h3 class="recipe-card-title">${r.title}</h3>
-          </a>
-        </article>
-      `).join("");
+      const matches = all
+        .filter(item => buildHaystack(item).includes(qLower))
+        .sort((a, b) => {
+          const order = { "Opskrift": 0, "Guide": 1, "Anmeldelse": 2 };
+          return (order[a.__type] ?? 9) - (order[b.__type] ?? 9);
+        });
+
+      if (matches.length === 0) {
+        summaryEl.innerHTML = `Ingen resultater for <strong>${escapeHtml(q)}</strong>.`;
+        resultsEl.innerHTML = `
+          <div class="card search-empty">
+            <h3 class="search-empty-title">Prøv igen</h3>
+            <p class="search-empty-text">Søg fx på “kylling”, “rengøring”, “ninja” eller “cosori”.</p>
+          </div>
+        `;
+        return;
+      }
+
+      summaryEl.innerHTML = `<strong>${matches.length}</strong> resultat(er) for <strong>${escapeHtml(q)}</strong>.`;
+
+      resultsEl.innerHTML = matches.map(item => {
+        const cats = (item.categories || []).slice(0, 3);
+        return `
+          <article class="card recipe-card search-card">
+            <a href="${item.__url}" class="recipe-card-link search-card-link">
+              ${item.__img ? `
+                <div class="recipe-card-image">
+                  <img
+                    src="${item.__img}"
+                    alt="${escapeHtml(item.title)}"
+                    loading="lazy"
+                  >
+                </div>
+              ` : `
+                <div class="recipe-card-image search-image-placeholder" aria-hidden="true"></div>
+              `}
+              <div class="search-card-meta">
+                <span class="search-badge ${item.__typeClass}">${escapeHtml(item.__type)}</span>
+                ${cats.length ? `<span class="search-cats">${escapeHtml(cats.join(" · "))}</span>` : ``}
+              </div>
+              <h3 class="recipe-card-title">${highlight(item.title, q)}</h3>
+            </a>
+          </article>
+        `;
+      }).join("");
     }
 
     document.addEventListener("DOMContentLoaded", runSearch);
