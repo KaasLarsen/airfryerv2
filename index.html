@@ -114,37 +114,36 @@
 
     <button class="hero-large-filter-btn">Filtre +</button>
   </div>
+
   <!-- FILTER PANEL -->
-<div class="filter-panel" id="filterPanel">
-  <div class="filter-header">
-    <h3>Filtrér opskrifter</h3>
-    <button class="filter-close" id="filterClose">✕</button>
-  </div>
-
-  <div class="filter-section">
-    <h4>Kategorier</h4>
-    <div class="filter-options">
-      <label><input type="checkbox" value="nem-aftensmad"> Nem aftensmad</label>
-      <label><input type="checkbox" value="jul"> Jul</label>
-      <label><input type="checkbox" value="sproede-kartofler"> Sprøde kartofler</label>
-      <label><input type="checkbox" value="sund-airfryer"> Sund airfryer</label>
-      <label><input type="checkbox" value="snacks-tilbehor"> Snacks & tilbehør</label>
-      <label><input type="checkbox" value="morgenmad"> Morgenmad</label>
-      <label><input type="checkbox" value="kyllingefavoritter"> Kyllingefavoritter</label>
-      <label><input type="checkbox" value="groentsager"> Grøntsager</label>
-      <label><input type="checkbox" value="tilbehor"> Tilbehør</label>
+  <div class="filter-panel" id="filterPanel">
+    <div class="filter-header">
+      <h3>Filtrér opskrifter</h3>
+      <button class="filter-close" id="filterClose">✕</button>
     </div>
+
+    <div class="filter-section">
+      <h4>Kategorier</h4>
+      <div class="filter-options">
+        <label><input type="checkbox" value="nem-aftensmad"> Nem aftensmad</label>
+        <label><input type="checkbox" value="sproede-kartofler"> Sprøde kartofler</label>
+        <label><input type="checkbox" value="sund-airfryer"> Sund airfryer</label>
+        <label><input type="checkbox" value="snacks-tilbehor"> Snacks & tilbehør</label>
+        <label><input type="checkbox" value="morgenmad"> Morgenmad</label>
+        <label><input type="checkbox" value="kyllingefavoritter"> Kyllingefavoritter</label>
+        <label><input type="checkbox" value="groentsager"> Grøntsager</label>
+        <label><input type="checkbox" value="tilbehor"> Tilbehør</label>
+      </div>
+    </div>
+
+    <button class="filter-apply" id="filterApply">Anvend filtre</button>
   </div>
 
-  <button class="filter-apply" id="filterApply">Anvend filtre</button>
-</div>
-
-<!-- DARK OVERLAY -->
-<div class="filter-overlay" id="filterOverlay"></div>
-
+  <!-- DARK OVERLAY -->
+  <div class="filter-overlay" id="filterOverlay"></div>
 </section>
 
-<!-- Søgeresultater – placeres lige under hero, med samme max-width / layout -->
+<!-- Søgeresultater -->
 <section id="frontpage-search-results"
          class="section-category"
          style="display:none; margin-top:2.5rem; margin-bottom:2.5rem;">
@@ -161,97 +160,90 @@
   </p>
 </section>
 
-
 <!-- MAIN CONTENT -->
 <main>
 
+  <!-- Populære temaer -->
   <section class="section-popular">
-  <h2 class="section-title">Populære temaer</h2>
+    <h2 class="section-title">Populære temaer</h2>
 
-  <div class="swipe-row popular-grid">
+    <div class="swipe-row popular-grid">
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=sproede-kartofler">
-      <img src="assets/images/tema/sproede-kartofler-768x768.jpg" class="theme-img-round" alt="Sprøde kartofler">
-      <h3>Sprøde kartofler</h3>
-      <p class="theme-meta" data-category="sproede-kartofler">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=sproede-kartofler">
+        <img src="assets/images/tema/sproede-kartofler-768x768.jpg" class="theme-img-round" alt="Sprøde kartofler">
+        <h3>Sprøde kartofler</h3>
+        <p class="theme-meta" data-category="sproede-kartofler">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=kyllingefavoritter">
-      <img src="assets/images/tema/kyllingefavoritter-768x768.jpg" class="theme-img-round" alt="Kyllingefavoritter">
-      <h3>Kyllingefavoritter</h3>
-      <p class="theme-meta" data-category="kyllingefavoritter">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=kyllingefavoritter">
+        <img src="assets/images/tema/kyllingefavoritter-768x768.jpg" class="theme-img-round" alt="Kyllingefavoritter">
+        <h3>Kyllingefavoritter</h3>
+        <p class="theme-meta" data-category="kyllingefavoritter">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=nem-aftensmad">
-      <img src="assets/images/tema/nem-aftensmad-768x768.jpg" class="theme-img-round" alt="Nem aftensmad">
-      <h3>Nem aftensmad</h3>
-      <p class="theme-meta" data-category="nem-aftensmad">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=nem-aftensmad">
+        <img src="assets/images/tema/nem-aftensmad-768x768.jpg" class="theme-img-round" alt="Nem aftensmad">
+        <h3>Nem aftensmad</h3>
+        <p class="theme-meta" data-category="nem-aftensmad">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=snacks-tilbehor">
-      <img src="assets/images/tema/snacks-tilbehor-768x768.jpg" class="theme-img-round" alt="Snacks & tilbehør">
-      <h3>Snacks & tilbehør</h3>
-      <p class="theme-meta" data-category="snacks-tilbehor">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=snacks-tilbehor">
+        <img src="assets/images/tema/snacks-tilbehor-768x768.jpg" class="theme-img-round" alt="Snacks & tilbehør">
+        <h3>Snacks & tilbehør</h3>
+        <p class="theme-meta" data-category="snacks-tilbehor">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=sund-airfryer">
-      <img src="assets/images/tema/sund-airfryer-768x768.jpg" class="theme-img-round" alt="Sundere airfryer-retter">
-      <h3>Sundere airfryer-retter</h3>
-      <p class="theme-meta" data-category="sund-airfryer">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=sund-airfryer">
+        <img src="assets/images/tema/sund-airfryer-768x768.jpg" class="theme-img-round" alt="Sundere airfryer-retter">
+        <h3>Sundere airfryer-retter</h3>
+        <p class="theme-meta" data-category="sund-airfryer">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=morgenmad">
-      <img src="assets/images/tema/morgenmad-airfryer-768x768.jpg" class="theme-img-round" alt="Morgenmad i airfryer">
-      <h3>Morgenmad i airfryer</h3>
-      <p class="theme-meta" data-category="morgenmad">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=morgenmad">
+        <img src="assets/images/tema/morgenmad-airfryer-768x768.jpg" class="theme-img-round" alt="Morgenmad i airfryer">
+        <h3>Morgenmad i airfryer</h3>
+        <p class="theme-meta" data-category="morgenmad">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=bagvaerk">
-      <img src="assets/images/tema/bagvaerk-soede-sager-768x768.jpg" class="theme-img-round" alt="Bagværk & søde sager">
-      <h3>Bagværk & søde sager</h3>
-      <p class="theme-meta" data-category="bagvaerk">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=bagvaerk">
+        <img src="assets/images/tema/bagvaerk-soede-sager-768x768.jpg" class="theme-img-round" alt="Bagværk & søde sager">
+        <h3>Bagværk & søde sager</h3>
+        <p class="theme-meta" data-category="bagvaerk">–</p>
+      </a>
 
-  </div>
-</section>
+    </div>
+  </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", async () => {
-  // hent recipes.json
-  const res = await fetch("/assets/recipes.json");
-  const data = await res.json();
-  const recipes = data.recipes || [];
+  <script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const res = await fetch("/assets/recipes.json");
+    const data = await res.json();
+    const recipes = data.recipes || [];
 
-  // find alle meta elementer
-  document.querySelectorAll(".theme-meta").forEach(meta => {
-    const cat = meta.dataset.category;
-
-    const count = recipes.filter(r =>
-      r.categories && r.categories.includes(cat)
-    ).length;
-
-    meta.textContent = `${count} opskrifter`;
+    document.querySelectorAll(".theme-meta").forEach(meta => {
+      const cat = meta.dataset.category;
+      const count = recipes.filter(r => r.categories && r.categories.includes(cat)).length;
+      meta.textContent = `${count} opskrifter`;
+    });
   });
-});
-</script>
+  </script>
 
-
-  <!-- JULEFROKOST HEADER -->
+  <!-- SUNDE OPSKRIFTER HEADER -->
   <section class="section-category jule-header">
     <div class="category-header">
-      <h2 class="section-title">Julefrokost</h2>
+      <h2 class="section-title">Sunde opskrifter</h2>
 
       <div class="category-links">
-        <a href="#">Jule klassikere</a><span>|</span>
-        <a href="#">Julemad</a><span>|</span>
-        <a href="#">Julesalat</a><span>|</span>
-        <a href="#">Julekager</a><span>|</span>
-        <a href="#">Juledesserter</a>
+        <a href="/sider/opskrifter.html?filter=sund-airfryer">Sund airfryer</a><span>|</span>
+        <a href="/sider/opskrifter.html?filter=kyllingefavoritter">Kylling</a><span>|</span>
+        <a href="/sider/opskrifter.html?filter=groentsager">Grøntsager</a><span>|</span>
+        <a href="/sider/opskrifter.html?filter=fisk">Fisk</a><span>|</span>
+        <a href="/sider/opskrifter.html?filter=nem-aftensmad">Nem hverdagsmad</a>
       </div>
     </div>
   </section>
 
-  <!-- SLIDER SKAL LIGGE HER -->
+  <!-- SUNDE OPSKRIFTER SLIDER -->
   <section class="slider-section">
     <div class="slider-wrapper">
 
@@ -259,24 +251,34 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       <div class="recipe-slider" id="recipe-slider">
 
-        <a href="opskrifter/flaeskestegssandwich.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/flaeskestegssandwich-768x768.jpg" alt="">
-          <h3>Flæskestegssandwich</h3>
+        <a href="opskrifter/kyllingebryst-i-airfryer.html" class="recipe-slide-card">
+          <img src="assets/images/recipes/kyllingebryst-airfryer-768x768.jpg" alt="Kyllingebryst i airfryer">
+          <h3>Kyllingebryst i airfryer</h3>
         </a>
 
-        <a href="opskrifter/vegetar-tarteletter.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/vegetar-tarteletter-768x768.jpg" alt="">
-          <h3>Vegetar tarteletter</h3>
+        <a href="opskrifter/laks-i-airfryer.html" class="recipe-slide-card">
+          <img src="assets/images/recipes/laks-i-airfryer-768x768.jpg" alt="Laks i airfryer">
+          <h3>Laks i airfryer</h3>
+        </a>
+
+        <a href="opskrifter/kyllinge-laar-airfryer.html" class="recipe-slide-card">
+          <img src="assets/images/recipes/kyllinge-laar-airfryer-768x768.jpg" alt="Kyllingelår i airfryer">
+          <h3>Kyllingelår i airfryer</h3>
+        </a>
+
+        <a href="opskrifter/grillede-groentsager-airfryer.html" class="recipe-slide-card">
+          <img src="assets/images/recipes/grillede-groentsager-airfryer-768x768.jpg" alt="Grillede grøntsager i airfryer">
+          <h3>Grillede grøntsager i airfryer</h3>
         </a>
 
         <a href="opskrifter/fiskefilet.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/fiskefilet-768x768.jpg" alt="">
+          <img src="assets/images/recipes/fiskefilet-768x768.jpg" alt="Fiskefilet i airfryer">
           <h3>Fiskefilet i airfryer</h3>
         </a>
 
-        <a href="opskrifter/frikadeller-juleudgave.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/frikadeller-768x768.jpg" alt="">
-          <h3>Julefrikadeller i airfryer</h3>
+        <a href="opskrifter/vegetar-tarteletter.html" class="recipe-slide-card">
+          <img src="assets/images/recipes/vegetar-tarteletter-768x768.jpg" alt="Vegetar tarteletter">
+          <h3>Vegetar tarteletter</h3>
         </a>
 
       </div>
@@ -286,32 +288,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     </div>
   </section>
 
-  <!-- FEATURED FLÆSKESTEG -->
+  <!-- FEATURED (SUNDERE) – LAKS -->
   <section class="featured-recipe">
     <div class="featured-grid">
 
       <div class="featured-image">
-        <img src="assets/images/recipes/flaeskesteg-i-airfryer-768x768.jpg" alt="Flæskesteg i airfryer">
+        <img src="assets/images/recipes/laks-i-airfryer-768x768.jpg" alt="Laks i airfryer">
       </div>
 
       <div class="featured-content">
         <span class="featured-badge">NY</span>
 
-        <h2 class="featured-title">Flæskesteg i airfryer</h2>
+        <h2 class="featured-title">Laks i airfryer</h2>
 
         <div class="featured-meta">
-          <span>55 min</span>
+          <span>12 min</span>
           <span>•</span>
-          <span>Aftensmad</span>
+          <span>Sund / Fisk</span>
           <span class="featured-stars">★★★★★</span>
         </div>
 
         <p class="featured-text">
-          Flæskesteg i airfryer er en sand klassiker – perfekt sprød svær og saftig steg.
-          Den er skabt til julefrokosten, men fungerer lige så godt som hverdagssteg.
+          Laks i airfryer er en af de nemmeste “sunde genveje” i hverdagen: saftig fisk,
+          sprød overflade og klar på få minutter – perfekt med grøntsager eller en frisk salat.
         </p>
 
-        <a href="opskrifter/flaeskesteg-i-airfryer.html" class="featured-btn">
+        <a href="opskrifter/laks-i-airfryer.html" class="featured-btn">
           Se opskrift →
         </a>
       </div>
@@ -319,7 +321,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     </div>
   </section>
 
-  <!-- AIRFRYER KLASSIKERE – MED SLIDER -->
+  <!-- AIRFRYER KLASSIKERE – BEHOLDES -->
   <section class="section-category">
     <div class="category-header">
       <h2 class="section-title">Airfryer klassikere</h2>
@@ -389,85 +391,78 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     </div>
   </section>
-<!-- FEATURED SOLTØRREDE TOMATER -->
-<section class="featured-recipe">
-  <div class="featured-grid featured-grid--reverse">
 
-    <!-- TEKST TIL VENSTRE -->
-    <div class="featured-content">
-      <span class="featured-badge">NY</span>
+  <!-- FEATURED (SUNDERE) – GRILLEDE GRØNTSAGER (erstatning for soltørrede tomater) -->
+  <section class="featured-recipe">
+    <div class="featured-grid featured-grid--reverse">
 
-      <h2 class="featured-title">Soltørrede tomater i airfryer</h2>
+      <div class="featured-content">
+        <span class="featured-badge">NY</span>
 
-      <div class="featured-meta">
-        <span>120 min</span>
-        <span>•</span>
-        <span>Tilbehør / Snacks</span>
-        <span class="featured-stars">★★★★★</span>
+        <h2 class="featured-title">Grillede grøntsager i airfryer</h2>
+
+        <div class="featured-meta">
+          <span>18 min</span>
+          <span>•</span>
+          <span>Sund / Tilbehør</span>
+          <span class="featured-stars">★★★★★</span>
+        </div>
+
+        <p class="featured-text">
+          Grillede grøntsager i airfryer er den nemmeste måde at få mere grønt ind i hverdagen:
+          sprød kant, masser af smag og klar på under 20 minutter – perfekt som tilbehør eller let aftensmad.
+        </p>
+
+        <a href="opskrifter/grillede-groentsager-airfryer.html" class="featured-btn">
+          Se opskrift →
+        </a>
       </div>
 
-      <p class="featured-text">
-        Soltørrede tomater i airfryer giver intens smag, sødme og perfekt konsistens – 
-        på en brøkdel af tiden sammenlignet med ovn eller traditionel tørring. 
-        De bliver dybt aromatiske, let seje og fantastiske i salater, sandwiches 
-        og pastaretter – eller bare som snack.
-      </p>
+      <div class="featured-image">
+        <img src="assets/images/recipes/grillede-groentsager-airfryer-768x768.jpg"
+             alt="Grillede grøntsager i airfryer">
+      </div>
 
-      <a href="opskrifter/soltorrede-tomater-i-airfryer.html" class="featured-btn">
-        Se opskrift →
-      </a>
     </div>
-
-    <!-- BILLEDE TIL HØJRE -->
-    <div class="featured-image">
-      <img src="assets/images/recipes/soltorrede-tomater-airfryer-768x768.jpg"
-           alt="Soltørrede tomater i airfryer">
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- PRICERUNNER FULL-WIDTH HERO SLIDER -->
-<section class="section-category pricerunner-hero-section">
-  <div class="category-header">
-    <h2 class="section-title">Udvalgte airfryere</h2>
-  </div>
+  <section class="section-category pricerunner-hero-section">
+    <div class="category-header">
+      <h2 class="section-title">Udvalgte airfryere</h2>
+    </div>
 
-  <div class="pricerunner-hero-wrapper">
+    <div class="pricerunner-hero-wrapper">
 
-    <button class="slider-btn pricerunner-hero-prev">‹</button>
+      <button class="slider-btn pricerunner-hero-prev">‹</button>
 
-    <div class="pricerunner-hero-slider" id="pricerunnerHeroSlider">
+      <div class="pricerunner-hero-slider" id="pricerunnerHeroSlider">
 
-      <!-- Slide 1 -->
-      <div class="pricerunner-hero-slide">
-        <div id="pr-product-widget-da8ffb40" style="width:100%"></div>
-        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3208440524&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-da8ffb40" async></script>
+        <div class="pricerunner-hero-slide">
+          <div id="pr-product-widget-da8ffb40" style="width:100%"></div>
+          <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3208440524&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-da8ffb40" async></script>
+        </div>
+
+        <div class="pricerunner-hero-slide">
+          <div id="pr-product-widget-f25f68f0" style="width:100%"></div>
+          <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3231353404&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-f25f68f0" async></script>
+        </div>
+
+        <div class="pricerunner-hero-slide">
+          <div id="pr-product-widget-18227690" style="width:100%"></div>
+          <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3405103592&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-18227690" async></script>
+        </div>
+
       </div>
 
-      <!-- Slide 2 -->
-      <div class="pricerunner-hero-slide">
-        <div id="pr-product-widget-f25f68f0" style="width:100%"></div>
-        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3231353404&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-f25f68f0" async></script>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="pricerunner-hero-slide">
-        <div id="pr-product-widget-18227690" style="width:100%"></div>
-        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3405103592&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-18227690" async></script>
-      </div>
+      <button class="slider-btn pricerunner-hero-next">›</button>
 
     </div>
 
-    <button class="slider-btn pricerunner-hero-next">›</button>
-
-  </div>
-
-  <p class="pricerunner-note">
-    Annonce i samarbejde med <strong>PriceRunner</strong>
-  </p>
-
-</section>
+    <p class="pricerunner-note">
+      Annonce i samarbejde med <strong>PriceRunner</strong>
+    </p>
+  </section>
 
 </main>
 
@@ -477,36 +472,31 @@ document.addEventListener("DOMContentLoaded", async () => {
 <script src="assets/include.js" defer></script>
 <script src="assets/header.js" defer></script>
 
-<!-- SLIDER JS – uændret -->
+<!-- SLIDER JS (første slider) -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.getElementById("recipe-slider");
   const btnPrev = document.querySelector(".slider-btn.prev");
   const btnNext = document.querySelector(".slider-btn.next");
 
-  btnPrev.addEventListener("click", () => {
-    slider.scrollBy({ left: -320, behavior: "smooth" });
-  });
-
-  btnNext.addEventListener("click", () => {
-    slider.scrollBy({ left: 320, behavior: "smooth" });
-  });
+  if (btnPrev && btnNext && slider) {
+    btnPrev.addEventListener("click", () => slider.scrollBy({ left: -320, behavior: "smooth" }));
+    btnNext.addEventListener("click", () => slider.scrollBy({ left: 320, behavior: "smooth" }));
+  }
 });
 </script>
 
-<!-- Kategori-count – uændret -->
+<!-- Kategori-count -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
   fetch("/assets/recipes.json")
     .then(r => r.json())
     .then(data => {
-
       const counts = {};
-      const recipes = data.recipes;
+      const recipes = data.recipes || [];
 
       recipes.forEach(recipe => {
-        recipe.categories.forEach(cat => {
+        (recipe.categories || []).forEach(cat => {
           counts[cat] = (counts[cat] || 0) + 1;
         });
       });
@@ -516,9 +506,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const amount = counts[cat] || 0;
         el.textContent = amount + " opskrifter";
       });
-
-      console.log("✔ Kategorier opdateret:", counts);
-
     })
     .catch(err => console.error("FEJL:", err));
 });
@@ -526,7 +513,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <!-- FORSIDE-LIVE-SØGNING -->
 <script>
-// Hent alle opskrifter én gang
 let FP_ALL_RECIPES = [];
 
 async function fpLoadRecipes() {
@@ -534,46 +520,6 @@ async function fpLoadRecipes() {
   const res = await fetch("/assets/recipes.json");
   const data = await res.json();
   FP_ALL_RECIPES = data.recipes || [];
-}
-
-// Billed-fuzzy-match (samme som andre steder)
-const FP_IMAGES = [
-  "bacon-airfryer-768x768.jpg",
-  "chicken-nuggets-airfryer-768x768.jpg",
-  "fiskefilet-768x768.jpg",
-  "flaeskesteg-i-airfryer-768x768.jpg",
-  "flaeskestegssandwich-768x768.jpg",
-  "frikadeller-768x768.jpg",
-  "grillede-groentsager-airfryer-768x768.jpg",
-  "hvidloegsbroed-airfryer-768x768.jpg",
-  "kyllinge-laar-airfryer-768x768.jpg",
-  "kyllingebryst-airfryer-768x768.jpg",
-  "kyllingevinger-i-airfryer-768x768.jpg",
-  "laks-i-airfryer-768x768.jpg",
-  "pommes-frites-768x768.jpg",
-  "vegetar-tarteletter-768x768.jpg"
-];
-
-function fpNormalize(str) {
-  return str.toLowerCase()
-    .replace(/-/g, " ")
-    .replace(/æ/g, "ae").replace(/ø/g, "oe").replace(/å/g, "aa")
-    .replace(/[^\w\s]/g, "");
-}
-
-function fpFindImage(slug) {
-  const normSlug = fpNormalize(slug);
-  const words = normSlug.split(" ").filter(Boolean);
-  let best = null, bestScore = -1;
-
-  FP_IMAGES.forEach(file => {
-    const f = fpNormalize(file);
-    let score = 0;
-    words.forEach(w => { if (f.includes(w)) score++; });
-    if (score > bestScore) { bestScore = score; best = file; }
-  });
-
-  return best ? `assets/images/recipes/${best}` : "assets/images/recipes/placeholder.jpg";
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -586,7 +532,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const count = document.getElementById("frontpage-results-count");
   const noResults = document.getElementById("frontpage-no-results");
 
-  // Sticky søgefelt
   window.addEventListener("scroll", () => {
     if (window.scrollY > 120) searchForm.classList.add("sticky");
     else searchForm.classList.remove("sticky");
@@ -602,12 +547,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const matches = FP_ALL_RECIPES.filter(r =>
       r.title.toLowerCase().includes(q) ||
-      r.categories.join(" ").toLowerCase().includes(q)
+      (r.categories || []).join(" ").toLowerCase().includes(q)
     );
 
     grid.innerHTML = "";
 
-    // Triggere fade-in hver gang vi viser nye resultater
     section.classList.remove("fade-in");
     void section.offsetWidth;
     section.classList.add("fade-in");
@@ -623,7 +567,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     count.textContent = `Vi fandt ${matches.length} opskrifter`;
 
     matches.slice(0, 12).forEach(r => {
-      // ✅ FIX: Brug det rigtige billede fra recipes.json (ikke fuzzy-match på slug)
       const img = r.image
         ? `/assets/images/recipes/${r.image}`
         : `/assets/images/recipes/placeholder.jpg`;
@@ -647,22 +590,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 </script>
 
+<!-- Filterpanel -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
-  // KORRIGERET: Dette er den rigtige knap!
   const openBtn = document.querySelector(".hero-large-filter-btn");
-
   const panel = document.getElementById("filterPanel");
   const overlay = document.getElementById("filterOverlay");
   const closeBtn = document.getElementById("filterClose");
   const applyBtn = document.getElementById("filterApply");
 
-  // OBS: Denne del virker kun hvis der findes .recipe-card på siden.
-  // På forsiden gør der ikke – men vi lader det stå uden at ændre noget.
-  const recipeCards = document.querySelectorAll(".recipe-card");
+  function closePanel() {
+    panel.classList.remove("open");
+    overlay.classList.remove("open");
+  }
 
-  // Åbn filterpanel
   if (openBtn) {
     openBtn.addEventListener("click", () => {
       panel.classList.add("open");
@@ -670,59 +611,56 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Luk panel
-  function closePanel() {
-    panel.classList.remove("open");
-    overlay.classList.remove("open");
+  if (closeBtn) closeBtn.addEventListener("click", closePanel);
+  if (overlay) overlay.addEventListener("click", closePanel);
+
+  if (applyBtn) {
+    applyBtn.addEventListener("click", () => {
+      const selected = Array.from(panel.querySelectorAll("input[type='checkbox']:checked"))
+        .map(cb => cb.value);
+
+      if (selected.length > 0) {
+        const query = selected.join(",");
+        window.location.href = `/sider/opskrifter.html?filter=${query}`;
+      } else {
+        window.location.href = `/sider/opskrifter.html`;
+      }
+
+      closePanel();
+    });
   }
-
-  closeBtn.addEventListener("click", closePanel);
-  overlay.addEventListener("click", closePanel);
-
-  // Anvend filtre (vigtigt: redirect til opskrifter-siden)
-  applyBtn.addEventListener("click", () => {
-    const selected = Array.from(
-      panel.querySelectorAll("input[type='checkbox']:checked")
-    ).map(cb => cb.value);
-
-    // Gå til opskrifter-siden med filter i URL
-    if (selected.length > 0) {
-      const query = selected.join(",");
-      window.location.href = `/sider/opskrifter.html?filter=${query}`;
-    } else {
-      window.location.href = `/sider/opskrifter.html`;
-    }
-
-    closePanel();
-  });
-
 });
 </script>
+
+<!-- PriceRunner hero slider -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.getElementById("pricerunnerHeroSlider");
+  if (!slider) return;
+
   const slides = slider.children;
   const total = slides.length;
 
   let index = 0;
-  let autoplaySpeed = 6000; // 6 sekunder per slide
+  let autoplaySpeed = 6000;
 
   function updateSlider() {
     slider.style.transform = `translateX(-${index * 100}%)`;
   }
 
-  // Knapper
-  document.querySelector(".pricerunner-hero-prev").addEventListener("click", () => {
+  const prev = document.querySelector(".pricerunner-hero-prev");
+  const next = document.querySelector(".pricerunner-hero-next");
+
+  if (prev) prev.addEventListener("click", () => {
     index = (index - 1 + total) % total;
     updateSlider();
   });
 
-  document.querySelector(".pricerunner-hero-next").addEventListener("click", () => {
+  if (next) next.addEventListener("click", () => {
     index = (index + 1) % total;
     updateSlider();
   });
 
-  // Autoplay
   setInterval(() => {
     index = (index + 1) % total;
     updateSlider();
@@ -732,27 +670,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <div data-include="cookie-banner"></div>
 
-  <script>
+<!-- Mobile touch-fix -->
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".theme-card").forEach(card => {
-
-    // Mobile touch-fix (DETTE er nøglen)
     card.addEventListener("touchend", e => {
       e.preventDefault();
       e.stopPropagation();
       window.location.href = card.getAttribute("href");
     }, { passive: false });
 
-    // Desktop fallback (ufarlig)
-    card.addEventListener("click", e => {
+    card.addEventListener("click", () => {
       window.location.href = card.getAttribute("href");
     });
-
   });
 });
 </script>
-
-
 
 </body>
 </html>
