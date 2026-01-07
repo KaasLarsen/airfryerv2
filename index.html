@@ -709,6 +709,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+<script>
+(() => {
+  const RECIPES_URL = "/assets/data/recipes.json"; // Hvis din json ligger et andet sted, så ret kun denne.
+
+  const norm = s => String(s || "").trim().toLowerCase();
+
+  fetch(RECIPES_URL)
+    .then(r => r.json())
+    .then(data => {
+      const recipes = data.recipes || [];
+
+      document.querySelectorAll(".theme-meta[data-category]").forEach(el => {
+        const aliasesRaw = el.getAttribute("data-aliases") || el.getAttribute("data-category") || "";
+        const aliases = aliasesRaw.split(",").map(norm).filter(Boolean);
+
+        const count = recipes.filter(rec => {
+          const cats = (rec.categories || []).map(norm);
+          return aliases.some(a => cats.includes(a));
+        }).length;
+
+        el.textContent = `${count} opskrifter`;
+      });
+    })
+    .catch(() => {
+      // Hvis fetch fejler, så lad bare '-' stå, så du tydeligt kan se at noget ikke loader.
+    });
+})();
+</script>
 
 </body>
 </html>
