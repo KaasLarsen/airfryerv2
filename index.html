@@ -392,6 +392,63 @@
     </div>
   </section>
 
+  <!-- UDVALGTE ANMELDELSER -->
+<section class="section-category">
+  <div class="category-header">
+    <h2 class="section-title">Udvalgte airfryer anmeldelser</h2>
+
+    <div class="category-links">
+      <a href="/anmeldelser/">Se alle anmeldelser</a><span>|</span>
+      <a href="/anmeldelser/#bedst-i-test">Bedst i test</a><span>|</span>
+      <a href="/anmeldelser/#budget">Budget</a><span>|</span>
+      <a href="/anmeldelser/#stor-kurv">Stor kurv</a>
+    </div>
+  </div>
+</section>
+
+<section class="slider-section">
+  <h2 class="section-title">Udvalgte airfryer anmeldelser</h2>
+
+  <div class="slider-wrapper">
+
+    <button class="slider-btn prev" data-slider="reviews">‹</button>
+
+    <div class="recipe-slider" id="airfryer-anmeldelser-slider">
+
+      <!-- Eksempler – byt ud med dine rigtige links + billeder -->
+      <a href="/anmeldelser/witt-premium-airfryer-bladeless-5l.html" class="recipe-slide-card">
+        <img src="assets/images/anmeldelser/witt-premium-airfryer-bladeless-5l-768x768.jpg" alt="Witt Premium Airfryer Bladeless 5L">
+        <h3>Witt Premium Airfryer Bladeless 5L</h3>
+      </a>
+
+      <a href="/anmeldelser/philips-hd9270-70.html" class="recipe-slide-card">
+        <img src="assets/images/anmeldelser/philips-hd9270-70-768x768.jpg" alt="Philips HD9270/70">
+        <h3>Philips HD9270/70</h3>
+      </a>
+
+      <a href="/anmeldelser/ninja-air-fryer-max.html" class="recipe-slide-card">
+        <img src="assets/images/anmeldelser/ninja-air-fryer-max-768x768.jpg" alt="Ninja Air Fryer MAX">
+        <h3>Ninja Air Fryer MAX</h3>
+      </a>
+
+      <a href="/anmeldelser/cosori-premium-ii-plus.html" class="recipe-slide-card">
+        <img src="assets/images/anmeldelser/cosori-premium-ii-plus-768x768.jpg" alt="Cosori Premium II Plus">
+        <h3>Cosori Premium II Plus</h3>
+      </a>
+
+      <a href="/anmeldelser/obh-nordica-easy-fry-grill-fw2018s0.html" class="recipe-slide-card">
+        <img src="assets/images/anmeldelser/obh-nordica-easy-fry-grill-fw2018s0-768x768.jpg" alt="OBH Nordica Easy Fry Grill FW2018S0">
+        <h3>OBH Nordica Easy Fry Grill</h3>
+      </a>
+
+    </div>
+
+    <button class="slider-btn next" data-slider="reviews">›</button>
+
+  </div>
+</section>
+
+
   <!-- FEATURED – GROVFRITTER (erstatning for grillede grøntsager) -->
 <section class="featured-recipe">
   <div class="featured-grid featured-grid--reverse">
@@ -475,19 +532,30 @@
 <script src="assets/include.js" defer></script>
 <script src="assets/header.js" defer></script>
 
-<!-- SLIDER JS (første slider) -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.getElementById("recipe-slider");
-  const btnPrev = document.querySelector(".slider-btn.prev");
-  const btnNext = document.querySelector(".slider-btn.next");
+  function hookSlider(wrapperSelector, sliderId) {
+    const wrapper = document.querySelector(wrapperSelector);
+    const slider = document.getElementById(sliderId);
+    if (!wrapper || !slider) return;
 
-  if (btnPrev && btnNext && slider) {
-    btnPrev.addEventListener("click", () => slider.scrollBy({ left: -320, behavior: "smooth" }));
-    btnNext.addEventListener("click", () => slider.scrollBy({ left: 320, behavior: "smooth" }));
+    const prev = wrapper.querySelector(".slider-btn.prev");
+    const next = wrapper.querySelector(".slider-btn.next");
+
+    if (prev) prev.addEventListener("click", () => slider.scrollBy({ left: -320, behavior: "smooth" }));
+    if (next) next.addEventListener("click", () => slider.scrollBy({ left: 320, behavior: "smooth" }));
   }
+
+  // Sunde opskrifter
+  hookSlider("#recipe-slider").closest ? "" : ""; // (safe no-op)
+
+  // Brug konkrete wrappers (mest stabilt):
+  hookSlider(".slider-section .slider-wrapper", "recipe-slider"); // første slider
+  hookSlider(".slider-section .slider-wrapper", "airfryer-klassikere-slider");
+  hookSlider(".slider-section .slider-wrapper", "airfryer-anmeldelser-slider");
 });
 </script>
+
 
 <!-- FORSIDE-LIVE-SØGNING -->
 <script>
