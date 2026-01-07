@@ -687,5 +687,73 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+  <script>
+  // Hvilke categories skal tælle med under hvert populært tema?
+  const POPULAR_MATCH = {
+    "sproede-kartofler": [
+      "sproede-kartofler",
+      "kartofler",
+      "tilbehør", "tilbehoer", "tilbehor"
+    ],
+    "kyllingefavoritter": [
+      "kyllingefavoritter",
+      "kylling",
+      "fjerkrae"
+    ],
+    "nem-aftensmad": [
+      "nem-aftensmad",
+      "hovedret"
+    ],
+    "snacks-tilbehor": [
+      "snacks-tilbehor",
+      "snack",
+      "snacks",
+      "tilbehør", "tilbehoer", "tilbehor"
+    ],
+    "sund-airfryer": [
+      "sund-airfryer",
+      "sund"
+    ],
+    "morgenmad": [
+      "morgenmad",
+      "æg"
+    ],
+    "bagvaerk": [
+      "bagvaerk",
+      "broed",
+      "dessert",
+      "madpakke"
+    ]
+  };
+
+  function norm(s) {
+    return String(s || "").trim().toLowerCase();
+  }
+
+  function recipeMatchesTheme(recipe, themeKey) {
+    const cats = (recipe.categories || []).map(norm);
+    const matchList = (POPULAR_MATCH[themeKey] || [themeKey]).map(norm);
+
+    // Match hvis en af opskriftens categories findes i temaets matchList
+    return cats.some(c => matchList.includes(c));
+  }
+
+  fetch("/assets/data/recipes.json")
+    .then(r => r.json())
+    .then(data => {
+      const recipes = data.recipes || [];
+
+      document.querySelectorAll(".theme-meta[data-category]").forEach(el => {
+        const themeKey = norm(el.getAttribute("data-category"));
+
+        // Tæl opskrifter der matcher temaet via alias-liste
+        const count = recipes.filter(r => recipeMatchesTheme(r, themeKey)).length;
+
+        el.textContent = `${count} opskrifter`;
+      });
+    })
+    .catch(err => console.error("Kunne ikke indlæse recipes.json:", err));
+</script>
+
 </body>
 </html>
