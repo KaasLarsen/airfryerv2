@@ -25,6 +25,12 @@
   "categories": ["dessert", "jul", "bagværk"]
     },
     {
+  "slug": "pulled-pork-i-airfryer",
+  "title": "Pulled pork i airfryer",
+  "image": "pulled-pork-i-airfryer-768x768.jpg",
+  "categories": ["hovedret", "svinekød", "slowfood"]
+    },
+    {
   "slug": "grovfritter-med-hvidloegssmoer",
   "title": "Grovfritter med hvidløgssmør i airfryer",
   "image": "grovfritter-med-hvidloegssmoer-768x768.jpg",
