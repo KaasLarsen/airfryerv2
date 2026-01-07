@@ -175,7 +175,6 @@
       <p class="theme-meta"
          data-category="sproede-kartofler"
          data-aliases="sproede-kartofler,kartofler,tilbehør,tilbehoer,tilbehor">–</p>
-      <p class="theme-desc">Kartofler, fritter, wedges</p>
     </a>
 
     <a class="theme-card" href="/sider/opskrifter.html?filter=kyllingefavoritter">
@@ -184,7 +183,6 @@
       <p class="theme-meta"
          data-category="kyllingefavoritter"
          data-aliases="kyllingefavoritter,kylling,fjerkrae">–</p>
-      <p class="theme-desc">Bryst, vinger, lår, nuggets</p>
     </a>
 
     <a class="theme-card" href="/sider/opskrifter.html?filter=nem-aftensmad">
@@ -193,7 +191,6 @@
       <p class="theme-meta"
          data-category="nem-aftensmad"
          data-aliases="nem-aftensmad,hovedret">–</p>
-      <p class="theme-desc">Hovedretter der bare virker</p>
     </a>
 
     <a class="theme-card" href="/sider/opskrifter.html?filter=snacks-tilbehor">
@@ -202,7 +199,6 @@
       <p class="theme-meta"
          data-category="snacks-tilbehor"
          data-aliases="snacks-tilbehor,snack,snacks,tilbehør,tilbehoer,tilbehor">–</p>
-      <p class="theme-desc">Dip-venlige favoritter</p>
     </a>
 
     <a class="theme-card" href="/sider/opskrifter.html?filter=sund-airfryer">
@@ -211,7 +207,6 @@
       <p class="theme-meta"
          data-category="sund-airfryer"
          data-aliases="sund-airfryer,sund,protein,groentsager,grøntsager,vegetar">–</p>
-      <p class="theme-desc">Lettere retter og grønt</p>
     </a>
 
     <a class="theme-card" href="/sider/opskrifter.html?filter=morgenmad">
@@ -219,8 +214,7 @@
       <h3>Morgenmad i airfryer</h3>
       <p class="theme-meta"
          data-category="morgenmad"
-         data-aliases="morgenmad,æg,aeg">–</p>
-      <p class="theme-desc">Æg, toast, hurtige bites</p>
+         data-aliases="morgenmad,aeg,æg">–</p>
     </a>
 
     <a class="theme-card" href="/sider/opskrifter.html?filter=bagvaerk">
@@ -229,11 +223,11 @@
       <p class="theme-meta"
          data-category="bagvaerk"
          data-aliases="bagvaerk,broed,dessert,madpakke">–</p>
-      <p class="theme-desc">Boller, brød og sødt</p>
     </a>
 
   </div>
 </section>
+
 
 
 
@@ -735,6 +729,44 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(() => {
       // Hvis fetch fejler, så lad bare '-' stå, så du tydeligt kan se at noget ikke loader.
     });
+})();
+</script>
+<script>
+(function () {
+  const RECIPES_URL = "/assets/data/recipes.json"; // ret kun denne hvis din sti er anderledes
+  const norm = (s) => String(s || "").trim().toLowerCase();
+
+  function runPopularCounts(recipes) {
+    document.querySelectorAll(".theme-meta[data-category]").forEach((el) => {
+      const aliasesRaw = el.getAttribute("data-aliases") || el.getAttribute("data-category") || "";
+      const aliases = aliasesRaw.split(",").map(norm).filter(Boolean);
+
+      const count = recipes.filter((r) => {
+        const cats = (r.categories || []).map(norm);
+        return aliases.some((a) => cats.includes(a));
+      }).length;
+
+      el.textContent = `${count} opskrifter`;
+    });
+  }
+
+  function boot() {
+    fetch(RECIPES_URL)
+      .then((r) => r.json())
+      .then((data) => {
+        const recipes = data.recipes || [];
+
+        // Kør flere gange, så vi “vinder” over eventuelle gamle scripts der overskriver bagefter
+        runPopularCounts(recipes);
+        setTimeout(() => runPopularCounts(recipes), 150);
+        setTimeout(() => runPopularCounts(recipes), 600);
+      })
+      .catch(() => {
+        // behold '-' hvis fetch fejler
+      });
+  }
+
+  window.addEventListener("load", boot);
 })();
 </script>
 
