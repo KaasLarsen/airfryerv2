@@ -16,10 +16,7 @@
       animation: fadeIn 0.3s ease-out forwards;
     }
     @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Sticky søgefelt */
@@ -43,7 +40,6 @@
       margin: 0 auto;
       padding: 1rem;
     }
-
     .category-card {
       border: 1px solid #e5e5e5;
       border-radius: 14px;
@@ -51,12 +47,10 @@
       overflow: hidden;
       transition: transform .15s ease, box-shadow .15s ease;
     }
-
     .category-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 14px rgba(0,0,0,0.10);
     }
-
     .category-card-image img {
       display: block;
       width: 100%;
@@ -64,23 +58,14 @@
       object-fit: cover;
       background: #fafafa;
     }
-
-    .category-card-body {
-      padding: 1rem;
-    }
-
+    .category-card-body { padding: 1rem; }
     .category-card-title {
       font-size: 1.05rem;
       margin: 0;
       font-weight: 600;
       color: #111;
     }
-
-    .category-card-link {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-    }
+    .category-card-link { display: block; text-decoration: none; color: inherit; }
   </style>
 </head>
 
@@ -90,8 +75,7 @@
 <div data-include="header"></div>
 
 <!-- HERO -->
-<section class="hero-large"
-         style="background-image: url('assets/images/hero/sunde-airfryer-retter.jpg');">
+<section class="hero-large" style="background-image: url('assets/images/hero/sunde-airfryer-retter.jpg');">
   <div class="hero-large-overlay"></div>
 
   <div class="hero-large-content">
@@ -100,10 +84,9 @@
       300 lækre airfryeropskrifter udviklet og testet i vores eget airfryerkøkken.
     </p>
 
-    <!-- Søgefelt: ingen action, vi håndterer søgning i JS -->
     <form class="hero-large-search" id="frontpage-search" onsubmit="return false;">
       <input type="search" id="frontpage-search-input" placeholder="Søg efter opskrift…" />
-      <button type="submit">
+      <button type="submit" aria-label="Søg">
         <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round">
           <circle cx="10" cy="10" r="7"></circle>
@@ -139,7 +122,6 @@
     <button class="filter-apply" id="filterApply">Anvend filtre</button>
   </div>
 
-  <!-- DARK OVERLAY -->
   <div class="filter-overlay" id="filterOverlay"></div>
 </section>
 
@@ -160,75 +142,74 @@
   </p>
 </section>
 
-<!-- MAIN CONTENT -->
 <main>
 
- <!-- Populære temaer -->
-<section class="section-popular">
-  <h2 class="section-title">Populære temaer</h2>
+  <!-- Populære temaer -->
+  <section class="section-popular">
+    <h2 class="section-title">Populære temaer</h2>
 
-  <div class="swipe-row popular-grid">
+    <div class="swipe-row popular-grid">
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=sproede-kartofler">
-      <img src="assets/images/tema/sproede-kartofler-768x768.jpg" class="theme-img-round" alt="Sprøde kartofler">
-      <h3>Sprøde kartofler</h3>
-      <p class="theme-meta"
-         data-category="sproede-kartofler"
-         data-aliases="sproede-kartofler,kartofler,tilbehør,tilbehoer,tilbehor">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=sproede-kartofler">
+        <img src="assets/images/tema/sproede-kartofler-768x768.jpg" class="theme-img-round" alt="Sprøde kartofler">
+        <h3>Sprøde kartofler</h3>
+        <p class="theme-meta"
+           data-category="sproede-kartofler"
+           data-aliases="sproede-kartofler,kartofler,tilbehør,tilbehoer,tilbehor">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=kyllingefavoritter">
-      <img src="assets/images/tema/kyllingefavoritter-768x768.jpg" class="theme-img-round" alt="Kyllingefavoritter">
-      <h3>Kyllingefavoritter</h3>
-      <p class="theme-meta"
-         data-category="kyllingefavoritter"
-         data-aliases="kyllingefavoritter,kylling,fjerkrae">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=kyllingefavoritter">
+        <img src="assets/images/tema/kyllingefavoritter-768x768.jpg" class="theme-img-round" alt="Kyllingefavoritter">
+        <h3>Kyllingefavoritter</h3>
+        <p class="theme-meta"
+           data-category="kyllingefavoritter"
+           data-aliases="kyllingefavoritter,kylling,fjerkrae">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=nem-aftensmad">
-      <img src="assets/images/tema/nem-aftensmad-768x768.jpg" class="theme-img-round" alt="Nem aftensmad">
-      <h3>Nem aftensmad</h3>
-      <p class="theme-meta"
-         data-category="nem-aftensmad"
-         data-aliases="nem-aftensmad,hovedret">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=nem-aftensmad">
+        <img src="assets/images/tema/nem-aftensmad-768x768.jpg" class="theme-img-round" alt="Nem aftensmad">
+        <h3>Nem aftensmad</h3>
+        <p class="theme-meta"
+           data-category="nem-aftensmad"
+           data-aliases="nem-aftensmad,hovedret">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=snacks-tilbehor">
-      <img src="assets/images/tema/snacks-tilbehor-768x768.jpg" class="theme-img-round" alt="Snacks & tilbehør">
-      <h3>Snacks & tilbehør</h3>
-      <p class="theme-meta"
-         data-category="snacks-tilbehor"
-         data-aliases="snacks-tilbehor,snack,snacks,tilbehør,tilbehoer,tilbehor">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=snacks-tilbehor">
+        <img src="assets/images/tema/snacks-tilbehor-768x768.jpg" class="theme-img-round" alt="Snacks & tilbehør">
+        <h3>Snacks & tilbehør</h3>
+        <p class="theme-meta"
+           data-category="snacks-tilbehor"
+           data-aliases="snacks-tilbehor,snack,snacks,tilbehør,tilbehoer,tilbehor">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=sund-airfryer">
-      <img src="assets/images/tema/sund-airfryer-768x768.jpg" class="theme-img-round" alt="Sundere airfryer-retter">
-      <h3>Sundere airfryer-retter</h3>
-      <p class="theme-meta"
-         data-category="sund-airfryer"
-         data-aliases="sund-airfryer,sund,protein,groentsager,grøntsager,vegetar">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=sund-airfryer">
+        <img src="assets/images/tema/sund-airfryer-768x768.jpg" class="theme-img-round" alt="Sundere airfryer-retter">
+        <h3>Sundere airfryer-retter</h3>
+        <p class="theme-meta"
+           data-category="sund-airfryer"
+           data-aliases="sund-airfryer,sund,protein,groentsager,grøntsager,vegetar">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=morgenmad">
-      <img src="assets/images/tema/morgenmad-airfryer-768x768.jpg" class="theme-img-round" alt="Morgenmad i airfryer">
-      <h3>Morgenmad i airfryer</h3>
-      <p class="theme-meta"
-         data-category="morgenmad"
-         data-aliases="morgenmad,aeg,æg">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=morgenmad">
+        <img src="assets/images/tema/morgenmad-airfryer-768x768.jpg" class="theme-img-round" alt="Morgenmad i airfryer">
+        <h3>Morgenmad i airfryer</h3>
+        <p class="theme-meta"
+           data-category="morgenmad"
+           data-aliases="morgenmad,aeg,æg">–</p>
+      </a>
 
-    <a class="theme-card" href="/sider/opskrifter.html?filter=bagvaerk">
-      <img src="assets/images/tema/bagvaerk-soede-sager-768x768.jpg" class="theme-img-round" alt="Bagværk & søde sager">
-      <h3>Bagværk & søde sager</h3>
-      <p class="theme-meta"
-         data-category="bagvaerk"
-         data-aliases="bagvaerk,broed,dessert,madpakke">–</p>
-    </a>
+      <a class="theme-card" href="/sider/opskrifter.html?filter=bagvaerk">
+        <img src="assets/images/tema/bagvaerk-soede-sager-768x768.jpg" class="theme-img-round" alt="Bagværk & søde sager">
+        <h3>Bagværk & søde sager</h3>
+        <p class="theme-meta"
+           data-category="bagvaerk"
+           data-aliases="bagvaerk,broed,dessert,madpakke">–</p>
+      </a>
 
-  </div>
-</section>
+    </div>
+  </section>
 
-  <!-- SUNDE OPSKRIFTER HEADER -->
+  <!-- SUNDE OPSKRIFTER -->
   <section class="section-category jule-header">
     <div class="category-header">
       <h2 class="section-title">Sunde opskrifter</h2>
@@ -243,62 +224,62 @@
     </div>
   </section>
 
-  <!-- SUNDE OPSKRIFTER SLIDER -->
   <section class="slider-section">
-    <div class="slider-wrapper">
-
-      <button class="slider-btn prev">‹</button>
+    <div class="slider-wrapper" id="sunde-slider-wrapper">
+      <button class="slider-btn prev" aria-label="Forrige">‹</button>
 
       <div class="recipe-slider" id="recipe-slider">
-
         <a href="opskrifter/kyllingebryst-i-airfryer.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/kyllingebryst-airfryer-768x768.jpg" alt="Kyllingebryst i airfryer">
+          <img src="assets/images/recipes/kyllingebryst-airfryer-768x768.jpg" alt="Kyllingebryst i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Kyllingebryst i airfryer</h3>
         </a>
 
         <a href="opskrifter/laks-i-airfryer.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/laks-i-airfryer-768x768.jpg" alt="Laks i airfryer">
+          <img src="assets/images/recipes/laks-i-airfryer-768x768.jpg" alt="Laks i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Laks i airfryer</h3>
         </a>
 
         <a href="opskrifter/kyllinge-laar-airfryer.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/kyllinge-laar-airfryer-768x768.jpg" alt="Kyllingelår i airfryer">
+          <img src="assets/images/recipes/kyllinge-laar-airfryer-768x768.jpg" alt="Kyllingelår i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Kyllingelår i airfryer</h3>
         </a>
 
         <a href="opskrifter/grillede-groentsager-airfryer.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/grillede-groentsager-airfryer-768x768.jpg" alt="Grillede grøntsager i airfryer">
+          <img src="assets/images/recipes/grillede-groentsager-airfryer-768x768.jpg" alt="Grillede grøntsager i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Grillede grøntsager i airfryer</h3>
         </a>
 
         <a href="opskrifter/fiskefilet.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/fiskefilet-768x768.jpg" alt="Fiskefilet i airfryer">
+          <img src="assets/images/recipes/fiskefilet-768x768.jpg" alt="Fiskefilet i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Fiskefilet i airfryer</h3>
         </a>
 
         <a href="opskrifter/vegetar-tarteletter.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/vegetar-tarteletter-768x768.jpg" alt="Vegetar tarteletter">
+          <img src="assets/images/recipes/vegetar-tarteletter-768x768.jpg" alt="Vegetar tarteletter"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Vegetar tarteletter</h3>
         </a>
-
       </div>
 
-      <button class="slider-btn next">›</button>
-
+      <button class="slider-btn next" aria-label="Næste">›</button>
     </div>
   </section>
 
   <!-- FEATURED (SUNDERE) – LAKS -->
   <section class="featured-recipe">
     <div class="featured-grid">
-
       <div class="featured-image">
-        <img src="assets/images/recipes/laks-i-airfryer-768x768.jpg" alt="Laks i airfryer">
+        <img src="assets/images/recipes/laks-i-airfryer-768x768.jpg" alt="Laks i airfryer"
+             onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
       </div>
 
       <div class="featured-content">
         <span class="featured-badge">NY</span>
-
         <h2 class="featured-title">Laks i airfryer</h2>
 
         <div class="featured-meta">
@@ -313,15 +294,12 @@
           sprød overflade og klar på få minutter – perfekt med grøntsager eller en frisk salat.
         </p>
 
-        <a href="opskrifter/laks-i-airfryer.html" class="featured-btn">
-          Se opskrift →
-        </a>
+        <a href="opskrifter/laks-i-airfryer.html" class="featured-btn">Se opskrift →</a>
       </div>
-
     </div>
   </section>
 
-  <!-- AIRFRYER KLASSIKERE – BEHOLDES -->
+  <!-- AIRFRYER KLASSIKERE -->
   <section class="section-category">
     <div class="category-header">
       <h2 class="section-title">Airfryer klassikere</h2>
@@ -337,166 +315,161 @@
   </section>
 
   <section class="slider-section">
-    <h2 class="section-title">Airfryer klassikere</h2>
-
-    <div class="slider-wrapper">
-
-      <button class="slider-btn prev">‹</button>
+    <div class="slider-wrapper" id="klassikere-slider-wrapper">
+      <button class="slider-btn prev" aria-label="Forrige">‹</button>
 
       <div class="recipe-slider" id="airfryer-klassikere-slider">
-
         <a href="opskrifter/pommes-frites.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/pommes-frites-768x768.jpg" alt="Pommes frites i airfryer">
+          <img src="assets/images/recipes/pommes-frites-768x768.jpg" alt="Pommes frites i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Pommes frites i airfryer</h3>
         </a>
 
         <a href="opskrifter/kyllinge-laar-airfryer.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/kyllinge-laar-airfryer-768x768.jpg" alt="Kyllingelår i airfryer">
+          <img src="assets/images/recipes/kyllinge-laar-airfryer-768x768.jpg" alt="Kyllingelår i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Kyllingelår i airfryer</h3>
         </a>
 
         <a href="opskrifter/kyllingebryst-i-airfryer.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/kyllingebryst-airfryer-768x768.jpg" alt="Kyllingebryst i airfryer">
+          <img src="assets/images/recipes/kyllingebryst-airfryer-768x768.jpg" alt="Kyllingebryst i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Kyllingebryst i airfryer</h3>
         </a>
 
         <a href="opskrifter/chicken-nuggets-airfryer.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/chicken-nuggets-airfryer-768x768.jpg" alt="Chicken nuggets i airfryer">
+          <img src="assets/images/recipes/chicken-nuggets-airfryer-768x768.jpg" alt="Chicken nuggets i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Chicken nuggets i airfryer</h3>
         </a>
 
         <a href="opskrifter/bacon-i-airfryer.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/bacon-airfryer-768x768.jpg" alt="Bacon i airfryer">
+          <img src="assets/images/recipes/bacon-airfryer-768x768.jpg" alt="Bacon i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Bacon i airfryer</h3>
         </a>
 
         <a href="opskrifter/hvidloegsbroed-airfryer.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/hvidloegsbroed-airfryer-768x768.jpg" alt="Hvidløgsbrød i airfryer">
+          <img src="assets/images/recipes/hvidloegsbroed-airfryer-768x768.jpg" alt="Hvidløgsbrød i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Hvidløgsbrød i airfryer</h3>
         </a>
 
         <a href="opskrifter/laks-i-airfryer.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/laks-i-airfryer-768x768.jpg" alt="Laks i airfryer">
+          <img src="assets/images/recipes/laks-i-airfryer-768x768.jpg" alt="Laks i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Laks i airfryer</h3>
         </a>
 
         <a href="opskrifter/kyllingevinger-i-airfryer.html" class="recipe-slide-card">
-          <img src="assets/images/recipes/kyllingevinger-i-airfryer-768x768.jpg" alt="Kyllingevinger i airfryer">
+          <img src="assets/images/recipes/kyllingevinger-i-airfryer-768x768.jpg" alt="Kyllingevinger i airfryer"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
           <h3>Kyllingevinger i airfryer</h3>
+        </a>
+      </div>
+
+      <button class="slider-btn next" aria-label="Næste">›</button>
+    </div>
+  </section>
+
+  <!-- UDVALGTE ANMELDELSER (ingen dobbelt H2) -->
+  <section class="section-category">
+    <div class="category-header">
+      <h2 class="section-title">Udvalgte airfryer anmeldelser</h2>
+
+      <div class="category-links">
+        <a href="/sider/airfryer-anmeldelser.html">Se alle anmeldelser</a><span>|</span>
+        <a href="/sider/airfryer-anmeldelser.html#bedst-i-test">Bedst i test</a><span>|</span>
+        <a href="/sider/airfryer-anmeldelser.html#budget">Budget</a><span>|</span>
+        <a href="/sider/airfryer-anmeldelser.html#stor-kurv">Stor kurv</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="slider-section">
+    <div class="slider-wrapper" id="reviews-slider-wrapper">
+      <button class="slider-btn prev" aria-label="Forrige">‹</button>
+
+      <!-- Billeder: bruger recipes-mappen så de vises NU (ret til egen mappe senere hvis du vil) -->
+      <div class="recipe-slider" id="airfryer-anmeldelser-slider">
+
+        <a href="/anmeldelser/witt-premium-airfryer-bladeless-5l.html" class="recipe-slide-card">
+          <img src="assets/images/recipes/witt-premium-airfryer-bladeless-5l-768x768.jpg"
+               alt="Witt Premium Airfryer Bladeless 5L"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
+          <h3>Witt Premium Airfryer Bladeless 5L</h3>
+        </a>
+
+        <a href="/anmeldelser/instant-pot-vortex-plus-8-dual.html" class="recipe-slide-card">
+          <img src="assets/images/recipes/instant-pot-vortex-plus-8-dual-768x768.jpg"
+               alt="Instant Pot Vortex Plus 8 Dual"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
+          <h3>Instant Pot Vortex Plus 8 Dual</h3>
+        </a>
+
+        <a href="/anmeldelser/philips-hd9270-70.html" class="recipe-slide-card">
+          <img src="assets/images/recipes/philips-hd9270-70-768x768.jpg"
+               alt="Philips HD9270/70"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
+          <h3>Philips HD9270/70</h3>
+        </a>
+
+        <a href="/anmeldelser/cosori-premium-ii-plus-caf-p653-keur.html" class="recipe-slide-card">
+          <img src="assets/images/recipes/cosori-premium-ii-plus-768x768.jpg"
+               alt="Cosori Premium II Plus"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
+          <h3>Cosori Premium II Plus</h3>
+        </a>
+
+        <a href="/anmeldelser/obh-nordica-easy-fry-grill-fw2018s0.html" class="recipe-slide-card">
+          <img src="assets/images/recipes/obh-nordica-easy-fry-grill-fw2018s0-768x768.jpg"
+               alt="OBH Nordica Easy Fry Grill"
+               onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
+          <h3>OBH Nordica Easy Fry Grill</h3>
         </a>
 
       </div>
 
-      <button class="slider-btn next">›</button>
-
+      <button class="slider-btn next" aria-label="Næste">›</button>
     </div>
   </section>
 
- <!-- UDVALGTE ANMELDELSER -->
-<section class="section-category">
-  <div class="category-header">
-    <h2 class="section-title">Udvalgte airfryer anmeldelser</h2>
+  <!-- FEATURED – GROVFRITTER -->
+  <section class="featured-recipe">
+    <div class="featured-grid featured-grid--reverse">
 
-    <div class="category-links">
-      <a href="/sider/airfryer-anmeldelser.html">Se alle anmeldelser</a><span>|</span>
-      <a href="/sider/airfryer-anmeldelser.html#bedst-i-test">Bedst i test</a><span>|</span>
-      <a href="/sider/airfryer-anmeldelser.html#budget">Budget</a><span>|</span>
-      <a href="/sider/airfryer-anmeldelser.html#stor-kurv">Stor kurv</a>
-    </div>
-  </div>
-</section>
+      <div class="featured-content">
+        <span class="featured-badge">NY</span>
 
-<section class="slider-section">
-  <div class="slider-wrapper" id="reviews-slider-wrapper">
+        <h2 class="featured-title">Grovfritter med parmesan og hvidløg i airfryer</h2>
 
-    <button class="slider-btn prev" aria-label="Forrige">‹</button>
+        <div class="featured-meta">
+          <span>35 min</span>
+          <span>•</span>
+          <span>Sprøde kartofler / Tilbehør</span>
+          <span class="featured-stars">★★★★★</span>
+        </div>
 
-    <div class="recipe-slider" id="airfryer-anmeldelser-slider">
+        <p class="featured-text">
+          Grovfritter i airfryer kan blive helt perfekte: sprøde udenpå, bløde indeni og med masser af kartoffelsmag.
+          Tricket er timingen — parmesan og hvidløg skal på til sidst, så du får maksimal smag uden brændt ost eller bittert hvidløg.
+          Det her er vores MEGA-guide, der gør grovfritter til et sikkert hit hver gang.
+        </p>
 
-      <a href="/anmeldelser/witt-premium-airfryer-bladeless-5l.html" class="recipe-slide-card">
-        <img
-          src="assets/images/anmeldelser/witt-premium-airfryer-bladeless-5l-768x768.jpg"
-          alt="Witt Premium Airfryer Bladeless 5L"
-          onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
-        <h3>Witt Premium Airfryer Bladeless 5L</h3>
-      </a>
-
-      <a href="/anmeldelser/philips-hd9270-70.html" class="recipe-slide-card">
-        <img
-          src="assets/images/anmeldelser/philips-hd9270-70-768x768.jpg"
-          alt="Philips HD9270/70"
-          onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
-        <h3>Philips HD9270/70</h3>
-      </a>
-
-      <a href="/anmeldelser/ninja-air-fryer-max.html" class="recipe-slide-card">
-        <img
-          src="assets/images/anmeldelser/ninja-air-fryer-max-768x768.jpg"
-          alt="Ninja Air Fryer MAX"
-          onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
-        <h3>Ninja Air Fryer MAX</h3>
-      </a>
-
-      <a href="/anmeldelser/cosori-premium-ii-plus.html" class="recipe-slide-card">
-        <img
-          src="assets/images/anmeldelser/cosori-premium-ii-plus-768x768.jpg"
-          alt="Cosori Premium II Plus"
-          onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
-        <h3>Cosori Premium II Plus</h3>
-      </a>
-
-      <a href="/anmeldelser/obh-nordica-easy-fry-grill-fw2018s0.html" class="recipe-slide-card">
-        <img
-          src="assets/images/anmeldelser/obh-nordica-easy-fry-grill-fw2018s0-768x768.jpg"
-          alt="OBH Nordica Easy Fry Grill"
-          onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
-        <h3>OBH Nordica Easy Fry Grill</h3>
-      </a>
-
-    </div>
-
-    <button class="slider-btn next" aria-label="Næste">›</button>
-
-  </div>
-</section>
-
-
-  <!-- FEATURED – GROVFRITTER (erstatning for grillede grøntsager) -->
-<section class="featured-recipe">
-  <div class="featured-grid featured-grid--reverse">
-
-    <div class="featured-content">
-      <span class="featured-badge">NY</span>
-
-      <h2 class="featured-title">Grovfritter med parmesan og hvidløg i airfryer</h2>
-
-      <div class="featured-meta">
-        <span>35 min</span>
-        <span>•</span>
-        <span>Sprøde kartofler / Tilbehør</span>
-        <span class="featured-stars">★★★★★</span>
+        <a href="opskrifter/grovfritter-med-parmesan-og-hvidloeg-i-airfryer.html" class="featured-btn">
+          Se opskrift →
+        </a>
       </div>
 
-      <p class="featured-text">
-        Grovfritter i airfryer kan blive helt perfekte: sprøde udenpå, bløde indeni og med masser af kartoffelsmag.
-        Tricket er timingen — parmesan og hvidløg skal på til sidst, så du får maksimal smag uden brændt ost eller bittert hvidløg.
-        Det her er vores MEGA-guide, der gør grovfritter til et sikkert hit hver gang.
-      </p>
+      <div class="featured-image">
+        <img
+          src="assets/images/recipes/grovfritter-med-parmesan-og-hvidloeg-i-airfryer-768x768.jpg"
+          alt="Grovfritter med parmesan og hvidløg i airfryer"
+          onerror="this.onerror=null;this.src='assets/images/recipes/placeholder.jpg';">
+      </div>
 
-      <a href="opskrifter/grovfritter-med-parmesan-og-hvidloeg-i-airfryer.html" class="featured-btn">
-        Se opskrift →
-      </a>
     </div>
-
-    <div class="featured-image">
-      <img
-        src="assets/images/recipes/grovfritter-med-parmesan-og-hvidloeg-i-airfryer-768x768.jpg"
-        alt="Grovfritter med parmesan og hvidløg i airfryer">
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- PRICERUNNER FULL-WIDTH HERO SLIDER -->
   <section class="section-category pricerunner-hero-section">
@@ -544,10 +517,11 @@
 <script src="assets/include.js" defer></script>
 <script src="assets/header.js" defer></script>
 
+<!-- ✅ Slider JS: stabil (binder til wrappers, ikke første element på siden) -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  function hookSlider(wrapperSelector, sliderId) {
-    const wrapper = document.querySelector(wrapperSelector);
+  function hookSlider(wrapperId, sliderId) {
+    const wrapper = document.getElementById(wrapperId);
     const slider = document.getElementById(sliderId);
     if (!wrapper || !slider) return;
 
@@ -558,16 +532,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (next) next.addEventListener("click", () => slider.scrollBy({ left: 320, behavior: "smooth" }));
   }
 
-  // Sunde opskrifter
-  hookSlider("#recipe-slider").closest ? "" : ""; // (safe no-op)
-
-  // Brug konkrete wrappers (mest stabilt):
-  hookSlider(".slider-section .slider-wrapper", "recipe-slider"); // første slider
-  hookSlider(".slider-section .slider-wrapper", "airfryer-klassikere-slider");
-  hookSlider(".slider-section .slider-wrapper", "airfryer-anmeldelser-slider");
+  hookSlider("sunde-slider-wrapper", "recipe-slider");
+  hookSlider("klassikere-slider-wrapper", "airfryer-klassikere-slider");
+  hookSlider("reviews-slider-wrapper", "airfryer-anmeldelser-slider");
 });
 </script>
-
 
 <!-- FORSIDE-LIVE-SØGNING -->
 <script>
@@ -625,15 +594,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     count.textContent = `Vi fandt ${matches.length} opskrifter`;
 
     matches.slice(0, 12).forEach(r => {
-      const img = r.image
-        ? `/assets/images/recipes/${r.image}`
-        : `/assets/images/recipes/placeholder.jpg`;
+      const img = r.image ? `/assets/images/recipes/${r.image}` : `/assets/images/recipes/placeholder.jpg`;
 
       grid.insertAdjacentHTML("beforeend", `
         <article class="category-card fade-in">
           <a class="category-card-link" href="/opskrifter/${r.slug}.html">
             <div class="category-card-image">
-              <img src="${img}" alt="${r.title}" loading="lazy">
+              <img src="${img}" alt="${r.title}" loading="lazy"
+                   onerror="this.onerror=null;this.src='/assets/images/recipes/placeholder.jpg';">
             </div>
             <div class="category-card-body">
               <h3 class="category-card-title">${r.title}</h3>
@@ -745,7 +713,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<!-- ✅ Populære temaer count via aliases (ingen konflikter) -->
+<!-- ✅ Populære temaer count via aliases -->
 <script>
 (function () {
   const RECIPES_URL = "/assets/recipes.json";
