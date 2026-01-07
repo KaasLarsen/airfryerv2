@@ -228,23 +228,6 @@
   </div>
 </section>
 
-
-
-
-  <script>
-  document.addEventListener("DOMContentLoaded", async () => {
-    const res = await fetch("/assets/recipes.json");
-    const data = await res.json();
-    const recipes = data.recipes || [];
-
-    document.querySelectorAll(".theme-meta").forEach(meta => {
-      const cat = meta.dataset.category;
-      const count = recipes.filter(r => r.categories && r.categories.includes(cat)).length;
-      meta.textContent = `${count} opskrifter`;
-    });
-  });
-  </script>
-
   <!-- SUNDE OPSKRIFTER HEADER -->
   <section class="section-category jule-header">
     <div class="category-header">
@@ -409,7 +392,7 @@
     </div>
   </section>
 
-  <!-- FEATURED (SUNDERE) – GRILLEDE GRØNTSAGER (erstatning for soltørrede tomater) -->
+  <!-- FEATURED (SUNDERE) – GRILLEDE GRØNTSAGER -->
   <section class="featured-recipe">
     <div class="featured-grid featured-grid--reverse">
 
@@ -500,31 +483,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btnPrev.addEventListener("click", () => slider.scrollBy({ left: -320, behavior: "smooth" }));
     btnNext.addEventListener("click", () => slider.scrollBy({ left: 320, behavior: "smooth" }));
   }
-});
-</script>
-
-<!-- Kategori-count -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("/assets/recipes.json")
-    .then(r => r.json())
-    .then(data => {
-      const counts = {};
-      const recipes = data.recipes || [];
-
-      recipes.forEach(recipe => {
-        (recipe.categories || []).forEach(cat => {
-          counts[cat] = (counts[cat] || 0) + 1;
-        });
-      });
-
-      document.querySelectorAll("[data-category]").forEach(el => {
-        const cat = el.dataset.category;
-        const amount = counts[cat] || 0;
-        el.textContent = amount + " opskrifter";
-      });
-    })
-    .catch(err => console.error("FEJL:", err));
 });
 </script>
 
@@ -703,37 +661,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
-<script>
-(() => {
-  const RECIPES_URL = "/assets/data/recipes.json"; // Hvis din json ligger et andet sted, så ret kun denne.
 
-  const norm = s => String(s || "").trim().toLowerCase();
-
-  fetch(RECIPES_URL)
-    .then(r => r.json())
-    .then(data => {
-      const recipes = data.recipes || [];
-
-      document.querySelectorAll(".theme-meta[data-category]").forEach(el => {
-        const aliasesRaw = el.getAttribute("data-aliases") || el.getAttribute("data-category") || "";
-        const aliases = aliasesRaw.split(",").map(norm).filter(Boolean);
-
-        const count = recipes.filter(rec => {
-          const cats = (rec.categories || []).map(norm);
-          return aliases.some(a => cats.includes(a));
-        }).length;
-
-        el.textContent = `${count} opskrifter`;
-      });
-    })
-    .catch(() => {
-      // Hvis fetch fejler, så lad bare '-' stå, så du tydeligt kan se at noget ikke loader.
-    });
-})();
-</script>
+<!-- ✅ Populære temaer count via aliases (ingen konflikter) -->
 <script>
 (function () {
-  const RECIPES_URL = "/assets/data/recipes.json"; // ret kun denne hvis din sti er anderledes
+  const RECIPES_URL = "/assets/recipes.json";
   const norm = (s) => String(s || "").trim().toLowerCase();
 
   function runPopularCounts(recipes) {
@@ -750,23 +682,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function boot() {
+  window.addEventListener("load", () => {
     fetch(RECIPES_URL)
       .then((r) => r.json())
-      .then((data) => {
-        const recipes = data.recipes || [];
-
-        // Kør flere gange, så vi “vinder” over eventuelle gamle scripts der overskriver bagefter
-        runPopularCounts(recipes);
-        setTimeout(() => runPopularCounts(recipes), 150);
-        setTimeout(() => runPopularCounts(recipes), 600);
-      })
-      .catch(() => {
-        // behold '-' hvis fetch fejler
-      });
-  }
-
-  window.addEventListener("load", boot);
+      .then((data) => runPopularCounts(data.recipes || []))
+      .catch((err) => console.error("[Popular aliases] FEJL:", err));
+  });
 })();
 </script>
 
