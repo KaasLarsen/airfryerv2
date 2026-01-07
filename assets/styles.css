@@ -1998,3 +1998,9 @@ img {
   flex-shrink: 0;
   opacity: .6;
 }
+/* Anmeldelser – produktbilleder skal ikke beskæres */
+.recipe-slider--reviews .recipe-slide-card img {
+  object-fit: contain;
+  background: #f7f7f7;       /* pæn neutral baggrund */
+  padding: 12px;             /* luft omkring produktet */
+}
