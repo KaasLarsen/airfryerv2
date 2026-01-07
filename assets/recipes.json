@@ -6,11 +6,11 @@
       "image": "pommes-frites-768x768.jpg",
       "categories": ["sproede-kartofler"]
     },
-    {
+   {
+  slug: "grovfritter-med-rosmarin-og-flagesalt",
   title: "Grovfritter med rosmarin og flagesalt i airfryer",
-  slug: "grovfritter-med-rosmarin-og-flagesalt-i-airfryer",
-  image: "assets/images/recipes/grovfritter-med-rosmarin-og-flagesalt-i-airfryer-768x768.jpg",
-  tags: ["airfryer", "kartofler", "tilbehør", "nem", "sprød", "rosmarin"]
+  image: "grovfritter-med-rosmarin-og-flagesalt-i-airfryer-768x768.jpg",
+  categories: ["sproede-kartofler"]
     },
     {
   "slug": "grovfritter-med-parmesan-og-hvidloeg-i-airfryer",
