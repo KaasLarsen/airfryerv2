@@ -6,6 +6,12 @@
       "image": "pommes-frites-768x768.jpg",
       "categories": ["sproede-kartofler"]
     },
+    {
+  "slug": "pommes-frites-2",
+  "title": "Pommes frites i airfryer",
+  "image": "pommes-frites-2-768x768.jpg",
+  "categories": ["sproede-kartofler"]
+  },
    {
   "slug": "grovfritter-med-rosmarin-og-flagesalt-i-airfryer",
   "title": "Grovfritter med rosmarin og flagesalt i airfryer",
