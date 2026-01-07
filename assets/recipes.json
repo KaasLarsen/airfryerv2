@@ -25,6 +25,12 @@
   "categories": ["snack", "sund", "grønt"]
     },
     {
+  "slug": "t-bone-i-airfryer",
+  "title": "T-bone i airfryer",
+  "image": "t-bone-i-airfryer-768x768.jpg",
+  "categories": ["hovedret", "oksekød", "gæstemad"]
+    },
+    {
   "slug": "pulled-chicken-i-airfryer",
   "title": "Pulled chicken i airfryer",
   "image": "pulled-chicken-i-airfryer-768x768.jpg",
