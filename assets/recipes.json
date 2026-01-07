@@ -7,6 +7,12 @@
       "categories": ["sproede-kartofler"]
     },
     {
+  "slug": "lasagne-i-airfryer",
+  "title": "Lasagne i airfryer",
+  "image": "lasagne-i-airfryer-768x768.jpg",
+  "categories": ["hovedret", "aftensmad", "pasta"]
+    },
+    {
   "slug": "pulled-chicken-i-airfryer",
   "title": "Pulled chicken i airfryer",
   "image": "pulled-chicken-i-airfryer-768x768.jpg",
