@@ -135,3 +135,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   s.crossOrigin = "anonymous";
   document.head.appendChild(s);
 })();
+<script src="/assets/review-schema-patch.js" defer></script>
