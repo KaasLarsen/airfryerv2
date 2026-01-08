@@ -9,6 +9,13 @@
   </url>
 
   <url>
+  <loc>https://opskrift-airfryer.dk/sider/guides/airfryer-og-vaegttab-2026.html</loc>
+  <priority>0.8</priority>
+  <changefreq>yearly</changefreq>
+</url>
+
+
+  <url>
   <loc>https://opskrift-airfryer.dk/sider/guides/bedste-airfryer-2026.html</loc>
   <priority>0.8</priority>
   <changefreq>yearly</changefreq>
