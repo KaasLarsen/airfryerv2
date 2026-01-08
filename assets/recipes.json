@@ -61,6 +61,12 @@
   "categories": ["dessert", "sund", "frugt"]
     },
     {
+  "slug": "spicy-quesadilla-i-airfryer",
+  "title": "Spicy quesadilla i airfryer",
+  "image": "spicy-quesadilla-i-airfryer-768x768.jpg",
+  "categories": ["mexicansk", "spicy", "aftensmad"]
+    },
+    {
   "slug": "cote-de-boeuf-i-airfryer",
   "title": "Côte de boeuf i airfryer",
   "image": "cote-de-boeuf-i-airfryer-768x768.jpg",
