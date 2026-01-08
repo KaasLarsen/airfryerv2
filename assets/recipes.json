@@ -49,6 +49,12 @@
   "categories": ["hovedret", "aftensmad", "pasta"]
     },
     {
+  "slug": "leverpostej-i-airfryer",
+  "title": "Leverpostej i airfryer",
+  "image": "leverpostej-i-airfryer-768x768.jpg",
+  "categories": ["paalaeg", "dansk-mad", "jul"]
+    },
+    {
   "slug": "tun-steak-i-airfryer",
   "title": "Tun steak i airfryer",
   "image": "tun-steak-i-airfryer-768x768.jpg",
