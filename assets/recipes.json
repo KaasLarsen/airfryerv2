@@ -7,15 +7,10 @@
       "categories": ["sproede-kartofler"]
     },
     {
-  "title": "Bagt kartoffel i airfryer",
   "slug": "bagt-kartoffel-i-airfryer",
-  "url": "https://www.opskrift-airfryer.dk/opskrifter/bagt-kartoffel-i-airfryer.html",
-  "image": "https://www.opskrift-airfryer.dk/assets/images/recipes/bagt-kartoffel-i-airfryer-768x768.jpg",
-  "description": "Bagt kartoffel i airfryer med sprød skal og luftig, blød midte. Nem guide med tid, temperatur, tips, fyld, servering, rester og FAQ.",
-  "time": "Ca. 45–55 min",
-  "yield": "2 personer",
-  "category": "Tilbehør",
-  "tags": ["airfryer", "tilbehoer", "kartofler", "nem", "hverdagsmad"]
+  "title": "Bagt kartoffel i airfryer",
+  "image": "bagt-kartoffel-i-airfryer-768x768.jpg",
+  "categories": ["tilbehoer", "kartofler", "nem-aftensmad"]
     },
     {
   "slug": "pandekager-i-airfryer",
