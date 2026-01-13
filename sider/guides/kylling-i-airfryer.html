@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Den store guide til kylling i airfryer. Lær forskellen på kyllingebryst, lår og hel kylling, få styr på temperatur, tid, sprødt skind, saftighed og de klassiske fejl. Samler alle vores kyllingeopskrifter ét sted."
+    content="Den store guide til kylling i airfryer: kyllingebryst, kyllingelår og hel kylling. Få styr på temperatur, tid, sprødt skind, saftighed, marinader, krydring og de klassiske fejl – med links til vores bedste kyllingeopskrifter."
   />
 
   <link rel="stylesheet" href="../../assets/styles.css" />
@@ -16,29 +16,26 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Kylling i airfryer – saftig, sprød og perfekt hver gang",
-    "description": "Den komplette guide til kylling i airfryer med tips, temperaturer, fejl og links til alle kyllingeopskrifter.",
-    "author": {
-      "@type": "Organization",
-      "name": "Opskrift-Airfryer"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Opskrift-Airfryer"
-    },
+    "headline": "Kylling i airfryer – saftig, sprød og perfekt hver gang (stor guide)",
+    "description": "Pillar-guide til kylling i airfryer med temperaturer, teknik, fejl og interne links til kyllingeopskrifter.",
+    "author": { "@type": "Organization", "name": "Opskrift-Airfryer" },
+    "publisher": { "@type": "Organization", "name": "Opskrift-Airfryer" },
     "datePublished": "2026-01-12",
-    "dateModified": "2026-01-12"
+    "dateModified": "2026-01-13"
   }
   </script>
 
   <style>
+    /* Små lokale forbedringer uden at ændre jeres globale styles */
     .toc {
       margin-top: 1.25rem;
       padding: 1rem;
       border-radius: 16px;
       background: rgba(0,0,0,0.03);
     }
+    .toc h2 { margin-top: 0; }
     .toc ul { margin: 0.75rem 0 0; padding-left: 1.15rem; }
+    .toc a { text-decoration: none; }
 
     .note-box {
       margin-top: 1.25rem;
@@ -47,22 +44,23 @@
       background: rgba(0,0,0,0.03);
     }
 
-    .grid-two {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
-      margin-top: 1rem;
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
     }
-    @media (min-width: 900px) {
-      .grid-two { grid-template-columns: 1fr 1fr; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.05);
+      font-size: 0.95rem;
+      line-height: 1.1;
+      white-space: nowrap;
     }
-
-    .card-soft {
-      padding: 1rem;
-      border-radius: 16px;
-      background: rgba(0,0,0,0.03);
-    }
-    .card-soft h3 { margin-top: 0; }
 
     .callout-links {
       margin-top: 1rem;
@@ -80,6 +78,35 @@
       display: block;
       margin-bottom: 0.25rem;
     }
+
+    .mini-faq {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.03);
+    }
+    .mini-faq details { padding: 0.5rem 0; }
+    .mini-faq summary { cursor: pointer; font-weight: 700; }
+
+    .table-soft {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+      overflow: hidden;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.03);
+    }
+    .table-soft th, .table-soft td {
+      text-align: left;
+      padding: 0.75rem 0.85rem;
+      vertical-align: top;
+    }
+    .table-soft th {
+      font-weight: 700;
+    }
+    .table-soft tr + tr td, .table-soft tr + tr th {
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
   </style>
 </head>
 
@@ -94,12 +121,9 @@
       <header class="recipe-page-header">
 
         <div class="recipe-page-image">
-          <!-- Billede:
-               /assets/images/guides/kylling-i-airfryer-768x768.jpg
-          -->
           <img
             src="../../assets/images/guides/kylling-i-airfryer-768x768.jpg"
-            alt="Kylling i airfryer – saftig og sprød kylling"
+            alt="Kylling i airfryer – saftig kylling og sprødt skind"
             class="recipe-main-img"
           />
         </div>
@@ -109,29 +133,35 @@
           <h1 class="recipe-page-title">Kylling i airfryer – den store guide</h1>
 
           <p class="recipe-page-lead">
-            Kylling er noget af det mest populære at lave i en airfryer –
-            og samtidig noget af det nemmeste at gøre forkert.
-            For høj varme giver tørt kød.
-            For lav varme giver blegt skind.
-            Og uden struktur ender mange med “okay” kylling i stedet for virkelig god kylling.
+            Kylling er noget af det bedste, du kan lave i en airfryer – men også noget af det mest irriterende,
+            når det går galt. Tørt kyllingebryst, blegt skind, eller kød der bliver færdigt på ydersiden før det er saftigt indeni.
+            Denne guide er din “alt-i-en” side, der samler principperne og hjælper dig til at ramme rigtigt hver gang.
           </p>
 
           <p class="recipe-page-lead">
-            Denne guide samler alt, du har brug for at vide om kylling i airfryer.
-            Uanset om du laver kyllingebryst til hverdagen, kyllingelår med sprødt skind
-            eller en hel kylling til familien, får du her principperne, der virker.
+            Den vigtigste sandhed: Airfryere varmer forskelligt. Derfor handler succes ikke om at lære én tid udenad,
+            men om at forstå de få greb, der giver sprødhed, saftighed og gentagelige resultater – uanset model.
           </p>
 
           <div class="recipe-page-meta">
             <span>Guide</span>
             <span>2026</span>
             <span>Kylling</span>
-            <span>Airfryer</span>
+            <span>Tips</span>
+            <span>Aftensmad</span>
+          </div>
+
+          <div class="pill-row" aria-label="hurtigt overblik">
+            <span class="pill">🔥 Sprødt skind</span>
+            <span class="pill">💧 Saftigt kød</span>
+            <span class="pill">⏱️ Hverdagsvenligt</span>
+            <span class="pill">🧠 Færre fejl</span>
+            <span class="pill">🌡️ Temperaturstyring</span>
           </div>
 
           <div class="note-box">
-            <strong>Vigtigt:</strong> Alle råd i denne guide er skrevet specifikt til airfryer.
-            Ingen ovn-logik. Ingen “kan også laves i…”.
+            <strong>Vigtigt:</strong> Denne guide er bygget som en hub.
+            Den samler links til jeres kyllingeopskrifter, og du kan løbende udvide den uden at ændre strukturen.
           </div>
 
         </div>
@@ -139,139 +169,258 @@
 
       <section class="recipe-page-content">
 
+        <!-- VENSTRE KOLONNE -->
         <div class="recipe-page-ingredients">
 
-          <h2 id="hvorfor-airfryer">Hvorfor kylling fungerer så godt i airfryer</h2>
-
-          <p>
-            Airfryeren er ideel til kylling, fordi den kombinerer høj varme med konstant luftcirkulation.
-            Det betyder, at overfladen kan blive sprød, mens indersiden bevarer saft.
-            Især kyllingelår og kylling med skind får et markant bedre resultat end på pande.
-          </p>
+          <h2 id="hurtig-overblik">Hurtigt overblik: Sådan lykkes kylling i airfryer</h2>
 
           <ul>
-            <li>Hurtig tilberedning</li>
-            <li>Mindre behov for fedt</li>
-            <li>Jævn varme omkring kødet</li>
-            <li>Nem portionering i hverdagen</li>
+            <li><strong>Plads i kurven:</strong> Ét lag giver sprødhed, bunke giver damp</li>
+            <li><strong>Temperatur:</strong> Bryst lavere, lår højere</li>
+            <li><strong>Timing af marinade/sauce:</strong> Våde ting til sidst</li>
+            <li><strong>Hviletid:</strong> 3–5 minutter gør en stor forskel</li>
+            <li><strong>Termometer:</strong> Den hurtigste vej til “ramt hver gang”</li>
           </ul>
 
-          <h2 style="margin-top:2rem;" id="typer">De forskellige typer kylling i airfryer</h2>
-
-          <div class="grid-two">
-
-            <div class="card-soft">
-              <h3>Kyllingebryst</h3>
-              <p>
-                Magert og hurtigt, men også den type der lettest bliver tør.
-                Kræver lavere temperatur og præcis tid.
-              </p>
-              <div class="callout-links">
-                <a href="/opskrifter/kyllingebryst-i-airfryer.html">
-                  <strong>Kyllingebryst i airfryer</strong>
-                  Saftigt bryst uden tørhed – trin for trin.
-                </a>
-              </div>
-            </div>
-
-            <div class="card-soft">
-              <h3>Kyllingelår og overlår</h3>
-              <p>
-                Den mest taknemmelige del.
-                Mere fedt, mere smag og langt nemmere at få sprød.
-              </p>
-              <div class="callout-links">
-                <a href="/opskrifter/kyllingelaar-med-sproedt-skind-i-airfryer.html">
-                  <strong>Kyllingelår med sprødt skind</strong>
-                  Sådan får du sprødt skind uden at udtørre kødet.
-                </a>
-              </div>
-            </div>
-
-            <div class="card-soft">
-              <h3>Hel kylling</h3>
-              <p>
-                Perfekt hvis din airfryer er stor nok.
-                Kræver lidt længere tid, men giver saftigt kød og sprødt skind.
-              </p>
-              <div class="callout-links">
-                <a href="/opskrifter/hel-kylling-i-airfryer.html">
-                  <strong>Hel kylling i airfryer</strong>
-                  Familienfavorit med jævn stegning.
-                </a>
-              </div>
-            </div>
-
-            <div class="card-soft">
-              <h3>Kyllingespyd, nuggets og wraps</h3>
-              <p>
-                Ideelt til hverdagsmad og børn.
-                Hurtigt, fleksibelt og let at variere.
-              </p>
-              <div class="callout-links">
-                <a href="/opskrifter/kyllingespyd-i-airfryer.html">
-                  <strong>Kyllingespyd i airfryer</strong>
-                  Perfekt til hurtig aftensmad.
-                </a>
-              </div>
-            </div>
-
+          <div class="toc" aria-label="indholdsfortegnelse">
+            <h2 style="font-size:1.25rem;">Indhold i guiden</h2>
+            <ul>
+              <li><a href="#temperatur-og-tid">Temperatur og tid (praktisk tabel)</a></li>
+              <li><a href="#kyllingetyper">Hvilken type kylling laver du?</a></li>
+              <li><a href="#sprødt-skind">Sådan får du sprødt skind</a></li>
+              <li><a href="#saftigt-bryst">Sådan undgår du tørt bryst</a></li>
+              <li><a href="#fejl">De klassiske fejl og præcise fixes</a></li>
+              <li><a href="#interne-links">Vores kyllingeopskrifter (linkhub)</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
           </div>
 
-          <h2 style="margin-top:2rem;" id="temperatur">Temperatur og tid – det folk søger mest på</h2>
-
-          <ul>
-            <li><strong>Kyllingebryst:</strong> 175–180 °C</li>
-            <li><strong>Kyllingelår:</strong> 190–200 °C</li>
-            <li><strong>Hel kylling:</strong> 180 °C</li>
-          </ul>
+          <h2 style="margin-top:2rem;" id="temperatur-og-tid">Temperatur og tid: Det du faktisk kan bruge</h2>
 
           <p>
-            Det vigtigste er ikke minutterne – det er kernetemperaturen.
-            Brug gerne termometer:
+            Brug tabellen som startpunkt og justér efter din model.
+            Hvis du vil være 100 % sikker på saftigt resultat, så styr efter kernetemperatur – ikke kun minutter.
           </p>
 
-          <ul>
-            <li>Kyllingebryst: ca. 70–72 °C</li>
-            <li>Lår og hel kylling: ca. 75 °C</li>
-          </ul>
-
-          <h2 style="margin-top:2rem;" id="fejl">De 5 klassiske fejl med kylling i airfryer</h2>
-
-          <ol>
-            <li>For høj temperatur fra start</li>
-            <li>Overfyldt kurv</li>
-            <li>Ingen hviletid</li>
-            <li>For meget marinade for tidligt</li>
-            <li>Ingen kontrol af kernetemperatur</li>
-          </ol>
+          <table class="table-soft" role="table" aria-label="temperatur tabel kylling i airfryer">
+            <tr>
+              <th>Type</th>
+              <th>Temperatur</th>
+              <th>Typisk tid</th>
+              <th>Målet (kerne)</th>
+            </tr>
+            <tr>
+              <td><strong>Kyllingebryst</strong></td>
+              <td>175–180 °C</td>
+              <td>12–18 min (afhænger af tykkelse)</td>
+              <td>Ca. 70–72 °C</td>
+            </tr>
+            <tr>
+              <td><strong>Kyllingelår / overlår</strong></td>
+              <td>190–200 °C</td>
+              <td>18–28 min</td>
+              <td>Ca. 75 °C</td>
+            </tr>
+            <tr>
+              <td><strong>Vinger</strong></td>
+              <td>200 °C</td>
+              <td>16–22 min (vend/rist undervejs)</td>
+              <td>Gennemstegt + sprød overflade</td>
+            </tr>
+            <tr>
+              <td><strong>Hel kylling</strong></td>
+              <td>175–185 °C</td>
+              <td>45–70 min (afhængigt af størrelse)</td>
+              <td>Ca. 75 °C ved lår</td>
+            </tr>
+          </table>
 
           <div class="note-box">
-            <strong>Husk:</strong> Airfryer tilgiver meget – men ikke overfyldning.
+            <strong>Tip:</strong> Hvis du jagter sprødt skind, så er en god strategi at slutte med 2–5 minutter ved højere temperatur,
+            når kødet allerede er tæt på færdigt.
           </div>
 
-          <h2 style="margin-top:2rem;" id="hvad-skal-jeg-lave">Hvad skal jeg lave i dag?</h2>
+          <h2 style="margin-top:2rem;" id="kyllingetyper">Hvilken type kylling laver du?</h2>
+
+          <p>
+            Det er her de fleste går galt: De bruger samme temperatur til alt.
+            Bryst har brug for skånsom varme for ikke at blive tørt.
+            Lår tåler mere varme og bliver bedre af det.
+          </p>
+
+          <ul>
+            <li><strong>Kyllingebryst:</strong> Fokus på saftighed og kontrol</li>
+            <li><strong>Lår/overlår:</strong> Fokus på sprødt skind og smag</li>
+            <li><strong>Hel kylling:</strong> Fokus på jævn varme og tid</li>
+            <li><strong>Spyd/nuggets:</strong> Fokus på hurtighed og ens størrelse</li>
+          </ul>
+
+          <h2 style="margin-top:2rem;" id="interne-links">Vores kyllingeopskrifter (linkhub)</h2>
+
+          <p>
+            Brug denne sektion som din “menu”.
+            Målet er, at du altid kan klikke videre til en opskrift, der passer til din dag.
+          </p>
 
           <div class="callout-links">
             <a href="/opskrifter/kyllingebryst-i-airfryer.html">
-              <strong>Hurtig og sund hverdagsmad</strong>
-              Kyllingebryst – klar på under 20 minutter.
+              <strong>Kyllingebryst i airfryer</strong>
+              Saftigt bryst med styr på tid, temperatur og hviletid.
             </a>
+
             <a href="/opskrifter/kyllingelaar-med-sproedt-skind-i-airfryer.html">
-              <strong>Sprødt og saftigt</strong>
-              Kyllingelår med perfekt skind.
+              <strong>Kyllingelår med sprødt skind i airfryer</strong>
+              Det sikre valg, når du vil have sprødhed og smag.
             </a>
+
+            <a href="/opskrifter/hel-kylling-i-airfryer.html">
+              <strong>Hel kylling i airfryer</strong>
+              Familieklassiker med jævn stegning og god skorpe.
+            </a>
+
             <a href="/opskrifter/kyllingespyd-i-airfryer.html">
-              <strong>Børnevenligt</strong>
-              Kyllingespyd og små bidder.
+              <strong>Kyllingespyd i airfryer</strong>
+              Hurtig aftensmad, nemt at variere og børnevenligt.
             </a>
           </div>
 
           <div class="note-box">
-            <strong>Konklusion:</strong>
-            Hvis du styrer temperatur, plads i kurven og hviletid,
-            er kylling i airfryer noget af det mest stabile og velsmagende,
-            du kan lave i hverdagen.
+            <strong>Note:</strong> Hvis én af linksene ikke matcher jeres faktiske filnavn, så ret kun href’en – strukturen her skal blive.
+            Ideen er, at guiden altid peger på jeres bedste kyllingesider.
+          </div>
+
+        </div>
+
+        <!-- HØJRE KOLONNE -->
+        <div class="recipe-page-steps">
+
+          <h2 id="sprødt-skind">Sådan får du sprødt skind (uden at udtørre kødet)</h2>
+
+          <p>
+            Sprødt skind handler om to ting: tør overflade og varm luft.
+            Hvis skindet er vådt (eller kyllingen ligger for tæt), får du damp – og damp giver blødt skind.
+            Den gode nyhed: Det kan fixes med få greb.
+          </p>
+
+          <ol>
+            <li>
+              <strong>Dup skindet tørt.</strong>
+              Brug køkkenrulle og fjern overfladefugt. Det gør en større forskel end folk tror.
+            </li>
+            <li>
+              <strong>Giv plads i kurven.</strong>
+              Lår og overlår skal ligge med luft omkring, ellers damper de hinanden.
+            </li>
+            <li>
+              <strong>Start roligt, slut varmt.</strong>
+              Tilbered til næsten færdig ved 190 °C og giv 2–5 minutter til sidst ved 200 °C for ekstra sprødhed.
+            </li>
+            <li>
+              <strong>Salt hjælper.</strong>
+              Salt trækker fugt ud og gør skindet mere “tørt” og sprødt.
+            </li>
+          </ol>
+
+          <div class="note-box">
+            <strong>Genvej:</strong> Vil du have “sikker sprødhed”, så vælg kyllingelår/overlår frem for bryst.
+            Lår tilgiver mere og giver bedre crunch.
+          </div>
+
+          <h2 style="margin-top:2rem;" id="saftigt-bryst">Sådan undgår du tørt kyllingebryst</h2>
+
+          <p>
+            Bryst bliver tørt af to ting: for høj varme og for lang tid.
+            Mange overkoger “for at være sikre”, men det er netop dét, der ødelægger saftigheden.
+          </p>
+
+          <ul>
+            <li><strong>Sænk temperaturen:</strong> 175–180 °C er ofte bedre end 200 °C</li>
+            <li><strong>Stop i tide:</strong> Tag brystet ud når det rammer ca. 70–72 °C</li>
+            <li><strong>Hvil 3–5 minutter:</strong> Saften fordeler sig, og du får et mere saftigt snit</li>
+            <li><strong>Ens tykkelse:</strong> Bank det evt. let fladere, så det tilberedes jævnt</li>
+          </ul>
+
+          <h2 style="margin-top:2rem;" id="fejl">De klassiske fejl (og præcis hvordan du fikser dem)</h2>
+
+          <h3 style="margin-top:1rem;">Fejl 1: Overfyldt kurv</h3>
+          <p>
+            Hvis kyllingen ligger i bunker, får du damp og ujævn tilberedning.
+            <strong>Fix:</strong> lav mindre portion eller to runder.
+          </p>
+
+          <h3 style="margin-top:1rem;">Fejl 2: Marinade for tidligt</h3>
+          <p>
+            Sød/tyk marinade brænder let, og våd overflade hæmmer sprødhed.
+            <strong>Fix:</strong> tilbered først, pensl marinade på til sidst og giv kort finish.
+          </p>
+
+          <h3 style="margin-top:1rem;">Fejl 3: For høj temperatur hele vejen</h3>
+          <p>
+            Det giver hurtig farve men kan give tør midte, især i bryst.
+            <strong>Fix:</strong> brug to faser (skånsomt først, varmt til sidst).
+          </p>
+
+          <h3 style="margin-top:1rem;">Fejl 4: Ingen hviletid</h3>
+          <p>
+            Skærer du med det samme, løber saften ud.
+            <strong>Fix:</strong> 3–5 minutter er nok til stor forskel.
+          </p>
+
+          <h3 style="margin-top:1rem;">Fejl 5: Du måler aldrig</h3>
+          <p>
+            Det er her man mister gentageligheden.
+            <strong>Fix:</strong> et simpelt termometer gør dig “ramt hver gang”.
+          </p>
+
+          <div class="mini-faq" id="faq" aria-label="FAQ">
+            <h2 style="font-size:1.25rem; margin-top:0;">FAQ: Kylling i airfryer</h2>
+
+            <details>
+              <summary>Skal man forvarme airfryeren til kylling?</summary>
+              <p>
+                Ikke altid, men forvarmning hjælper, hvis du vil have sprød overflade.
+                Til lår med skind giver 3–5 minutter ofte et bedre “kickstart”.
+              </p>
+            </details>
+
+            <details>
+              <summary>Hvorfor bliver mit skind blødt?</summary>
+              <p>
+                Det skyldes næsten altid fugt eller for lidt plads.
+                Dup skindet tørt, giv luft i kurven og undgå at dække med sauce før til sidst.
+              </p>
+            </details>
+
+            <details>
+              <summary>Kan jeg lave kylling fra frossen?</summary>
+              <p>
+                Nogle produkter kan, men for bedst resultat anbefales optøning.
+                Frossen kylling afgiver mere fugt, hvilket gør sprødhed sværere.
+              </p>
+            </details>
+
+            <details>
+              <summary>Hvilke krydderier passer bedst?</summary>
+              <p>
+                Paprika, hvidløgspulver, løgpulver, oregano, timian og citron fungerer næsten altid.
+                Gem friske urter til efter tilberedning, så de ikke brænder.
+              </p>
+            </details>
+          </div>
+
+          <section style="margin-top:2rem;">
+            <h2 class="section-title">Kort opsummering</h2>
+            <ul>
+              <li>Bryst: lavere temperatur, stop i tide, hvil</li>
+              <li>Lår: højere temperatur, tør overflade, plads i kurven</li>
+              <li>Sprødhed: luft + tørhed + varm finish</li>
+              <li>Gentagelighed: termometer + samme metode hver gang</li>
+            </ul>
+          </section>
+
+          <div class="note-box" style="margin-bottom:0;">
+            <strong>Næste skridt:</strong> Brug linkhubben i venstre side til at vælge din kyllingeopskrift,
+            og link tilbage til denne guide fra alle kyllingeopskrifter, så Google forstår at dette er jeres pillar-side.
           </div>
 
         </div>
