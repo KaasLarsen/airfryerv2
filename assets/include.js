@@ -213,3 +213,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     // fail silent
   }
 });
+document.addEventListener("DOMContentLoaded", async () => {
+  // Heuristik: anmeldelser indeholder typisk "anmeldelse" i title eller url, og har ikke recipeSlug
+  const isReview =
+    !window.recipeSlug &&
+    (location.pathname.includes("anmeld") || /anmeldelse/i.test(document.title));
+
+  if (!isReview) return;
+
+  // Find et godt sted: lige efter første H1, eller øverst i main/article
+  const h1 = document.querySelector("main h1, article h1");
+  const anchor = h1 || document.querySelector("main article") || document.querySelector("main");
+  if (!anchor) return;
+
+  // Undgå dubletter
+  if (document.querySelector(".affiliate-box")) return;
+
+  try {
+    const res = await fetch("/partials/review-buybox.html", { cache: "force-cache" });
+    if (!res.ok) return;
+
+    const html = await res.text();
+
+    // indsæt lige efter H1 hvis muligt, ellers i toppen
+    if (h1) h1.insertAdjacentHTML("afterend", html);
+    else anchor.insertAdjacentHTML("afterbegin", html);
+  } catch (e) {
+    // fail silent
+  }
+});
