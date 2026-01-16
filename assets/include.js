@@ -17,7 +17,6 @@ function loadPartials() {
     const file = el.getAttribute("data-include");
     if (!file) return;
 
-    // Altid hent partials fra rodmappen
     const path = `/partials/${file}.html`;
 
     fetch(path)
@@ -27,11 +26,8 @@ function loadPartials() {
       })
       .then((html) => {
         el.innerHTML = html;
-
-        // Kør <script>-tags i partials (fx widgets)
         runInlineScripts(el);
 
-        // Når headeren er indlæst, loader vi save-recipe.js globalt
         if (file === "header") {
           loadScriptOnce("/assets/save-recipe.js", { defer: true, appendTo: "body" });
         }
@@ -49,30 +45,21 @@ function runInlineScripts(el) {
   scripts.forEach((oldScript) => {
     const newScript = document.createElement("script");
 
-    // Copy attributes
     for (const attr of oldScript.attributes) {
       newScript.setAttribute(attr.name, attr.value);
     }
 
     if (oldScript.src) {
-      // external script
       newScript.src = oldScript.src;
     } else {
-      // inline script
       newScript.textContent = oldScript.textContent;
     }
 
-    // Append to body so it executes
     document.body.appendChild(newScript);
-
-    // Remove old script so it doesn't stay in DOM
     oldScript.remove();
   });
 }
 
-/**
- * Helper: load a script only once
- */
 function loadScriptOnce(src, opts = {}) {
   if (document.querySelector(`script[src="${src}"]`)) return;
 
@@ -93,13 +80,10 @@ function loadScriptOnce(src, opts = {}) {
 async function initRecipePrevNextAndBreadcrumbs() {
   const path = window.location.pathname;
 
-  // Kun på opskriftssider i /opskrifter/ og .html
   if (!path.includes("/opskrifter/") || !path.endsWith(".html")) return;
 
-  // Udtræk slug fra URL
   const slug = path.split("/").pop().replace(".html", "");
 
-  // Hent opskrifter
   let recipes;
   try {
     const res = await fetch("/assets/recipes.json");
@@ -117,7 +101,6 @@ async function initRecipePrevNextAndBreadcrumbs() {
   const prev = recipes[index - 1] || null;
   const next = recipes[index + 1] || null;
 
-  // Hvor skal navigationen indsættes?
   const content = document.querySelector(".recipe-content") || document.body;
 
   const breadcrumbHTML = `
@@ -133,21 +116,18 @@ async function initRecipePrevNextAndBreadcrumbs() {
       <div class="recipe-nav-grid">
         ${
           prev
-            ? `
-        <a class="recipe-nav-item recipe-nav-prev" href="${escapeAttr(prev.slug)}.html">
-          <span class="recipe-nav-label">← forrige opskrift</span>
-          <span class="recipe-nav-title">${escapeHtml(prev.title || "")}</span>
-        </a>`
+            ? `<a class="recipe-nav-item recipe-nav-prev" href="${escapeAttr(prev.slug)}.html">
+                 <span class="recipe-nav-label">← forrige opskrift</span>
+                 <span class="recipe-nav-title">${escapeHtml(prev.title || "")}</span>
+               </a>`
             : ""
         }
-
         ${
           next
-            ? `
-        <a class="recipe-nav-item recipe-nav-next" href="${escapeAttr(next.slug)}.html">
-          <span class="recipe-nav-label">næste opskrift →</span>
-          <span class="recipe-nav-title">${escapeHtml(next.title || "")}</span>
-        </a>`
+            ? `<a class="recipe-nav-item recipe-nav-next" href="${escapeAttr(next.slug)}.html">
+                 <span class="recipe-nav-label">næste opskrift →</span>
+                 <span class="recipe-nav-title">${escapeHtml(next.title || "")}</span>
+               </a>`
             : ""
         }
       </div>
@@ -167,23 +147,20 @@ function escapeHtml(str) {
 }
 
 function escapeAttr(str) {
-  // til href/attributes
   return String(str).replaceAll('"', "").replaceAll("'", "");
 }
 
 // -------------------------------------------------------
-// GOOGLE ADSENSE – INDSÆT GLOBALT (kun 1 gang)
+// GOOGLE ADSENSE – global (kun 1 gang)
 // -------------------------------------------------------
 function injectAdSense() {
   const CLIENT = "ca-pub-7373148222153531";
   const SRC = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${CLIENT}`;
-
   loadScriptOnce(SRC, { async: true, crossOrigin: "anonymous", appendTo: "head" });
 }
 
 // -------------------------------------------------------
 // REVIEW SCHEMA PATCH – kun på /anmeldelser/
-// (løser Search Console-fejlen om offers/review/aggregateRating)
 // -------------------------------------------------------
 function injectReviewSchemaPatch() {
   if (!location.pathname.includes("/anmeldelser/")) return;
@@ -191,7 +168,7 @@ function injectReviewSchemaPatch() {
 }
 
 // -------------------------------------------------------
-// OPSKRIFTER: affiliate-boks (måltidskasser) – auto-inject
+// ANMELDELSER: køb-boks – auto-inject (KUN ÉN GANG)
 // -------------------------------------------------------
 document.addEventListener("DOMContentLoaded", async () => {
   const isReview =
@@ -200,10 +177,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (!isReview) return;
 
+  if (window.__reviewBuyboxInjected) return;
+  window.__reviewBuyboxInjected = true;
+
   const wrap = document.querySelector(".review-wrap");
   if (!wrap) return;
-
-  if (document.querySelector(".affiliate-box")) return;
 
   try {
     const res = await fetch("/partials/review-buybox.html", { cache: "no-store" });
@@ -211,45 +189,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const html = await res.text();
 
-    // indsæt øverst i review-wrap, så den følger samme max-width som resten
+    if (document.querySelector(".affiliate-box")) return;
+
     wrap.insertAdjacentHTML("afterbegin", html);
   } catch (e) {}
-});
-
-
-// -------------------------------------------------------
-// ANMELDELSER: køb-boks – auto-inject (FIXET placering)
-// -------------------------------------------------------
-document.addEventListener("DOMContentLoaded", async () => {
-  // Heuristik: anmeldelser indeholder typisk "anmeldelse" i title eller url, og har ikke recipeSlug
-  const isReview =
-    !window.recipeSlug &&
-    (location.pathname.includes("anmeld") || /anmeldelse/i.test(document.title));
-
-  if (!isReview) return;
-
-  // Find en centreret wrapper/container i stedet for H1 (H1 ligger ofte i hero og er full width)
-  const container =
-    document.querySelector("main .container") ||
-    document.querySelector("main .content") ||
-    document.querySelector("main .page") ||
-    document.querySelector("main article") ||
-    document.querySelector("main");
-
-  if (!container) return;
-
-  // Undgå dubletter
-  if (document.querySelector(".affiliate-box")) return;
-
-  try {
-    const res = await fetch("/partials/review-buybox.html", { cache: "force-cache" });
-    if (!res.ok) return;
-
-    const html = await res.text();
-
-    // Indsæt øverst i containeren, så den følger layoutets bredde
-    container.insertAdjacentHTML("afterbegin", html);
-  } catch (e) {
-    // fail silent
-  }
 });
