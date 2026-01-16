@@ -194,41 +194,81 @@ document.addEventListener("DOMContentLoaded", async () => {
     wrap.insertAdjacentHTML("afterbegin", html);
   } catch (e) {}
 });
+
+// -------------------------------------------------------
+// GUIDES: vælg overskrift/tekst automatisk ud fra URL
+// -------------------------------------------------------
 function getGuideBuyboxCopy() {
   const path = location.pathname.toLowerCase();
 
   const rules = [
     {
-      match: ["bedste", "køb", "vælge", "guide"],
+      match: ["bedste", "køb", "vaelg", "vælg", "valg", "anbefal"],
       title: "Overvejer du en ny airfryer?",
-      text: "Her er populære airfryers, som klarer netop denne type mad ekstra godt."
+      text: "Her er populære airfryers, som passer godt til det, guiden handler om."
     },
     {
-      match: ["sund", "vægttab", "fedtfattig"],
+      match: ["sund", "vægttab", "vaegttab", "kalorie", "protein"],
       title: "Airfryers til sund mad",
-      text: "Disse modeller er særligt gode til fedtfattig og nem hverdagsmad."
+      text: "Disse modeller er oplagte, hvis du vil lave fedtfattig og nem hverdagsmad."
     },
     {
-      match: ["tapas", "jul", "snacks", "grill"],
-      title: "Airfryers der er gode til denne type mad",
-      text: "Hvis du ofte laver denne type retter, er disse airfryers værd at kigge på."
+      match: ["tapas", "jul", "jule", "snacks", "gæster", "gaester", "fest"],
+      title: "Airfryers der er gode til inspiration og gæstemad",
+      text: "Hvis du ofte laver småretter eller mange portioner, kan en rummelig airfryer gøre livet lettere."
     },
     {
-      match: ["temperatur", "sprød", "fejl", "tips"],
-      title: "Vil du have bedre resultater?",
-      text: "En mere kraftig eller rummelig airfryer kan gøre en stor forskel."
+      match: ["tips", "sprød", "sproed", "fejl", "temperatur", "guide-til"],
+      title: "Vil du have bedre resultater i airfryer?",
+      text: "En mere kraftig eller rummelig airfryer kan give mere jævn sprødhed og færre batches."
     }
   ];
 
   for (const rule of rules) {
-    if (rule.match.some(word => path.includes(word))) {
+    if (rule.match.some((word) => path.includes(word))) {
       return rule;
     }
   }
 
-  // fallback (altid)
   return {
     title: "Find den rette airfryer",
     text: "Se populære modeller og sammenlign priser, før du beslutter dig."
   };
 }
+
+// -------------------------------------------------------
+// GUIDES: køb-boks – auto-inject på alle guides
+// (uden at du skal redigere fremtidige guides)
+// -------------------------------------------------------
+document.addEventListener("DOMContentLoaded", async () => {
+  const isGuide = location.pathname.includes("/sider/guides/");
+  if (!isGuide) return;
+
+  // Undgå dublet
+  if (window.__guideBuyboxInjected) return;
+  window.__guideBuyboxInjected = true;
+
+  // Hvis der allerede ligger en guide-buybox i HTML (manuelt), så gør intet
+  if (document.querySelector(".guide-buybox")) return;
+
+  // Placering: øverst i main, men efter hero hvis den findes
+  const main = document.querySelector("main");
+  if (!main) return;
+
+  try {
+    const res = await fetch("/partials/guide-buybox-airfryer.html", { cache: "no-store" });
+    if (!res.ok) return;
+
+    const html = await res.text();
+
+    main.insertAdjacentHTML("afterbegin", html);
+
+    // Udfyld tekst dynamisk
+    const copy = getGuideBuyboxCopy();
+    const titleEl = document.querySelector(".guide-buybox [data-guide-title]");
+    const textEl = document.querySelector(".guide-buybox [data-guide-text]");
+
+    if (titleEl) titleEl.textContent = copy.title;
+    if (textEl) textEl.textContent = copy.text;
+  } catch (e) {}
+});
