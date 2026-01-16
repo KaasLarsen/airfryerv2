@@ -194,3 +194,41 @@ document.addEventListener("DOMContentLoaded", async () => {
     wrap.insertAdjacentHTML("afterbegin", html);
   } catch (e) {}
 });
+function getGuideBuyboxCopy() {
+  const path = location.pathname.toLowerCase();
+
+  const rules = [
+    {
+      match: ["bedste", "køb", "vælge", "guide"],
+      title: "Overvejer du en ny airfryer?",
+      text: "Her er populære airfryers, som klarer netop denne type mad ekstra godt."
+    },
+    {
+      match: ["sund", "vægttab", "fedtfattig"],
+      title: "Airfryers til sund mad",
+      text: "Disse modeller er særligt gode til fedtfattig og nem hverdagsmad."
+    },
+    {
+      match: ["tapas", "jul", "snacks", "grill"],
+      title: "Airfryers der er gode til denne type mad",
+      text: "Hvis du ofte laver denne type retter, er disse airfryers værd at kigge på."
+    },
+    {
+      match: ["temperatur", "sprød", "fejl", "tips"],
+      title: "Vil du have bedre resultater?",
+      text: "En mere kraftig eller rummelig airfryer kan gøre en stor forskel."
+    }
+  ];
+
+  for (const rule of rules) {
+    if (rule.match.some(word => path.includes(word))) {
+      return rule;
+    }
+  }
+
+  // fallback (altid)
+  return {
+    title: "Find den rette airfryer",
+    text: "Se populære modeller og sammenlign priser, før du beslutter dig."
+  };
+}
