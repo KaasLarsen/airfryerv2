@@ -194,29 +194,28 @@ function injectReviewSchemaPatch() {
 // OPSKRIFTER: affiliate-boks (måltidskasser) – auto-inject
 // -------------------------------------------------------
 document.addEventListener("DOMContentLoaded", async () => {
-  // Kun opskrifter
-  if (!window.recipeSlug) return;
+  const isReview =
+    !window.recipeSlug &&
+    (location.pathname.includes("/anmeldelser/") || /anmeldelse/i.test(document.title));
 
-  // Find ingrediensboksen (bedste placering lige efter)
-  const ingredients = document.querySelector(".recipe-page-ingredients");
-  if (!ingredients) return;
+  if (!isReview) return;
 
-  // Undgå dubletter
+  const wrap = document.querySelector(".review-wrap");
+  if (!wrap) return;
+
   if (document.querySelector(".affiliate-box")) return;
 
   try {
-    // Hent partialen fra roden
-    const res = await fetch("/partials/recipe-affiliate-mealkits.html", { cache: "force-cache" });
+    const res = await fetch("/partials/review-buybox.html", { cache: "no-store" });
     if (!res.ok) return;
 
     const html = await res.text();
 
-    // Indsæt efter ingredienser (før steps)
-    ingredients.insertAdjacentHTML("afterend", html);
-  } catch (e) {
-    // fail silent
-  }
+    // indsæt øverst i review-wrap, så den følger samme max-width som resten
+    wrap.insertAdjacentHTML("afterbegin", html);
+  } catch (e) {}
 });
+
 
 // -------------------------------------------------------
 // ANMELDELSER: køb-boks – auto-inject (FIXET placering)
