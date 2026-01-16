@@ -189,6 +189,10 @@ function injectReviewSchemaPatch() {
   if (!location.pathname.includes("/anmeldelser/")) return;
   loadScriptOnce("/assets/review-schema-patch.js", { defer: true, appendTo: "head" });
 }
+
+// -------------------------------------------------------
+// OPSKRIFTER: affiliate-boks (måltidskasser) – auto-inject
+// -------------------------------------------------------
 document.addEventListener("DOMContentLoaded", async () => {
   // Kun opskrifter
   if (!window.recipeSlug) return;
@@ -213,6 +217,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     // fail silent
   }
 });
+
+// -------------------------------------------------------
+// ANMELDELSER: køb-boks – auto-inject (FIXET placering)
+// -------------------------------------------------------
 document.addEventListener("DOMContentLoaded", async () => {
   // Heuristik: anmeldelser indeholder typisk "anmeldelse" i title eller url, og har ikke recipeSlug
   const isReview =
@@ -221,10 +229,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (!isReview) return;
 
-  // Find et godt sted: lige efter første H1, eller øverst i main/article
-  const h1 = document.querySelector("main h1, article h1");
-  const anchor = h1 || document.querySelector("main article") || document.querySelector("main");
-  if (!anchor) return;
+  // Find en centreret wrapper/container i stedet for H1 (H1 ligger ofte i hero og er full width)
+  const container =
+    document.querySelector("main .container") ||
+    document.querySelector("main .content") ||
+    document.querySelector("main .page") ||
+    document.querySelector("main article") ||
+    document.querySelector("main");
+
+  if (!container) return;
 
   // Undgå dubletter
   if (document.querySelector(".affiliate-box")) return;
@@ -235,9 +248,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const html = await res.text();
 
-    // indsæt lige efter H1 hvis muligt, ellers i toppen
-    if (h1) h1.insertAdjacentHTML("afterend", html);
-    else anchor.insertAdjacentHTML("afterbegin", html);
+    // Indsæt øverst i containeren, så den følger layoutets bredde
+    container.insertAdjacentHTML("afterbegin", html);
   } catch (e) {
     // fail silent
   }
