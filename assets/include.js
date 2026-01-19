@@ -168,6 +168,28 @@ function injectReviewSchemaPatch() {
 }
 
 // -------------------------------------------------------
+// OPSKRIFTER: affiliate-boks (måltidskasser) – auto-inject (TILBAGE IGEN)
+// -------------------------------------------------------
+document.addEventListener("DOMContentLoaded", async () => {
+  // Kun opskrifter
+  if (!window.recipeSlug) return;
+
+  const ingredients = document.querySelector(".recipe-page-ingredients");
+  if (!ingredients) return;
+
+  // Undgå dublet (vi kigger efter recipe-affiliate-mealkits, så review/guide ikke blokerer)
+  if (document.querySelector(".recipe-affiliate-mealkits")) return;
+
+  try {
+    const res = await fetch("/partials/recipe-affiliate-mealkits.html", { cache: "no-store" });
+    if (!res.ok) return;
+
+    const html = await res.text();
+    ingredients.insertAdjacentHTML("afterend", html);
+  } catch (e) {}
+});
+
+// -------------------------------------------------------
 // ANMELDELSER: køb-boks – auto-inject (KUN ÉN GANG)
 // -------------------------------------------------------
 document.addEventListener("DOMContentLoaded", async () => {
@@ -183,14 +205,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   const wrap = document.querySelector(".review-wrap");
   if (!wrap) return;
 
+  // Undgå dublet (kun review-boksen)
+  if (document.querySelector(".review-buybox")) return;
+
   try {
     const res = await fetch("/partials/review-buybox.html", { cache: "no-store" });
     if (!res.ok) return;
 
     const html = await res.text();
-
-    if (document.querySelector(".affiliate-box")) return;
-
     wrap.insertAdjacentHTML("afterbegin", html);
   } catch (e) {}
 });
@@ -238,20 +260,16 @@ function getGuideBuyboxCopy() {
 
 // -------------------------------------------------------
 // GUIDES: køb-boks – auto-inject på alle guides
-// (uden at du skal redigere fremtidige guides)
 // -------------------------------------------------------
 document.addEventListener("DOMContentLoaded", async () => {
   const isGuide = location.pathname.includes("/sider/guides/");
   if (!isGuide) return;
 
-  // Undgå dublet
   if (window.__guideBuyboxInjected) return;
   window.__guideBuyboxInjected = true;
 
-  // Hvis der allerede ligger en guide-buybox i HTML (manuelt), så gør intet
   if (document.querySelector(".guide-buybox")) return;
 
-  // Placering: øverst i main, men efter hero hvis den findes
   const main = document.querySelector("main");
   if (!main) return;
 
@@ -261,9 +279,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const html = await res.text();
 
-    main.insertAdjacentHTML("afterbegin", html);
+    // Indsæt efter hero hvis den findes, ellers i toppen af main
+    const hero = document.querySelector(".hero-large, .hero, header.hero, section.hero");
+    if (hero) hero.insertAdjacentHTML("afterend", html);
+    else main.insertAdjacentHTML("afterbegin", html);
 
-    // Udfyld tekst dynamisk
     const copy = getGuideBuyboxCopy();
     const titleEl = document.querySelector(".guide-buybox [data-guide-title]");
     const textEl = document.querySelector(".guide-buybox [data-guide-text]");
