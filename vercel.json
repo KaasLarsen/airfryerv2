@@ -1,0 +1,185 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.opskrift-airfryer.dk"
+        }
+      ],
+      "destination": "https://opskrift-airfryer.dk/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/aeggmuffins-i-airfryer.html",
+      "destination": "/opskrifter/aeggemuffins-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/asparges-i-airfryer.html",
+      "destination": "/opskrifter/lasagne-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/boef-i-airfryer.html",
+      "destination": "/opskrifter/boller-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/broed-i-airfryer.html",
+      "destination": "/opskrifter/ostebroed-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/crispy-kyllingevinger-i-airfryer.html",
+      "destination": "/opskrifter/kyllingevinger-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/culottesteg-i-airfryer.html",
+      "destination": "/opskrifter/culotte-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/duebryst-i-airfryer.html",
+      "destination": "/opskrifter/andebryst-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/focaccia-med-rosmarin-i-airfryer.html",
+      "destination": "/opskrifter/focaccia-med-oliven-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/frikadeller-i-airfryer.html",
+      "destination": "/opskrifter/oksefrikadeller-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/groentsagsfritter-i-airfryer.html",
+      "destination": "/opskrifter/groentsagsfrikadeller-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/halloumi-fries-i-airfryer.html",
+      "destination": "/opskrifter/halloumi-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/hasselbagte-kartofler-i-airfryer.html",
+      "destination": "/opskrifter/bagte-kartofler-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/kalv-moerbrad-klassisk-i-airfryer.html",
+      "destination": "/opskrifter/vildsvin-moerbrad-klassisk-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/kalv-skank-bbq-i-airfryer.html",
+      "destination": "/opskrifter/okse-skank-bbq-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/koldhaevede-morgenboller-i-airfryer-i-airfryer.html",
+      "destination": "/opskrifter/koldhaevede-boller-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/koteletter-i-airfryer.html",
+      "destination": "/opskrifter/lammekoteletter-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/kylling-med-soja-i-airfryer.html",
+      "destination": "/opskrifter/kylling-med-karry-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/kyllingeburger-i-airfryer.html",
+      "destination": "/opskrifter/kyllingevinger-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/kyllingefilet-i-airfryer.html",
+      "destination": "/opskrifter/kyllingelever-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/kyllingelaar-i-airfryer.html",
+      "destination": "/opskrifter/kyllingelever-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/lime-kylling-i-airfryer.html",
+      "destination": "/opskrifter/hel-kylling-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/multe-i-airfryer.html",
+      "destination": "/opskrifter/culotte-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/okse-steak-bbq-i-airfryer.html",
+      "destination": "/opskrifter/okse-skank-bbq-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/poelsehorn-i-airfryer.html",
+      "destination": "/opskrifter/poelser-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/pulled-turkey-i-airfryer.html",
+      "destination": "/opskrifter/pulled-duck-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/quesadillas-okse-i-airfryer.html",
+      "destination": "/opskrifter/quesadillas-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/ranch-kartofelbaade-i-airfryer-i-airfryer.html",
+      "destination": "/opskrifter/kartoffelbaade-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/rejetoast-i-airfryer.html",
+      "destination": "/opskrifter/toast-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/roedbeder-med-feta-i-airfryer.html",
+      "destination": "/opskrifter/bagte-roedbeder-med-feta-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/teacher-lunch-soed-kartoffel-med-ost-i-airfryer.html",
+      "destination": "/opskrifter/teacher-lunch-soed-kartoffel-med-ost.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/tunsteaks-i-airfryer.html",
+      "destination": "/opskrifter/tun-steak-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/vildandebryst-i-airfryer.html",
+      "destination": "/opskrifter/andebryst-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/vildsvin-boef-klassisk-i-airfryer.html",
+      "destination": "/opskrifter/vildsvin-moerbrad-klassisk-i-airfryer.html",
+      "permanent": true
+    },
+    {
+      "source": "/opskrifter/vildsvin-steak-klassisk-i-airfryer.html",
+      "destination": "/opskrifter/vildsvin-moerbrad-klassisk-i-airfryer.html",
+      "permanent": true
+    }
+  ]
+}
