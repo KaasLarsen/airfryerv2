@@ -5,12 +5,19 @@
       "has": [
         {
           "type": "host",
-          "value": "www.opskrift-airfryer.dk"
+          "value": "opskrift-airfryer.dk"
         }
       ],
-      "destination": "https://opskrift-airfryer.dk/:path*",
+      "destination": "https://www.opskrift-airfryer.dk/:path*",
       "permanent": true
     },
+
+    {
+      "source": "/opskrifter/:slug*-i-airfryer-i-airfryer.html",
+      "destination": "/opskrifter/:slug*-i-airfryer.html",
+      "permanent": true
+    },
+
     {
       "source": "/opskrifter/aeggmuffins-i-airfryer.html",
       "destination": "/opskrifter/aeggemuffins-i-airfryer.html",
